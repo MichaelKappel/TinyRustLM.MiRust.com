@@ -1,0 +1,17 @@
+profile: tinyrustlm.coding-standards.v1
+updated_utc: 2026-06-29T22:59:10Z
+php:
+  version: PHP 8.0 or newer
+  dependency_policy: No Composer dependencies.
+  rendering_policy: Server-rendered PHP for site pages; static Markdown for docs.
+  security_policy: Escape HTML with includes/functions.php::e before rendering dynamic text.
+css:
+  dependency_policy: Custom CSS only.
+  layout_policy: Responsive, liquid, accessible, no framework classes.
+javascript:
+  dependency_policy: Vanilla JS only.
+  scope: Navigation disclosure behavior only unless explicitly expanded.
+docs:
+  report_bodies: docs/reports
+  long_term_memory_body: docs/long-term-memory.md
+  pointer_ledger: .uai/long-term-memory.uai

@@ -1,0 +1,55 @@
+# TinyRustLM Long-Term Memory
+
+> Durable project memory for TinyRustLM plain PHP site package 1.3.0. This file is the body memory target for `.uai/long-term-memory.uai`; the `.uai` file stays pointer-first and routes agents here for full context.
+
+## Current truth boundary
+
+TinyRustLM is presented as a browser-local Rust/WebAssembly small language model runtime project, not as a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, or GGUF runtime claim. The public site explains the current architecture and its proof surfaces: custom `.slm` artifacts, f32/q8_0/q4_0 quantization, deterministic validation, ADP1/ASP1/ALR1 adapter sidecars, selector registries, module-plan receipts, local-only browser diagnostics, and evidence-first model-breeding workflows.
+
+## Site implementation memory
+
+- Current package version: `1.3.0`.
+- Site type: plain PHP 8, no WordPress, no database, no Composer, no npm.
+- Frontend: custom CSS and small vanilla JavaScript only.
+- Public routes: `/`, `/architecture/`, `/runtime/`, `/slm-format/`, `/quantization/`, `/browser-runtime/`, `/adapters/`, `/model-breeding/`, `/testing/`, `/roadmap/`, `/glossary/`, `/docs/`, and `/contact/`.
+- Machine routes: `/llms.txt`, `/llms-full.txt`, `/robots.txt`, `/sitemap.xml`, plus Markdown negotiation via `?format=md` or `Accept: text/markdown` on PHP-rendered pages.
+- Durable docs: `/docs/`, `/docs/report-index.md`, `/docs/long-term-memory.md`, and `/docs/reports/*`.
+
+## Technical memory
+
+TinyRustLM should be described through concrete engineering surfaces:
+
+1. **Runtime** — Rust owns `.slm` parsing, tokenizer behavior, tensor validation, quantization math, KV cache state, sampling, generation, diagnostics, error codes, adapter validation, and adapter application.
+2. **Browser shell** — JavaScript owns local file fetches, manifest checks, byte transfer into WASM memory, controls, transcript rendering, and diagnostics display. It must not parse tensor payloads or make model-quality claims.
+3. **Artifact format** — `.slm` is the custom local model artifact, with strict header, tensor directory, tokenizer metadata, quantization fields, dimension checks, checksums, and bounded runtime state.
+4. **Memory envelope** — public copy should keep the 33,554,432-byte selector model budget visible because it explains vocabulary pressure, q8/q4 tradeoffs, scratch buffers, adapter stack limits, and browser viability.
+5. **Adapters** — ADP1, ASP1, and ALR1 are validated sidecars. They are not replacement models and are not applied until Rust validates shape, identity, checksums, tokenizer agreement, tensor layout, and finite payload values.
+6. **Model breeding** — model breeding is offline and receipt-bound. Operators can produce candidates, sparse/low-rank sidecars, and evidence records, but public assistant-quality claims require additional runtime-smoke and evaluation sidecars.
+
+## Public copy boundaries
+
+- Do not claim trained assistant quality unless an evaluation sidecar with passed cases exists.
+- Do not claim GGUF import support as a TinyRustLM feature unless a specific conversion path and smoke evidence are added.
+- Do not describe the project as WordPress; this package is plain PHP.
+- Do not introduce Bootstrap, jQuery, Tailwind, React, Vue, Composer, npm, CDN dependencies, analytics, telemetry, remote inference APIs, or external model downloads by default.
+- Keep TinyRustLM centered on local agency, deterministic proof, inspectable artifacts, and constrained browser execution.
+
+## Report memory index
+
+| Durable report | Source file | Type | SHA-256 |
+|---|---:|---|---|
+| [Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes](/docs/reports/tiny-language-models-for-wasm.md) | `Tiny Language Models for WASM.md` | report | `B823A12562F6DB288C6B16A38A6A9A8C6DD2AF8C02F783BBF34E3C54836FF6FB` |
+| [Architecting Minimalist Neural Inference in WebAssembly](/docs/reports/rust-wasm-neural-model-patterns.md) | `Rust WASM Neural Model Patterns.md` | report | `53E988FBCDD51A06A6155A8293CA85113543F20D9F78AF52EE50997B23E5F618` |
+| [Architecture and Engineering of TinyRustLM](/docs/reports/understanding-tinyrustlm-creation-and-purpose.md) | `Understanding TinyRustLM_ Creation and Purpose.md` | report | `69A94B184F4876B293EF268F22DF5DB63F1DFF5413AFEF03F7A9C6BAB397440D` |
+| [Tiny Language Models for Rust/WASM](/docs/reports/tiny-language-models-for-rust-wasm.md) | `Tiny Language Models for Rust_WASM.md` | report | `37D6B47ED4284F65C591921F653F3AA4E17672593AE84C09C84E4222FC808AE9` |
+| [GGUF MiRust All Source Review Bundle](/docs/reports/gguf-mirust-all-source-review-bundle.txt) | `GGUF_MiRust_All_Source_Review_Bundle(1).txt` | source-review-bundle | `2B2D72AC23F1D63919C0B744E9586C8AE73C45B26891E8F698DAD1417E8DE931` |
+| [Memory Systems Domains Research](/docs/reports/memory-systems-domains-research.md) | `Memory Systems Domains Research(2).md` | report | `B400312F9FEB5F5D5D2BF0C77B221B925B7AC091BC618E1B6964D38885D8C9B9` |
+| [Future-Proof Native HTML5 Techniques](/docs/reports/future-proof-native-html5-techniques.md) | `Future-Proof Native HTML5 Techniques(3).md` | report | `A152A89B4575DDB990DDB5300DAE0AC44BC424ABDED40C9ADB7CA87045461879` |
+| [Future-Proof JavaScript Without Dependencies](/docs/reports/vanilla-js-future-proof-techniques.md) | `Vanilla JS Future-Proof Techniques(3).md` | report | `5BCC36711C08D1072C857B01E025D7FFF946615349BDEEB340E70FA8677F92B3` |
+| [Innovative Vanilla Web Design](/docs/reports/innovative-vanilla-web-design.md) | `Innovative Vanilla Web Design(3).md` | report | `FE68269F39258FA1E3BFECB7F78C153F4CA24C0F08432D3F193F91087B12122C` |
+| [Agent-Native Vanilla Web Architecture](/docs/reports/mememtech-vanilla-web-architecture.md) | `Mememtech Vanilla Web Architecture(3).md` | report | `4E3ACAA0D568C201C56E8F74E0016004743D04E553B9AEC8E83152E0F8B4E47A` |
+| [Analyzing Website Virality](/docs/reports/analyzing-website-virality.md) | `Analyzing Website Virality(3).md` | report | `5CDB3C8C9FA714AF0C44B48EC58B3C885846D5C8D7B1E5DDE869442B83DA95EF` |
+
+## Next recursive direction
+
+Continue by improving the docs surface and public evidence flow without widening claims. Good next work: add a public support matrix, add code snippets that mirror current source behavior, add downloadable checksums for source evidence, add a `/docs/proof/` page, and keep `.uai/long-term-memory.uai` synchronized whenever reports or source boundaries change.

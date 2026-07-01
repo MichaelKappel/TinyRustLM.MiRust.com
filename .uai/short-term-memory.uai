@@ -1,0 +1,15 @@
+profile: tinyrustlm.short-term-memory.v1
+updated_utc: 2026-06-29T22:59:10Z
+current_package_version: 1.3.0
+current_goal: Plain PHP TinyRustLM project site with Contact Mike Kappel footer, improved top menu, docs folder, preserved reports, long-term memory, and .uai file-memory routes.
+latest_changes:
+  - Added docs/index.php as /docs/.
+  - Copied 11 source reports into docs/reports.
+  - Added docs/report-index.md and docs/long-term-memory.md.
+  - Added .uai file-memory suite with long-term pointer ledger and file-handoff guidance.
+  - Updated top navigation with Docs + Memory group.
+  - Updated llms.txt, llms-full.txt, sitemap.xml, and README.
+next_read:
+  - .uai/long-term-memory.uai
+  - docs/report-index.md
+  - docs/long-term-memory.md

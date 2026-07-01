@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /docs/
+Allow: /.uai/
+
+Sitemap: https://TinyRustLM.mirust.com/sitemap.xml

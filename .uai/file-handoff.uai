@@ -1,0 +1,27 @@
+profile: tinyrustlm.file-handoff.v1
+updated_utc: 2026-06-29T22:59:10Z
+handoff_root: agent-file-handoff/
+active_buckets:
+  content: agent-file-handoff/Content/
+  improvement: agent-file-handoff/Improvement/
+completion_gate:
+  required_before_broad_work: true
+  required_evidence:
+    - live_bucket_scan
+    - disposition_per_non_placeholder_file
+    - processed_outcome
+    - proof_of_use
+    - durable_preservation_or_rejection_reason
+    - hot_memory_update
+    - source_site_removal_or_keep_active_reason
+durable_targets:
+  reports: docs/reports/
+  report_index: docs/report-index.md
+  long_term_memory_body: docs/long-term-memory.md
+  pointer_ledger: .uai/long-term-memory.uai
+current_scan:
+  scanned_utc: 2026-06-29T22:59:10Z
+  content_non_placeholder_files: 0
+  improvement_non_placeholder_files: 0
+  result: no_active_intake_after_package_generation
+note: Future report drops belong in active buckets first. Once reviewed, preserve accepted durable bodies under docs and deep-link them from .uai/long-term-memory.uai.

@@ -1,0 +1,28 @@
+profile: tinyrustlm-site.workspace.v1
+updated_utc: 2026-07-01T13:15:00Z
+site: TinyRustLM.MiRust.com
+workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
+coordinator: E:\Source\Rust\workspace.uai
+role: talisman_client
+talisman_source: MiRust.com
+sensitivity: internal
+public_export: https://TinyRustLM.MiRust.com/.well-known/uaix-talisman.txt
+private_memory_root: .uai/
+private_intake_root: agent-file-handoff/
+public_access_policy:
+  .uai: denied
+  agent-file-handoff: denied
+  workspace.uai: do_not_publish_without_root_deny_or_auth
+required_private_read_order:
+  - workspace.uai
+  - .uai/index.uai
+  - .uai/totem.uai
+  - .uai/taboo.uai
+  - .uai/talisman.uai
+  - .uai/file-handoff.uai
+  - .uai/intake-outcome-ledger.uai
+  - .uai/short-term-memory.uai
+current_state:
+  - TinyRustLM.MiRust.com is the model/runtime documentation site.
+  - The live public-safe export is verified.
+  - Direct public .uai and agent-file-handoff access is denied.

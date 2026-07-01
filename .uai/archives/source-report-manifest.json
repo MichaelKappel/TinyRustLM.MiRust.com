@@ -1,0 +1,129 @@
+{
+  "profile": "tinyrustlm.archives.source-report-manifest.v1",
+  "updated_utc": "2026-06-29T22:59:10Z",
+  "reports": [
+    {
+      "stable_id": "report_tiny_language_models_for_wasm",
+      "source_filename": "Tiny Language Models for WASM.md",
+      "title": "Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes",
+      "summary": "Core tiny-model feasibility, micro-model tiers, quantization constraints, deterministic WASM smoke testing, and Rust/WASM runtime pressure.",
+      "path": "docs/reports/tiny-language-models-for-wasm.md",
+      "url": "/docs/reports/tiny-language-models-for-wasm.md",
+      "bytes": 46105,
+      "sha256": "B823A12562F6DB288C6B16A38A6A9A8C6DD2AF8C02F783BBF34E3C54836FF6FB",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_rust_wasm_neural_model_patterns",
+      "source_filename": "Rust WASM Neural Model Patterns.md",
+      "title": "Architecting Minimalist Neural Inference in WebAssembly",
+      "summary": "WASM heap planning, zero-copy tensor views, tokenizer data structures, SIMD matrix-vector kernels, and deterministic neural inference design.",
+      "path": "docs/reports/rust-wasm-neural-model-patterns.md",
+      "url": "/docs/reports/rust-wasm-neural-model-patterns.md",
+      "bytes": 69793,
+      "sha256": "53E988FBCDD51A06A6155A8293CA85113543F20D9F78AF52EE50997B23E5F618",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_understanding_tinyrustlm_creation_and_purpose",
+      "source_filename": "Understanding TinyRustLM_ Creation and Purpose.md",
+      "title": "Architecture and Engineering of TinyRustLM",
+      "summary": "Primary TinyRustLM explanation: browser-local runtime, .slm format, q8/q4 quantization, adapters, selector registries, and offline model breeding.",
+      "path": "docs/reports/understanding-tinyrustlm-creation-and-purpose.md",
+      "url": "/docs/reports/understanding-tinyrustlm-creation-and-purpose.md",
+      "bytes": 31890,
+      "sha256": "69A94B184F4876B293EF268F22DF5DB63F1DFF5413AFEF03F7A9C6BAB397440D",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_tiny_language_models_for_rust_wasm",
+      "source_filename": "Tiny Language Models for Rust_WASM.md",
+      "title": "Tiny Language Models for Rust/WASM",
+      "summary": "Candidate model analysis, 33.5 MB budget math, Llama and GPT-NeoX topology notes, tokenizer constraints, and converter requirements.",
+      "path": "docs/reports/tiny-language-models-for-rust-wasm.md",
+      "url": "/docs/reports/tiny-language-models-for-rust-wasm.md",
+      "bytes": 44102,
+      "sha256": "37D6B47ED4284F65C591921F653F3AA4E17672593AE84C09C84E4222FC808AE9",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_gguf_mirust_all_source_review_bundle",
+      "source_filename": "GGUF_MiRust_All_Source_Review_Bundle(1).txt",
+      "title": "GGUF MiRust All Source Review Bundle",
+      "summary": "Large source review bundle containing the TinyRustLM source inventory, hot .uai memory files, docs, runtime, packer, harness, and model-breeding artifacts.",
+      "path": "docs/reports/gguf-mirust-all-source-review-bundle.txt",
+      "url": "/docs/reports/gguf-mirust-all-source-review-bundle.txt",
+      "bytes": 4922808,
+      "sha256": "2B2D72AC23F1D63919C0B744E9586C8AE73C45B26891E8F698DAD1417E8DE931",
+      "type": "source-review-bundle"
+    },
+    {
+      "stable_id": "report_memory_systems_domains_research",
+      "source_filename": "Memory Systems Domains Research(2).md",
+      "title": "Memory Systems Domains Research",
+      "summary": "Background research on AI memory domains, UAIX-style short-term handoff, long-term governed memory, and machine-readable knowledge routing.",
+      "path": "docs/reports/memory-systems-domains-research.md",
+      "url": "/docs/reports/memory-systems-domains-research.md",
+      "bytes": 39530,
+      "sha256": "B400312F9FEB5F5D5D2BF0C77B221B925B7AC091BC618E1B6964D38885D8C9B9",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_future_proof_native_html5_techniques",
+      "source_filename": "Future-Proof Native HTML5 Techniques(3).md",
+      "title": "Future-Proof Native HTML5 Techniques",
+      "summary": "Native HTML5, semantic structure, progressive enhancement, declarative shadow DOM, popovers, dialogs, and accessible no-framework web patterns.",
+      "path": "docs/reports/future-proof-native-html5-techniques.md",
+      "url": "/docs/reports/future-proof-native-html5-techniques.md",
+      "bytes": 53751,
+      "sha256": "A152A89B4575DDB990DDB5300DAE0AC44BC424ABDED40C9ADB7CA87045461879",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_vanilla_js_future_proof_techniques",
+      "source_filename": "Vanilla JS Future-Proof Techniques(3).md",
+      "title": "Future-Proof JavaScript Without Dependencies",
+      "summary": "Native JavaScript standards, import maps, async control flow, reactive stores, navigation, view transitions, and security primitives.",
+      "path": "docs/reports/vanilla-js-future-proof-techniques.md",
+      "url": "/docs/reports/vanilla-js-future-proof-techniques.md",
+      "bytes": 47621,
+      "sha256": "5BCC36711C08D1072C857B01E025D7FFF946615349BDEEB340E70FA8677F92B3",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_innovative_vanilla_web_design",
+      "source_filename": "Innovative Vanilla Web Design(3).md",
+      "title": "Innovative Vanilla Web Design",
+      "summary": "Advanced vanilla design ideas, view transitions, Web Components, Houdini, WebGPU, Web Audio, and immersive zero-dependency interaction patterns.",
+      "path": "docs/reports/innovative-vanilla-web-design.md",
+      "url": "/docs/reports/innovative-vanilla-web-design.md",
+      "bytes": 47461,
+      "sha256": "FE68269F39258FA1E3BFECB7F78C153F4CA24C0F08432D3F193F91087B12122C",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_mememtech_vanilla_web_architecture",
+      "source_filename": "Mememtech Vanilla Web Architecture(3).md",
+      "title": "Agent-Native Vanilla Web Architecture",
+      "summary": "Agent-readable web architecture, semantic HTML, llms.txt, content negotiation, robots policy, and machine-readable site surfaces.",
+      "path": "docs/reports/mememtech-vanilla-web-architecture.md",
+      "url": "/docs/reports/mememtech-vanilla-web-architecture.md",
+      "bytes": 42941,
+      "sha256": "4E3ACAA0D568C201C56E8F74E0016004743D04E553B9AEC8E83152E0F8B4E47A",
+      "type": "report"
+    },
+    {
+      "stable_id": "report_analyzing_website_virality",
+      "source_filename": "Analyzing Website Virality(3).md",
+      "title": "Analyzing Website Virality",
+      "summary": "Sharing psychology, growth loops, friction reduction, dark social, interactive microsites, and resilient infrastructure for public project sites.",
+      "path": "docs/reports/analyzing-website-virality.md",
+      "url": "/docs/reports/analyzing-website-virality.md",
+      "bytes": 62253,
+      "sha256": "5CDB3C8C9FA714AF0C44B48EC58B3C885846D5C8D7B1E5DDE869442B83DA95EF",
+      "type": "report"
+    }
+  ],
+  "long_term_memory_sha256": "E930670CE12380A29218ADE238D3E3CCD1B9E0949C1FC9365BA075ED30060E45",
+  "report_index_sha256": "C88BF4F11877B97220E717BB5A41A6663790E07A7673DA97F3F386169608329D"
+}

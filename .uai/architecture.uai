@@ -1,0 +1,26 @@
+profile: tinyrustlm.architecture.v1
+updated_utc: 2026-06-29T22:59:10Z
+site_architecture:
+  root_files:
+    - index.php
+    - .htaccess
+    - data/site.php
+    - data/pages.php
+    - includes/header.php
+    - includes/footer.php
+    - includes/functions.php
+    - assets/css/site.css
+    - assets/js/site.js
+    - docs/index.php
+  content_sources:
+    - data/pages.php for public PHP routes
+    - docs/long-term-memory.md for durable memory body
+    - docs/report-index.md for durable report manifest
+    - docs/reports/* for preserved reports
+  machine_files:
+    - llms.txt
+    - llms-full.txt
+    - robots.txt
+    - sitemap.xml
+    - .uai/*.uai
+runtime_architecture_summary: Rust/WASM runtime owns inference, model parsing, tensor validation, quantization, tokenizer, sampler, diagnostics, and adapter apply. Browser JavaScript owns local fetch, manifest/receipt checks, byte transfer, UI controls, and text-safe rendering.

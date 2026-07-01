@@ -1,0 +1,13 @@
+profile: tinyrustlm.context.v1
+updated_utc: 2026-06-29T22:59:10Z
+context_summary: TinyRustLM is the entire focus of this site. It is not a generic MiRust, WordPress, or GGUF-only project page.
+project_context:
+  - Custom Rust/WASM browser-local SLM runtime.
+  - Custom .slm artifact format and strict validation.
+  - q8_0 and q4_0 quantized execution under a 33.5 MB model budget.
+  - ADP1, ASP1, and ALR1 adapter sidecars with Rust validation-before-apply.
+  - Selector registries, module-plan receipts, deterministic smoke tests, and local-only diagnostics.
+site_context:
+  - Plain PHP route shell with static docs.
+  - Native HTML/CSS/vanilla JS only.
+  - Contact route remains /contact/ with footer link text Contact Mike Kappel.

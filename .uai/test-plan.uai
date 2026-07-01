@@ -1,0 +1,14 @@
+profile: tinyrustlm.test-plan.v1
+updated_utc: 2026-06-29T22:59:10Z
+verification_targets:
+  - PHP syntax passes for every PHP file.
+  - /docs/ returns HTTP 200.
+  - /docs/report-index.md returns HTTP 200.
+  - /docs/long-term-memory.md returns HTTP 200.
+  - /.uai/index.uai and /.uai/long-term-memory.uai are present in the package.
+  - llms.txt and sitemap.xml include /docs/.
+  - Root ZIP includes dotfiles and .uai folder.
+manual_review:
+  - Confirm footer still contains Contact Mike Kappel linked to /contact/.
+  - Confirm top menu includes Docs + Memory.
+  - Confirm .uai/long-term-memory.uai deep-links to every docs report.

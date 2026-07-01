@@ -1,0 +1,10 @@
+profile: tinyrustlm-site.taboo.v1
+updated_utc: 2026-07-01T03:10:00Z
+site: TinyRustLM.MiRust.com
+role: negative_anchor
+taboo:
+  - Do not claim TinyRustLM.MiRust.com runs hosted inference.
+  - Do not publish or imply unreviewed model-quality claims.
+  - Do not host or route model weights without checksum-bound evidence and explicit local-use boundaries.
+  - Do not mutate totem.uai, taboo.uai, or talisman.uai without exact human artifact-and-operation authorization.
+agent_mutability: read_only_without_exact_human_artifact_and_operation_authorization

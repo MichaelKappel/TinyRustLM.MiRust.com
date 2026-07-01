@@ -1,0 +1,6 @@
+profile: tinyrustlm.receiver-brief.v1
+updated_utc: 2026-06-29T22:59:10Z
+brief: The next agent should treat this as a plain PHP site package with UAIX-style .uai memory and a docs-backed long-term ledger.
+read_order_summary: system-profile, startup-packet, context, constraints, architecture, coding-standards, short-term-memory, long-term-memory, file-handoff, intake ledger, then docs report index.
+current_state: Version 1.3.0 adds /docs, .uai file memory, a report archive, and a long-term memory body.
+blockers: none_known_after_package_generation

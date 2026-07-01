@@ -1,0 +1,12 @@
+profile: tinyrustlm.decisions.v1
+updated_utc: 2026-06-29T22:59:10Z
+decisions:
+  - id: D001
+    decision: Keep TinyRustLM as a plain PHP site, not WordPress.
+    reason: User corrected the platform after the initial WordPress package.
+  - id: D002
+    decision: Preserve full report bodies under docs/reports and keep .uai memory pointer-first.
+    reason: UAIX-style long-term memory should route to durable bodies rather than bulk-loading reports into hot memory.
+  - id: D003
+    decision: Add Docs + Memory top-menu group.
+    reason: The site now has first-class documentation and UAI memory surfaces.

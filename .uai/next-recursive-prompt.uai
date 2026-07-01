@@ -1,0 +1,4 @@
+profile: tinyrustlm.next-recursive-prompt.v1
+updated_utc: 2026-06-29T22:59:10Z
+prompt: |
+  Continue the TinyRustLM plain PHP site from version 1.3.0. Preserve the zero-dependency PHP/CSS/vanilla JS stack, keep footer text "Contact Mike Kappel" linked to /contact/, and keep TinyRustLM centered on the Rust/WASM browser-local SLM runtime. Before changes, read .uai/index.uai, .uai/short-term-memory.uai, .uai/long-term-memory.uai, docs/report-index.md, and docs/long-term-memory.md. If new reports are supplied, preserve full bodies under docs/reports, update docs/report-index.md, update docs/long-term-memory.md when the current truth boundary changes, and add pointer records to .uai/long-term-memory.uai with checksums and deep links.

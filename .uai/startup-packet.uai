@@ -1,0 +1,11 @@
+profile: tinyrustlm.startup-packet.v1
+updated_utc: 2026-06-29T22:59:10Z
+receiver_instruction: Start here when resuming TinyRustLM site work.
+first_steps:
+  - Read .uai/index.uai for memory file order.
+  - Read .uai/short-term-memory.uai for current package state.
+  - Read .uai/long-term-memory.uai for durable report deep links.
+  - Use /docs/report-index.md only when full report context is needed.
+  - Scan agent-file-handoff/Content and agent-file-handoff/Improvement before implementation claims.
+active_goal: Maintain and expand the plain PHP TinyRustLM project website while preserving zero-dependency, local-only, proof-first claim boundaries.
+current_package: tinyrustlm-plainphp-site-v1.3.0.zip

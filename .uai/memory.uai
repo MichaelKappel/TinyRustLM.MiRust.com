@@ -1,0 +1,9 @@
+profile: tinyrustlm.memory.v1
+updated_utc: 2026-06-29T22:59:10Z
+memory_model:
+  hot_memory: .uai/*.uai
+  durable_memory: docs/long-term-memory.md
+  report_archive: docs/reports/*
+  report_manifest: docs/report-index.md
+  active_intake: agent-file-handoff/Content and agent-file-handoff/Improvement
+routing_policy: Read compact .uai files first. Follow deep links to docs only for task-relevant report context.
