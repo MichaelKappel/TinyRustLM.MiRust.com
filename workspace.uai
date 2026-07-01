@@ -1,5 +1,5 @@
 profile: tinyrustlm-site.workspace.v1
-updated_utc: 2026-07-01T13:15:00Z
+updated_utc: 2026-07-01T20:46:46Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -13,6 +13,11 @@ public_access_policy:
   .uai: denied
   agent-file-handoff: denied
   workspace.uai: do_not_publish_without_root_deny_or_auth
+deploy_gate:
+  instruction: Before deploying TinyRustLM.MiRust.com, update this model/runtime documentation site and related SLMComposer.com, Runtime.MiRust.com, MiniModel.org, and MiRust.com documentation/public exports to match the deployed source behavior.
+  requirements:
+    - Keep source options, .slm verification claims, model documentation, and no-server-model-byte boundaries current.
+    - Run relevant pointer audits and git diff --check before packaging or deployment.
 required_private_read_order:
   - workspace.uai
   - .uai/index.uai
