@@ -2,7 +2,7 @@ UAIX Talisman Public Export
 site: TinyRustLM.MiRust.com
 role: talisman-client
 source: MiRust.com
-updated_utc: 2026-07-01T13:10:00Z
+updated_utc: 2026-07-01T23:51:22Z
 
 Purpose
 TinyRustLM.MiRust.com documents browser-local Rust/WASM tiny language models and .slm artifacts. This file is a public orientation export only.
@@ -10,11 +10,13 @@ TinyRustLM.MiRust.com documents browser-local Rust/WASM tiny language models and
 Public Anchors
 - Explain TinyRustLM runtime, .slm format, quantization, adapters, selectors, and local-only diagnostics.
 - Keep model package evidence checksum-bound.
-- Route live local use to SLMComposer.com.
+- Route live local use to https://TinyRustLM.com/.
+- Treat TinyRustLM.com as the root-domain app route, not an /app/ subpath.
 - Route project evidence to Runtime.MiRust.com.
 
 Public Boundaries
 - TinyRustLM.MiRust.com is a documentation site, not a hosted inference service.
+- Project servers do not run user model bytes and do not serve runnable .slm artifacts.
 - Public quality claims must stay evidence-bound.
 
 Private Memory Boundary

@@ -2,9 +2,10 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.3.0',
-    'updated_utc' => '2026-06-29T22:59:10Z',
+    'version' => '1.4.0',
+    'updated_utc' => '2026-07-01T23:51:22Z',
     'description' => 'A zero-dependency Rust and WebAssembly browser-local small language model runtime built around custom .slm artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, and local-only diagnostics.',
+    'public_app' => 'https://TinyRustLM.com/',
     'contact' => [
         'name' => 'Mike Kappel',
         'full_name' => 'Michael Kappel',
