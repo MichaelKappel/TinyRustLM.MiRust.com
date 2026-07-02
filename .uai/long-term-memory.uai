@@ -1,5 +1,5 @@
-profile: tinyrustlm.long-term-memory.v7
-updated_utc: 2026-07-02T19:10:00Z
+profile: tinyrustlm.long-term-memory.v8
+updated_utc: 2026-07-02T20:30:00Z
 storage_mode: pointer_ledger_with_durable_docs
 ledger_rule:
   pointer_only_not_context_free: true
@@ -13,11 +13,11 @@ records:
     path: docs/long-term-memory.md
     deep_link: /docs/long-term-memory.md
     label: TinyRustLM Long-Term Memory Body
-    routing_summary: Durable project memory for current scope, public claim boundaries, report routing, and next recursive direction.
+    routing_summary: Durable project memory for current scope, public claim boundaries, report routing, and the MiniModel prepare-peer-share / import-peer-request source handoff.
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:D67F9502C104938628D9A46F017699F71120FCFED9DBD6B8C5631D1B5A8975D9
+    checksum_hash: sha256:03BB8E1A30FDD8B7F83EC3C1BDA72C72E07783DAA41FA21A1E4B1769DECFFD8B
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: tinyrustlm_runtime_portal_preservation_manifest
     pointer_type: preservation-manifest
@@ -28,7 +28,7 @@ records:
     pointer_status: current
     authority: preserved-runtime-mirust-public-corpus
     review_status: reviewed_current
-    checksum_hash: sha256:588B42477CF072DF96051448F48E34D59ABD056D1AE78FFC4C4FC8D0299E2BB5
+    checksum_hash: sha256:D998B43F402C02043F03C3D62CCFE464058F22C637E27036BBDF352763188207
     truth_boundary: Runtime.MiRust.com is retired as a separate documentation authority; use the manifest and /developer-portal/ for current developer routing.
   - stable_id: tinyrustlm_docs_report_index
     pointer_type: report-index
