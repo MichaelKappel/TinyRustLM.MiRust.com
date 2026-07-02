@@ -1,4 +1,4 @@
-profile: tinyrustlm-site.workspace.v8
+profile: tinyrustlm-site.workspace.v9
 updated_utc: 2026-07-02T16:40:00Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
@@ -36,7 +36,7 @@ current_state:
   - TinyRustLM.com is the root-domain browser-local Rust/WASM app route.
   - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm with peer-offer proof or the user locally converts source bytes with Rust and imports a verified .slm.
   - TinyRustLM's simple Hugging Face lane defaults P2P on, shows P2P Import only for MiniModel matches with write-catalog-entry peer-offer proof, shows Start Conversion otherwise, and shows one list-level warning when P2P is disabled.
-  - Proof-ready MiniModel rows use metadata-only catalog entries with peer_hint_status=peer-offer-ready-known-peer-needed and peer_import_status=request-script-ready; P2P Import still requires the list-level Known peer URL, rejects project/Hugging Face hosts, and requires local Rust fetch, assembly, verification, and import receipt before browser import.
+  - Proof-ready MiniModel rows use metadata-only catalog entries with peer_hint_status=peer-offer-ready-known-peer-needed and peer_import_status=request-script-ready; P2P Import still requires the list-level Known peer URL, rejects project/Hugging Face hosts, and uses local Rust `import-peer-request` receiver execution for fetch, assembly, verification, and import receipt before browser import.
   - TinyRustLM can save local MiniModel share metadata after verified .slm import; MiniModel can export/serve/fetch/reassemble known-peer pieces, while broader peer discovery/relay remains later.
   - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
   - SLMComposer.com is no longer the canonical public app identity.
