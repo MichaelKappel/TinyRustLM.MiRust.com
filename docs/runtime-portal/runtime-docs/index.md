@@ -45,4 +45,4 @@ The WordPress deployment path is superseded. Runtime.MiRust.com now ships as a r
 
 ## SLM Composer UI source-options update
 
-- [SLM Composer Source Options UI v1.0.7](/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode now starts with starter profiles and local, Hugging Face, and P2P source choices while Advanced Tools retains model selection, diagnostics, provenance, and module-plan details.
+- [SLM Composer Source Options UI v1.0.7](/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode now starts with starter profiles and local, Hugging Face, and P2P source choices, including request-driven Hugging Face conversion handoff, while Advanced Tools retains model selection, diagnostics, provenance, and module-plan details.
