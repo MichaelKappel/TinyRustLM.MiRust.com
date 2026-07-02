@@ -1,6 +1,6 @@
 # SLM Composer Source Options UI v1.0.7
 
-Updated UTC: 2026-07-02T05:15:00Z
+Updated UTC: 2026-07-02T15:05:00Z
 
 This note records the SLMComposer.com UI change driven by the 2026-07-01 UI improvement report. The source change belongs in the active Rust/WASM workspace at `E:\Source\Rust\SLMComposer.com`; Runtime.MiRust.com documents the runtime and public claim boundary.
 
@@ -28,16 +28,18 @@ The three source choices do not change the security model:
 
 All source lanes must converge on a local `.slm` file before SLM Composer runs generation. Rust/WASM remains the final `.slm` validation authority.
 
-The Search Metadata action must keep the source chooser open, update the visible result list, show `Rust conversion required` for unmatched Hub model cards, show `Catalog match, local .slm needed` for admitted converted records, and avoid any Hugging Face `/resolve/` model-byte fetch. Save Rust Conversion Script and Save Conversion Request must also keep the chooser open after the local handoff file is downloaded.
+The Search Metadata action must keep the source chooser open, update the visible result list, show `Rust conversion required` for unmatched Hub model cards, and avoid any Hugging Face `/resolve/` model-byte fetch. The simple Hugging Face list has one `Enable P2P when available` toggle, defaults P2P on, shows `P2P Import` only when MiniModel metadata includes peer-offer proof, shows `Start Conversion` otherwise, and shows one list-level warning when P2P is disabled. The lower-level Save Rust Conversion Script and Save Conversion Request controls remain Advanced Tools details and must also keep the chooser open after local handoff files are downloaded.
+
+The implementation keeps Hugging Face compatibility decisions centralized through a shared row view model and shared DOM/action builders. The `hf-search-ui` browser smoke asserts the exact simple primary actions (`Start Conversion` plus `P2P Import` while P2P is enabled, then two `Start Conversion` actions when P2P is disabled) and verifies that the disabled-P2P warning remains one list-level control rather than a repeated per-row warning.
 
 The Share Metadata action must stay disabled until a local `.slm` is verified. When enabled it writes JSON locally through the browser download flow; it does not upload, relay, or publish model bytes.
 
 ## Deployment Gate
 
-Deploying this UI requires updating the public app files under SLMComposer.com `/app/` and keeping related documentation sites aligned:
+Deploying this UI requires updating the public app files under TinyRustLM.com `/` and keeping related documentation sites aligned:
 
 - Runtime.MiRust.com documents the runtime and implementation boundary.
 - TinyRustLM.MiRust.com documents the tiny-model runtime and browser-local behavior.
 - MiniModel.org documents the metadata-only catalog, verifier, Hugging Face source lane, and future P2P exchange.
 
-The live site should not be called updated until `https://slmcomposer.com/app/` visibly shows `Chat`, `Advanced Tools`, starter profiles, and the three source choices on first load.
+The live site should not be called updated until `https://TinyRustLM.com/` visibly shows `Chat`, `Advanced Tools`, starter profiles, the three source choices, the Hugging Face `Enable P2P when available` toggle, and the corrected `P2P Import` / `Start Conversion` action model on first load.

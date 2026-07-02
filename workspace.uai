@@ -1,5 +1,5 @@
-profile: tinyrustlm-site.workspace.v4
-updated_utc: 2026-07-02T04:53:29Z
+profile: tinyrustlm-site.workspace.v5
+updated_utc: 2026-07-02T14:28:00Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -34,7 +34,8 @@ required_private_read_order:
 current_state:
   - TinyRustLM.MiRust.com is the TinyRustLM developer portal.
   - TinyRustLM.com is the root-domain browser-local Rust/WASM app route.
-  - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm or the user locally converts source bytes with Rust and imports a verified .slm.
+  - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm with peer-offer proof or the user locally converts source bytes with Rust and imports a verified .slm.
+  - TinyRustLM's simple Hugging Face lane defaults P2P on, shows P2P Import only for peer-proof MiniModel matches, shows Start Conversion otherwise, and shows one list-level warning when P2P is disabled.
   - TinyRustLM can save local MiniModel share metadata after verified .slm import, with peer transfer still unavailable until implemented.
   - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
   - SLMComposer.com is no longer the canonical public app identity.
