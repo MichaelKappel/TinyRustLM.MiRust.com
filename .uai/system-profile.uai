@@ -1,18 +1,20 @@
-profile: tinyrustlm.system-profile.v1
-updated_utc: 2026-06-29T22:59:10Z
+profile: tinyrustlm.system-profile.v2
+updated_utc: 2026-07-02T00:12:07Z
 project:
   name: TinyRustLM
   site: https://TinyRustLM.mirust.com/
-  package_version: 1.3.0
-  implementation: plain PHP project website
+  package_version: 1.5.0
+  implementation: plain PHP developer portal
   owner_contact_route: /contact/
 collaboration_contract:
-  purpose: Explain TinyRustLM as a zero-dependency Rust/WASM browser-local SLM runtime project.
-  source_authority: Uploaded TinyRustLM source review bundle, TinyRustLM research reports, native web reports, and preserved docs folder.
+  purpose: Explain TinyRustLM as a zero-dependency Rust/WASM browser-local SLM runtime project and preserve retired Runtime.MiRust.com implementation evidence.
+  source_authority: TinyRustLM source review bundle, TinyRustLM research reports, native web reports, preserved docs folder, and docs/runtime-portal checksum manifest.
   memory_strategy: Read compact .uai files first, then follow deep links to docs only as needed.
   completion_standard: Do not claim memory setup complete without .uai index, long-term pointer ledger, report index, docs reports, intake ledger, and verification notes.
 public_claim_boundary:
   - Plain PHP, not WordPress.
   - No third-party frontend or PHP dependency.
+  - TinyRustLM.com is the current public app route.
+  - Runtime.MiRust.com is retired as a separate documentation authority.
   - Browser-local architecture explanation only; no cloud inference claim.
   - Runtime-smoke evidence is not broad assistant-quality evidence.

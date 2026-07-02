@@ -1,12 +1,14 @@
-profile: tinyrustlm.progress.v1
-updated_utc: 2026-06-29T22:59:10Z
+profile: tinyrustlm.progress.v2
+updated_utc: 2026-07-02T00:12:07Z
 completed:
   - Converted mistaken WordPress package direction to plain PHP.
   - Added /contact/ and footer Contact Mike Kappel link in v1.2.0.
-  - Added /docs folder, all preserved reports, long-term memory body, report index, and .uai file-memory suite in v1.3.0.
+  - Added /docs folder, all preserved reports, long-term memory body, report index, and .uai file-memory suite in the earlier docs package.
   - Added top-menu Docs + Memory group.
   - Updated llms.txt, llms-full.txt, sitemap.xml, and README.
+  - Added /developer-portal/ in v1.5.0.
+  - Preserved retired Runtime.MiRust.com implementation evidence under docs/runtime-portal/ with MANIFEST.md checksums.
 remaining:
-  - Deploy to live TinyRustLM subdomain.
-  - Review live /docs/ and public .uai exposure policy after deployment.
+  - Deploy to live TinyRustLM.MiRust.com developer portal.
+  - Verify live /developer-portal/, /docs/runtime-portal/MANIFEST.md, and public .uai exposure policy after deployment.
   - Add public evidence matrix when source artifacts are ready to publish.

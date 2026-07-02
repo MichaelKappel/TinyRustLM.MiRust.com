@@ -2,9 +2,9 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.4.0',
-    'updated_utc' => '2026-07-01T23:51:22Z',
-    'description' => 'A zero-dependency Rust and WebAssembly browser-local small language model runtime built around custom .slm artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, and local-only diagnostics.',
+    'version' => '1.5.0',
+    'updated_utc' => '2026-07-02T00:12:07Z',
+    'description' => 'Developer portal for TinyRustLM: a zero-dependency Rust and WebAssembly browser-local small language model runtime built around custom .slm artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, local-only diagnostics, and an absorbed legacy runtime documentation archive.',
     'public_app' => 'https://TinyRustLM.com/',
     'contact' => [
         'name' => 'Mike Kappel',
@@ -32,6 +32,7 @@ return [
         '/adapters/' => 'Adapters',
         '/model-breeding/' => 'Model Breeding',
         '/testing/' => 'Testing',
+        '/developer-portal/' => 'Developer Portal',
         '/roadmap/' => 'Roadmap',
         '/glossary/' => 'Glossary',
         '/docs/' => 'Docs + UAI Memory',
@@ -71,6 +72,7 @@ return [
             'description' => 'Testing, roadmap, and reference material.',
             'items' => [
                 ['label' => 'Testing', 'path' => '/testing/', 'description' => 'Rust tests, WASM ABI smoke, and browser smokes.'],
+                ['label' => 'Developer Portal', 'path' => '/developer-portal/', 'description' => 'Consolidated TinyRustLM implementation docs, legacy runtime archive, and operations map.'],
                 ['label' => 'Roadmap', 'path' => '/roadmap/', 'description' => 'Proof-first future work and boundaries.'],
                 ['label' => 'Glossary', 'path' => '/glossary/', 'description' => 'Compact terms for agent and human readers.'],
                 ['label' => 'llms.txt', 'href' => '/llms.txt', 'description' => 'Machine-readable site map.'],

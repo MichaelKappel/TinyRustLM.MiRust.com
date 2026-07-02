@@ -1,6 +1,6 @@
 # TinyRustLM Report Index
 
-> Durable report map for TinyRustLM plain PHP site package 1.3.0. Every source report copied into `/docs/reports/` is listed with a source filename, durable route, role, byte count, and checksum.
+> Durable report map for TinyRustLM plain PHP site package 1.5.0. Every source report copied into `/docs/reports/` is listed with a source filename, durable route, role, byte count, and checksum.
 
 | Report | Source filename | Role | Bytes | SHA-256 |
 |---|---|---|---:|---|
@@ -18,6 +18,6 @@
 
 ## Related durable memory
 
-- [Long-term memory](/docs/long-term-memory.md): Durable body memory for project state, boundaries, report routing, and next recursive direction. SHA-256: `E930670CE12380A29218ADE238D3E3CCD1B9E0949C1FC9365BA075ED30060E45`
+- [Long-term memory](/docs/long-term-memory.md): Durable body memory for project state, boundaries, report routing, and next recursive direction. SHA-256: `A1070BB051DE287A245646B4DEE7CBA122B3F03DB8CF1CA93ED8359587138DFC`
 - [.uai long-term pointer ledger](../.uai/long-term-memory.uai): Pointer-first memory ledger that deep-links to this report index and every preserved report.
 - [.uai file handoff](../.uai/file-handoff.uai): Active intake and disposition rules for future report drops.

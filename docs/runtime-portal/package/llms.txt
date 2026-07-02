@@ -1,0 +1,33 @@
+# Runtime.MiRust.com
+
+> Runtime.MiRust.com is a plain PHP, zero-dependency project site for TinyRustLM, a browser-local Rust/WASM small language model runtime with source-backed claim boundaries.
+
+## Start
+- [Runtime.MiRust.com](https://Runtime.MiRust.com/): Project website for TinyRustLM, the custom Rust/WASM browser-local SLM runtime behind Runtime.MiRust.com.
+- [Project Explanation](https://Runtime.MiRust.com/project/): Plain-language explanation of what Runtime.MiRust.com and TinyRustLM are, what is implemented, and what is still future work.
+- [Source-Backed Facts](https://Runtime.MiRust.com/source-facts/): Concise source-backed facts and claim boundaries for Runtime.MiRust.com and TinyRustLM.
+- [Plain PHP Rebuild](https://Runtime.MiRust.com/plain-php-rebuild/): Plain PHP rebuild notes for Runtime.MiRust.com after removing the WordPress layer.
+- [FAQ](https://Runtime.MiRust.com/faq/): Frequently asked questions about Runtime.MiRust.com, TinyRustLM, .slm, GGUF, model breeding, local runtime boundaries, and proof claims.
+
+## Runtime
+- [Architecture](https://Runtime.MiRust.com/architecture/): System architecture for TinyRustLM: static browser app, Rust/WASM runtime, .slm model format, packer, local server, browser harness, and proof memory.
+- [Browser Runtime](https://Runtime.MiRust.com/browser-runtime/): Browser runtime explanation for TinyRustLM, including local WASM, local model files, Step Token, Adapter Sidecar, diagnostics, and privacy boundaries.
+- [Model Format](https://Runtime.MiRust.com/model-format/): Explanation of the custom .slm model file format, manifest sidecars, checksums, tokenizer metadata, tensor directory, and current quality boundaries.
+- [Developer Docs](https://Runtime.MiRust.com/developer-docs/): Developer documentation map for Runtime.MiRust.com, TinyRustLM, local build commands, source structure, model artifacts, and proof files.
+- [SLM Composer Source Options UI v1.0.7](https://Runtime.MiRust.com/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode starter profiles, local/Hugging Face/P2P source choices, and Advanced Tools boundary.
+
+## Evidence and operations
+- [Proof & Testing](https://Runtime.MiRust.com/proof-testing/): Testing and evidence strategy for TinyRustLM, including Rust unit tests, browser smokes, WASM ABI checks, route drift tests, and quality gates.
+- [Memory & Reports](https://Runtime.MiRust.com/memory-reports/): Public map of the Runtime.MiRust.com .uai memory suite, /docs reports, long-term memory ledger, and UAIX file-handoff routing.
+- [Origin Fix: cPanel Default Page](https://Runtime.MiRust.com/site-origin-fix/): Plain PHP deployment fix notes for cPanel default webpage redirects, stale WordPress files, document roots, DNS, and root extraction.
+- [Runtime Health](https://Runtime.MiRust.com/runtime-health/): Runtime.MiRust.com health endpoints, version endpoint, machine-readable route checks, and post-deployment verification commands.
+- [Deployment Checklist](https://Runtime.MiRust.com/deployment-checklist/): Post-deployment verification checklist for Runtime.MiRust.com covering DNS, HTTPS, security headers, static memory routes, Markdown negotiation, and dependency policy.
+- [Launch Operations](https://Runtime.MiRust.com/launch-operations/): Operational launch plan for Runtime.MiRust.com: backups, rollback, cache purge, route verification, stale WordPress cleanup, and no-dependency checks.
+- [Roadmap & Boundaries](https://Runtime.MiRust.com/roadmap-boundaries/): Current support boundaries and future roadmap for TinyRustLM, including GGUF import, trained-quality models, LoRA, WebGPU, OPFS, workers, and persistence.
+
+## Machine-readable files
+- [llms-full.txt](https://Runtime.MiRust.com/llms-full.txt): Full Markdown corpus for core pages.
+- [/docs index](https://Runtime.MiRust.com/docs/index.md): Durable report and memory route index.
+- [.uai index](https://Runtime.MiRust.com/.uai/index.uai): Hot memory file index.
+- [healthz](https://Runtime.MiRust.com/healthz): Plain text deployment health marker.
+- [version.json](https://Runtime.MiRust.com/version.json): Machine-readable package version and claim boundary.

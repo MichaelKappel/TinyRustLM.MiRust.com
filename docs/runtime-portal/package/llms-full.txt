@@ -1,0 +1,1140 @@
+# Runtime.MiRust.com full corpus
+
+Generated UTC: 2026-07-01T21:20:00Z
+Package version: 1.0.7
+
+# Runtime.MiRust.com
+
+> Runtime.MiRust.com is the project website for TinyRustLM: a custom Rust/WASM browser-local small language model runtime, static browser UI, local model format, adapter route, and proof pipeline.
+
+Runtime.MiRust.com should not read like a placeholder CMS blog. It should explain the actual project: a zero-dependency Rust and browser runtime that loads local `.slm` model files, validates them, runs inference in WebAssembly, displays model provenance, and records the evidence chain around generated model artifacts.
+
+## Current implementation in one view
+
+| Area | Current source-backed status |
+| --- | --- |
+| Browser shell | Static HTML, custom CSS, handwritten JavaScript. |
+| Runtime | No-crate Rust compiled to WASM with explicit exported functions. |
+| Model format | Custom `.slm` format with checksum, tensor directory, tokenizer metadata, and quantization metadata. |
+| Quantization | f32, q8_0, and q4_0 fixture and TinyLM-16M smoke paths. |
+| Adapters | ADP1 raw adapters, ASP1 sparse adapters, and ALR1 low-rank adapters. |
+| Provenance | `.slm.manifest`, assembly receipts, adapter-family receipts, selector registries, and module-plan receipts. |
+| Testing | Rust tests, browser harness checks, Node DevTools browser smokes, WASM ABI smoke, route-soak checks. |
+| Product boundary | Runtime and evidence are real. Trained assistant quality and full GGUF import are not claimed yet. |
+
+## What the name means
+
+Runtime.MiRust.com is the public lane for the Rust/WASM local-model runtime work. GGUF remains an important roadmap-facing format boundary, but the source-backed implementation currently centers on TinyRustLM and the custom `.slm` route because that path is small enough to audit, validate, and prove in the browser before wider format support is added.
+
+## Why this exists
+
+Most local AI demonstrations hide important boundaries behind frameworks, package managers, opaque model loaders, or remote inference calls. TinyRustLM takes the opposite route:
+
+- keep the browser app static;
+- keep JavaScript as a host boundary, not a tensor engine;
+- keep Rust in charge of model parsing, validation, inference, adapters, diagnostics, and state;
+- keep model artifacts local and checksum-bound;
+- keep every expansion behind receipts, manifests, and browser smoke evidence.
+
+## Main project lanes
+
+1. **Browser-local runtime**: local `.slm` files and WASM runtime, no external inference API.
+2. **Proof-first model format**: checksum-bearing local model files with explicit quality boundaries.
+3. **Adapter ecology**: raw, sparse, and low-rank delta packages validated by Rust before use.
+4. **Model breeding pipeline**: offline compatibility, lineage, operators, candidates, promotions, population review, parent-pool recipes, selector admission, and browser-routable bundles.
+5. **Agent-readable site**: semantic PHP-rendered pages, Markdown alternates, `llms.txt`, `llms-full.txt`, and no dependency-heavy front-end framework.
+
+
+## Audit-driven site improvements
+
+The latest improvement round adds the missing layer that a technical project site needs before deeper UI work: deployment trust, namespace clarity, research routing, and explicit launch checks.
+
+- [Audit Response](/site-audit-response/): What changed from the attached review.
+- [Infrastructure & Trust](/site-infrastructure/): DNS, TLS, headers, docs routes, and trust checks.
+- [Name & Scope](/name-scope/): Make TinyRustLM and the `.slm` boundary unambiguous.
+- [Deploy Check](/deployment-checklist/): Post-deploy commands for humans and agents.
+
+## Start here
+
+- Read **Architecture** for the system map.
+- Read **Browser Runtime** for what runs in the user’s browser.
+- Read **Model Format** for the `.slm` boundary.
+- Read **Adapters & Assembly** for ADP1, ASP1, ALR1, module plans, selector registries, and assembly receipts.
+- Read **Proof & Testing** before trusting any support claim.
+- Read **Contact Mike Kappel** when you need maintainer contact, project follow-up, or external profile links.
+
+## Live operations added in v1.0.6
+
+The latest continuation round adds explicit health endpoints, origin-fix guidance, stale WordPress route interception, and deploy verification scripts so the site can stay out of the cPanel default-page failure mode.
+
+- [Origin Fix](/site-origin-fix/): why cPanel default pages appear and how to correct root mapping.
+- [Runtime Health](/runtime-health/): health, version, docs, memory, and Markdown checks.
+- [Fact Sheet](/source-facts/): short source-backed claim boundary for humans and agents.
+- [Launch Ops](/launch-operations/): backup, extraction, verification, cache purge, and rollback rules.
+
+## Documentation source-options update in v1.0.7
+
+The latest documentation update records the SLMComposer.com Chat-first source-options UI: beginner starter profiles, Local Files / Hugging Face / P2P Exchange choices, and the Advanced Tools boundary that keeps diagnostics, checksums, provenance, module plans, catalog URLs, and raw model controls available without making them the first screen.
+
+- [SLM Composer Source Options UI](/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): implementation note and deploy gate for the visible app change.
+
+---
+
+# Project Explanation
+
+Runtime.MiRust.com is a project website for a custom local AI runtime stack. The active implementation target is **TinyRustLM**, a browser-local small language model application built from static HTML, custom CSS, handwritten JavaScript, and no-crate Rust compiled to WebAssembly.
+
+## The simplest accurate description
+
+TinyRustLM is a small, auditable runtime that proves a local model can be loaded, validated, tokenized, run, adapted, diagnosed, and tested inside the browser without depending on a third-party front-end framework, an external inference API, or a large machine-learning runtime.
+
+## What the project is not
+
+The current source should not be marketed as a general assistant product. It should not claim trained assistant quality, full GGUF import, Mini Browser orchestration, hosted model execution, remote inference, analytics, telemetry, or plugin-driven automation.
+
+The site should instead describe the real thing that exists:
+
+- a custom model file route;
+- local deterministic smoke models;
+- quantized runtime paths;
+- adapter package validation;
+- receipts and manifests;
+- browser route proofs;
+- a model-breeding research pipeline;
+- strict boundaries around what has and has not been proven.
+
+## The project’s engineering posture
+
+The project is intentionally small at the trusted boundary. It favors direct Rust modules, explicit file formats, deterministic test artifacts, and visible browser diagnostics over framework-level magic.
+
+That is why the website uses the same public posture:
+
+- no Bootstrap;
+- no jQuery;
+- no external CSS framework;
+- no page builder dependency;
+- no client-side rendering requirement for core content;
+- no hidden bot-only copy;
+- no “magic AI” language where evidence should be shown.
+
+## How to read the site
+
+The site is organized as a proof map:
+
+1. **Architecture** explains the parts.
+2. **Browser Runtime** explains the runtime/app boundary.
+3. **Model Format** explains `.slm`.
+4. **Adapters & Assembly** explains ADP1, ASP1, ALR1, selector registries, module plans, and assembly receipts.
+5. **Model Breeding** explains the offline candidate lineage and promotion pipeline.
+6. **Proof & Testing** records what support claims should be backed by tests or smoke evidence.
+7. **Roadmap & Boundaries** keeps future ambition separate from current support.
+
+## Public positioning
+
+Use the phrase “browser-local Rust/WASM SLM runtime” before broader phrases like “AI system.” This keeps the project precise, searchable, and agent-readable.
+
+Runtime.MiRust.com is a constructive local-model craft site. It should make the engineering understandable without diluting the boundaries.
+
+---
+
+# Source-Backed Facts
+
+> This page is the short answer for humans, search engines, and AI agents: what exists, what is being proven, and what is not claimed yet.
+
+## Current facts
+
+- **Runtime.MiRust.com** is the project site for TinyRustLM.
+- **TinyRustLM** is a browser-local Rust/WASM small language model runtime and static app.
+- The current source-backed model route is the custom `.slm` format.
+- JavaScript is the host boundary; Rust owns model parsing, generation, adapters, diagnostics, and runtime state.
+- The public site is plain PHP, no WordPress, no database, no Composer, and no external front-end library.
+
+## Current support boundary
+
+| Claim | Status |
+| --- | --- |
+| Browser-local Rust/WASM SLM runtime | Current source-backed lane. |
+| Custom `.slm` model loading | Current source-backed lane. |
+| ADP1, ASP1, ALR1 adapter routes | Current evidence lane. |
+| Broad GGUF import | Roadmap only. |
+| Trained assistant quality | Not claimed until eval evidence supports it. |
+| Remote inference service | Not the current product. |
+
+---
+
+# Architecture
+
+TinyRustLM is split into small, explicit boundaries. The website should explain those boundaries because they are the product.
+
+## Source-backed workspace
+
+| Component | Role |
+| --- | --- |
+| `tinyrustlm/app/` | Static browser UI with handwritten HTML, CSS, and JavaScript. |
+| `tinyrustlm/runtime/` | No-crate Rust runtime compiled to WASM. |
+| `tinyrustlm/tools/slm_pack/` | No-crate Rust utility for model files, manifests, receipts, operators, and browser bundles. |
+| `tinyrustlm/tools/local_server/` | No-crate local static server for loopback app hosting. |
+| `tinyrustlm/tools/browser_harness/` | No-crate Rust contract checker for app and route assumptions. |
+| `tinyrustlm/docs/` | Durable architecture, browser runtime, testing, performance, tokenizer, quantization, and format notes. |
+| `.uai/` | Hot project handoff and routing memory. |
+| `wiki/runtime-mirust/` | LLM Wiki source namespace for durable memory publication. |
+
+## Runtime boundary
+
+The runtime owns the parts that must be trustworthy:
+
+- `.slm` parsing and validation;
+- checksum checks before tensor decoding;
+- tokenizer behavior;
+- f32, q8_0, and q4_0 storage and dispatch;
+- tensor routing and tied-output fallback;
+- KV cache and scratch buffers;
+- sampler and output limits;
+- diagnostics;
+- context reset;
+- model free;
+- ADP1, ASP1, and ALR1 adapter validation and apply.
+
+JavaScript does not parse `.slm`, own tensor math, or make quality claims. JavaScript hosts the browser state, fetches local files, copies bytes into WASM memory, calls Rust exports, and renders diagnostics.
+
+## Browser app boundary
+
+The browser app is intentionally static. It presents model selection, prompt controls, output, transcript state, Step Token, Adapter Sidecar, Model Provenance, Module Plan, Assembly Evidence, and developer diagnostics. It fetches only local or same-origin project artifacts.
+
+The browser-side rules are strict:
+
+- selected model bytes must match declared byte counts;
+- manifests must fit text-sidecar budgets;
+- generated module plans must be verified before model bytes;
+- adapter manifests and adapter bytes must be verified before WASM transfer;
+- generated adapter stacks must validate in Rust before apply;
+- transcript Clear is different from runtime Reset.
+
+## Packer boundary
+
+`tinyrustlm-slm-pack` is the offline tool lane. It produces or validates model artifacts, adapter artifacts, receipts, manifests, candidates, promotions, population records, parent-pool recipes, selector registries, and browser-routable bundles.
+
+This design keeps model-breeding work out of the live runtime until it has normal `.slm` validation, manifests, evidence sidecars, admission records, and browser route proof.
+
+## Proof memory
+
+The `.uai` and `wiki/runtime-mirust/` files are not decorative. They are part of the project handoff system. They route future agents to source boundaries, testing rules, report synthesis, long-term pointers, and next prompts without dumping every report body into hot memory.
+
+---
+
+# Browser Runtime
+
+The browser runtime is the human-facing proof surface for TinyRustLM. It is not a remote chat service. It is a local static app that loads local project artifacts and calls the Rust/WASM runtime.
+
+## SLM Composer source options UI
+
+SLM Composer now defaults to Chat mode with starter profiles and three source choices: Your Local Files, Hugging Face, and P2P Exchange. Advanced Tools retains exact model names, max tokens, decoding parameters, catalog URLs, Hugging Face search, provenance, module plans, diagnostics, and run history for expert use.
+
+All three source choices still converge on a local `.slm` file before execution. Hugging Face remains metadata and external discovery. P2P Exchange remains a future MiniModel manifest and receipt-gated transfer path. Project servers do not run or serve user model bytes.
+
+## What loads in the browser
+
+The browser shell includes:
+
+- static `index.html`;
+- custom `app.css`;
+- handwritten `app.js`;
+- `runtime/tinyrustlm.wasm`;
+- `runtime/tinyrustlm.wasm.manifest`;
+- local `.slm` model files and `.slm.manifest` sidecars;
+- optional `models/selector.registry`;
+- generated `.module-plan.receipt`, `.assembly.receipt`, `.adapter-family.receipt`, and adapter manifests when a generated bundle is being tested.
+
+## Runtime controls
+
+The browser app can expose:
+
+- model selection;
+- prompt entry;
+- deterministic and stochastic decoding controls;
+- Generate;
+- Step Token;
+- Reset runtime context;
+- Clear transcript;
+- Adapter Sidecar apply;
+- Model Provenance;
+- Module Plan;
+- Assembly Evidence;
+- diagnostics and developer console.
+
+## Local-only privacy boundary
+
+The app is designed around local files and same-origin fetches. It should not silently call remote inference APIs. It should not download hidden model files from external hosts. It should not add telemetry, analytics, or remote logging unless the project explicitly changes that boundary.
+
+## Browser-owned state versus Rust-owned state
+
+The browser owns UI state and transcript rendering. Rust owns runtime state, model state, adapter apply state, diagnostics, and generation boundaries.
+
+This matters because Clear should only clear browser transcript history, while Reset should clear runtime context/output state. Mixing those two actions would make diagnostics less trustworthy.
+
+## Failure states are product behavior
+
+The browser app should visibly handle:
+
+- missing model files;
+- malformed model files;
+- checksum mismatches;
+- model byte-budget rejection;
+- text-sidecar budget rejection;
+- oversized prompt bytes;
+- context overflow;
+- adapter identity mismatch;
+- adapter checksum mismatch;
+- generated receipt drift;
+- failed WASM ABI calls.
+
+These are not polish issues. They are the evidence that the runtime boundary is real.
+
+---
+
+# Model Format
+
+TinyRustLM currently uses a custom local `.slm` model format. This is the format the runtime can validate and load in the browser today.
+
+## Why `.slm` exists
+
+The `.slm` path is a constrained proof lane. It avoids the complexity of broad external model formats while the runtime stabilizes:
+
+- header validation;
+- checksum validation;
+- tokenizer metadata;
+- tensor directory validation;
+- f32, q8_0, and q4_0 storage;
+- context/token limits;
+- adapter compatibility;
+- browser byte budgets;
+- manifest sidecars.
+
+The domain name is GGUF-facing, but the current source does not claim full GGUF import. GGUF support belongs on the roadmap until it has the same style of validation and proof.
+
+## Core `.slm` concepts
+
+| Concept | Meaning |
+| --- | --- |
+| Header | Versioned binary record that defines shape, quantization, tokenizer, tensor count, and checksums. |
+| Tensor directory | Explicit map of tensor names, offsets, sizes, types, and layout. |
+| Tokenizer section | Byte tokenizer or custom BPE fixture metadata. |
+| Quantization metadata | f32, q8_0, or q4_0 route metadata. |
+| Manifest sidecar | Human- and agent-readable route that records checksum, shape, source kind, admission status, and quality boundary. |
+| Admission status | Whether the artifact is accepted for runtime smoke, pending evaluation, or rejected. |
+
+## Current model artifacts
+
+The source bundle references deterministic smoke models and TinyLM-16M f32/q8_0/q4_0 artifacts. Those artifacts exist to prove runtime execution, not to claim finished assistant quality.
+
+## Quality boundary
+
+A manifest can say `runtime-execution-smoke-only` or `trained_quality_claim=not-claimed`. The public site must preserve that distinction. A model that can load and generate one deterministic smoke output is not automatically a trained, useful assistant.
+
+## Future route
+
+Future trained or converted models should enter through validated source manifests, provenance sidecars, runtime-smoke evidence, eval sidecars, promotion gates, selector admission, and browser route proof.
+
+---
+
+# Adapters & Assembly
+
+Adapters are how TinyRustLM explores small, modular model changes without pretending every change is a finished model.
+
+## Adapter package types
+
+| Package | Meaning | Runtime role |
+| --- | --- | --- |
+| ADP1 | Raw f32 task-delta adapter package. | Can be validated and applied to compatible f32/q8_0/q4_0 loaded models. |
+| ASP1 | Sparse f32 task-delta adapter package. | Compact sparse route with retention and mask metadata. |
+| ALR1 | Low-rank adapter package. | Factor-based low-rank route with source-backed metadata. |
+
+Rust is the package authority. JavaScript may select and transfer adapter bytes, but Rust validates identity, checksums, tensor directory, tokenizer, layout, finite payload values, sparse indexes or low-rank shapes, and fused values before mutation.
+
+## Generated assembly chain
+
+Generated browser bundles can carry:
+
+1. selector registry;
+2. module-plan receipt;
+3. model bytes;
+4. model manifest;
+5. assembly receipt;
+6. evidence files;
+7. adapter-family receipt;
+8. adapter manifests;
+9. ADP1, ASP1, and ALR1 stack artifacts;
+10. Rust validation calls;
+11. Rust apply calls;
+12. diagnostics proving the assembly state.
+
+## Module plan
+
+A module plan is a browser-constrained assembly receipt. It states what must be fetched, in what class, under what byte budgets, with what checksums, roles, phases, dependencies, and slots.
+
+The browser must verify the plan before fetching generated model bytes. This prevents a selector registry from silently routing an unplanned artifact.
+
+## Selector registry
+
+The selector registry is the browser route gate. It carries entries for admitted model candidates and optional adapter families. It must include budget fields such as model byte budgets and text-sidecar budgets before generated entries are accepted.
+
+## Assembly receipt
+
+The assembly receipt binds the model manifest, ledger, review, recipe, operator, candidate, promotion, runtime, eval, admission, eval-case digest, and adapter-family evidence by checksum.
+
+The browser should fetch evidence files referenced by the receipt and verify their checksums before showing Assembly Evidence as loaded.
+
+## Why this matters
+
+This project is about controlled local evolution, not arbitrary runtime mutation. Every generated route should be a chain of ordinary files that can be inspected, replayed, and rejected when drift is detected.
+
+---
+
+# Model Breeding Pipeline
+
+Model breeding in Runtime.MiRust.com is an offline evidence pipeline. It is not a live browser swarm and it is not unbounded self-modification.
+
+## The pipeline shape
+
+1. **Source artifact**: a `.slm` file, trained-source manifest, or adapter-source manifest.
+2. **Compatibility report**: confirms direct-parameter compatibility before merge-style operators are allowed.
+3. **Lineage template**: binds parents, operator identity, budget, and expected output.
+4. **Operator receipt**: records what the operator did and how to recompute it.
+5. **Candidate manifest**: binds the produced candidate artifact.
+6. **Runtime smoke**: proves the candidate can run.
+7. **Evaluation sidecar**: required before assistant-quality claims.
+8. **Promotion template**: records readiness and pending gates.
+9. **Admission record**: admits evidence-passed candidates.
+10. **Promotion ledger**: hash-chains accepted history.
+11. **Population review**: ranks candidates by objective vectors.
+12. **Parent-pool recipe**: selects parents for later cycles.
+13. **Selector registry**: routes admitted candidates to browser-visible local artifacts.
+
+## Implemented operator families
+
+The source bundle references implemented or routed operator lanes including:
+
+- blend;
+- task delta;
+- sparse task delta;
+- deterministic crossover;
+- bounded mutation;
+- deterministic magnitude pruning;
+- DARE dropout/rescaled task delta;
+- federated/local update;
+- sign-aware parent-pool merge;
+- seed-weighted parent-pool soup.
+
+Each operator should remain offline until its output passes normal artifact gates.
+
+## The biology vocabulary translated
+
+| Concept | Project meaning |
+| --- | --- |
+| Heritable artifact | `.slm`, manifest, receipt, eval sidecar, or adapter package. |
+| Mate selection | Compatibility, population review, and parent-pool recipe. |
+| Phenotype evidence | Runtime smoke, eval evidence, provenance, and browser smoke. |
+| Fitness | Objective-vector review and eval-bound checksums. |
+| Species fit | Quantization, tokenizer, layout, adapter, and resource envelope compatibility. |
+| Novelty | Behavior-relevant descriptor and evidence checksum. |
+
+## Public boundary
+
+Do not describe this as autonomous replication. Describe it as controlled candidate assembly with evidence, manifests, receipts, and explicit promotion gates.
+
+---
+
+# Proof & Testing
+
+Support claims on Runtime.MiRust.com should map to evidence. The source code already treats tests as part of the architecture.
+
+## Test categories
+
+| Test lane | What it protects |
+| --- | --- |
+| Rust unit tests | Math ops, parser rules, tokenizer, quantization, adapters, packer operators, receipts, manifests. |
+| WASM ABI smoke | Export boundary, allocation, model load, generation, next token, adapter validation/apply, reset, free. |
+| Browser harness | Static app IDs, local-only markers, route declarations, manifest presence, content types. |
+| Browser smoke | Headless browser behavior, model load, generation, Step Token, Adapter Sidecar, selector registries, module-plan drift rejection, assembly evidence checks. |
+| Route soaks | Repeated q4_0/q8_0/f32 generated assembly routes, reload behavior, no-store fetches, model release before reassembly. |
+| Visual Studio scripts | Build, test, copy WASM, check model artifacts, run browser harness, reuse local server. |
+
+## Drift tests
+
+Generated routes should reject checksum-consistent but semantically wrong metadata. The source references drift gates for:
+
+- runtime manifest drift;
+- selector byte-budget drift;
+- text-sidecar budget drift;
+- module-plan profile drift;
+- execution profile drift;
+- fetch policy drift;
+- origin policy drift;
+- fetch-count drift;
+- resource drift;
+- graph drift;
+- stack drift;
+- role drift;
+- slot drift;
+- phase drift;
+- dependency drift;
+- byte-count drift;
+- checksum drift;
+- assembly eval-case drift;
+- assembly evidence-file drift;
+- adapter manifest drift;
+- adapter artifact drift;
+- adapter Rust validation drift.
+
+## Quality gates
+
+A runtime smoke model proves runtime behavior. It does not prove assistant usefulness.
+
+Assistant-quality claims need converted-trained provenance and a matching passed evaluation sidecar with declared cases, prompts, expected text, actual text, totals, and checksums.
+
+## Public evidence wording
+
+Use phrases such as:
+
+- “source-backed at bundle time”;
+- “runtime-smoke evidence”;
+- “deterministic fixture”;
+- “quality not claimed yet”;
+- “accepted for runtime smoke”;
+- “requires trained/evaluated model before product-quality claim.”
+
+Avoid implying that deterministic smoke models are production assistants.
+
+---
+
+# Developer Docs
+
+This page is the public map from website readers to the implementation structure.
+
+## Important source files
+
+| File or directory | Purpose |
+| --- | --- |
+| `README.md` | Workspace overview and command entry. |
+| `tinyrustlm/README.md` | TinyRustLM app and runtime overview. |
+| `tinyrustlm/docs/architecture.md` | Architecture detail. |
+| `tinyrustlm/docs/browser-runtime.md` | Browser-local runtime detail. |
+| `tinyrustlm/docs/slm-format.md` | `.slm` model format detail. |
+| `tinyrustlm/docs/tokenizer.md` | Byte tokenizer and BPE fixture rules. |
+| `tinyrustlm/docs/quantization.md` | f32/q8_0/q4_0 support boundaries. |
+| `tinyrustlm/docs/testing.md` | Test matrix and proof expectations. |
+| `tinyrustlm/docs/performance.md` | Scratch, logits, sampling, output cap, and benchmark guidance. |
+| `wiki/runtime-mirust/` | Local LLM Wiki source namespace. |
+| `.uai/` | Project handoff memory and source routing. |
+
+## Useful local commands
+
+The exact command set evolves with the source tree, but the public site can safely describe the command families:
+
+```bash
+cargo fmt --all
+cargo test --workspace
+cargo run -p tinyrustlm-browser-harness -- tinyrustlm
+node tinyrustlm/tools/wasm-abi-smoke.js
+node tinyrustlm/tools/browser-smoke.js
+```
+
+Visual Studio wrapper scripts live under `tools/vs/` for build, run, and test flows.
+
+## Website content rule
+
+Developer docs on this site should summarize source-backed boundaries. They should not replace the repository docs, and they should not claim support that the tests do not support.
+
+## Agent-readable docs
+
+This site exposes `llms.txt`, `llms-full.txt`, Markdown alternates, and semantic page structure so AI systems can cite the project accurately without scraping a generic plain PHP shell.
+
+## Root /docs corpus
+
+The full root package also publishes [`/docs/index.md`](/docs/index.md), [`/docs/reports/index.md`](/docs/reports/index.md), and [`/docs/long-term-memory.uai`](/docs/long-term-memory.uai). The hot .uai deep-link map is [`/.uai/docs-routing.uai`](./.uai/docs-routing.uai).
+
+---
+
+# Memory & Reports
+
+This page explains the public memory layer packaged with the site. The project now ships a root `/.uai/` folder for hot project memory and a root `/docs/` folder for durable report bodies, implementation docs, and the published long-term memory ledger.
+
+## Primary memory routes
+
+| Route | Purpose |
+| --- | --- |
+| [`/docs/index.md`](/docs/index.md) | Durable documentation index for reports, research, implementation docs, source-memory pages, and dogfood notes. |
+| [`/docs/reports/index.md`](/docs/reports/index.md) | Index of source-backed report memory extracted from the review bundle. |
+| [`/docs/long-term-memory.uai`](/docs/long-term-memory.uai) | Published copy of the long-term pointer ledger with public-docs overlay. |
+| [`/.uai/docs-routing.uai`](./.uai/docs-routing.uai) | Hot deep-link map from .uai memory to every durable report and memory file. |
+| [`/.uai/long-term-memory.uai`](./.uai/long-term-memory.uai) | Active long-term pointer ledger. |
+| [`/.uai/file-handoff.uai`](./.uai/file-handoff.uai) | Agent File Handoff configuration and active intake rules. |
+
+## Why reports live in /docs instead of hot .uai files
+
+The site follows the file-handoff pattern: `.uai` files carry current routing, synthesis, pointer records, checksums, and startup guidance. Full report bodies live in durable Markdown under `/docs/`, where humans and agents can deep-link exact sources without overloading the startup memory layer.
+
+## Included durable memory
+
+- source report bodies under `/docs/reports/`;
+- model-breeding and zero-dependency research under `/docs/research/`;
+- uploaded website architecture research under `/docs/web-research/`;
+- source-memory maps under `/docs/source-memory/`;
+- TinyRustLM implementation docs under `/docs/implementation/`;
+- UAIX dogfood notes under `/docs/dogfood/`;
+- the published long-term memory ledger at `/docs/long-term-memory.uai`.
+
+## Agent startup rule
+
+For memory-aware work, start with `/.uai/index.uai`, then `/.uai/docs-routing.uai`, then `/.uai/long-term-memory.uai`. Open the durable report or research body only when the current task needs that evidence.
+
+---
+
+# Agent-Readable Site
+
+This plain PHP package implements the same philosophy as the runtime: keep the trusted surface small and make the structure explicit.
+
+## Human and machine surfaces
+
+| Surface | Purpose |
+| --- | --- |
+| HTML pages | Human-facing project site with semantic structure. |
+| Markdown alternates | Token-efficient versions for LLMs and coding agents. |
+| `llms.txt` | Curated site map for agents. |
+| `llms-full.txt` | Single-file corpus for project summary ingestion. |
+| `robots.txt` | Explicit crawl map and sitemap reference. |
+| JSON-LD | Search and answer-engine entity clarity. |
+| Sitemap XML | Conventional crawler route map. |
+
+## No front-end dependency stack
+
+The site does not use Bootstrap, Tailwind, jQuery, Popper, React, Vue, Angular, or page builders. It uses plain PHP, semantic HTML, custom CSS, and small handwritten JavaScript.
+
+## Native web techniques used
+
+- semantic landmarks;
+- strict heading hierarchy;
+- CSS custom properties;
+- container queries;
+- native details/summary;
+- native dialog for the site map;
+- View Transition opt-in where supported;
+- reduced-motion guardrails;
+- Markdown content negotiation by `Accept: text/markdown`;
+- `Vary: Accept` headers for negotiated Markdown responses.
+
+## Why it matters
+
+AI systems often misread generic PHP-rendered pages because the page says almost nothing about the project. This package makes the project understandable at the URL level, page-title level, heading level, and machine-readable text level.
+
+---
+
+# Roadmap & Boundaries
+
+The project has broad ambition, but the public site must preserve the current evidence boundary.
+
+## Current support boundary
+
+The current source-backed implementation supports the TinyRustLM lane:
+
+- static browser shell;
+- no-crate Rust/WASM runtime;
+- custom `.slm` format;
+- deterministic smoke artifacts;
+- f32/q8_0/q4_0 routes;
+- model manifests and provenance display;
+- ADP1/ASP1/ALR1 adapter validation and apply;
+- selector registry route gates;
+- module-plan receipt gates;
+- assembly and adapter-family receipt gates;
+- browser smoke and route drift evidence.
+
+## Not claimed yet
+
+The site should not claim:
+
+- general trained assistant quality;
+- production assistant accuracy;
+- broad GGUF model import;
+- remote model hosting;
+- hidden model download;
+- telemetry-driven production monitoring;
+- live autonomous model replication;
+- Mini Browser orchestration as a completed feature.
+
+## Future lanes
+
+| Lane | Future direction |
+| --- | --- |
+| GGUF import | Add only after parser, tensor routing, tokenizer, quantization, manifests, and browser smoke proof exist. |
+| Trained models | Add with raw source manifests, provenance, runtime smoke, eval sidecars, and quality gates. |
+| LoRA-style adapters | Extend ADP1/ASP1/ALR1 with trained factor evidence and runtime validation. |
+| Multi-model routing | Introduce after one local runtime path remains stable under tests. |
+| WebGPU | Compare after CPU/WASM correctness and evidence routes are mature. |
+| OPFS and persistence | Add after privacy, storage, checksum, and recovery boundaries are explicit. |
+| Workers | Add after current single-threaded WASM proof remains stable. |
+| Agent integration | Keep the site agent-readable before exposing richer browser tools. |
+
+## Public language rule
+
+Use “planned,” “future,” “not claimed yet,” and “requires proof” where appropriate. That keeps the project credible and prevents ModelBreeder-style ideas from being mistaken for completed runtime behavior.
+
+---
+
+# Contact Mike Kappel
+
+> Use this page for questions about Runtime.MiRust.com, TinyRustLM, local Rust/WASM model work, plain PHP implementation, source-backed project documentation, or related engineering review.
+
+Michael Kappel is a senior software engineer and software architect focused on enterprise modernization, .NET, SQL Server, TypeScript/Angular, and human-reviewed AI-assisted engineering. The project site links here so visitors do not have to leave the source-backed documentation path just to find the maintainer.
+
+## Direct contact
+
+| Channel | Detail | Use |
+| --- | --- | --- |
+| Primary email | mike@ns12.com | Best first option for project questions, implementation review, consulting, or technical follow-up. |
+| Primary phone | (630) 362-7576 | Primary public phone number listed on MikeKappel.com and MJK.tel. |
+| Signal | Mike.7576 | Public Signal username listed on MJK.tel. |
+
+## Professional and project links
+
+| Link | Use |
+| --- | --- |
+| [MikeKappel.com](https://MikeKappel.com/) | Resume, project evidence, selected projects, case studies, and contact route. |
+| [MJK.tel](https://MJK.tel/) | Central public contact hub with vCard, phone, Signal, domains, and profiles. |
+| [LinkedIn](https://www.linkedin.com/in/michaelkappel) | Professional profile. |
+| [GitHub](https://github.com/MichaelKappel) | Public development profile and repositories. |
+| [MichaelJosephKappel.com](https://MichaelJosephKappel.com/) | Full-name personal domain and creative/photography route. |
+
+## Contact context
+
+For Runtime.MiRust.com, include the page or artifact you are reviewing, the exact claim or UI behavior in question, and whether the question concerns the plain PHP site package, the Rust/WASM runtime, the `.slm` model path, adapter/assembly evidence, or future GGUF import work.
+
+## Public source note
+
+The contact details on this page are taken from the public MikeKappel.com and MJK.tel contact surfaces. If those sources change, treat them as the authority and refresh this page in the next package revision.
+
+---
+
+# Site Audit Response
+
+> The attached review is a site-infrastructure and namespace-risk report. It is not TinyRustLM source evidence. The applicable lesson is direct: a technical project site must first be reachable, secure, disambiguated, crawlable, and evidence-backed.
+
+## How the report changes this site
+
+The report treats foundational availability as the first-order failure mode: if DNS, transport, and routing fail, every content or interface improvement becomes irrelevant. This package turns that into an explicit Runtime.MiRust.com launch gate instead of leaving it as an operations afterthought.
+
+| Report pressure | Site change | New route |
+| --- | --- | --- |
+| Network blackout risk | Added a deployment checklist that tests DNS, TLS, root pages, static docs, and machine-readable endpoints before the site is considered live. | [Deployment Checklist](/deployment-checklist/) |
+| DNS and cryptographic records | Added a host-neutral infrastructure page covering A/AAAA, CAA, DNSSEC, SPF, DKIM, DMARC, TLS, HSTS, cache, and route stability. | [Infrastructure & Trust](/site-infrastructure/) |
+| Namespace collision | Added a scope page that distinguishes Runtime.MiRust.com, TinyRustLM, `.slm`, current proof, and future GGUF work. | [Name & Scope](/name-scope/) |
+| Research credibility | Added an R&D page that explains how reports become docs, pointer memory, and public claims. | [Research & Development](/research-development/) |
+| Machine-readable structure | Expanded top navigation, `llms.txt`, `llms-full.txt`, sitemap routing, and `.uai` deep links. | [Agent-Readable Site](/agent-readiness/) |
+
+## What changed in v1.0.4
+
+- New trust-oriented top menu group.
+- New seeded pages for site audit response, infrastructure, naming, R&D, and deployment verification.
+- New static `/.well-known/security.txt` route in the root package.
+- Front-end security headers emitted by the site where appropriate.
+- Attached report preserved under `/docs/web-research/website-review-and-improvement-plan.md`.
+- `.uai` memory deep-linked to the new report and follow-up pages.
+- Home page expanded with an audit-driven improvement map.
+
+## Adapted, not copied
+
+The report contains broad examples from adjacent namespaces and recommends some stacks that are intentionally outside this project’s constraints. Runtime.MiRust.com remains a plain PHP site with semantic PHP-rendered content, custom CSS, and small handwritten JavaScript. It does not adopt React, Tailwind, Vite, Bootstrap, jQuery, or page builders.
+
+## Current public rule
+
+Every major public claim should point to one of three things: a source-backed implementation page, a durable `/docs/` report, or a hot `.uai` pointer that routes to durable evidence. Claims that cannot point to evidence belong on the roadmap, not in the hero.
+
+---
+
+# Origin Fix: cPanel Default Page
+
+> If `/cgi-sys/defaultwebpage.cgi` appears, the request is not reaching the intended Runtime.MiRust.com plain PHP root. Fix the host mapping before doing design work.
+
+## What it means
+
+The default cPanel page is usually an origin-routing problem: the subdomain is pointed at a server account, IP, or document root that is not the folder containing this package's `index.php`.
+
+## Immediate checks
+
+```bash
+curl -IL https://runtime.mirust.com/
+curl -IL https://runtime.mirust.com/index.php
+curl -IL https://runtime.mirust.com/healthz
+curl -IL https://runtime.mirust.com/version.json
+curl -IL https://runtime.mirust.com/cgi-sys/defaultwebpage.cgi
+```
+
+## Expected root layout
+
+```text
+index.php
+.htaccess
+assets/
+inc/
+data/
+docs/
+.uai/
+llms.txt
+llms-full.txt
+sitemap.xml
+robots.txt
+```
+
+## WordPress cleanup
+
+Archive or remove old `wp-admin/`, `wp-includes/`, `wp-content/`, and `wp-login.php` after the plain PHP root is confirmed live.
+
+---
+
+# Infrastructure & Trust
+
+A project site about proof-bound local AI has to be proof-bound itself. The infrastructure layer is not cosmetic: if the domain does not resolve, redirects are broken, certificates fail, or machine-readable files are missing, the site cannot carry technical authority.
+
+## Launch-gate infrastructure matrix
+
+| Layer | Required state | Why it matters |
+| --- | --- | --- |
+| A / AAAA | Root and `www` resolve to active IPv4 and, where available, IPv6 routes. | Basic reachability and crawler access. |
+| HTTPS | Valid TLS certificate, forced HTTPS, no mixed-content assets. | Trust, browser security, and agent fetch reliability. |
+| HSTS | Enable after HTTPS is stable; use a cautious ramp before preload. | Prevents protocol downgrade once configured correctly. |
+| CAA | Restrict certificate issuance to the intended certificate authority. | Limits unauthorized certificate issuance. |
+| DNSSEC | Publish DS/DNSKEY where registrar and DNS host support it. | Improves DNS integrity for a technical brand. |
+| SPF / DKIM / DMARC | Publish strict mail authentication for any sending domain. | Reduces spoofing risk for the maintainer and project. |
+| robots.txt | Allow public crawl, publish sitemap, do not block project docs. | Prevents accidental invisibility. |
+| llms.txt | Root file exists and links to core project pages and docs. | Gives agents a curated map instead of forcing blind scraping. |
+| /docs and /.uai | Static public routes are reachable from the root package. | Preserves durable memory and source report access. |
+| Markdown negotiation | `Accept: text/markdown` can return Markdown for project pages. | Reduces token waste while preserving the same semantic content. |
+
+## Headers emitted by the site
+
+The site now sends conservative front-end headers when plain PHP serves public pages:
+
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy` restricting camera, microphone, geolocation, payment, USB, and serial access by default
+- `Strict-Transport-Security` only when the request is already HTTPS
+
+These do not replace server configuration. They provide a baseline while the deployment host should still own TLS, redirects, HTTP/2 or HTTP/3, compression, caching, and WAF behavior.
+
+## Host-neutral verification commands
+
+```bash
+dig Runtime.MiRust.com A +short
+dig Runtime.MiRust.com AAAA +short
+dig Runtime.MiRust.com CAA +short
+dig Runtime.MiRust.com TXT +short
+curl -I https://Runtime.MiRust.com/
+curl -I https://Runtime.MiRust.com/llms.txt
+curl -H "Accept: text/markdown" https://Runtime.MiRust.com/architecture/
+curl https://Runtime.MiRust.com/.uai/index.uai
+curl https://Runtime.MiRust.com/docs/index.md
+curl https://Runtime.MiRust.com/.well-known/security.txt
+```
+
+## What the plain PHP package controls
+
+- Theme-rendered pages and semantic HTML.
+- Dynamic `llms.txt`, `llms-full.txt`, sitemap XML, Markdown alternates, and robots output.
+- Root package static `/docs`, `/.uai`, and `/.well-known/security.txt` files.
+- Public contact path for maintainer follow-up.
+- No external front-end dependencies or CDN assets.
+
+## What deployment controls
+
+- Registrar status and domain lock.
+- Authoritative DNS provider and DNSSEC.
+- TLS certificate lifecycle.
+- HTTP to HTTPS redirect.
+- Server compression and object/page cache.
+- WAF and bot policy.
+- Email authentication records.
+
+---
+
+# Name & Scope
+
+The attached review spends significant space on namespace collision. That pressure matters here because the domain contains several loaded technical terms: **GGUF**, **MiRust**, and the implementation name **TinyRustLM**.
+
+## Entity map
+
+| Name | Meaning on this site | Boundary |
+| --- | --- | --- |
+| Runtime.MiRust.com | The public project site and documentation surface. | Site identity, not proof that broad GGUF import is complete. |
+| MiRust | The Rust-oriented Machine Intelligence naming lane. | Brand family context. |
+| TinyRustLM | The active source-backed runtime implementation. | Current product reality. |
+| `.slm` | The current custom small-language-model file route. | Implemented and documented path. |
+| GGUF import | A future compatibility lane. | Roadmap until parser, tensor routing, tokenizer, quantization, and browser proof exist. |
+| Model breeding | Offline evidence pipeline around compatible artifacts, receipts, population review, parent pools, and selector admission. | Proof-oriented artifact process, not autonomous live replication. |
+| Mike Kappel | Maintainer/contact identity for the project site. | Use [Contact Mike Kappel](/contact-mike-kappel/) for follow-up. |
+
+## First-viewport clarity rule
+
+The homepage and metadata should identify the site as a **Rust/WASM browser-local SLM runtime project** before broader AI language. That phrase gives humans and agents a concrete anchor.
+
+## Avoid these confusing claims
+
+- Do not call the current implementation a full GGUF runtime.
+- Do not call deterministic smoke output trained assistant quality.
+- Do not describe future model-breeding theory as live production behavior.
+- Do not let Mememtech, memory-hardware, apparel, industrial automation, or generic “AI memory” namespaces bleed into this project’s public identity.
+- Do not use “local AI” alone when a more precise phrase is available.
+
+## Use these precise claims
+
+- “TinyRustLM is the current source-backed implementation target.”
+- “The runtime is a no-crate Rust/WASM local SLM lane.”
+- “The current model file route is custom `.slm`.”
+- “ADP1, ASP1, and ALR1 adapter packages are validated by Rust before apply.”
+- “Broad GGUF import is future work until comparable proof exists.”
+
+## Search and answer-engine target
+
+Every answer engine should be able to summarize the project without guessing: Runtime.MiRust.com documents TinyRustLM, a custom Rust/WASM browser-local SLM runtime and proof pipeline. The site exists to explain the current implementation, evidence routes, and roadmap boundaries.
+
+---
+
+# Research & Development
+
+The report argues that a serious technology site needs visible research and development depth. Runtime.MiRust.com should show that depth without turning speculative ideas into completed-runtime claims.
+
+## R&D pipeline
+
+1. **Intake**: source review bundles, implementation reports, web architecture reports, and improvement reports arrive as source material.
+2. **Durable body**: useful bodies are preserved under `/docs/`.
+3. **Pointer memory**: `.uai` files record route summaries, checksums, and truth boundaries.
+4. **Public synthesis**: PHP-rendered pages explain the parts in human-readable form.
+5. **Claim gate**: claims stay bounded to source-backed implementation, manifests, receipts, tests, and browser smokes.
+
+## Active research lanes
+
+| Lane | Current site treatment | Evidence route |
+| --- | --- | --- |
+| Rust/WASM runtime | Presented as the current implementation boundary. | [Architecture](/architecture/) and `/docs/implementation/` |
+| `.slm` model format | Explained as the current file route before broader GGUF import. | [Model Format](/model-format/) |
+| Adapters | ADP1, ASP1, and ALR1 explained as package lanes that Rust validates. | [Adapters & Assembly](/adapters-assembly/) |
+| Model breeding | Offline compatibility, lineage, operators, receipts, and selector admission. | [Model Breeding](/model-breeding/) |
+| Browser proof | Manifest, module-plan, assembly, adapter-family, and drift-test evidence. | [Proof & Testing](/proof-testing/) |
+| Agent-readable site | Markdown alternates, `llms.txt`, `llms-full.txt`, docs, and `.uai`. | [Agent-Readable Site](/agent-readiness/) |
+| Infrastructure trust | DNS/TLS/security/deploy checks made explicit. | [Infrastructure & Trust](/site-infrastructure/) |
+
+## What should be expanded next
+
+- A concise diagram showing browser, WASM, model file, manifest, module plan, adapter stack, and receipt flow.
+- A current-limit table for context tokens, prompt bytes, output bytes, model byte budgets, adapter budgets, and route-count limits.
+- A release-evidence page for each deployed package version.
+- A benchmark page that separates deterministic runtime proof from trained assistant quality.
+- A public issue/decision log distilled from `/docs/source-memory/log.md`.
+
+## Research language rule
+
+Use “research lane,” “design pressure,” “future work,” “receipt route,” and “proof gate” where appropriate. Avoid language that makes exploratory model-breeding concepts sound like uncontrolled live autonomy.
+
+---
+
+# Deployment Checklist
+
+This checklist converts the infrastructure-risk report into a concrete post-deploy gate. Do not treat the site as ready until these checks pass from an external network.
+
+## 1. DNS and registration
+
+- Registrar shows the domain as active and locked against unauthorized transfer.
+- Authoritative nameservers are correct.
+- `A` and optional `AAAA` records resolve globally.
+- `www` either redirects cleanly or resolves intentionally.
+- `CAA` records match the certificate authority in use.
+- DNSSEC is either configured correctly or intentionally deferred.
+
+## 2. Transport and headers
+
+- `https://Runtime.MiRust.com/` returns HTTP 200 or the intended plain PHP front page.
+- `https://Runtime.MiRust.com/` redirects to HTTPS.
+- The certificate chain is valid.
+- No mixed content is loaded.
+- Security headers are present on front-end responses.
+
+## 3. plain PHP content
+
+- The homepage is no longer “Hello world!” or “Sample Page.”
+- The seeded pages exist and have clean permalinks.
+- Top navigation groups fit on desktop and wrap on smaller screens.
+- The footer contains [Contact Mike Kappel](/contact-mike-kappel/).
+- The contact page works without requiring external profile lookup.
+
+## 4. Machine-readable routes
+
+```bash
+curl https://Runtime.MiRust.com/llms.txt
+curl https://Runtime.MiRust.com/llms-full.txt
+curl https://Runtime.MiRust.com/sitemap.xml
+curl https://Runtime.MiRust.com/robots.txt
+curl https://Runtime.MiRust.com/.uai/index.uai
+curl https://Runtime.MiRust.com/.uai/docs-routing.uai
+curl https://Runtime.MiRust.com/docs/index.md
+curl https://Runtime.MiRust.com/docs/web-research/website-review-and-improvement-plan.md
+curl https://Runtime.MiRust.com/.well-known/security.txt
+```
+
+## 5. Markdown negotiation
+
+```bash
+curl -H "Accept: text/markdown" https://Runtime.MiRust.com/project/
+curl -H "Accept: text/markdown" https://Runtime.MiRust.com/site-infrastructure/
+curl https://Runtime.MiRust.com/name-scope.md
+```
+
+Expected result: Markdown output with `Content-Type: text/markdown; charset=utf-8` and `Vary: Accept`.
+
+## 6. Dependency policy
+
+- No Bootstrap, Tailwind, Popper, jQuery front-end dependency, CDN CSS, CDN JavaScript, page builder, or framework hydration path is present.
+- Core content renders server-side as HTML.
+- Theme JavaScript is only small behavior around native dialog, navigation details, filtering, and copy buttons.
+
+## 7. Claim boundary
+
+- Homepage and metadata say TinyRustLM is current.
+- Broad GGUF import remains roadmap language.
+- Trained assistant quality remains unclaimed until eval evidence exists.
+- Every major technical claim links to a page, `/docs` file, or `.uai` route.
+## 8. Origin default-page regression
+
+```bash
+curl -IL https://runtime.mirust.com/cgi-sys/defaultwebpage.cgi
+curl -fsS https://runtime.mirust.com/healthz
+curl -fsS https://runtime.mirust.com/version.json
+```
+
+Expected result: the old cPanel default path is not the active homepage, and the health/version routes prove the request reaches this package root.
+
+---
+
+# Runtime Health
+
+> This page turns the previous redirect problem into durable operational checks.
+
+## Health endpoints
+
+- [/healthz](/healthz): Plain text package health marker.
+- [/version.json](/version.json): Machine-readable package version and claim boundary.
+- [/llms.txt](/llms.txt): Agent route map.
+- [/.uai/index.uai](/.uai/index.uai): Hot memory index.
+
+## External verification commands
+
+```bash
+curl -fsS https://runtime.mirust.com/healthz
+curl -fsS https://runtime.mirust.com/version.json
+curl -fsS https://runtime.mirust.com/llms.txt
+curl -fsS https://runtime.mirust.com/docs/index.md
+curl -fsS https://runtime.mirust.com/.uai/index.uai
+curl -H "Accept: text/markdown" -fsS https://runtime.mirust.com/source-facts/
+```
+
+---
+
+# Launch Operations
+
+> The site now works as plain PHP. This page keeps that state repeatable: extract, verify, purge, monitor, and roll back if necessary.
+
+## Before extraction
+
+- Download a full backup of the current document root.
+- Export or archive any remaining WordPress database before deleting WordPress files.
+- Confirm the cPanel document root for `runtime.mirust.com`.
+- Confirm the new ZIP is the root package and not a WordPress theme package.
+
+## After extraction
+
+1. `curl -IL https://runtime.mirust.com/`
+2. `curl -fsS https://runtime.mirust.com/healthz`
+3. `curl -fsS https://runtime.mirust.com/version.json`
+4. `curl -H "Accept: text/markdown" -fsS https://runtime.mirust.com/project/`
+5. Open `/docs/index.md` and `/.uai/index.uai`.
+6. Purge CDN/browser cache if stale redirects persist.
+
+## Package-level tools
+
+The root ZIP includes `/tools/verify-runtime-mirust.sh` and `/tools/verify-runtime-mirust.ps1`.
+
+---
+
+# Plain PHP Rebuild
+
+> Runtime.MiRust.com now ships as a plain PHP root site. The WordPress layer has been removed from the deployable package.
+
+## What changed
+
+- Removed the WordPress theme package, theme folder, template files, functions file, and activation seeding logic.
+- Added a plain PHP front controller at `/index.php`.
+- Added a JSON-backed content registry at `/data/pages.json`.
+- Added semantic PHP templates in `/inc/site.php`.
+- Kept the source-backed page content, top-menu structure, contact footer, docs, `.uai` memory, `llms.txt`, `llms-full.txt`, sitemap, robots, and security file.
+- Added Markdown content negotiation for page routes and direct `.md` page alternates.
+
+## Extraction target
+
+Extract the root package directly at the public web root for `Runtime.MiRust.com`. The ZIP intentionally has no wrapper folder.
+
+## Runtime requirements
+
+- PHP 8.1 or newer recommended.
+- Apache with `mod_rewrite` for clean routes, or equivalent Nginx routing to `/index.php`.
+- No Composer install step.
+- No database.
+- No WordPress.
+- No Bootstrap, Tailwind, jQuery, Popper, React, Vue, Angular, or page builder.
+
+## Current package boundary
+
+This rebuild changes the public website delivery layer only. It does not rebuild the Rust/WASM runtime or regenerate model artifacts.
+
+---
+
+# FAQ
+
+## Is Runtime.MiRust.com currently a full GGUF runtime?
+
+No. The source-backed runtime currently centers on TinyRustLM and the custom `.slm` route. GGUF import belongs on the roadmap until it has proof comparable to the current `.slm` lane.
+
+## Does TinyRustLM use third-party Rust crates?
+
+The current runtime, packer, local server, and browser harness are designed as no-crate Rust components.
+
+## Does the browser app call a remote inference API?
+
+No. The source-backed app target is local/same-origin file loading and Rust/WASM inference. Remote inference is not part of the current claim boundary.
+
+## Is this a trained assistant?
+
+Not yet. Deterministic smoke models and TinyLM-16M smoke artifacts prove runtime behavior. Assistant-quality claims require trained/evaluated artifacts and passed eval sidecars.
+
+## What are ADP1, ASP1, and ALR1?
+
+They are adapter package lanes. ADP1 is raw task delta, ASP1 is sparse task delta, and ALR1 is low-rank adapter packaging. Rust validates compatible packages before applying them to a loaded model.
+
+## What is a selector registry?
+
+A selector registry is the browser route gate for admitted model candidates and optional adapter routes. It carries budgets, manifest paths, checksums, default selection metadata, module-plan metadata, and evidence pointers.
+
+## What is a module plan?
+
+A module plan is a receipt that tells the browser which generated modules should exist, how large they are, what checksums they have, what phase they belong to, and what dependencies they have. The browser verifies it before generated model bytes are fetched.
+
+## Why is the site built as plain PHP instead of a JavaScript app?
+
+The public project website needs crawlable, semantic, server-rendered content. plain PHP is used as the content shell, but the site avoids dependency-heavy front-end runtimes and exposes Markdown alternates for agents.
+
+## Why include llms.txt?
+
+`llms.txt` gives AI systems a concise, curated project map. It reduces the chance that a model reads the live site as a generic CMS shell or confuses future-roadmap ideas with current implementation.
+
+## How do I contact Mike Kappel about this project?
+
+Use the [Contact Mike Kappel](/contact-mike-kappel/) page for email, phone, Signal, professional links, and source notes.
+
+---

@@ -1,19 +1,25 @@
 # TinyRustLM Long-Term Memory
 
-> Durable project memory for TinyRustLM plain PHP site package 1.3.0. This file is the body memory target for `.uai/long-term-memory.uai`; the `.uai` file stays pointer-first and routes agents here for full context.
+> Durable project memory for TinyRustLM plain PHP site package 1.5.0. This file is the body memory target for `.uai/long-term-memory.uai`; the `.uai` file stays pointer-first and routes agents here for full context.
 
 ## Current truth boundary
 
-TinyRustLM is presented as a browser-local Rust/WebAssembly small language model runtime project, not as a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, or GGUF runtime claim. The public site explains the current architecture and its proof surfaces: custom `.slm` artifacts, f32/q8_0/q4_0 quantization, deterministic validation, ADP1/ASP1/ALR1 adapter sidecars, selector registries, module-plan receipts, local-only browser diagnostics, and evidence-first model-breeding workflows.
+TinyRustLM is presented as a browser-local Rust/WebAssembly small language model runtime project, not as a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, or GGUF runtime claim. TinyRustLM.MiRust.com is now the developer portal for the runtime, including the legacy runtime documentation archive under `/docs/runtime-portal/`. The public site explains the current architecture and its proof surfaces: custom `.slm` artifacts, f32/q8_0/q4_0 quantization, deterministic validation, ADP1/ASP1/ALR1 adapter sidecars, selector registries, module-plan receipts, local-only browser diagnostics, and evidence-first model-breeding workflows.
 
 ## Site implementation memory
 
-- Current package version: `1.3.0`.
+- Current package version: `1.5.0`.
 - Site type: plain PHP 8, no WordPress, no database, no Composer, no npm.
 - Frontend: custom CSS and small vanilla JavaScript only.
-- Public routes: `/`, `/architecture/`, `/runtime/`, `/slm-format/`, `/quantization/`, `/browser-runtime/`, `/adapters/`, `/model-breeding/`, `/testing/`, `/roadmap/`, `/glossary/`, `/docs/`, and `/contact/`.
+- Public routes: `/`, `/architecture/`, `/runtime/`, `/slm-format/`, `/quantization/`, `/browser-runtime/`, `/adapters/`, `/model-breeding/`, `/testing/`, `/developer-portal/`, `/roadmap/`, `/glossary/`, `/docs/`, and `/contact/`.
 - Machine routes: `/llms.txt`, `/llms-full.txt`, `/robots.txt`, `/sitemap.xml`, plus Markdown negotiation via `?format=md` or `Accept: text/markdown` on PHP-rendered pages.
-- Durable docs: `/docs/`, `/docs/report-index.md`, `/docs/long-term-memory.md`, and `/docs/reports/*`.
+- Durable docs: `/docs/`, `/docs/report-index.md`, `/docs/long-term-memory.md`, `/docs/reports/*`, and `/docs/runtime-portal/*`.
+
+## Runtime documentation consolidation memory
+
+The former standalone runtime documentation lane is retired as a separate documentation authority. Its public implementation corpus was preserved under `/docs/runtime-portal/` with a checksum-bearing manifest at `/docs/runtime-portal/MANIFEST.md` and a current archive index at `/docs/runtime-portal/index.md`. The preserved archive includes the former runtime page registry, implementation docs, reports, source-memory notes, web-research notes, dogfood notes, package metadata, llms exports, sitemap, version marker, and health marker.
+
+Use `/developer-portal/` as the current human-readable route for TinyRustLM developer evidence. Use `https://TinyRustLM.com/` as the current public app route. SLMComposer.com is no longer the canonical public app identity.
 
 ## Technical memory
 

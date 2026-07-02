@@ -1,5 +1,5 @@
-profile: tinyrustlm.long-term-memory.v1
-updated_utc: 2026-06-29T22:59:10Z
+profile: tinyrustlm.long-term-memory.v2
+updated_utc: 2026-07-02T00:12:07Z
 storage_mode: pointer_ledger_with_durable_docs
 ledger_rule:
   pointer_only_not_context_free: true
@@ -17,8 +17,19 @@ records:
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:E930670CE12380A29218ADE238D3E3CCD1B9E0949C1FC9365BA075ED30060E45
+    checksum_hash: sha256:A1070BB051DE287A245646B4DEE7CBA122B3F03DB8CF1CA93ED8359587138DFC
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
+  - stable_id: tinyrustlm_runtime_portal_preservation_manifest
+    pointer_type: preservation-manifest
+    path: docs/runtime-portal/MANIFEST.md
+    deep_link: /docs/runtime-portal/MANIFEST.md
+    label: Runtime.MiRust.com Preservation Manifest
+    routing_summary: Checksum-bearing manifest for Runtime.MiRust.com implementation docs, reports, package metadata, and page registry consolidated into the TinyRustLM developer portal.
+    pointer_status: current
+    authority: preserved-runtime-mirust-public-corpus
+    review_status: reviewed_current
+    checksum_hash: sha256:9D3D994866A2F2AE2B5F3DA2FF95D41DAEBFA16C4DF5DE42490602DA99ABD49D
+    truth_boundary: Runtime.MiRust.com is retired as a separate documentation authority; use the manifest and /developer-portal/ for current developer routing.
   - stable_id: tinyrustlm_docs_report_index
     pointer_type: report-index
     path: docs/report-index.md
@@ -28,7 +39,7 @@ records:
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:C88BF4F11877B97220E717BB5A41A6663790E07A7673DA97F3F386169608329D
+    checksum_hash: sha256:53A5FBBD97426B72AFF7BAF9407F5DDEE8271FBDD0C32B61A0193F24CB462C0E
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: report_tiny_language_models_for_wasm
     pointer_type: report

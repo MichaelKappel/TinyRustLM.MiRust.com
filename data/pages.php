@@ -135,6 +135,66 @@ return [
         ],
     ],
 
+    '/developer-portal/' => [
+        'title' => 'TinyRustLM Developer Portal',
+        'summary' => 'Consolidated developer portal for the TinyRustLM Rust/WASM runtime, absorbed legacy implementation evidence, proof routes, operations notes, and current app boundary.',
+        'badge' => 'Developer Portal',
+        'actions' => [
+            ['label' => 'Open the app', 'href' => 'https://TinyRustLM.com/'],
+            ['label' => 'Open archive index', 'href' => '/docs/runtime-portal/index.md'],
+            ['label' => 'Open preserved manifest', 'href' => '/docs/runtime-portal/MANIFEST.md'],
+            ['label' => 'Open implementation docs', 'href' => '/docs/runtime-portal/runtime-docs/implementation/index.md'],
+        ],
+        'sections' => [
+            [
+                'heading' => 'What changed',
+                'body' => 'The former standalone runtime documentation lane has been absorbed into this TinyRustLM developer portal. Durable implementation content is preserved here so the project has one implementation-facing home instead of overlapping sites.',
+                'points' => ['TinyRustLM.MiRust.com is now the developer portal', 'TinyRustLM.com remains the root browser-local app', 'Legacy runtime content is preserved in /docs/runtime-portal/', 'SLMComposer.com is no longer the canonical public app identity'],
+                'links' => [
+                    ['label' => 'Archive index', 'href' => '/docs/runtime-portal/index.md'],
+                    ['label' => 'Preservation manifest', 'href' => '/docs/runtime-portal/MANIFEST.md'],
+                    ['label' => 'Runtime page registry archive', 'href' => '/docs/runtime-portal/runtime-pages.json'],
+                ],
+            ],
+            [
+                'heading' => 'Current implementation map',
+                'body' => 'The active product shape is simple: users open TinyRustLM.com, import a local .slm file through the browser picker, and run it locally through Rust/WASM. This portal explains the runtime architecture, artifact format, adapter packages, selector manifests, proof gates, and roadmap boundaries.',
+                'points' => ['Browser-local Rust/WASM runtime', 'User-selected local .slm files', 'No hosted user model execution', 'No project-served runnable .slm model bytes', 'Hugging Face and P2P remain metadata/discovery lanes until explicitly imported by the user'],
+                'links' => [
+                    ['label' => 'Runtime architecture archive', 'href' => '/docs/runtime-portal/runtime-docs/implementation/architecture.md'],
+                    ['label' => 'Browser runtime archive', 'href' => '/docs/runtime-portal/runtime-docs/implementation/browser-runtime.md'],
+                    ['label' => 'SLM format archive', 'href' => '/docs/runtime-portal/runtime-docs/implementation/slm-format.md'],
+                ],
+            ],
+            [
+                'heading' => 'Developer archive',
+                'body' => 'The old standalone runtime pages, implementation docs, reports, source-memory notes, web-research notes, dogfood notes, package metadata, llms exports, sitemap, version marker, and health marker are preserved as static reference material. The manifest records byte counts and SHA-256 checksums for the preserved files.',
+                'points' => ['184 preserved Runtime files', 'Checksum-bearing manifest', 'Implementation docs and reports retained', 'Operational notes retained as historical reference', 'No private FTP credentials or secrets copied'],
+                'links' => [
+                    ['label' => 'Implementation index', 'href' => '/docs/runtime-portal/runtime-docs/implementation/index.md'],
+                    ['label' => 'Reports archive', 'href' => '/docs/runtime-portal/runtime-docs/reports/'],
+                    ['label' => 'Package manifest archive', 'href' => '/docs/runtime-portal/package/PACKAGE-MANIFEST.md'],
+                ],
+            ],
+            [
+                'heading' => 'Proof and operations',
+                'body' => 'Runtime operational checks are now portal history rather than a separate live-site identity. Use them to understand how the old plain-PHP package was verified, but use TinyRustLM.MiRust.com and TinyRustLM.com for current public documentation and app verification.',
+                'points' => ['Developer claims stay evidence-bound', 'Runtime health notes are preserved, not current separate-site authority', 'Current deploy verification targets TinyRustLM.MiRust.com and TinyRustLM.com', 'Pointer memory stays checksum-bearing and links to durable docs'],
+                'links' => [
+                    ['label' => 'Testing archive', 'href' => '/docs/runtime-portal/runtime-docs/implementation/testing.md'],
+                    ['label' => 'Launch operations archive', 'href' => '/docs/runtime-portal/package/DEPLOYMENT.md'],
+                    ['label' => 'Current report index', 'href' => '/docs/report-index.md'],
+                ],
+            ],
+        ],
+        'cards' => [
+            ['title' => 'Current app', 'text' => 'TinyRustLM.com is the simple root-domain browser-local Rust/WASM app.', 'href' => 'https://TinyRustLM.com/', 'link_label' => 'Open app'],
+            ['title' => 'Legacy runtime archive', 'text' => 'Current index and checksum manifest for the runtime documentation corpus consolidated into this portal.', 'href' => '/docs/runtime-portal/index.md', 'link_label' => 'Open archive'],
+            ['title' => 'Implementation docs', 'text' => 'Preserved architecture, browser runtime, .slm, tokenizer, quantization, testing, and workspace references.', 'href' => '/docs/runtime-portal/runtime-docs/implementation/index.md', 'link_label' => 'Open docs'],
+            ['title' => 'Current memory', 'text' => 'TinyRustLM UAI memory and long-term pointers remain separate from the preserved Runtime archive.', 'href' => '/docs/', 'link_label' => 'Open docs home'],
+        ],
+    ],
+
     '/docs/' => [
         'title' => 'TinyRustLM Docs and UAI Memory',
         'summary' => 'Durable report archive, long-term memory, and .uai file-memory routes for the TinyRustLM plain PHP project site.',
@@ -142,6 +202,7 @@ return [
         'actions' => [
             ['label' => 'Open long-term memory', 'href' => '/docs/long-term-memory.md'],
             ['label' => 'Open report index', 'href' => '/docs/report-index.md'],
+            ['label' => 'Open developer portal', 'href' => '/developer-portal/'],
             ['label' => 'Open .uai index', 'href' => '/.uai/index.uai'],
         ],
         'sections' => [
@@ -152,6 +213,15 @@ return [
                 'links' => [
                     ['label' => 'Report index', 'href' => '/docs/report-index.md'],
                     ['label' => 'Long-term memory', 'href' => '/docs/long-term-memory.md'],
+                ],
+            ],
+            [
+                'heading' => 'Runtime developer portal consolidation',
+                'body' => 'Legacy runtime implementation material has been consolidated into TinyRustLM.MiRust.com. The preserved runtime corpus now lives under /docs/runtime-portal/ with a checksum manifest, while /developer-portal/ is the current human-readable entry point.',
+                'points' => ['Developer portal route: /developer-portal/', 'Preserved Runtime manifest: /docs/runtime-portal/MANIFEST.md', 'Runtime page registry archive: /docs/runtime-portal/runtime-pages.json', 'Implementation docs archive: /docs/runtime-portal/runtime-docs/implementation/'],
+                'links' => [
+                    ['label' => 'Developer portal', 'href' => '/developer-portal/'],
+                    ['label' => 'Runtime preservation manifest', 'href' => '/docs/runtime-portal/MANIFEST.md'],
                 ],
             ],
             [
@@ -176,6 +246,7 @@ return [
         'cards' => [
             ['title' => 'Long-term memory', 'text' => 'Durable current truth boundary, implementation memory, report routes, and next recursive direction.', 'href' => '/docs/long-term-memory.md', 'link_label' => 'Open memory'],
             ['title' => 'Report index', 'text' => 'Manifest of preserved reports with source filenames, roles, byte counts, and checksums.', 'href' => '/docs/report-index.md', 'link_label' => 'Open index'],
+            ['title' => 'Legacy runtime archive', 'text' => 'Checksum-bearing preservation index and manifest for the former standalone runtime developer corpus.', 'href' => '/docs/runtime-portal/index.md', 'link_label' => 'Open archive'],
             ['title' => '.uai pointer ledger', 'text' => 'Compact long-term pointer records that deep-link to durable docs and reports.', 'href' => '/.uai/long-term-memory.uai', 'link_label' => 'Open ledger'],
             ['title' => 'File handoff', 'text' => 'Rules for future active Content and Improvement bucket intake.', 'href' => '/.uai/file-handoff.uai', 'link_label' => 'Open handoff'],
         ],

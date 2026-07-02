@@ -1,12 +1,13 @@
-profile: tinyrustlm-site.totem.v1
-updated_utc: 2026-07-01T03:10:00Z
+profile: tinyrustlm-site.totem.v2
+updated_utc: 2026-07-02T00:12:07Z
 site: TinyRustLM.MiRust.com
 role: positive_anchor
-mission: Preserve TinyRustLM.MiRust.com as the model/runtime documentation site for browser-local Rust/WASM tiny language models and `.slm` artifacts.
+mission: Preserve TinyRustLM.MiRust.com as the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, `.slm` artifacts, and retired Runtime.MiRust.com implementation evidence.
 anchors:
   - Explain TinyRustLM runtime, model format, quantization, adapters, selectors, and local-only diagnostics.
   - Keep model package evidence checksum-bound.
-  - Route live usage to SLMComposer.com and project evidence to Runtime.MiRust.com.
+  - Route live usage to TinyRustLM.com and current developer evidence to TinyRustLM.MiRust.com/developer-portal/.
+  - Preserve retired Runtime.MiRust.com evidence under docs/runtime-portal/ with checksums.
   - Keep File Handoff intake reviewed, recorded, and cleared.
 talisman_source: MiRust.com
 agent_mutability: read_only_without_exact_human_artifact_and_operation_authorization

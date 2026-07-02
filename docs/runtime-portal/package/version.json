@@ -1,0 +1,20 @@
+{
+  "site": "Runtime.MiRust.com",
+  "version": "1.0.7",
+  "package": "runtime-mirust-plain-php-root",
+  "generated_utc": "2026-07-01T21:20:00Z",
+  "deployment": "root-extract plain PHP",
+  "current_claim_boundary": "TinyRustLM .slm runtime, browser-local Rust/WASM, no broad GGUF import claim",
+  "required_public_routes": [
+    "/",
+    "/healthz",
+    "/version.json",
+    "/llms.txt",
+    "/llms-full.txt",
+    "/sitemap.xml",
+    "/robots.txt",
+    "/docs/index.md",
+    "/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md",
+    "/.uai/index.uai"
+  ]
+}

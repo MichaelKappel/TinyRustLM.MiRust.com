@@ -1,6 +1,6 @@
-profile: tinyrustlm.uai-index.v2
-updated_utc: 2026-07-01T13:15:00Z
-package: TinyRustLM plain PHP site 1.3.0
+profile: tinyrustlm.uai-index.v3
+updated_utc: 2026-07-02T00:12:07Z
+package: TinyRustLM developer portal plain PHP site 1.5.0
 workspace_coordinator: workspace.uai
 public_export: .well-known/uaix-talisman.txt
 public_uai_policy: denied
@@ -28,10 +28,13 @@ read_order:
   - .uai/intake-outcome-ledger.uai
   - .uai/next-recursive-prompt.uai
 primary_deep_links:
+  developer_portal: /developer-portal/
   docs_home: /docs/
+  runtime_portal_manifest: /docs/runtime-portal/MANIFEST.md
+  runtime_portal_archive: /docs/runtime-portal/
   long_term_memory_body: /docs/long-term-memory.md
   report_index: /docs/report-index.md
   reports_folder: /docs/reports/
   machine_index: /llms.txt
   full_machine_text: /llms-full.txt
-note: Hot .uai records are compact routing memory. Full report bodies live in docs/reports and long-term body memory lives in docs/long-term-memory.md.
+note: Hot .uai records are compact routing memory. TinyRustLM.MiRust.com is now the TinyRustLM developer portal; preserved Runtime.MiRust.com implementation evidence lives under docs/runtime-portal/ with a checksum manifest.

@@ -1,12 +1,12 @@
-profile: tinyrustlm.operations.v1
-updated_utc: 2026-06-29T22:59:10Z
+profile: tinyrustlm.operations.v2
+updated_utc: 2026-07-02T00:12:07Z
 local_checks:
   php_syntax: find . -name '*.php' -print0 | xargs -0 -n1 php -l
-  local_server: php -S 127.0.0.1:8093 -t /path/to/tinyrustlm-plainphp-v1.3.0
-  route_checks: curl / /docs/ /contact/ /llms.txt /docs/report-index.md /docs/long-term-memory.md
+  local_server: php -S 127.0.0.1:8093 -t /path/to/TinyRustLM.MiRust.com
+  route_checks: curl / /developer-portal/ /docs/ /contact/ /llms.txt /docs/runtime-portal/MANIFEST.md /docs/report-index.md /docs/long-term-memory.md
   markdown_negotiation: curl -H 'Accept: text/markdown' /docs/
 deployment:
-  upload_root_zip_contents_to: TinyRustLM subdomain document root
+  upload_root_contents_to: TinyRustLM.MiRust.com document root
   preserve_dotfiles: true
   important_dotfiles:
     - .htaccess

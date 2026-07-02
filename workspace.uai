@@ -1,9 +1,9 @@
-profile: tinyrustlm-site.workspace.v2
-updated_utc: 2026-07-01T23:51:22Z
+profile: tinyrustlm-site.workspace.v3
+updated_utc: 2026-07-02T00:12:07Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
-role: talisman_client
+role: tinyrustlm_developer_portal
 talisman_source: MiRust.com
 sensitivity: internal
 public_export: https://TinyRustLM.MiRust.com/.well-known/uaix-talisman.txt
@@ -14,10 +14,12 @@ public_access_policy:
   agent-file-handoff: denied
   workspace.uai: do_not_publish_without_root_deny_or_auth
 deploy_gate:
-  instruction: Before deploying TinyRustLM.MiRust.com or TinyRustLM.com, update this model/runtime documentation site and related SLMComposer.com, Runtime.MiRust.com, MiniModel.org, and MiRust.com documentation/public exports to match the deployed source behavior.
+  instruction: Before deploying TinyRustLM.MiRust.com or TinyRustLM.com, update this developer portal, MiRust.com, MiniModel.org, and any remaining SLMComposer.com redirect/public export surfaces to match the deployed source behavior.
   requirements:
     - Keep source options, .slm verification claims, model documentation, and no-server-model-byte boundaries current.
     - Keep TinyRustLM.com documented as the root app route; do not describe /app/ as the canonical TinyRustLM.com path.
+    - Keep the former standalone runtime documentation lane documented only as retired/preserved content under /docs/runtime-portal/.
+    - Keep SLMComposer.com documented only as a retired or redirecting app identity, not the canonical public app.
     - Run relevant pointer audits and git diff --check before packaging or deployment.
 required_private_read_order:
   - workspace.uai
@@ -29,7 +31,9 @@ required_private_read_order:
   - .uai/intake-outcome-ledger.uai
   - .uai/short-term-memory.uai
 current_state:
-  - TinyRustLM.MiRust.com is the model/runtime documentation site.
+  - TinyRustLM.MiRust.com is the TinyRustLM developer portal.
   - TinyRustLM.com is the root-domain browser-local Rust/WASM app route.
+  - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
+  - SLMComposer.com is no longer the canonical public app identity.
   - The live public-safe export is verified.
   - Direct public .uai and agent-file-handoff access is denied.

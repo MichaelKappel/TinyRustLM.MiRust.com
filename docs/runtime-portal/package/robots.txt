@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://Runtime.MiRust.com/sitemap.xml
+
+# Agent entry points
+# https://Runtime.MiRust.com/llms.txt
+# https://Runtime.MiRust.com/llms-full.txt
+# https://Runtime.MiRust.com/docs/index.md
+# https://Runtime.MiRust.com/.uai/index.uai
+# https://Runtime.MiRust.com/version.json
