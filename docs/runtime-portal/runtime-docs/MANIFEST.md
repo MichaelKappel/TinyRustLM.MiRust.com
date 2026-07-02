@@ -28,13 +28,13 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
 - [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:8DDE334D27A44979124441E7221B68310F76A39195C6F9D73CA12E4D6597776C
-- [docs/implementation/index.md](implementation/index.md): sha256:27D272CA2227D87512196C19E89DFC7CCDFE27AD72B0FBB96219D268687CF00C
+- [docs/implementation/index.md](implementation/index.md): sha256:9EE013563DA8589016D35EDB7E9B05603D97CFAC9B6EA4001255EB02785A6E92
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
 - [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:9E17C9CB45C76381513101C4568896F6C05BD862E2536AAD738B597C8E221A21
 - [docs/implementation/site-audit-response-v1.0.4.md](implementation/site-audit-response-v1.0.4.md): sha256:38E401F82FC1764D0F8297D7ECAB33ACCDC7718A90A20C3DD602FEDC3EFE7FD3
 - [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:4D06F94001165FBA0E996ADFE2DB234CA66B758379F807E716F6B7D542EA7627
-- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:D7CA4D27402A1CA33E607641DE24A7737A8892B7872C31752F6A95BD3F9DAE48
+- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:21ED1E7A90EC710D331D96248148D33E044B4F5F7DC46DC736A36C45586820A0
 - [docs/implementation/testing.md](implementation/testing.md): sha256:FEEB5288862F939384B44320EA75AF0DEE06BDF76E1D919B9A543BEEB448C5A4
 - [docs/implementation/tinyrustlm-models-readme.md](implementation/tinyrustlm-models-readme.md): sha256:58B136954E3227CB9B15801DF742EE36511F44A505F65B4FA148001F8B26EAA8
 - [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:7ECEBC86F338172467FA72893FC521C29E8BDD58E17A23653E65833C7E59B267
