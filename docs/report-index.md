@@ -18,6 +18,6 @@
 
 ## Related durable memory
 
-- [Long-term memory](/docs/long-term-memory.md): Durable body memory for project state, boundaries, report routing, and next recursive direction. SHA-256: `22DCF8011E4D42BC6DFF7CB29FA208D48AC6A1059D5C24B19A68D37C4E1E2CD2`
+- [Long-term memory](/docs/long-term-memory.md): Durable body memory for project state, boundaries, report routing, and next recursive direction. SHA-256: `21D3438AA165209ED276C2C7CAA9BFE8B7225078B67A6A5A13D558AF0CDB6C8C`
 - [.uai long-term pointer ledger](../.uai/long-term-memory.uai): Pointer-first memory ledger that deep-links to this report index and every preserved report.
 - [.uai file handoff](../.uai/file-handoff.uai): Active intake and disposition rules for future report drops.

@@ -1,4 +1,4 @@
-profile: tinyrustlm.short-term-memory.v4
+profile: tinyrustlm.short-term-memory.v5
 updated_utc: 2026-07-02T16:40:00Z
 current_package_version: 1.5.0
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
@@ -10,6 +10,7 @@ latest_changes:
   - Updated docs/long-term-memory.md and .uai/long-term-memory.uai pointer records.
   - Updated llms.txt, llms-full.txt, sitemap.xml, workspace.uai, and public talisman boundaries.
   - Added proof-ready MiniModel catalog-entry language: `write-catalog-entry` validates admitted manifests plus `.minimodel-peer-offer` proof, TinyRustLM shows P2P Import only for those metadata rows, and import still requires a consenting peer URL plus local Rust reverify.
+  - Updated Known peer URL behavior: TinyRustLM now records one list-level consenting direct `http://` peer URL, rejects project/Hugging Face hosts as peer sources, and writes that URL into the generated peer-import JSON/script.
 next_read:
   - /developer-portal/
   - .uai/long-term-memory.uai
