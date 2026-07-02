@@ -7,8 +7,8 @@ This manifest excludes itself to avoid a recursive checksum. The legacy runtime 
 
 ## Legacy Runtime Archive
 - `docs/runtime-portal/index.md` - bytes:1504 sha256:108486F3A3A19A281A0359E78EF3356F1109FB5F7C98C2A3C900A00B3934CE90
-- `docs/runtime-portal/MANIFEST.md` - bytes:27818 sha256:02383F3F99107C21B0E7D97ECD8301CDAE05B886B6974064F7AEC0161D37FF9C
-- `docs/runtime-portal/` - files:186 bytes:1950167; per-file legacy archive hashes are in `docs/runtime-portal/MANIFEST.md`.
+- `docs/runtime-portal/MANIFEST.md` - bytes:27816 sha256:C02F89C11E42062E4E33C560B0CA43CC816C340E885149DEDCA233977167E966
+- `docs/runtime-portal/` - files:186 bytes:1950818; per-file legacy archive hashes are in `docs/runtime-portal/MANIFEST.md`.
 
 ## Package Files
 - `.gitignore` - bytes:92 sha256:0D412C5B9592B052A2711CF688753D79367D7795AB1618C96833FD9FC6C216F7
