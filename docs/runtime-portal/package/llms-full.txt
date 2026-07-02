@@ -230,7 +230,7 @@ The browser runtime is the human-facing proof surface for TinyRustLM. It is not 
 
 SLM Composer now defaults to Chat mode with starter profiles and three source choices: Your Local Files, Hugging Face, and P2P Exchange. Advanced Tools retains exact model names, max tokens, decoding parameters, catalog URLs, Hugging Face search, provenance, module plans, diagnostics, and run history for expert use.
 
-All three source choices still converge on a local `.slm` file before execution. Hugging Face remains metadata and external discovery. P2P Exchange now has MiniModel peer-offer proof, one-command `prepare-peer-share` sender output, optional catalog-listed peer sources, a list-level Known peer URL fallback, and one-command `import-peer-request` receiver scripts for proof-ready rows, while broad peer discovery and relays remain later work. Project servers do not run or serve user model bytes.
+All three source choices still converge on a local `.slm` file before execution. Hugging Face remains metadata and external discovery. P2P Exchange now has MiniModel peer-offer proof, one-command `prepare-peer-share` sender output, metadata-only `write-catalog-snapshot` reuse, optional catalog-listed peer sources, a list-level Known peer URL fallback, and one-command `import-peer-request` receiver scripts for proof-ready rows, while broad peer discovery and relays remain later work. Project servers do not run or serve user model bytes.
 
 ## What loads in the browser
 
