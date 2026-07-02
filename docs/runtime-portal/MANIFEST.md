@@ -5,7 +5,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 - Source root: `E:\Source\Rust\Runtime.MiRust.com`
 - Preserved destination: `TinyRustLM.MiRust.com/docs/runtime-portal/`
 - Preserved file count: 184
-- Preserved byte count: 1918381
+- Preserved byte count: 1922079
 - Rule: legacy runtime documentation content is preserved here for developer reference while TinyRustLM.MiRust.com is the current developer portal.
 - Current app route: https://TinyRustLM.com/
 - Current developer portal route: https://TinyRustLM.MiRust.com/developer-portal/
@@ -30,7 +30,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/implementation/aiwikis-routing.md` | 887 | `eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db` |
 | `runtime-docs/implementation/architecture.md` | 18117 | `6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269` |
 | `runtime-docs/implementation/browser-harness.md` | 1266 | `50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb` |
-| `runtime-docs/implementation/browser-runtime.md` | 18535 | `d4432924171f59288226caaa428ea8afa3ee42242b360492483ff4e3e91514f7` |
+| `runtime-docs/implementation/browser-runtime.md` | 18755 | `762baa411d1631ad5a9848cff84e578c8f9809b22bfb2eaac91c13d9c26768fb` |
 | `runtime-docs/implementation/index.md` | 3440 | `9ee013563da8589016d35edb7e9b05603d97cfac9b6ea4001255eb02785a6e92` |
 | `runtime-docs/implementation/performance.md` | 3603 | `07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33` |
 | `runtime-docs/implementation/quantization.md` | 2032 | `1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700` |
@@ -38,7 +38,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/implementation/runtime-mirust-plain-php-rebuild-v1.0.5.md` | 1295 | `3bfd31fba0a74a346f89b98bdc550a9b83bcefcb9c5a5df2b591f4623b799185` |
 | `runtime-docs/implementation/runtime-mirust-rebrand-v1.0.4.md` | 923 | `52373a54f97f15101034cf620c295043be7124424303b601247d8326546dc88e` |
 | `runtime-docs/implementation/site-audit-response-v1.0.4.md` | 1264 | `38e401f82fc1764d0f8297d7ecab33accdc7718a90a20c3dd602fedc3efe7fd3` |
-| `runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` | 5251 | `ebecc471d9f7148004225e071c62fbe88f7ac227b3d7b20aaf66394c55f75320` |
+| `runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` | 5548 | `6218da6baaf8df72d133dc92ef3781e1b5a9f41f6a49d9b820a7d9831c46d5da` |
 | `runtime-docs/implementation/slm-format.md` | 29705 | `4d06f94001165fba0e996adfe2db234ca66b758379f807e716f6b7d542ea7627` |
 | `runtime-docs/implementation/testing.md` | 45408 | `feeb5288862f939384b44320ea75af0dee06bdf76e1d919b9a543beeb448c5a4` |
 | `runtime-docs/implementation/tinyrustlm-models-readme.md` | 37451 | `58b136954e3227cb9b15801df742ee36511f44a505f65b4fa148001f8b26eaa8` |

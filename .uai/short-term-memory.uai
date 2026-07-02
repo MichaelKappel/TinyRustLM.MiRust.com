@@ -1,8 +1,9 @@
-profile: tinyrustlm.short-term-memory.v2
-updated_utc: 2026-07-02T00:12:07Z
+profile: tinyrustlm.short-term-memory.v3
+updated_utc: 2026-07-02T16:40:00Z
 current_package_version: 1.5.0
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
 latest_changes:
+  - Documented MiniModel known-peer `serve-peer-pieces` / `fetch-peer-pieces` handoffs in the developer portal while keeping broad discovery/relay as later work.
   - Added /developer-portal/ route.
   - Preserved Runtime.MiRust.com docs, reports, package metadata, page registry, llms exports, sitemap, version marker, and health marker under docs/runtime-portal/.
   - Added docs/runtime-portal/MANIFEST.md with byte counts and SHA-256 checksums.
