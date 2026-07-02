@@ -14,7 +14,7 @@
 - [Browser Runtime](https://Runtime.MiRust.com/browser-runtime/): Browser runtime explanation for TinyRustLM, including local WASM, local model files, Step Token, Adapter Sidecar, diagnostics, and privacy boundaries.
 - [Model Format](https://Runtime.MiRust.com/model-format/): Explanation of the custom .slm model file format, manifest sidecars, checksums, tokenizer metadata, tensor directory, and current quality boundaries.
 - [Developer Docs](https://Runtime.MiRust.com/developer-docs/): Developer documentation map for Runtime.MiRust.com, TinyRustLM, local build commands, source structure, model artifacts, and proof files.
-- [SLM Composer Source Options UI v1.0.7](https://Runtime.MiRust.com/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode starter profiles, local/Hugging Face/P2P source choices, request-driven Hugging Face conversion handoff, and Advanced Tools boundary.
+- [SLM Composer Source Options UI v1.0.7](https://Runtime.MiRust.com/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode starter profiles, local/Hugging Face/P2P source choices, request-driven Hugging Face conversion handoff, self-locating P2P import handoff, and Advanced Tools boundary.
 
 ## Evidence and operations
 - [Proof & Testing](https://Runtime.MiRust.com/proof-testing/): Testing and evidence strategy for TinyRustLM, including Rust unit tests, browser smokes, WASM ABI checks, route drift tests, and quality gates.
