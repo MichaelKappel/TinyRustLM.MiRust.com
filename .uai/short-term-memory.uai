@@ -14,6 +14,7 @@ latest_changes:
   - Updated P2P receiver behavior: generated peer-import scripts now call MiniModel `import-peer-request <request-json> <manifest> <output-dir>` so Rust validates the request, fetches, assembles, verifies, and writes the receipt through one command.
   - Updated Hugging Face conversion docs: TinyRustLM's Start Conversion handoff now runs local Rust conversion/validation and then MiniModel `prepare-peer-share`, which writes the manifest, peer-offer proof, local piece set, and metadata-only catalog entry in one command.
   - Updated catalog reuse docs: TinyRustLM's generated conversion handoff now also calls MiniModel `write-catalog-snapshot` so verified catalog entries become loadable metadata-only `models.v0.json` without hosting `.slm` bytes.
+  - Updated local snapshot reuse docs: TinyRustLM now exposes `Local models.v0.json` / `Load Local Catalog`; `hf-local-catalog-ui` proves a loaded local snapshot can make matching Hugging Face rows `P2P Import` without fetching the default MiniModel catalog or `/resolve/` model bytes.
 next_read:
   - /developer-portal/
   - .uai/long-term-memory.uai
