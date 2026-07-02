@@ -1,5 +1,5 @@
-profile: tinyrustlm-site.workspace.v9
-updated_utc: 2026-07-02T16:40:00Z
+profile: tinyrustlm-site.workspace.v10
+updated_utc: 2026-07-02T19:10:00Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -17,7 +17,7 @@ deploy_gate:
   instruction: Before deploying TinyRustLM.MiRust.com or TinyRustLM.com, update this developer portal, MiRust.com, MiniModel.org, and any remaining SLMComposer.com redirect/public export surfaces to match the deployed source behavior.
   requirements:
     - Keep source options, .slm verification claims, model documentation, and no-server-model-byte boundaries current.
-    - Document Hugging Face metadata/conversion handoffs, local MiniModel share metadata export, and known-peer MiniModel serve/fetch handoffs when TinyRustLM app behavior changes; do not imply broad P2P discovery, relays, or project-hosted model bytes until implemented.
+    - Document Hugging Face metadata/conversion handoffs, local MiniModel share metadata export, catalog-listed MiniModel peer sources, and known-peer MiniModel serve/fetch handoffs when TinyRustLM app behavior changes; do not imply broad P2P discovery, relays, or project-hosted model bytes until implemented.
     - Keep TinyRustLM.com documented as the root app route; do not describe /app/ as the canonical TinyRustLM.com path.
     - Keep the former standalone runtime documentation lane documented only as retired/preserved content under /docs/runtime-portal/.
     - Keep SLMComposer.com documented only as a retired or redirecting app identity, not the canonical public app.
@@ -34,9 +34,9 @@ required_private_read_order:
 current_state:
   - TinyRustLM.MiRust.com is the TinyRustLM developer portal.
   - TinyRustLM.com is the root-domain browser-local Rust/WASM app route.
-  - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm with peer-offer proof or the user locally converts source bytes with Rust and imports a verified .slm.
-  - TinyRustLM's simple Hugging Face lane defaults P2P on, shows P2P Import only for MiniModel matches with write-catalog-entry peer-offer proof, shows Start Conversion otherwise, and shows one list-level warning when P2P is disabled.
-  - Proof-ready MiniModel rows use metadata-only catalog entries with peer_hint_status=peer-offer-ready-known-peer-needed and peer_import_status=request-script-ready; P2P Import still requires the list-level Known peer URL, rejects project/Hugging Face hosts, and uses local Rust `import-peer-request` receiver execution for fetch, assembly, verification, and import receipt before browser import.
+  - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm with peer-offer proof and a catalog-listed or user-supplied consenting peer source, or the user locally converts source bytes with Rust and imports a verified .slm.
+  - TinyRustLM's simple Hugging Face lane defaults P2P on, shows P2P Import only for MiniModel matches with write-catalog-entry peer-offer proof plus validated catalog peer source or saved Known peer URL, shows Set Peer URL for proof-ready rows without a known source, shows Start Conversion otherwise, and shows one list-level warning when P2P is disabled.
+  - Proof-ready MiniModel rows use metadata-only catalog entries with peer_hint_status=peer-offer-ready-known-peer-needed, peer_import_status=request-script-ready, and optional peer_source_count/peer_sources metadata; P2P import rejects project/Hugging Face hosts and uses local Rust `import-peer-request` receiver execution for fetch, assembly, verification, and import receipt before browser import.
   - TinyRustLM can save local MiniModel share metadata after verified .slm import; MiniModel can export/serve/fetch/reassemble known-peer pieces, while broader peer discovery/relay remains later.
   - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
   - SLMComposer.com is no longer the canonical public app identity.
