@@ -4,8 +4,8 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 
 - Source root: `E:\Source\Rust\Runtime.MiRust.com`
 - Preserved destination: `TinyRustLM.MiRust.com/docs/runtime-portal/`
-- Preserved file count: 184
-- Preserved byte count: 1922079
+- Preserved file count: 185
+- Preserved byte count: 1924426
 - Rule: legacy runtime documentation content is preserved here for developer reference while TinyRustLM.MiRust.com is the current developer portal.
 - Current app route: https://TinyRustLM.com/
 - Current developer portal route: https://TinyRustLM.MiRust.com/developer-portal/
@@ -14,10 +14,11 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 
 | Path | Bytes | SHA-256 |
 | --- | ---: | --- |
+| `index.md` | 1504 | `108486f3a3a19a281a0359e78ef3356f1109fb5f7c98c2a3c900a00b3934ce90` |
 | `package/DEPLOYMENT.md` | 804 | `86c364cb9bd11eb3e44e415c7f9768982a15b6824546ce4f613319bf27b60167` |
 | `package/healthz` | 38 | `ef358dcfd4b663e050fa29230d0324f60002a128ad5f2008ef6c38203c20be6e` |
 | `package/llms.txt` | 4154 | `df7d48bf57862c44f2f1cd004146824d878119f583e80a7585c92c5f0cd57f7a` |
-| `package/llms-full.txt` | 54399 | `dbeea313a083eff76b5923dfdec444b46151b7851716ec3aca1ac1d6be90df4a` |
+| `package/llms-full.txt` | 54475 | `6e801a9cbc03e3de95ed057023a9b71bc13dd8a9761610acefd24d08f2647b15` |
 | `package/PACKAGE-MANIFEST.md` | 28859 | `f23a57e60875e8d2aea9e89340f55e3a2334354679ec81d41f4d005f08c6a7eb` |
 | `package/README.md` | 985 | `daa2b38aaccef4a51d54d1d17464a6d0af433347aaf8137b097f9f6996b87a78` |
 | `package/robots.txt` | 472 | `2506d62b48e313887fdcc56d54beb789a94794c79c3a963194bfa3382cce6437` |
@@ -30,15 +31,15 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/implementation/aiwikis-routing.md` | 887 | `eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db` |
 | `runtime-docs/implementation/architecture.md` | 18117 | `6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269` |
 | `runtime-docs/implementation/browser-harness.md` | 1266 | `50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb` |
-| `runtime-docs/implementation/browser-runtime.md` | 18755 | `762baa411d1631ad5a9848cff84e578c8f9809b22bfb2eaac91c13d9c26768fb` |
-| `runtime-docs/implementation/index.md` | 3440 | `9ee013563da8589016d35edb7e9b05603d97cfac9b6ea4001255eb02785a6e92` |
+| `runtime-docs/implementation/browser-runtime.md` | 19112 | `1fa26beac6ae1567a3f189b7aceb60afd41eceae98cc742fd2a7ecdafaa2bfb9` |
+| `runtime-docs/implementation/index.md` | 3464 | `8e744b873458f51700a678d041b28958745c1eaddbd4387658898e525cb4adfd` |
 | `runtime-docs/implementation/performance.md` | 3603 | `07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33` |
 | `runtime-docs/implementation/quantization.md` | 2032 | `1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700` |
 | `runtime-docs/implementation/runtime-mirust-continuation-v1.0.6.md` | 1212 | `0a76e16385c8766a39e31a8de62872859672ce3fdc8cc2a228ebf6e997ae5119` |
 | `runtime-docs/implementation/runtime-mirust-plain-php-rebuild-v1.0.5.md` | 1295 | `3bfd31fba0a74a346f89b98bdc550a9b83bcefcb9c5a5df2b591f4623b799185` |
 | `runtime-docs/implementation/runtime-mirust-rebrand-v1.0.4.md` | 923 | `52373a54f97f15101034cf620c295043be7124424303b601247d8326546dc88e` |
 | `runtime-docs/implementation/site-audit-response-v1.0.4.md` | 1264 | `38e401f82fc1764d0f8297d7ecab33accdc7718a90a20c3dd602fedc3efe7fd3` |
-| `runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` | 5548 | `6218da6baaf8df72d133dc92ef3781e1b5a9f41f6a49d9b820a7d9831c46d5da` |
+| `runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` | 5934 | `1d8a64cbaef067e526f7d5f13011f34e46fbfc89ee77652544ee058137c23027` |
 | `runtime-docs/implementation/slm-format.md` | 29705 | `4d06f94001165fba0e996adfe2db234ca66b758379f807e716f6b7d542ea7627` |
 | `runtime-docs/implementation/testing.md` | 45408 | `feeb5288862f939384b44320ea75af0dee06bdf76e1d919b9a543beeb448c5a4` |
 | `runtime-docs/implementation/tinyrustlm-models-readme.md` | 37451 | `58b136954e3227cb9b15801df742ee36511f44a505f65b4fa148001f8b26eaa8` |
@@ -49,7 +50,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/index.html` | 186 | `fd38054d2bb5a04f6fd6dc19c75ab22eb7814bf1e5e7fadf3bf3492679de9bc1` |
 | `runtime-docs/index.md` | 3258 | `c411114e3425a6f81bf7778135ad2a94f53b90479939c03f2eaf3400d90c93b4` |
 | `runtime-docs/long-term-memory.uai` | 343834 | `9188267d9c6ab5299a1b3356576ace1c4685e3016f5466652d1739e81ef761c5` |
-| `runtime-docs/MANIFEST.md` | 33790 | `ab2a4752e50af1b2ff1b8049028f6a70d4b3223ea898cdcaa42bd4591820f89d` |
+| `runtime-docs/MANIFEST.md` | 33790 | `73ad51922bed281376ecaed9399cb50edbfd655427559049c46d5a8756ee390a` |
 | `runtime-docs/README-site-package.md` | 1417 | `6db41d4cdd03e65f5fa4ab2e437f70232bb4f5bb8cdf653d07831e8bb2e7ff3a` |
 | `runtime-docs/reports/adapter-family-receipt-memory-2026-06-27.md` | 5967 | `5794a57c60f0ef1e8e61079e4d4bc0335e0dca6a933ed87be599b424e95bdebe` |
 | `runtime-docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md` | 4820 | `821543e27a431a2377dbbd7606702957f721a151282d35165cd6e079abcd54fd` |

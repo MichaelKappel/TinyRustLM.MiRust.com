@@ -1,6 +1,6 @@
 # Runtime.MiRust.com Public Docs Manifest
 
-Updated UTC: 2026-07-01T21:20:00Z
+Updated UTC: 2026-07-02T16:40:00Z
 Package version: 1.0.7
 Public base: https://Runtime.MiRust.com
 
@@ -19,22 +19,22 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 
 ## Files
 
-- [docs/README-site-package.md](README-site-package.md): sha256:AE1D112118B06BB96D96F0F66062AB196A060D518FF70AD78EDC9227E87CFFC5
+- [docs/README-site-package.md](README-site-package.md): sha256:6DB41D4CDD03E65F5FA4AB2E437F70232BB4F5BB8CDF653D07831E8BB2E7FF3A
 - [docs/dogfood/index.md](dogfood/index.md): sha256:EAF73D6D9596E21F13BC0F99386AA1537A2C79B58B64EF18FDA4CF3A7A232EA7
 - [docs/dogfood/uaix-file-handoff-memory-strategy-2026-06-26.md](dogfood/uaix-file-handoff-memory-strategy-2026-06-26.md): sha256:AC98D281728CC05E17CF735AA2186A6183A3B27DCE96E3257FBA360ED4C52FBC
 - [docs/dogfood/uaix-llm-wiki-crawlability-failure-2026-06-25.md](dogfood/uaix-llm-wiki-crawlability-failure-2026-06-25.md): sha256:8FBD6AC478E7E8D4A02196AFF5CC9FFA7E6E31EA3FD00787D329C3FC40EB6725
 - [docs/dogfood/uaix-llmwikis-setup-experience-2026-06-24.md](dogfood/uaix-llmwikis-setup-experience-2026-06-24.md): sha256:442AA49FA3B747B762C27DA31E85E4C1A852B7FBBE9C7C42D11436E044548B15
-- [docs/implementation/aiwikis-routing.md](implementation/aiwikis-routing.md): sha256:E97B0DD26614E1EB0495BE8023444C77C805327EDF2A6E115D5E4D3E97FC9D9C
+- [docs/implementation/aiwikis-routing.md](implementation/aiwikis-routing.md): sha256:EEB62E3E9279187EA3D766DBB92CB468913B50366B58952CC5731A127DD391DB
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
-- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:D4432924171F59288226CAAA428EA8AFA3EE42242B360492483FF4E3E91514F7
-- [docs/implementation/index.md](implementation/index.md): sha256:9EE013563DA8589016D35EDB7E9B05603D97CFAC9B6EA4001255EB02785A6E92
+- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:1FA26BEAC6AE1567A3F189B7ACEB60AFD41ECEAE98CC742FD2A7ECDAFAA2BFB9
+- [docs/implementation/index.md](implementation/index.md): sha256:8E744B873458F51700A678D041B28958745C1EADDBD4387658898E525CB4ADFD
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
-- [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:9E17C9CB45C76381513101C4568896F6C05BD862E2536AAD738B597C8E221A21
+- [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:52373A54F97F15101034CF620C295043BE7124424303B601247D8326546DC88E
 - [docs/implementation/site-audit-response-v1.0.4.md](implementation/site-audit-response-v1.0.4.md): sha256:38E401F82FC1764D0F8297D7ECAB33ACCDC7718A90A20C3DD602FEDC3EFE7FD3
 - [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:4D06F94001165FBA0E996ADFE2DB234CA66B758379F807E716F6B7D542EA7627
-- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:EBECC471D9F7148004225E071C62FBE88F7AC227B3D7B20AAF66394C55F75320
+- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:1D8A64CBAEF067E526F7D5F13011F34E46FBFC89EE77652544EE058137C23027
 - [docs/implementation/testing.md](implementation/testing.md): sha256:FEEB5288862F939384B44320EA75AF0DEE06BDF76E1D919B9A543BEEB448C5A4
 - [docs/implementation/tinyrustlm-models-readme.md](implementation/tinyrustlm-models-readme.md): sha256:58B136954E3227CB9B15801DF742EE36511F44A505F65B4FA148001F8B26EAA8
 - [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:7ECEBC86F338172467FA72893FC521C29E8BDD58E17A23653E65833C7E59B267
@@ -42,7 +42,7 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/visual-studio.md](implementation/visual-studio.md): sha256:4EB9659BEBD8C33799A384DEE81415BCCB13304F2D2E67CFDC1A3D0D9976ABDB
 - [docs/implementation/workspace-readme.md](implementation/workspace-readme.md): sha256:C80FF12021E9E7C7FE622A8E36779221CE4564397B1353F05A2B1818E3BBFBBA
 - [docs/index.md](index.md): sha256:C411114E3425A6F81BF7778135AD2A94F53B90479939C03F2EAF3400D90C93B4
-- [docs/long-term-memory.uai](long-term-memory.uai): sha256:86B42D4299E783B98BCA3FC8194591432644571608F09E3EAA75BA4175822AE2
+- [docs/long-term-memory.uai](long-term-memory.uai): sha256:9188267D9C6AB5299A1B3356576ACE1C4685E3016F5466652D1739E81EF761C5
 - [docs/reports/adapter-family-receipt-memory-2026-06-27.md](reports/adapter-family-receipt-memory-2026-06-27.md): sha256:5794A57C60F0EF1E8E61079E4D4BC0335E0DCA6A933ED87BE599B424E95BDEBE
 - [docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md](reports/admission-operator-receipt-binding-memory-2026-06-29.md): sha256:821543E27A431A2377DBBD7606702957F721A151282D35165CD6E079ABCD54FD
 - [docs/reports/assembly-receipt-memory-2026-06-27.md](reports/assembly-receipt-memory-2026-06-27.md): sha256:322C5FCAE1E5DE8B24957FEF773CA9F8E769E195FA10DD6CBB668046C0E5CABB
@@ -175,7 +175,7 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/research/index.md](research/index.md): sha256:A2DB1724945D9DD19BA4D0A117A885C5410E1F2BFB17F9D7CF4967AE1B1BDD10
 - [docs/research/model-breeding-reference-ideas-2026-06-26.md](research/model-breeding-reference-ideas-2026-06-26.md): sha256:759EB154A07CFE463F17990B070999ED8D459D58AFB43D0B3C4D4E89AA221286
 - [docs/research/modelbreeder-zero-dependency-reference-ideas-2026-06-28.md](research/modelbreeder-zero-dependency-reference-ideas-2026-06-28.md): sha256:162AFC09E80651913B241A75D5F0B7622789C7EC22BC9C08B8FDFBCED4EB7C46
-- [docs/source-analysis-summary.md](source-analysis-summary.md): sha256:260E0823273D2606F71605DF64BC2F84EE889C69210DAE978D6973A6B30A083E
+- [docs/source-analysis-summary.md](source-analysis-summary.md): sha256:D34C2AA68DAEBE2E03745AD08D0761A7C4786B6F754572938CDA95B4BB0F2C80
 - [docs/source-memory/index.md](source-memory/index.md): sha256:3C170411EE3DC1B95B1167D0EEBC75EAE57A487C34392CF975DDF45340E87F95
 - [docs/source-memory/knowledge-map.md](source-memory/knowledge-map.md): sha256:44F021CAA67A7B532195E8D9773858F4369668C09E215DACAB4F82198FD3BFEE
 - [docs/source-memory/log.md](source-memory/log.md): sha256:029DCD61D4D80D169AD9E189FF6637AD52E50FD44664B7CD965396582D0206A5
@@ -183,7 +183,7 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/source-memory/source-memory-guide.md](source-memory/source-memory-guide.md): sha256:F2211D0E70F89E9980ED0C7DF858171D9996478234F9B245A40C32992B49E5C5
 - [docs/web-research/analyzing-website-virality-1.md](web-research/analyzing-website-virality-1.md): sha256:6D9C11AFF76AA0B3505016958BCBE0EDE3DD1C8CDED1D749FED9DA5A798A5FAB
 - [docs/web-research/future-proof-native-html5-techniques-1.md](web-research/future-proof-native-html5-techniques-1.md): sha256:012AC971C92C0EF592C3517C3DB794379ECCD05F4A2E062034BC82803D24431F
-- [docs/web-research/index.md](web-research/index.md): sha256:FC4C2F3AD12F72C10ACD6298A4637C70F102B88D31A53E2B3297171A3CB9B519
+- [docs/web-research/index.md](web-research/index.md): sha256:5761B934D96F43CEB5D7388B3076CFE9CAD683B21DEFAFE9164B9FE4BE5A71AD
 - [docs/web-research/innovative-vanilla-web-design-1.md](web-research/innovative-vanilla-web-design-1.md): sha256:58A6DB0D6FA9226E9EC35A8DCB697B1D48644EC865158529631AB6552B4A2645
 - [docs/web-research/mememtech-vanilla-web-architecture-1.md](web-research/mememtech-vanilla-web-architecture-1.md): sha256:A8B1105BFF91A8E9230ED54A8643E6B8AC99556A448BF16285ED3FE5B5F49274
 - [docs/web-research/vanilla-js-future-proof-techniques-1.md](web-research/vanilla-js-future-proof-techniques-1.md): sha256:E3E7722BBB3369A374C8FDDED48A40CD37B2B3BDE03BEDB4E86ECE69915FF3E2

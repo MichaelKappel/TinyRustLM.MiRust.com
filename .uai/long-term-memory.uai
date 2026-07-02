@@ -1,4 +1,4 @@
-profile: tinyrustlm.long-term-memory.v3
+profile: tinyrustlm.long-term-memory.v4
 updated_utc: 2026-07-02T16:40:00Z
 storage_mode: pointer_ledger_with_durable_docs
 ledger_rule:
@@ -17,7 +17,7 @@ records:
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:469EDB9F2AC44B0F1B1194B2BE0121E4BE1E48644727432ED82ADA7CCF987099
+    checksum_hash: sha256:22DCF8011E4D42BC6DFF7CB29FA208D48AC6A1059D5C24B19A68D37C4E1E2CD2
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: tinyrustlm_runtime_portal_preservation_manifest
     pointer_type: preservation-manifest
@@ -28,7 +28,7 @@ records:
     pointer_status: current
     authority: preserved-runtime-mirust-public-corpus
     review_status: reviewed_current
-    checksum_hash: sha256:BA90BAA026D0B9BB055192FBD800C6530DEF32201A50EB47468A709A024354D1
+    checksum_hash: sha256:3B770B8177D53AF9319EBF81DB2A34F23E5204E02CA04BE6C6CB3EBF61D06A5E
     truth_boundary: Runtime.MiRust.com is retired as a separate documentation authority; use the manifest and /developer-portal/ for current developer routing.
   - stable_id: tinyrustlm_docs_report_index
     pointer_type: report-index
@@ -39,7 +39,7 @@ records:
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:5EBF78C04EEB78DAFAD15AB00F8D650FEAE10465F226D1A19D3E98D010404697
+    checksum_hash: sha256:C523EFB0D7D0931310246B27FF9A06FB660049366586AA65B765A1AC7DEA5E52
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: report_tiny_language_models_for_wasm
     pointer_type: report
