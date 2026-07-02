@@ -22,13 +22,13 @@ Technical controls remain available under `Advanced Tools`, including exact mode
 The three source choices do not change the security model:
 
 - Local files are the runnable path. Users choose `.slm` files through the browser file picker.
-- Hugging Face is a metadata and external discovery path. Results are not treated as runnable in TinyRustLM unless MiniModel metadata identifies an admitted `.slm`. Otherwise the UI saves a local `minimodel.huggingface_conversion_request.v0` handoff for review, conversion, Rust validation, admission, and future peer availability. Project servers do not proxy `/resolve/` model bytes and do not use project-owned Hugging Face tokens.
+- Hugging Face is a metadata and external discovery path. Results are not treated as runnable in TinyRustLM unless MiniModel metadata identifies an admitted `.slm`. Otherwise the UI saves a local `minimodel.huggingface_conversion_request.v0` handoff plus an optional `.tinyrustlm-convert.ps1` script for review, conversion, Rust validation, admission, and future peer availability. The script runs `inspect-safetensors`, `plan-safetensors-source`, `convert-safetensors-trained`, `validate`, and `validate-manifest` against user-owned local files; it does not download model bytes. Project servers do not proxy `/resolve/` model bytes and do not use project-owned Hugging Face tokens.
 - P2P Exchange is MiniModel metadata for converted `.slm` records now and a future consent-based peer-transfer path later, still gated by manifest verification, chunk/Merkle verification, and local import receipts.
 - After a verified local `.slm` import, TinyRustLM can save `minimodel.local_slm_share_metadata.v0` with the artifact SHA256, fixed-size chunk SHA256 entries, chunk-list SHA256, and Merkle root. The export keeps `peer_transfer_implemented=false` and `network_transfer_available=false` until real peer networking exists.
 
 All source lanes must converge on a local `.slm` file before SLM Composer runs generation. Rust/WASM remains the final `.slm` validation authority.
 
-The Search action must keep the source chooser open, update the visible result list, show `conversion required` for unmatched Hub models, show `MiniModel metadata found` for admitted converted records, and avoid any Hugging Face `/resolve/` model-byte fetch.
+The Search Metadata action must keep the source chooser open, update the visible result list, show `conversion required` for unmatched Hub models, show `MiniModel metadata found` for admitted converted records, and avoid any Hugging Face `/resolve/` model-byte fetch. Save Conversion Script and Save Conversion Request must also keep the chooser open after the local handoff file is downloaded.
 
 The Share Metadata action must stay disabled until a local `.slm` is verified. When enabled it writes JSON locally through the browser download flow; it does not upload, relay, or publish model bytes.
 

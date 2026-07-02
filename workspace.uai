@@ -1,5 +1,5 @@
 profile: tinyrustlm-site.workspace.v4
-updated_utc: 2026-07-02T05:15:00Z
+updated_utc: 2026-07-02T04:53:29Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -17,7 +17,7 @@ deploy_gate:
   instruction: Before deploying TinyRustLM.MiRust.com or TinyRustLM.com, update this developer portal, MiRust.com, MiniModel.org, and any remaining SLMComposer.com redirect/public export surfaces to match the deployed source behavior.
   requirements:
     - Keep source options, .slm verification claims, model documentation, and no-server-model-byte boundaries current.
-    - Document local MiniModel share metadata export when TinyRustLM app behavior changes; do not imply live P2P transfer until implemented.
+    - Document Hugging Face metadata/conversion handoffs and local MiniModel share metadata export when TinyRustLM app behavior changes; do not imply live P2P transfer until implemented.
     - Keep TinyRustLM.com documented as the root app route; do not describe /app/ as the canonical TinyRustLM.com path.
     - Keep the former standalone runtime documentation lane documented only as retired/preserved content under /docs/runtime-portal/.
     - Keep SLMComposer.com documented only as a retired or redirecting app identity, not the canonical public app.
@@ -34,6 +34,7 @@ required_private_read_order:
 current_state:
   - TinyRustLM.MiRust.com is the TinyRustLM developer portal.
   - TinyRustLM.com is the root-domain browser-local Rust/WASM app route.
+  - Hugging Face search rows in TinyRustLM are metadata until MiniModel metadata names an admitted .slm or the user locally converts source bytes with Rust and imports a verified .slm.
   - TinyRustLM can save local MiniModel share metadata after verified .slm import, with peer transfer still unavailable until implemented.
   - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
   - SLMComposer.com is no longer the canonical public app identity.
