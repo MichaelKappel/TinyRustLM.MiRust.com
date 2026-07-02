@@ -2,11 +2,11 @@
 
 Implementation docs copied from TinyRustLM and the workspace root so public docs can deep-link the source-backed architecture.
 
-Updated UTC: 2026-07-02T04:25:00Z
+Updated UTC: 2026-07-02T05:15:00Z
 
 Count: 14
 
-- [SLM Composer Source Options UI v1.0.7](slmcomposer-source-options-ui-v1.0.7.md): SLM Composer now defaults to Chat mode with starter profiles, local/Hugging Face/P2P source choices, conversion-request handoff for unmatched Hub metadata, and Advanced Tools for diagnostics.
+- [SLM Composer Source Options UI v1.0.7](slmcomposer-source-options-ui-v1.0.7.md): SLM Composer now defaults to Chat mode with starter profiles, local/Hugging Face/P2P source choices, conversion-request handoff for unmatched Hub metadata, local MiniModel share metadata export after verified `.slm` import, and Advanced Tools for diagnostics.
 
 - [TinyRustLM Architecture](architecture.md): TinyRustLM is a browser-local SLM runtime with a static UI, handwritten JavaScript bootstrap, no-crate Rust local server, no-crate Rust mini browser harness, Rust WASM runtime, and local .s…  
   `sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269`

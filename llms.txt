@@ -9,7 +9,7 @@
 - [Runtime](https://TinyRustLM.mirust.com/runtime/): Rust/WASM runtime responsibilities, memory transfer, generation, diagnostics, and explicit error states.
 - [.slm Format](https://TinyRustLM.mirust.com/slm-format/): Custom model artifact contract for header, tensor directory, tokenizer metadata, quantization fields, and checksum validation.
 - [Quantization](https://TinyRustLM.mirust.com/quantization/): f32, q8_0, and q4_0 memory math under the 33,554,432-byte browser selector budget.
-- [Browser Runtime](https://TinyRustLM.mirust.com/browser-runtime/): Local browser app behavior, TinyRustLM Chat mode at https://TinyRustLM.com/, local/Hugging Face/P2P source choices, Hugging Face conversion-request handoff, selector registry routing, local-only imports, transcript state, and reset boundaries.
+- [Browser Runtime](https://TinyRustLM.mirust.com/browser-runtime/): Local browser app behavior, TinyRustLM Chat mode at https://TinyRustLM.com/, local/Hugging Face/P2P source choices, Hugging Face conversion-request handoff, local MiniModel share metadata export after verified `.slm` import, selector registry routing, local-only imports, transcript state, and reset boundaries.
 - [Adapters](https://TinyRustLM.mirust.com/adapters/): ADP1, ASP1, and ALR1 adapter sidecars with Rust validation-before-apply.
 - [Model Breeding](https://TinyRustLM.mirust.com/model-breeding/): Offline candidate lineage, parent compatibility, operator receipts, manifests, runtime-smoke, eval evidence, and selector admission.
 - [Testing](https://TinyRustLM.mirust.com/testing/): Rust tests, browser harness checks, WASM ABI smoke, browser smoke modes, and performance soak.

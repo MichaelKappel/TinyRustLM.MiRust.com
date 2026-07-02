@@ -4,7 +4,7 @@
 
 ## Current truth boundary
 
-TinyRustLM is presented as a browser-local Rust/WebAssembly small language model runtime project, not as a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, or GGUF runtime claim. TinyRustLM.MiRust.com is now the developer portal for the runtime, including the legacy runtime documentation archive under `/docs/runtime-portal/`. The public site explains the current architecture and its proof surfaces: custom `.slm` artifacts, f32/q8_0/q4_0 quantization, deterministic validation, ADP1/ASP1/ALR1 adapter sidecars, selector registries, module-plan receipts, local-only browser diagnostics, and evidence-first model-breeding workflows.
+TinyRustLM is presented as a browser-local Rust/WebAssembly small language model runtime project, not as a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, or GGUF runtime claim. TinyRustLM.MiRust.com is now the developer portal for the runtime, including the legacy runtime documentation archive under `/docs/runtime-portal/`. The public site explains the current architecture and its proof surfaces: custom `.slm` artifacts, f32/q8_0/q4_0 quantization, deterministic validation, ADP1/ASP1/ALR1 adapter sidecars, selector registries, module-plan receipts, local-only browser diagnostics, local MiniModel share metadata export after verified `.slm` import, and evidence-first model-breeding workflows.
 
 ## Site implementation memory
 
