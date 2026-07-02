@@ -27,14 +27,14 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/aiwikis-routing.md](implementation/aiwikis-routing.md): sha256:E97B0DD26614E1EB0495BE8023444C77C805327EDF2A6E115D5E4D3E97FC9D9C
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
-- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:A3C58460BDB2134CEF931C144E7BD276C466F5D46E2DB55AF4EEA7979FC84110
+- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:D4432924171F59288226CAAA428EA8AFA3EE42242B360492483FF4E3E91514F7
 - [docs/implementation/index.md](implementation/index.md): sha256:9EE013563DA8589016D35EDB7E9B05603D97CFAC9B6EA4001255EB02785A6E92
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
 - [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:9E17C9CB45C76381513101C4568896F6C05BD862E2536AAD738B597C8E221A21
 - [docs/implementation/site-audit-response-v1.0.4.md](implementation/site-audit-response-v1.0.4.md): sha256:38E401F82FC1764D0F8297D7ECAB33ACCDC7718A90A20C3DD602FEDC3EFE7FD3
 - [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:4D06F94001165FBA0E996ADFE2DB234CA66B758379F807E716F6B7D542EA7627
-- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:668C0BD90D237C0970C2BF5348A5CDAA65F58B51190E505AB1011F64AC831A7C
+- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:EBECC471D9F7148004225E071C62FBE88F7AC227B3D7B20AAF66394C55F75320
 - [docs/implementation/testing.md](implementation/testing.md): sha256:FEEB5288862F939384B44320EA75AF0DEE06BDF76E1D919B9A543BEEB448C5A4
 - [docs/implementation/tinyrustlm-models-readme.md](implementation/tinyrustlm-models-readme.md): sha256:58B136954E3227CB9B15801DF742EE36511F44A505F65B4FA148001F8B26EAA8
 - [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:7ECEBC86F338172467FA72893FC521C29E8BDD58E17A23653E65833C7E59B267
