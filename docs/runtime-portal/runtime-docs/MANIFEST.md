@@ -1,6 +1,6 @@
 # Runtime.MiRust.com Public Docs Manifest
 
-Updated UTC: 2026-07-02T23:00:00Z
+Updated UTC: 2026-07-02T23:30:00Z
 Package version: 1.0.7
 Public base: https://Runtime.MiRust.com
 
@@ -27,7 +27,7 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/aiwikis-routing.md](implementation/aiwikis-routing.md): sha256:EEB62E3E9279187EA3D766DBB92CB468913B50366B58952CC5731A127DD391DB
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
-- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:73E5029E6D9DC97AAF0765A0962AE5B864650144715ECCA5186FC611D1631257
+- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:D4260EF583CE233510A97EE4948A38F50277656419DE10669610EE72D2F1746F
 - [docs/implementation/index.md](implementation/index.md): sha256:023024DF5D21CFFBFA62AE132C9270C8FD9B512599577041EA39F108E24715E7
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
