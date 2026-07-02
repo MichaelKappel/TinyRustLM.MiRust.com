@@ -1,6 +1,6 @@
 # SLM Composer Source Options UI v1.0.7
 
-Updated UTC: 2026-07-01T21:20:00Z
+Updated UTC: 2026-07-02T04:25:00Z
 
 This note records the SLMComposer.com UI change driven by the 2026-07-01 UI improvement report. The source change belongs in the active Rust/WASM workspace at `E:\Source\Rust\SLMComposer.com`; Runtime.MiRust.com documents the runtime and public claim boundary.
 
@@ -22,10 +22,12 @@ Technical controls remain available under `Advanced Tools`, including exact mode
 The three source choices do not change the security model:
 
 - Local files are the runnable path. Users choose `.slm` files through the browser file picker.
-- Hugging Face is a metadata and external discovery path. Project servers do not proxy `/resolve/` model bytes and do not use project-owned Hugging Face tokens.
-- P2P Exchange is a future MiniModel.org path for consent-based peer transfer, manifest verification, chunk/Merkle verification, and local import receipts.
+- Hugging Face is a metadata and external discovery path. Results are not treated as runnable in TinyRustLM unless MiniModel metadata identifies an admitted `.slm`. Otherwise the UI saves a local `minimodel.huggingface_conversion_request.v0` handoff for review, conversion, Rust validation, admission, and future peer availability. Project servers do not proxy `/resolve/` model bytes and do not use project-owned Hugging Face tokens.
+- P2P Exchange is MiniModel metadata for converted `.slm` records now and a future consent-based peer-transfer path later, still gated by manifest verification, chunk/Merkle verification, and local import receipts.
 
 All source lanes must converge on a local `.slm` file before SLM Composer runs generation. Rust/WASM remains the final `.slm` validation authority.
+
+The Search action must keep the source chooser open, update the visible result list, show `conversion required` for unmatched Hub models, show `MiniModel metadata found` for admitted converted records, and avoid any Hugging Face `/resolve/` model-byte fetch.
 
 ## Deployment Gate
 
