@@ -1,5 +1,5 @@
-profile: tinyrustlm-site.workspace.v16
-updated_utc: 2026-07-03T19:50:00Z
+profile: tinyrustlm-site.workspace.v17
+updated_utc: 2026-07-03T20:10:00Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -50,4 +50,5 @@ current_state:
   - The former standalone runtime documentation corpus was preserved under docs/runtime-portal/ with a checksum manifest while its separate documentation authority is retired.
   - SLMComposer.com is no longer the canonical public app identity.
   - The live public-safe export is verified.
+  - TinyRustLM.com live public smoke uses real DNS for https://TinyRustLM.com/, reaches wasmState=loaded, stays at choose a local .slm file, and makes no /models/, Hugging Face, or MiniModel catalog requests before user action.
   - Direct public .uai and agent-file-handoff access is denied.

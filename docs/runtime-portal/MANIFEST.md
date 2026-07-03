@@ -31,7 +31,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/implementation/aiwikis-routing.md` | 887 | `eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db` |
 | `runtime-docs/implementation/architecture.md` | 18117 | `6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269` |
 | `runtime-docs/implementation/browser-harness.md` | 1266 | `50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb` |
-| `runtime-docs/implementation/browser-runtime.md` | 26050 | `06c668b0fc38ceae19ec9aee319dd0723cbdd8901ba4d2dea2d01eccce229da6` |
+| `runtime-docs/implementation/browser-runtime.md` | 26473 | `786a063758a2eb8a98cc5cda2501fea38fd34f0ed70152af0c059dc70eeff167` |
 | `runtime-docs/implementation/index.md` | 3988 | `6f0198f3f1fdf2dd641f3b97bc5a15b5ffc314ea1510ee7bb2eefbb925d2280d` |
 | `runtime-docs/implementation/performance.md` | 3603 | `07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33` |
 | `runtime-docs/implementation/quantization.md` | 2032 | `1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700` |

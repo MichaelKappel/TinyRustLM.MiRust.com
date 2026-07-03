@@ -1,6 +1,6 @@
-profile: tinyrustlm.short-term-memory.v11
-updated_utc: 2026-07-03T19:55:00Z
-current_package_version: 1.5.9
+profile: tinyrustlm.short-term-memory.v12
+updated_utc: 2026-07-03T20:10:00Z
+current_package_version: 1.5.10
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
 latest_changes:
   - Documented MiniModel known-peer `serve-peer-pieces` / `fetch-peer-pieces` handoffs in the developer portal while keeping broad discovery/relay as later work.
@@ -19,6 +19,7 @@ latest_changes:
   - Updated Hugging Face source-file docs: TinyRustLM rows and local conversion handoffs now carry safe `.safetensors` sibling hints when metadata lists them, while preserving the rule that the browser does not download or proxy Hub model bytes.
   - Updated source-flow quality docs: TinyRustLM simple and advanced Hugging Face rows share action/source-note helpers, and `hf-search-ui` now checks source-hint parity plus primary-action alignment.
   - Updated converted-once publication docs: generated Hugging Face conversion scripts can write `peer-source-announcements.v0.json`, feed-bound `models.with-announcement-feed.v0.json`, and `converted-once-p2p-publish.README.txt` while keeping `.slm` files and peer-piece directories off project servers.
+  - Updated live public smoke docs: `public-local-only` now distinguishes loopback public-host simulations from real `https://TinyRustLM.com/` checks, which use live DNS and prove only app/runtime assets load before user action.
 next_read:
   - /developer-portal/
   - .uai/long-term-memory.uai

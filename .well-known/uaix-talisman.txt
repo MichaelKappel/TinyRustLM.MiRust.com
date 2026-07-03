@@ -2,7 +2,7 @@ UAIX Talisman Public Export
 site: TinyRustLM.MiRust.com
 role: talisman-client
 source: MiRust.com
-updated_utc: 2026-07-03T19:50:00Z
+updated_utc: 2026-07-03T20:10:00Z
 
 Purpose
 TinyRustLM.MiRust.com is the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, .slm artifacts, and the absorbed legacy runtime documentation archive. This file is a public orientation export only.
@@ -15,6 +15,7 @@ Public Anchors
 - Route current developer evidence to https://TinyRustLM.MiRust.com/developer-portal/.
 - Preserve the retired standalone runtime documentation corpus under /docs/runtime-portal/ with checksums.
 - Document Hugging Face local conversion handoffs, converted-once peer-source announcement feeds, feed-bound catalog snapshots, and MiniModel metadata-only P2P reuse without implying hosted model bytes.
+- Document that live TinyRustLM.com smoke checks use real DNS and load only app/runtime assets before user action.
 
 Public Boundaries
 - TinyRustLM.MiRust.com is a documentation site, not a hosted inference service.

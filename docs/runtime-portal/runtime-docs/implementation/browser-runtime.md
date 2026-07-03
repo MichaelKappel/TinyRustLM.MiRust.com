@@ -8,7 +8,7 @@ The browser runtime hosts TinyRustLM as static files and keeps prompts local to 
 
 The app uses static HTML, custom CSS, handwritten JavaScript, local WASM, and local `.slm` files only. It does not use npm, CDN scripts, frontend frameworks, remote inference APIs, telemetry, analytics, or model downloads from external hosts during inference.
 
-Local development hosting uses the no-crate Rust server in `tools/local_server/`. It serves only the checked-in static tree over loopback, supports `GET` and `HEAD`, rejects traversal paths, and keeps Visual Studio F5 on the Rust toolchain path. The no-crate Rust mini browser harness in `tools/browser_harness/` audits the static app contract and can probe loopback routes before headless browser automation. The older Node server remains only as a narrow fallback utility.
+Local development hosting uses the no-crate Rust server in `tools/local_server/`. It serves only the checked-in static tree over loopback, supports `GET` and `HEAD`, rejects traversal paths, and keeps Visual Studio F5 on the Rust toolchain path. The no-crate Rust mini browser harness in `tools/browser_harness/` audits the static app contract and can probe loopback routes before headless browser automation. The older Node server remains only as a narrow fallback utility. The `public-local-only` browser smoke maps `tinyrustlm.com` to loopback for local `http://tinyrustlm.com:PORT/` public-host simulations, but does not remap the real live `https://tinyrustlm.com/` target; that live smoke must prove the deployed page reaches `wasmState=loaded`, leaves the model boundary at `choose a local .slm file`, and makes no `/models/`, Hugging Face, or MiniModel catalog requests before user action.
 
 ## Data Structures
 
