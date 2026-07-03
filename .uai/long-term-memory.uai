@@ -1,5 +1,5 @@
-profile: tinyrustlm.long-term-memory.v13
-updated_utc: 2026-07-03T09:05:00Z
+profile: tinyrustlm.long-term-memory.v14
+updated_utc: 2026-07-03T19:55:00Z
 storage_mode: pointer_ledger_with_durable_docs
 ledger_rule:
   pointer_only_not_context_free: true
@@ -13,22 +13,22 @@ records:
     path: docs/long-term-memory.md
     deep_link: /docs/long-term-memory.md
     label: TinyRustLM Long-Term Memory Body
-    routing_summary: Durable memory for public boundaries, shared source-row actions, MiniModel handoffs, local share kit export, optional Peer Companion boundary, and P2P import.
+    routing_summary: Durable memory for public boundaries, converted-once announcement feeds, feed-bound snapshots, local share kit export, optional Peer Companion boundary, and P2P import.
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:6F9F6D0F466D6B58D210132E3864270796B3A74DB46545DE727EF4C9AFDAA0FC
+    checksum_hash: sha256:F336DFFE6464284E7CDCA289BCBAFB312C58A555BFA9435C7B29EA8D1730E946
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: tinyrustlm_runtime_portal_preservation_manifest
     pointer_type: preservation-manifest
     path: docs/runtime-portal/MANIFEST.md
     deep_link: /docs/runtime-portal/MANIFEST.md
     label: Runtime.MiRust.com Preservation Manifest
-    routing_summary: Checksum-bearing manifest for Runtime.MiRust.com docs, package metadata, shared source-row docs, local catalog reuse docs, reports, and page registry.
+    routing_summary: Checksum-bearing manifest for Runtime.MiRust.com docs, converted-once feed publication docs, local catalog reuse docs, reports, package metadata, and page registry.
     pointer_status: current
     authority: preserved-runtime-mirust-public-corpus
     review_status: reviewed_current
-    checksum_hash: sha256:22A09003950DEBD01B9F1BCA235BFEEB2ED0FCACDCD19D64CED932D0DDF2BF62
+    checksum_hash: sha256:F430F0F506BBE00C08E62D5ADD513B5457ED493B3F37542118DC21DFBAB86C37
     truth_boundary: Runtime.MiRust.com is retired as a separate documentation authority; use the manifest and /developer-portal/ for current developer routing.
   - stable_id: tinyrustlm_docs_report_index
     pointer_type: report-index
