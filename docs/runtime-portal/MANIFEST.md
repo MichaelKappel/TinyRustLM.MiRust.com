@@ -5,7 +5,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 - Source root: `E:\Source\Rust\Runtime.MiRust.com`
 - Preserved destination: `TinyRustLM.MiRust.com/docs/runtime-portal/`
 - Preserved file count: 185
-- Preserved byte count: 1937688
+- Preserved byte count: 1938218
 - Rule: legacy runtime documentation content is preserved here for developer reference while TinyRustLM.MiRust.com is the current developer portal.
 - Current app route: https://TinyRustLM.com/
 - Current developer portal route: https://TinyRustLM.MiRust.com/developer-portal/
@@ -31,7 +31,7 @@ The standalone runtime documentation corpus was consolidated into TinyRustLM.MiR
 | `runtime-docs/implementation/aiwikis-routing.md` | 887 | `eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db` |
 | `runtime-docs/implementation/architecture.md` | 18117 | `6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269` |
 | `runtime-docs/implementation/browser-harness.md` | 1266 | `50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb` |
-| `runtime-docs/implementation/browser-runtime.md` | 24243 | `82fadd420911b1db044a83153f61765a5020c43da54463335d33e5b0b7948f04` |
+| `runtime-docs/implementation/browser-runtime.md` | 24773 | `285777577a3d71f5d5f6a61e1e4fb1285ecd062a84355f9a15210f3a475277d2` |
 | `runtime-docs/implementation/index.md` | 3596 | `023024df5d21cffbfa62ae132c9270c8fd9b512599577041ea39f108e24715e7` |
 | `runtime-docs/implementation/performance.md` | 3603 | `07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33` |
 | `runtime-docs/implementation/quantization.md` | 2032 | `1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700` |
