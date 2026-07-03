@@ -1,5 +1,5 @@
-profile: tinyrustlm.long-term-memory.v12
-updated_utc: 2026-07-02T23:30:00Z
+profile: tinyrustlm.long-term-memory.v13
+updated_utc: 2026-07-03T09:05:00Z
 storage_mode: pointer_ledger_with_durable_docs
 ledger_rule:
   pointer_only_not_context_free: true
@@ -13,11 +13,11 @@ records:
     path: docs/long-term-memory.md
     deep_link: /docs/long-term-memory.md
     label: TinyRustLM Long-Term Memory Body
-    routing_summary: Durable memory for public boundaries, shared source-row actions, MiniModel handoffs, safe `.safetensors` hints, and local `models.v0.json` reuse before P2P import.
+    routing_summary: Durable memory for public boundaries, shared source-row actions, MiniModel handoffs, local share kit export, optional Peer Companion boundary, and P2P import.
     pointer_status: current
     authority: preserved-source-and-site-memory
     review_status: reviewed_current
-    checksum_hash: sha256:C55F2D6FB2824F867EE3B3D0D1C7A6C9954EE07A134554B294DF4E29CB28A27A
+    checksum_hash: sha256:6F9F6D0F466D6B58D210132E3864270796B3A74DB46545DE727EF4C9AFDAA0FC
     truth_boundary: The pointer routes to durable body memory; read the target file for full content and do not treat this one-line summary as the full report.
   - stable_id: tinyrustlm_runtime_portal_preservation_manifest
     pointer_type: preservation-manifest
