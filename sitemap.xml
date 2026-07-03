@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://TinyRustLM.mirust.com/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://TinyRustLM.mirust.com/</loc><lastmod>2026-07-03</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/architecture/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/runtime/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/slm-format/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/quantization/</loc><lastmod>2026-06-29</lastmod></url>
-  <url><loc>https://TinyRustLM.mirust.com/browser-runtime/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://TinyRustLM.mirust.com/browser-runtime/</loc><lastmod>2026-07-03</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/adapters/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/model-breeding/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/testing/</loc><lastmod>2026-06-29</lastmod></url>
@@ -14,14 +14,14 @@
   <url><loc>https://TinyRustLM.mirust.com/glossary/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/contact/</loc><lastmod>2026-06-29</lastmod></url>
-  <url><loc>https://TinyRustLM.mirust.com/docs/long-term-memory.md</loc><lastmod>2026-07-02</lastmod></url>
+  <url><loc>https://TinyRustLM.mirust.com/docs/long-term-memory.md</loc><lastmod>2026-07-03</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/report-index.md</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/runtime-portal/index.md</loc><lastmod>2026-07-02</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/runtime-portal/MANIFEST.md</loc><lastmod>2026-07-02</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/runtime-portal/runtime-docs/implementation/index.md</loc><lastmod>2026-07-02</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/runtime-portal/runtime-pages.json</loc><lastmod>2026-07-02</lastmod></url>
-  <url><loc>https://TinyRustLM.mirust.com/llms.txt</loc><lastmod>2026-07-02</lastmod></url>
-  <url><loc>https://TinyRustLM.mirust.com/llms-full.txt</loc><lastmod>2026-07-02</lastmod></url>
+  <url><loc>https://TinyRustLM.mirust.com/llms.txt</loc><lastmod>2026-07-03</lastmod></url>
+  <url><loc>https://TinyRustLM.mirust.com/llms-full.txt</loc><lastmod>2026-07-03</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/.uai/index.uai</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/.uai/long-term-memory.uai</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://TinyRustLM.mirust.com/docs/reports/tiny-language-models-for-wasm.md</loc><lastmod>2026-06-29</lastmod></url>
