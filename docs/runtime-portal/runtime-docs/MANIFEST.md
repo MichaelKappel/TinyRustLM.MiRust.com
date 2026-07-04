@@ -1,6 +1,6 @@
 # Runtime.MiRust.com Public Docs Manifest
 
-Updated UTC: 2026-07-02T23:30:00Z
+Updated UTC: 2026-07-04T00:00:00Z
 Package version: 1.0.7
 Public base: https://Runtime.MiRust.com
 
@@ -27,21 +27,21 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/aiwikis-routing.md](implementation/aiwikis-routing.md): sha256:EEB62E3E9279187EA3D766DBB92CB468913B50366B58952CC5731A127DD391DB
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
-- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:D4260EF583CE233510A97EE4948A38F50277656419DE10669610EE72D2F1746F
-- [docs/implementation/index.md](implementation/index.md): sha256:023024DF5D21CFFBFA62AE132C9270C8FD9B512599577041EA39F108E24715E7
+- [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:2E4B5BF263768B7ABB42E388FC80D99F6AB29CE8ADDB14C70D6C26FB218C9F44
+- [docs/implementation/index.md](implementation/index.md): sha256:6F0198F3F1FDF2DD641F3B97BC5A15B5FFC314EA1510EE7BB2EEFBB925D2280D
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
 - [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:52373A54F97F15101034CF620C295043BE7124424303B601247D8326546DC88E
 - [docs/implementation/site-audit-response-v1.0.4.md](implementation/site-audit-response-v1.0.4.md): sha256:38E401F82FC1764D0F8297D7ECAB33ACCDC7718A90A20C3DD602FEDC3EFE7FD3
-- [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:4D06F94001165FBA0E996ADFE2DB234CA66B758379F807E716F6B7D542EA7627
-- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:0F7F43147B02E3815828984396EEB5D77FBDA2C36D531FB2850454D4B01DF452
-- [docs/implementation/testing.md](implementation/testing.md): sha256:FEEB5288862F939384B44320EA75AF0DEE06BDF76E1D919B9A543BEEB448C5A4
+- [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:85D727DAF994D68F98FF6C7B370235B23698F1BFE2C436DD58D3521E40F8CF36
+- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:A4E27D35266412BC1CC7F425FFCA0D6BE976F8AEB752249237F4797A5B86E92C
+- [docs/implementation/testing.md](implementation/testing.md): sha256:AA705B1E3FF223FC3AAA0A0E5C7EE19D895B00F79B5915B4CD2C26313B03FA5F
 - [docs/implementation/tinyrustlm-models-readme.md](implementation/tinyrustlm-models-readme.md): sha256:58B136954E3227CB9B15801DF742EE36511F44A505F65B4FA148001F8B26EAA8
-- [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:7ECEBC86F338172467FA72893FC521C29E8BDD58E17A23653E65833C7E59B267
+- [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:81B74E7913BF45245AA707D04162B2F009EEF906DB2BFCF6C6C7705F2B1A9768
 - [docs/implementation/tokenizer.md](implementation/tokenizer.md): sha256:B133955180A0AF4F260C81F6438E1C586A27A4863068AD4B6E82C32DCB14D18F
 - [docs/implementation/visual-studio.md](implementation/visual-studio.md): sha256:4EB9659BEBD8C33799A384DEE81415BCCB13304F2D2E67CFDC1A3D0D9976ABDB
 - [docs/implementation/workspace-readme.md](implementation/workspace-readme.md): sha256:C80FF12021E9E7C7FE622A8E36779221CE4564397B1353F05A2B1818E3BBFBBA
-- [docs/index.md](index.md): sha256:C411114E3425A6F81BF7778135AD2A94F53B90479939C03F2EAF3400D90C93B4
+- [docs/index.md](index.md): sha256:E604E0372F0A816144B0D9B213555A2FC3C9DBFB11F72804BB5748DB0E46677D
 - [docs/long-term-memory.uai](long-term-memory.uai): sha256:9188267D9C6AB5299A1B3356576ACE1C4685E3016F5466652D1739E81EF761C5
 - [docs/reports/adapter-family-receipt-memory-2026-06-27.md](reports/adapter-family-receipt-memory-2026-06-27.md): sha256:5794A57C60F0EF1E8E61079E4D4BC0335E0DCA6A933ED87BE599B424E95BDEBE
 - [docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md](reports/admission-operator-receipt-binding-memory-2026-06-29.md): sha256:821543E27A431A2377DBBD7606702957F721A151282D35165CD6E079ABCD54FD
