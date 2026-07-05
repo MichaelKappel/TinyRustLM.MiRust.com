@@ -1,5 +1,7 @@
 # TinyRustLM Long-Term Memory
 
+Current P2P UI note: TinyRustLM now supports MiniModel peer contact books beside single peer contact cards. The browser validates `minimodel.peer_contact_book.v0` metadata, embedded card SHA-256s, duplicate peer rejection, and no-byte/no-catalog-claim boundaries before using the first reviewed peer as Known peer; `hf-peer-contact-book-ui` and `hf-peer-contact-book-reject-ui` cover the browser path.
+
 > Durable project memory for TinyRustLM plain PHP site package 1.5.4. This file is the body memory target for `.uai/long-term-memory.uai`; the `.uai` file stays pointer-first and routes agents here for full context.
 
 ## Current truth boundary
