@@ -4,6 +4,34 @@ Current P2P UI note: TinyRustLM now supports MiniModel peer contact books beside
 
 Current peer readiness note: TinyRustLM now supports local `minimodel.peer_status_check` report import beside receipt-ledger and companion-inventory metadata. The browser validates `minimodel check-peer-status` output as metadata-only, rejects peer-piece/artifact byte-transfer claims, and shows peer URL, piece count, artifact size, companion route, report SHA-256, and `Rust reverify required`; generated receiver scripts revalidate saved reports with MiniModel `inspect-peer-status-check`, and `peer-status-check-ui` covers the browser path.
 
+Current NuGet SDK note: SLMComposer.com carries the protected TinyRustLM NuGet SDK source for `TinyRustLM.Abstractions`, `TinyRustLM.Core`, and `TinyRustLM.P2P`, exposing only `.slm` validation/inspection, native-backed runtime harness operations, metadata-bound P2P share/import workflows, typed announcement/catalog application and inspection, announcement JSON handoff helpers, and .NET wrappers while keeping conversion, quantization authoring, adapter/selector/breeding/premium/telemetry/licensing/training internals private. The .NET wrapper and native public runtime SDK validate generation options before runtime mutation: non-positive `MaxNewTokens` / `max_new_tokens`, non-finite or negative `Temperature` / `temperature`, `TopK` / `top_k` outside `1..1024`, and non-finite or out-of-range `TopP` / `top_p` fail before generation work begins; direct native callers receive an `invalid_generation_options` JSON envelope before runtime-handle lookup or lossy floating-point casts. The .NET wrapper also rejects embedded NUL characters in paths, prompts, JSON handoff documents, optional catalog JSON, and P2P share-kit request fields before P/Invoke, preventing native C-string truncation, preserves empty managed strings as native empty strings rather than null pointers, validates `PrepareShareKitRequest` before native JSON serialization, rejecting missing model/output paths and piece sizes outside 1 KiB through 16 MiB while Rust keeps deeper URL, identifier, manifest, and artifact validation, and mirrors Rust P2P JSON byte budgets before native calls for manifests, announcements, receipts, and announcement catalogs. As of 2026-07-06, local package-folder feed-current and package-hash verification pass for version `0.1.1`, the release-readiness audit writes `tinyrustlm-nuget-release-readiness.json` with non-secret auth-mode/API-key/Trusted-Publishing evidence, NuGet.org reports zero listed versions, and the current API-key-mode readiness status is `blocked_missing_api_key`; public NuGet.org availability remains incomplete until authenticated publish plus feed-current and feed-hash verification passes.
+
+Current NuGet package-audit note: package-audit reports now record declared package-file entries and package documentation entries, expose `missing_package_file_count`, and fail when declared README/license files are missing from `.nupkg` contents.
+
+Current NuGet package-documentation audit note: package-audit reports now list expected package documentation entries with source/package SHA-256 values and fail when packaged README/license/package docs do not byte-match the current `docs/nuget` source files.
+
+Current NuGet exact package-set audit note: package-audit reports now list expected source-versioned package names plus missing/unexpected package entries and fail if `artifacts/packages` contains anything except `TinyRustLM.Abstractions`, `TinyRustLM.Core`, and `TinyRustLM.P2P` at the source-declared version.
+
+Current NuGet package-identity audit note: package-audit reports now record expected package ID/version for each protected `.nupkg` and fail if nuspec `id` or `version` differs from the protected filename and source-declared package version.
+
+Current NuGet dependency-audit note: package-audit reports now enforce the public dependency graph. Abstractions has no package dependencies, Core depends only on same-version Abstractions, and P2P depends only on same-version Abstractions and Core.
+
+Current NuGet dependency-metadata audit note: package-audit expected dependency entries now include `exclude=Build,Analyzers`, and missing/unexpected dependency checks fail if protected package references drift from that metadata policy.
+
+Current NuGet native-placement audit note: package-audit reports now enforce native asset placement. Native runtime entries are allowed only in TinyRustLM.Core, while TinyRustLM.Abstractions and TinyRustLM.P2P remain managed API/metadata packages.
+
+Current NuGet native-filename audit note: package-audit reports now record `allowed_native_entries` and fail if TinyRustLM.Core carries native files outside the approved RID/native filename set: Windows `tinyrustlm_native.dll`, Linux `libtinyrustlm_native.so`, and macOS `libtinyrustlm_native.dylib`.
+
+Current NuGet package-entry allow-list audit note: package-audit reports now record `package_entry_names`, `allowed_package_entry_patterns`, and `unexpected_package_content_entries`, and fail if protected `.nupkg` contents drift outside NuGet metadata, nuspec, README/license, package docs, `lib/net8.0` DLL/XML outputs, or approved Core native assets.
+
+Current NuGet P2P URL/catalog note: the public SDK validates `PublicBaseUrl` directly before writing announcements. Announcement manifest URLs accept HTTPS or explicit-port loopback HTTP only and reject credentials, whitespace, query strings, fragments, backslashes, dot-segment traversal, and encoded traversal before metadata is trusted. Received catalogs deduplicate honest announcement replays but reject conflicting same-peer/same-manifest metadata before mutation. `InspectAnnouncementCatalog` reports catalog SHA/count/byte evidence and rejects catalog JSON above 4 MiB before parsing.
+
+Current MiniModel manifest verifier note: signed manifests now fail closed unless `signature.kind=external-signature-v0`, comments are absent, `signature.key_id` is present, `signature.public_key_route` is safe, and `signature.payload_sha256` equals the canonical sorted non-signature manifest body digest printed by `minimodel verify-manifest`. This is a payload-integrity rule; cryptographic key-policy and transparency-log trust are still future work.
+
+Current MiniModel catalog/feed budget note: `inspect-catalog-snapshot`, `inspect-peer-source-announcement-feed`, and feed-bound catalog writing report exact metadata byte counts plus SHA-256 values and reject catalog/feed JSON above 4 MiB before parsing; generated TinyRustLM conversion/share kits already run those inspectors before sharing or loading metadata. TinyRustLM mapped public-root smoke `hf-peer-announcement-budget-ui` also proves oversized local peer-source announcement/feed files fail at the browser metadata budget before JSON parse or peer-source application while the proof-ready row remains at `Set Peer URL`, and `hf-catalog-announcement-route-budget-ui` proves oversized catalog-declared feed routes report `Peer-source announcement metadata exceeded browser budget`, stay at `Set Peer URL`, and save no peer import kit.
+
+Current Local Connect note: `tinyrustlm-local-connect serve-approval-endpoint` revalidates its watched approval-policy JSON before each request, applies valid saved-policy replacements without restart, and fails closed with `policy-reload-failed` when the watched policy is missing or invalid. The browser copy now tells users to save the endpoint policy JSON over that watched file when changing approved app/category rules.
+
 > Durable project memory for TinyRustLM plain PHP site package 1.5.4. This file is the body memory target for `.uai/long-term-memory.uai`; the `.uai` file stays pointer-first and routes agents here for full context.
 
 ## Current truth boundary
@@ -39,7 +67,7 @@ TinyRustLM should be described through concrete engineering surfaces:
 ## Public copy boundaries
 
 - Do not claim trained assistant quality unless an evaluation sidecar with passed cases exists.
-- Do not claim GGUF import support as a TinyRustLM feature unless a specific conversion path and smoke evidence are added.
+- Claim GGUF support only as the current local Rust conversion path to `.slm` with specific smoke evidence; do not claim broad direct browser GGUF runtime import.
 - Do not describe the project as WordPress; this package is plain PHP.
 - Do not introduce Bootstrap, jQuery, Tailwind, React, Vue, Composer, npm, CDN dependencies, analytics, telemetry, remote inference APIs, or external model downloads by default.
 - Keep TinyRustLM centered on local agency, deterministic proof, inspectable artifacts, and constrained browser execution.
