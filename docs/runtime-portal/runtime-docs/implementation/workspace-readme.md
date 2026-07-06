@@ -32,6 +32,7 @@ Run these once a Rust toolchain is installed or exposed:
 
 ```powershell
 cargo fmt --all
+cargo clippy --workspace --all-targets -- -D warnings
 cargo test --workspace
 cargo rustdoc -p tinyrustlm-runtime --lib -- -D missing_docs
 cargo rustdoc -p tinyrustlm-slm-pack --bin tinyrustlm-slm-pack -- -D missing_docs
