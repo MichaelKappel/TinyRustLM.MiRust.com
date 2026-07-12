@@ -4,21 +4,31 @@
     <div class="shell footer-grid">
         <section>
             <h2>TinyRustLM</h2>
-            <p>Plain PHP project site for a zero-dependency Rust/WASM browser-local SLM runtime.</p>
+            <p>Developer documentation for a browser-local Rust/WASM small language model runtime.</p>
+            <a class="footer-app" href="<?= e($site['public_app']) ?>" target="_blank" rel="noopener noreferrer">Open the TinyRustLM app <span aria-hidden="true">&rarr;</span></a>
         </section>
+        <nav aria-label="Footer engineering navigation">
+            <h2>Engineering</h2>
+            <a href="/architecture/">Architecture</a>
+            <a href="/runtime/">Runtime</a>
+            <a href="/slm-format/">.slm format</a>
+            <a href="/testing/">Testing</a>
+        </nav>
+        <nav aria-label="Footer evidence navigation">
+            <h2>Evidence</h2>
+            <a href="/developer-portal/">Developer portal</a>
+            <a href="/docs/">Docs and memory</a>
+            <a href="/llms.txt">llms.txt</a>
+            <a href="/sitemap.xml">sitemap.xml</a>
+        </nav>
         <section>
-            <h2>Machine-readable</h2>
-            <p><a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a> · <a href="/docs/">docs</a> · <a href="/docs/long-term-memory.md">long-term memory</a> · <a href="/sitemap.xml">sitemap.xml</a> · <a href="/robots.txt">robots.txt</a></p>
-        </section>
-        <section>
-            <h2><a href="/contact/">Contact Mike Kappel</a></h2>
-            <p><a href="mailto:<?= e($site['contact']['email']) ?>"><?= e($site['contact']['email']) ?></a><br><a href="tel:<?= e($site['contact']['phone_tel']) ?>"><?= e($site['contact']['phone_display']) ?></a><br><a href="<?= e($site['contact']['contact_hub']) ?>" target="_blank" rel="noopener noreferrer">MJK.tel contact hub</a></p>
-        </section>
-        <section>
-            <h2>Version</h2>
-            <p>Site package <?= e($site['version']) ?><br>Updated <?= e($site['updated_utc']) ?></p>
+            <h2>Project</h2>
+            <p><a href="/contact/">Contact Mike Kappel</a></p>
+            <p class="version">Site package <?= e($site['version']) ?><br>Updated <?= e($site['updated_utc']) ?></p>
         </section>
     </div>
 </footer>
+<button class="back-to-top" type="button" aria-label="Back to top" title="Back to top"><span aria-hidden="true">&uarr;</span></button>
+<p class="copy-status visually-hidden" aria-live="polite"></p>
 </body>
 </html>

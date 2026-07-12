@@ -2,8 +2,8 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.5.0',
-    'updated_utc' => '2026-07-02T00:12:07Z',
+    'version' => '1.6.0',
+    'updated_utc' => '2026-07-12T22:00:00Z',
     'description' => 'Developer portal for TinyRustLM: a zero-dependency Rust and WebAssembly browser-local small language model runtime built around custom .slm artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, local-only diagnostics, and an absorbed legacy runtime documentation archive.',
     'public_app' => 'https://TinyRustLM.com/',
     'contact' => [
@@ -58,8 +58,8 @@ return [
         ],
         [
             'type' => 'group',
-            'label' => 'Memory Math',
-            'description' => 'Quantization, adapter packages, and budgets.',
+            'label' => 'Models',
+            'description' => 'Quantization, adapters, and model composition.',
             'items' => [
                 ['label' => 'Quantization', 'path' => '/quantization/', 'description' => 'f32, q8_0, q4_0, and the 33.5 MB envelope.'],
                 ['label' => 'Adapters', 'path' => '/adapters/', 'description' => 'ADP1, ASP1, ALR1 sidecars and validation.'],
