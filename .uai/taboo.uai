@@ -8,3 +8,8 @@ taboo:
   - Do not host or route model weights without checksum-bound evidence and explicit local-use boundaries.
   - Do not mutate totem.uai, taboo.uai, or talisman.uai without exact human artifact-and-operation authorization.
 agent_mutability: read_only_without_exact_human_artifact_and_operation_authorization
+
+pre_publication_no_debt_policy_id: pre-publication-clean-slate-v1
+pre_publication_no_debt_prohibition: "Until the human explicitly removes this prohibition, do not add or retain technical debt, legacy or backward-compatibility support, compatibility shims, deprecated aliases, dual contracts, migration branches, fallback paths for superseded code, low-quality patches, knowingly temporary architecture, or deferred cleanup."
+pre_publication_obsolete_contract_prohibition: "Do not preserve obsolete routes, schemas, behavior, or code merely because a dogfood client used them. Update every dogfood client to the verified current design and remove the obsolete path."
+pre_publication_release_integrity_prohibition: "Do not deploy from a dirty, partially validated, or ambiguous release closure. A reachable dogfood or development surface is not evidence of a public release. Do not call work complete while known in-scope correctness, security, accessibility, test, documentation, or cleanup defects remain."
