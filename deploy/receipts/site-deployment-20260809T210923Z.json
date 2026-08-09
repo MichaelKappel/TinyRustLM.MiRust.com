@@ -1,0 +1,78 @@
+{
+    "schema":  "tinyrustlm.mirust.site_deployment_receipt.v1",
+    "site":  "TinyRustLM.MiRust.com",
+    "origin":  "https://tinyrustlm.mirust.com",
+    "version":  "1.7.0",
+    "source_commit":  "5c492e3a8fd96d1c676944755d73755c7b56eddb",
+    "source_tree":  "cf0ea1442b0fb0dd251276ea602ee7275f35173c",
+    "publisher_commit":  "9d29f28a6964cc7138e60ccbd4ded1c3a6928472",
+    "manifest_sha256":  "6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500",
+    "started_utc":  "2026-08-09T21:09:24.1914409Z",
+    "completed_utc":  "2026-08-09T21:09:56.4609808Z",
+    "status":  "failed",
+    "failure_code":  "System.Net.WebException/ProtocolError/ftp-451",
+    "current_path":  "data/pages.php",
+    "completed_file_count":  10,
+    "files":  [
+                  {
+                      "path":  ".htaccess",
+                      "status":  "already-current",
+                      "bytes":  403,
+                      "sha256":  "b57ff32b496771703ced66b2b167319ee178dd79a4f4002540423db4b36e5df7"
+                  },
+                  {
+                      "path":  ".uai/.htaccess",
+                      "status":  "already-current",
+                      "bytes":  256,
+                      "sha256":  "4268ee353e8ae2a97969cb8e03f17d6ad5d0b74b5c93c61a31f547038780c54f"
+                  },
+                  {
+                      "path":  ".uai/index.uai",
+                      "status":  "already-current",
+                      "bytes":  1422,
+                      "sha256":  "d8e904645139490a5cb9bd1f308a0a0a1f95583d4d4355a61979a9767b38aa5c"
+                  },
+                  {
+                      "path":  ".uai/long-term-memory.uai",
+                      "status":  "already-current",
+                      "bytes":  11339,
+                      "sha256":  "6fb7ce7c0d849c7a347c30a76f0122ac7abaa0700b6feb65eb71ecff242cc818"
+                  },
+                  {
+                      "path":  ".uai/taboo.uai",
+                      "status":  "already-current",
+                      "bytes":  1562,
+                      "sha256":  "cd60ff6f860c832a91291c436bec0469a55a65f688a87f3d2d292be37ceaa0dd"
+                  },
+                  {
+                      "path":  ".uai/talisman.uai",
+                      "status":  "already-current",
+                      "bytes":  732,
+                      "sha256":  "834d81a29d4bd2e6f339a23f375fb905d8605810b646c3e275c94d1bf704a7d1"
+                  },
+                  {
+                      "path":  ".uai/totem.uai",
+                      "status":  "already-current",
+                      "bytes":  3737,
+                      "sha256":  "0c1e00ea87cdc544d47e1d8ec2d97e1cd558d9159fa29dc1113d9d0a157dd9ab"
+                  },
+                  {
+                      "path":  ".well-known/uaix-talisman.txt",
+                      "status":  "already-current",
+                      "bytes":  1796,
+                      "sha256":  "0ec9a0a3d905a5a37f11368cc5973376b1d4a3caf2edb89c41832c779162b4df"
+                  },
+                  {
+                      "path":  "assets/css/site.css",
+                      "status":  "already-current",
+                      "bytes":  21543,
+                      "sha256":  "35bddf4c03d28e62e812424686b27cc208c173db5c7fd3fac97da965e9bfd730"
+                  },
+                  {
+                      "path":  "assets/js/site.js",
+                      "status":  "already-current",
+                      "bytes":  6971,
+                      "sha256":  "b01e2871e1cacc430ff065b5edea964a37810a342b84b3326aa20fa4466f1024"
+                  }
+              ]
+}

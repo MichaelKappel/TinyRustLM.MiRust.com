@@ -243,11 +243,46 @@ function Send-RemoteFile {
     param([string]$LocalPath, [string]$RemotePath)
 
     $request = New-FtpRequest -RemotePath $RemotePath -Method ([Net.WebRequestMethods+Ftp]::UploadFile)
+    $expectedBytes = (Get-Item -LiteralPath $LocalPath).Length
+    $request.ContentLength = $expectedBytes
     $input = [IO.File]::OpenRead($LocalPath)
-    $output = $request.GetRequestStream()
-    try { $input.CopyTo($output, 1048576) } finally { $input.Dispose(); $output.Dispose() }
-    $response = $request.GetResponse()
-    $response.Dispose()
+    $output = $null
+    $transferError = $null
+    try {
+        try {
+            $output = $request.GetRequestStream()
+            $input.CopyTo($output, 1048576)
+            $output.Flush()
+        }
+        catch {
+            $transferError = $_.Exception
+        }
+        finally {
+            if ($output) {
+                try { $output.Dispose() } catch { if (-not $transferError) { $transferError = $_.Exception } }
+            }
+        }
+
+        if (-not $transferError) {
+            try {
+                $response = $request.GetResponse()
+                $response.Dispose()
+            }
+            catch {
+                $transferError = $_.Exception
+            }
+        }
+    }
+    finally {
+        $input.Dispose()
+    }
+
+    if ($transferError) {
+        Start-Sleep -Milliseconds 750
+        if ((Get-RemoteSize -RemotePath $RemotePath) -ne $expectedBytes) {
+            throw $transferError
+        }
+    }
 }
 
 function Get-SafeFailureCode {
