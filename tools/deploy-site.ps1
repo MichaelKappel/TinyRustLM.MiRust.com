@@ -250,6 +250,21 @@ function Send-RemoteFile {
     $response.Dispose()
 }
 
+function Get-SafeFailureCode {
+    param([Exception]$Exception)
+
+    $current = $Exception
+    while ($current.InnerException) { $current = $current.InnerException }
+    $code = $current.GetType().FullName
+    if ($current -is [Net.WebException]) {
+        $code += "/" + [string]$current.Status
+        if ($current.Response -is [Net.FtpWebResponse]) {
+            $code += "/ftp-" + [int]$current.Response.StatusCode
+        }
+    }
+    return $code
+}
+
 function Publish-File {
     param([pscustomobject]$File, [string]$Nonce)
 
@@ -267,15 +282,24 @@ function Publish-File {
     $lastSlash = $relative.LastIndexOf("/")
     $parent = if ($lastSlash -ge 0) { $relative.Substring(0, $lastSlash + 1) } else { "" }
     $leaf = if ($lastSlash -ge 0) { $relative.Substring($lastSlash + 1) } else { $relative }
-    $stageLeaf = "$leaf.deploy-$Nonce"
-    $backupLeaf = "$leaf.backup-$Nonce"
+    $extension = [IO.Path]::GetExtension($leaf)
+    $stem = $leaf.Substring(0, $leaf.Length - $extension.Length)
+    $stageLeaf = "$stem.deploy-$Nonce$extension"
+    $backupLeaf = "$stem.backup-$Nonce$extension"
     $stagePath = "$parent$stageLeaf"
     $backupPath = "$parent$backupLeaf"
     Remove-RemoteFileIfPresent -RemotePath $stagePath
     Remove-RemoteFileIfPresent -RemotePath $backupPath
-    Send-RemoteFile -LocalPath $localPath -RemotePath $stagePath
-    if (-not (Test-RemoteIdentity -RemotePath $stagePath -Bytes ([int64]$File.bytes) -Sha256 ([string]$File.sha256))) {
-        throw "Staged remote identity mismatch for $relative"
+    try {
+        Send-RemoteFile -LocalPath $localPath -RemotePath $stagePath
+        if (-not (Test-RemoteIdentity -RemotePath $stagePath -Bytes ([int64]$File.bytes) -Sha256 ([string]$File.sha256))) {
+            throw "Staged remote identity mismatch for $relative"
+        }
+    }
+    catch {
+        $uploadError = $_.Exception
+        try { Remove-RemoteFileIfPresent -RemotePath $stagePath } catch { }
+        throw $uploadError
     }
 
     $hadTarget = (Get-RemoteSize -RemotePath $relative) -ge 0
@@ -300,7 +324,7 @@ function Publish-File {
 }
 
 function Write-Receipt {
-    param([hashtable]$Receipt, [string]$Path)
+    param([System.Collections.IDictionary]$Receipt, [string]$Path)
 
     $resolved = [IO.Path]::GetFullPath($Path)
     if (Test-Path -LiteralPath $resolved) { throw "Deployment receipts are append-only." }
@@ -358,6 +382,7 @@ if (-not $Publish) { exit 0 }
 $startedUtc = (Get-Date).ToUniversalTime().ToString("o")
 $nonce = [Guid]::NewGuid().ToString("N").Substring(0, 12)
 $results = @()
+$currentPath = $null
 $profile = Get-CredentialProfile -Path $FileZillaProfilePath -ProfileName ([string]$manifest.transport_profile)
 try {
     $script:ftpHost = $profile.Host
@@ -366,6 +391,7 @@ try {
     $profile.Password = $null
 
     foreach ($file in @($manifest.files)) {
+        $currentPath = [string]$file.path
         $status = Publish-File -File $file -Nonce $nonce
         $results += [ordered]@{ path = [string]$file.path; status = $status; bytes = [int64]$file.bytes; sha256 = [string]$file.sha256 }
     }
@@ -426,6 +452,28 @@ try {
     }
     Write-Receipt -Receipt $receipt -Path $ReportPath
     Write-Host "RECEIPT $ReportPath"
+}
+catch {
+    $failure = [ordered]@{
+        schema = "tinyrustlm.mirust.site_deployment_receipt.v1"
+        site = [string]$manifest.site
+        origin = [string]$manifest.origin
+        version = [string]$manifest.version
+        source_commit = [string]$manifest.source_commit
+        source_tree = [string]$manifest.source_tree
+        publisher_commit = [string](git -C $repositoryRoot rev-parse HEAD)
+        manifest_sha256 = $manifestSha256
+        started_utc = $startedUtc
+        completed_utc = (Get-Date).ToUniversalTime().ToString("o")
+        status = "failed"
+        failure_code = Get-SafeFailureCode -Exception $_.Exception
+        current_path = $currentPath
+        completed_file_count = $results.Count
+        files = $results
+    }
+    Write-Receipt -Receipt $failure -Path $ReportPath
+    Write-Host "FAILURE_RECEIPT $ReportPath"
+    throw
 }
 finally {
     if ($profile) { $profile.Password = $null }

@@ -1,0 +1,24 @@
+{
+  "schema": "tinyrustlm.mirust.site_deployment_failure.v1",
+  "site": "TinyRustLM.MiRust.com",
+  "origin": "https://tinyrustlm.mirust.com",
+  "version": "1.7.0",
+  "source_commit": "5c492e3a8fd96d1c676944755d73755c7b56eddb",
+  "source_tree": "cf0ea1442b0fb0dd251276ea602ee7275f35173c",
+  "publisher_commit": "45a1c65648855b8ec1095d7d4df08e9f9a52381a",
+  "manifest_sha256": "6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500",
+  "recorded_utc": "2026-08-09T21:07:58.6543512Z",
+  "elapsed_seconds": 72.8,
+  "status": "failed",
+  "failure_code": "System.Net.WebException/ProtocolError/ftp-451",
+  "current_path": "data/pages.php",
+  "completed_file_count": 10,
+  "production_mutation_occurred": true,
+  "published_paths": [
+    ".uai/.htaccess",
+    ".uai/taboo.uai",
+    ".uai/totem.uai"
+  ],
+  "completion_claim": false,
+  "note": "The host rejected the temporary PHP upload because the stage filename did not retain the .php extension. No PHP target was replaced."
+}
