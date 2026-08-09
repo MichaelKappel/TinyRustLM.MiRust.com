@@ -239,49 +239,69 @@ function Rename-RemoteFile {
     $response.Dispose()
 }
 
+function Write-RemoteChunk {
+    param([string]$RemotePath, [byte[]]$Bytes, [bool]$Append)
+
+    $method = if ($Append) { [Net.WebRequestMethods+Ftp]::AppendFile } else { [Net.WebRequestMethods+Ftp]::UploadFile }
+    $request = New-FtpRequest -RemotePath $RemotePath -Method $method
+    $request.ContentLength = $Bytes.Length
+    $output = $null
+    try {
+        $output = $request.GetRequestStream()
+        $output.Write($Bytes, 0, $Bytes.Length)
+        $output.Flush()
+        try { $output.Dispose() } catch { }
+        $output = $null
+        try {
+            $response = $request.GetResponse()
+            $response.Dispose()
+        }
+        catch {
+            # This host can return 451 after committing a chunk. The caller
+            # treats the authenticated remote size as the authority.
+        }
+    }
+    catch {
+        # The caller confirms whether the intended offset committed.
+    }
+    finally {
+        if ($output) { try { $output.Dispose() } catch { } }
+    }
+}
+
 function Send-RemoteFile {
     param([string]$LocalPath, [string]$RemotePath)
 
-    $request = New-FtpRequest -RemotePath $RemotePath -Method ([Net.WebRequestMethods+Ftp]::UploadFile)
     $expectedBytes = (Get-Item -LiteralPath $LocalPath).Length
-    $request.ContentLength = $expectedBytes
     $input = [IO.File]::OpenRead($LocalPath)
-    $output = $null
-    $transferError = $null
+    $offset = [int64]0
     try {
-        try {
-            $output = $request.GetRequestStream()
-            $input.CopyTo($output, 1048576)
-            $output.Flush()
-        }
-        catch {
-            $transferError = $_.Exception
-        }
-        finally {
-            if ($output) {
-                try { $output.Dispose() } catch { if (-not $transferError) { $transferError = $_.Exception } }
+        while ($offset -lt $expectedBytes) {
+            $count = [int][Math]::Min([int64]8192, $expectedBytes - $offset)
+            $chunk = New-Object byte[] $count
+            $read = $input.Read($chunk, 0, $count)
+            if ($read -ne $count) { throw "Unexpected end of staged deployment file." }
+            $intendedSize = $offset + $count
+            $committed = $false
+            for ($attempt = 1; $attempt -le 6; $attempt++) {
+                Write-RemoteChunk -RemotePath $RemotePath -Bytes $chunk -Append ($offset -gt 0)
+                Start-Sleep -Milliseconds 250
+                $actualSize = Get-RemoteSize -RemotePath $RemotePath
+                if ($actualSize -eq $intendedSize) {
+                    $committed = $true
+                    break
+                }
+                if ($actualSize -ne $offset) {
+                    throw "Remote staging offset drifted from the intended chunk boundary."
+                }
+                Start-Sleep -Milliseconds (250 * $attempt)
             }
-        }
-
-        if (-not $transferError) {
-            try {
-                $response = $request.GetResponse()
-                $response.Dispose()
-            }
-            catch {
-                $transferError = $_.Exception
-            }
+            if (-not $committed) { throw "Remote staging made no progress after bounded retries." }
+            $offset = $intendedSize
         }
     }
     finally {
         $input.Dispose()
-    }
-
-    if ($transferError) {
-        Start-Sleep -Milliseconds 750
-        if ((Get-RemoteSize -RemotePath $RemotePath) -ne $expectedBytes) {
-            throw $transferError
-        }
     }
 }
 
