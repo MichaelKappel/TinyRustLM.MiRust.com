@@ -278,7 +278,7 @@ return [
             [
                 'heading' => '1.7.0 - 2026-08-09',
                 'body' => 'Restored the complete source-controlled documentation closure to the production release path, including the historical Runtime.MiRust.com archive destination. Added a permanent updates route and visible release metadata so documentation publications are reviewable instead of silent.',
-                'points' => ['Last published: 2026-08-09', 'Runtime archive source route included', 'Version and release date visible in the footer', 'Updates route added to navigation, sitemap, and agent index', 'No trained-model, 20-model campaign, live-memory, or public P2P completion claim'],
+                'points' => ['Last published: 2026-08-09', 'Runtime archive source route included', 'Public .uai index and policy files restored through an explicit allowlist', 'Version and release date visible in the footer', 'Updates route added to navigation, sitemap, and agent index', 'No trained-model, 20-model campaign, live-memory, or public P2P completion claim'],
             ],
             [
                 'heading' => '1.6.0 - 2026-07-12',
