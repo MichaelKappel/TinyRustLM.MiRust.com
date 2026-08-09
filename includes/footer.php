@@ -18,13 +18,14 @@
             <h2>Evidence</h2>
             <a href="/developer-portal/">Developer portal</a>
             <a href="/docs/">Docs and memory</a>
+            <a href="/updates/">Updates</a>
             <a href="/llms.txt">llms.txt</a>
             <a href="/sitemap.xml">sitemap.xml</a>
         </nav>
         <section>
             <h2>Project</h2>
             <p><a href="/contact/">Contact Mike Kappel</a></p>
-            <p class="version">Site package <?= e($site['version']) ?><br>Updated <?= e($site['updated_utc']) ?></p>
+            <p class="version">Site package <?= e($site['version']) ?><br>Released <?= e($site['release_date']) ?><br>Last published <?= e($site['last_publish_date']) ?></p>
         </section>
     </div>
 </footer>

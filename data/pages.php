@@ -264,9 +264,32 @@ return [
         'cards' => [
             ['title' => 'Long-term memory', 'text' => 'Durable current truth boundary, implementation memory, report routes, and next recursive direction.', 'href' => '/docs/long-term-memory.md', 'link_label' => 'Open memory'],
             ['title' => 'Report index', 'text' => 'Manifest of preserved reports with source filenames, roles, byte counts, and checksums.', 'href' => '/docs/report-index.md', 'link_label' => 'Open index'],
-            ['title' => 'Legacy runtime archive', 'text' => 'Checksum-bearing preservation index and manifest for the former standalone runtime developer corpus.', 'href' => '/docs/runtime-portal/index.md', 'link_label' => 'Open archive'],
+            ['title' => 'Historical runtime archive', 'text' => 'Checksum-bearing preservation index and manifest for the former standalone runtime developer corpus.', 'href' => '/docs/runtime-portal/index.md', 'link_label' => 'Open archive'],
             ['title' => '.uai pointer ledger', 'text' => 'Compact long-term pointer records that deep-link to durable docs and reports.', 'href' => '/.uai/long-term-memory.uai', 'link_label' => 'Open ledger'],
             ['title' => 'File handoff', 'text' => 'Rules for future active Content and Improvement bucket intake.', 'href' => '/.uai/file-handoff.uai', 'link_label' => 'Open handoff'],
+        ],
+    ],
+
+    '/updates/' => [
+        'title' => 'TinyRustLM Documentation Updates',
+        'summary' => 'Versioned release notes for TinyRustLM.MiRust.com, including publication dates, evidence boundaries, and documentation availability changes.',
+        'badge' => 'Release History',
+        'sections' => [
+            [
+                'heading' => '1.7.0 - 2026-08-09',
+                'body' => 'Restored the complete source-controlled documentation closure to the production release path, including the historical Runtime.MiRust.com archive destination. Added a permanent updates route and visible release metadata so documentation publications are reviewable instead of silent.',
+                'points' => ['Last published: 2026-08-09', 'Runtime archive source route included', 'Version and release date visible in the footer', 'Updates route added to navigation, sitemap, and agent index', 'No trained-model, 20-model campaign, live-memory, or public P2P completion claim'],
+            ],
+            [
+                'heading' => '1.6.0 - 2026-07-12',
+                'body' => 'Consolidated the TinyRustLM developer portal and preserved the former standalone runtime documentation corpus under a stable historical archive route.',
+                'points' => ['Plain PHP documentation portal', 'Rust/WASM and .slm reference pages', 'Machine-readable llms.txt and Markdown negotiation', 'Historical runtime archive retained as documentation only'],
+            ],
+            [
+                'heading' => 'Publication policy',
+                'body' => 'A release is listed only when its source is committed, its PHP and route gates pass, and the deployed public routes are read back over HTTPS. Source-control progress and production publication are separate states.',
+                'points' => ['Committed source is not automatically published', 'HTTP success alone does not prove byte identity', 'Failed or unavailable evidence remains a blocker', 'Future releases append entries instead of rewriting history'],
+            ],
         ],
     ],
 

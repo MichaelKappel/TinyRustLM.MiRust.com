@@ -1,6 +1,6 @@
 # TinyRustLM Full Agent Text
 
-> Condensed full machine-readable bundle for TinyRustLM plain PHP package 1.5.0. TinyRustLM.MiRust.com is the developer portal, with the legacy runtime documentation corpus preserved under `/docs/runtime-portal/`. Deep report bodies remain in the linked durable docs rather than duplicated here.
+> Condensed full machine-readable bundle for TinyRustLM plain PHP package 1.7.0, released and last published on 2026-08-09. TinyRustLM.MiRust.com is the developer portal, with the historical runtime documentation corpus preserved under `/docs/runtime-portal/`. Versioned release notes are published at `/updates/`. Deep report bodies remain in the linked durable docs rather than duplicated here.
 
 # TinyRustLM
 
