@@ -1,5 +1,5 @@
 profile: tinyrustlm-site.workspace.v47
-updated_utc: 2026-08-09T22:06:41Z
+updated_utc: 2026-08-09T22:46:47Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -126,6 +126,7 @@ credit_window_handoff_2026_08_09:
     branch: master
     upstream: origin/master
     head_before_handoff_commit: 08cc78e2730fa5811abe2933c7a95d37ef6aa353
+    latest_receipt_commit: 8baaa49b7a77c14d9ff295000a35068232815ba3
   frozen_release:
     version: 1.7.0
     source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
@@ -135,21 +136,20 @@ credit_window_handoff_2026_08_09:
     manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
     local_gate: PHP 8.5.9 lint, route checks, and exact staging validation passed before publication began.
   publication:
-    status: operator_paused_resumable
+    status: failed_resumable
     operation_nonce: efa18f6e4a5a
-    completed_files: 22
+    completed_files: 82
     total_files: 224
-    current_path: docs/reports/memory-systems-domains-research.md
-    authenticated_stage_path: docs/reports/memory-systems-domains-research.deploy-efa18f6e4a5a.md
-    authenticated_stage_bytes: 32768
-    expected_bytes: 39530
-    target_replacement_in_progress: false
-    pause_receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
+    current_path: docs/runtime-portal/runtime-docs/reports/browser-auto-assembly-budget-memory-2026-06-27.md
+    failure_code: System.Net.InternalException
+    latest_failure_receipt: deploy/receipts/site-deployment-20260809T222026Z.json
+    latest_failure_receipt_sha256: 54ba115c173f93da5bf1c30a61a2ef08397b9ccae0382e785d43c887c9845d2a
+    prior_pause_receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
     resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
-    truth_boundary: Some individual files reached their targets, including the 4915911-byte GGUF review bundle, but the 1.7.0 site release is incomplete and must not be described as published.
+    truth_boundary: Eighty-two files are receipt-bound as current or newly published, but the 1.7.0 site release is incomplete and must not be described as published. The next resume must reauthenticate every current target and any staged prefix before continuing.
   next_actions:
     - Confirm this repository is clean and exactly synchronized with origin/master.
-    - Resume only with the recorded nonce; the publisher must authenticate the staged prefix before appending.
+    - Resume only with the recorded nonce; the publisher must authenticate current targets and any staged prefix before writing.
     - Run the complete authoritative transport and HTTPS readback gate after all 224 files finish.
     - Commit and push the append-only successful receipt only if every release check passes.
     - Re-run the Runtime.MiRust.com redirect verifier after the developer-portal routes are current.
