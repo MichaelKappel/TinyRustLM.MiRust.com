@@ -1,0 +1,19 @@
+{
+  "schema": "tinyrustlm.mirust.site_deployment_receipt.v1",
+  "site": "TinyRustLM.MiRust.com",
+  "origin": "https://tinyrustlm.mirust.com",
+  "version": "1.7.0",
+  "source_commit": "5c492e3a8fd96d1c676944755d73755c7b56eddb",
+  "source_tree": "cf0ea1442b0fb0dd251276ea602ee7275f35173c",
+  "publisher_commit": "d9baa0af8cd5e4267ec1d4853fbd4f2471dd2656",
+  "manifest_sha256": "6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500",
+  "started_utc": "2026-08-09T21:12:27Z",
+  "completed_utc": "2026-08-09T21:42:27Z",
+  "status": "interrupted",
+  "failure_code": "external-tool-timeout",
+  "current_path": "docs/reports/gguf-mirust-all-source-review-bundle.txt",
+  "completed_file_count": 19,
+  "target_replacement_in_progress": false,
+  "resume_required": true,
+  "notes": "The external command runner terminated the publisher at its 1800-second ceiling while the current file was still in remote staging. Previously completed files retained exact authenticated identities; the target for current_path was not renamed."
+}
