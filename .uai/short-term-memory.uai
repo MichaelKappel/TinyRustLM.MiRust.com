@@ -1,5 +1,5 @@
 profile: tinyrustlm.short-term-memory.v12
-updated_utc: 2026-08-09T22:46:47Z
+updated_utc: 2026-08-09T23:11:57Z
 current_package_version: 1.5.10
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
 latest_changes:
@@ -28,9 +28,9 @@ next_read:
   - docs/long-term-memory.md
 
 credit_window_handoff_2026_08_09:
-  current_truth: TinyRustLM.MiRust.com 1.7.0 is fully staged and locally validated but not fully published. The latest resumable attempt failed with bounded code System.Net.InternalException after receipt-binding 82 of 224 files.
+  current_truth: TinyRustLM.MiRust.com 1.7.0 is fully staged and locally validated but not fully published. The second resumable attempt failed with bounded code System.Net.WebException/ConnectFailure/ftp-0 after receipt-binding 145 of 224 files.
   source_identity: 5c492e3a8fd96d1c676944755d73755c7b56eddb tree cf0ea1442b0fb0dd251276ea602ee7275f35173c manifest 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
-  resume_identity: nonce efa18f6e4a5a; next path docs/runtime-portal/runtime-docs/reports/browser-auto-assembly-budget-memory-2026-06-27.md; resume logic must authenticate all existing targets and any stage before writing.
-  receipt: deploy/receipts/site-deployment-20260809T222026Z.json; SHA256 54ba115c173f93da5bf1c30a61a2ef08397b9ccae0382e785d43c887c9845d2a; pushed in commit 8baaa49b7a77c14d9ff295000a35068232815ba3.
+  resume_identity: nonce efa18f6e4a5a; next path docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-transfer-memory-2026-06-28.md; resume logic must authenticate all existing targets and any stage before writing.
+  receipt: deploy/receipts/site-deployment-20260809T224843Z.json; SHA256 265abc40fd3883fda5bdd0119eb3a54fab8de684196b911a4a482272133cfdf9; pushed in commit 1cee769a64f7bc5de528489975cf0aeb56f44a5e.
   resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
   prohibition: Do not regenerate the closure, invent a success receipt, restart without prefix authentication, or call partial target updates a completed 1.7.0 publication.
