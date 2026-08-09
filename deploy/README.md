@@ -29,6 +29,18 @@ bounded manifest, and ancestry from the declared content commit.
 & .\tools\deploy-site.ps1 -Publish
 ```
 
+If an external process terminates the publisher while a file is still staged,
+resume only with the exact 12-character nonce observed in that authenticated
+staging filename:
+
+```powershell
+& .\tools\deploy-site.ps1 -Publish -ResumeNonce <12-lowercase-hex>
+```
+
+The publisher hashes the complete remote prefix and the same-length canonical
+local prefix before seeking. A corrupt, empty, or oversized stage is deleted
+and rebuilt; an exact prefix is appended from its authenticated byte offset.
+
 Publishing loads only the exact external FileZilla profile named by the
 manifest. Each file is uploaded to a unique staging name, verified over FTPS,
 renamed into place with rollback protection, and verified again. Critical

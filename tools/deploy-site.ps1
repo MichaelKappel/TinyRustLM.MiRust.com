@@ -2,6 +2,7 @@ param(
     [string]$ManifestPath = (Join-Path (Split-Path -Parent $PSScriptRoot) "deploy\site-deployment-manifest.v1.json"),
     [string]$FileZillaProfilePath = (Join-Path $env:APPDATA "FileZilla\sitemanager.xml"),
     [string]$ReportPath = (Join-Path (Split-Path -Parent $PSScriptRoot) ("deploy\receipts\site-deployment-{0}.json" -f (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmssZ"))),
+    [string]$ResumeNonce,
     [switch]$Publish
 )
 
@@ -174,6 +175,33 @@ function Get-RemoteSha256 {
     }
 }
 
+function Get-LocalPrefixSha256 {
+    param([Parameter(Mandatory)][string]$Path, [Parameter(Mandatory)][int64]$Bytes)
+
+    $item = Get-Item -LiteralPath $Path
+    if ($Bytes -lt 0 -or $Bytes -gt $item.Length) { throw "Invalid local prefix length." }
+    $stream = [IO.File]::OpenRead($Path)
+    $sha = [Security.Cryptography.SHA256]::Create()
+    $buffer = New-Object byte[] 65536
+    $remaining = $Bytes
+    try {
+        while ($remaining -gt 0) {
+            $requested = [int][Math]::Min([int64]$buffer.Length, $remaining)
+            $read = $stream.Read($buffer, 0, $requested)
+            if ($read -ne $requested) { throw "Unexpected end of staged deployment file." }
+            $sha.TransformBlock($buffer, 0, $read, $buffer, 0) | Out-Null
+            $remaining -= $read
+        }
+        $empty = New-Object byte[] 0
+        $sha.TransformFinalBlock($empty, 0, 0) | Out-Null
+        return ([BitConverter]::ToString($sha.Hash)).Replace("-", "").ToLowerInvariant()
+    }
+    finally {
+        $sha.Dispose()
+        $stream.Dispose()
+    }
+}
+
 function Test-RemoteIdentity {
     param([string]$RemotePath, [int64]$Bytes, [string]$Sha256)
 
@@ -276,6 +304,24 @@ function Send-RemoteFile {
     $input = [IO.File]::OpenRead($LocalPath)
     $offset = [int64]0
     try {
+        $remoteBytes = Get-RemoteSize -RemotePath $RemotePath
+        if ($remoteBytes -gt $expectedBytes -or $remoteBytes -eq 0) {
+            Remove-RemoteFileIfPresent -RemotePath $RemotePath
+            $remoteBytes = -1
+        }
+        if ($remoteBytes -gt 0) {
+            $remoteSha256 = Get-RemoteSha256 -RemotePath $RemotePath
+            $localPrefixSha256 = Get-LocalPrefixSha256 -Path $LocalPath -Bytes $remoteBytes
+            if ($remoteSha256 -cne $localPrefixSha256) {
+                Remove-RemoteFileIfPresent -RemotePath $RemotePath
+                $remoteBytes = -1
+            }
+            else {
+                $offset = $remoteBytes
+                $input.Seek($offset, [IO.SeekOrigin]::Begin) | Out-Null
+                Write-Host "RESUME $RemotePath at $offset bytes"
+            }
+        }
         while ($offset -lt $expectedBytes) {
             $count = [int][Math]::Min([int64]8192, $expectedBytes - $offset)
             $chunk = New-Object byte[] $count
@@ -343,7 +389,6 @@ function Publish-File {
     $backupLeaf = "$stem.backup-$Nonce$extension"
     $stagePath = "$parent$stageLeaf"
     $backupPath = "$parent$backupLeaf"
-    Remove-RemoteFileIfPresent -RemotePath $stagePath
     Remove-RemoteFileIfPresent -RemotePath $backupPath
     try {
         Send-RemoteFile -LocalPath $localPath -RemotePath $stagePath
@@ -352,9 +397,7 @@ function Publish-File {
         }
     }
     catch {
-        $uploadError = $_.Exception
-        try { Remove-RemoteFileIfPresent -RemotePath $stagePath } catch { }
-        throw $uploadError
+        throw
     }
 
     $hadTarget = (Get-RemoteSize -RemotePath $relative) -ge 0
@@ -435,7 +478,13 @@ Write-Host ("VALID {0} files, {1} bytes, manifest {2}" -f @($manifest.files).Cou
 if (-not $Publish) { exit 0 }
 
 $startedUtc = (Get-Date).ToUniversalTime().ToString("o")
-$nonce = [Guid]::NewGuid().ToString("N").Substring(0, 12)
+$nonce = if ([string]::IsNullOrEmpty($ResumeNonce)) {
+    [Guid]::NewGuid().ToString("N").Substring(0, 12)
+}
+else {
+    if ($ResumeNonce -notmatch "^[0-9a-f]{12}$") { throw "Resume nonce must be exactly 12 lowercase hexadecimal characters." }
+    $ResumeNonce
+}
 $results = @()
 $currentPath = $null
 $profile = Get-CredentialProfile -Path $FileZillaProfilePath -ProfileName ([string]$manifest.transport_profile)
@@ -496,6 +545,7 @@ try {
         source_tree = [string]$manifest.source_tree
         publisher_commit = [string](git -C $repositoryRoot rev-parse HEAD)
         manifest_sha256 = $manifestSha256
+        operation_nonce = $nonce
         started_utc = $startedUtc
         completed_utc = (Get-Date).ToUniversalTime().ToString("o")
         status = "published-and-readback-verified"
@@ -518,6 +568,7 @@ catch {
         source_tree = [string]$manifest.source_tree
         publisher_commit = [string](git -C $repositoryRoot rev-parse HEAD)
         manifest_sha256 = $manifestSha256
+        operation_nonce = $nonce
         started_utc = $startedUtc
         completed_utc = (Get-Date).ToUniversalTime().ToString("o")
         status = "failed"
