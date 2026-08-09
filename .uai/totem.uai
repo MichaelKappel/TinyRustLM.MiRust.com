@@ -1,5 +1,5 @@
-profile: tinyrustlm-site.totem.v2
-updated_utc: 2026-07-02T00:12:07Z
+profile: tinyrustlm-site.totem.v3
+updated_utc: 2026-08-09T05:14:02Z
 site: TinyRustLM.MiRust.com
 role: positive_anchor
 mission: Preserve TinyRustLM.MiRust.com as the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, `.slm` artifacts, and retired Runtime.MiRust.com implementation evidence.
@@ -15,3 +15,11 @@ agent_mutability: read_only_without_exact_human_artifact_and_operation_authoriza
 pre_publication_clean_slate_policy_id: pre-publication-clean-slate-v1
 pre_publication_clean_slate_authority: "Treat this site and every consuming system as pre-publication dogfood, even when a development URL is publicly reachable. Until the human explicitly removes this authority, choose the best current architecture; full rewrites and clean contract replacements are authorized when they improve correctness, security, maintainability, performance, accessibility, or product quality."
 pre_publication_replacement_completion_authority: "Verify replacements end to end, migrate every dogfood caller to one current contract, remove superseded implementation in the same completed change, and finish tests, documentation, security review, and cleanup before deployment. Preserve immutable receipts and historical failure evidence as audit truth, never as a promise to support obsolete product behavior."
+documentation_integrity_policy_id: site-family-documentation-integrity-v1
+documentation_site_role: documentation-first-tinyrustlm-developer-architecture-and-evidence-portal
+documentation_integrity_authority: "This documentation-first site is a primary product surface, not secondary collateral. Keep architecture, model and composition formats, Rust/WASM APIs, browser and companion behavior, security, privacy, accessibility, deployment, operations, troubleshooting, limitations, evidence boundaries, and release material complete, technically rigorous, navigable, searchable, and current."
+documentation_same_change_rule: "Update affected guides, references, schemas, examples, diagrams, errors, compatibility statements, cross-site links, version metadata, update history, and machine-readable release records in the same completed change as TinyRustLM behavior or contracts."
+documentation_verification_rule: "Before publication, verify runnable examples, links, navigation, search discoverability, code samples, API and schema references, accessibility, responsive rendering, public HTTPS readback, and agreement with TinyRustLM.com, MiniModel.org, and current source contracts."
+documentation_truth_rule: "Distinguish proposed, implemented, locally tested, externally verified, deployed, rejected, blocked, and unavailable behavior. Never promote model quality, performance, privacy, memory continuity, P2P reachability, or release completion beyond its exact evidence."
+documentation_release_gate: "Do not publish an affected product or documentation site when this portal is incomplete, stale, contradictory, version-skewed, unverified, or inconsistent with implementation and release evidence."
+documentation_clean_replacement_rule: "Remove superseded documentation after its replacement and all consuming references are verified. Preserve immutable historical evidence and release history separately; obsolete guidance receives no legacy-support authority."
