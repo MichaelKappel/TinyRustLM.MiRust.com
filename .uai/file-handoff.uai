@@ -1,5 +1,5 @@
-profile: tinyrustlm.file-handoff.v1
-updated_utc: 2026-08-09T23:11:57Z
+profile: tinyrustlm.file-handoff.v2
+updated_utc: 2026-08-09T23:42:44Z
 handoff_root: agent-file-handoff/
 active_buckets:
   content: agent-file-handoff/Content/
@@ -32,9 +32,9 @@ credit_window_handoff_2026_08_09:
   frozen_source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
   frozen_manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
   operation_nonce: efa18f6e4a5a
-  progress: 145 of 224 files receipt-bound as current or published
-  current_path: docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-transfer-memory-2026-06-28.md
-  failure_code: System.Net.WebException/ConnectFailure/ftp-0
-  latest_receipt: deploy/receipts/site-deployment-20260809T224843Z.json
-  latest_receipt_sha256: 265abc40fd3883fda5bdd0119eb3a54fab8de684196b911a4a482272133cfdf9
-  restart: From clean upstream-exact commit `1cee769a64f7bc5de528489975cf0aeb56f44a5e` or its documented memory descendant, run `& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a`; require authenticated current targets/stages, complete transport, and public HTTPS verification before writing success evidence.
+  progress: 202 of 224 files receipt-bound as current or published
+  current_path: docs/runtime-portal/runtime-docs/source-memory/log.md
+  failure_code: System.Net.WebException/ProtocolError/ftp-500
+  latest_receipt: deploy/receipts/site-deployment-20260809T231659Z.json
+  latest_receipt_sha256: 264fd154879fd40c76c8f31425ba81bc1fc79270c1745155ac71c08c40bda211
+  restart: From clean upstream-exact commit `c51dda360596d67eb1bbee7ffba5bf6b83aec477` or its documented memory descendant, run `& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a`; require authenticated current targets/stages, complete transport, and public HTTPS verification before writing success evidence.
