@@ -1,5 +1,5 @@
 profile: tinyrustlm-site.workspace.v47
-updated_utc: 2026-07-07T20:42:00Z
+updated_utc: 2026-08-09T22:06:41Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -117,3 +117,39 @@ current_state:
   - TinyRustLM.com root-package public-host share-metadata receiver smoke runs `share-metadata-import-ui` against mapped `http://tinyrustlm.com:<port>/` and proves the packaged root rejects chunk-list drift and wrong local `.slm` artifacts, keeps valid local share metadata at `Use Metadata`, loads/generates from the matching local `.slm`, and makes only app/runtime network requests.
   - TinyRustLM.com root-package public-host P2P smoke runs `hf-p2p-import-kit-exec` against mapped `http://tinyrustlm.com:<port>/` and proves the packaged root completes browser conversion-kit generation, metadata-only catalog/feed publication, consenting path-prefixed MiniModel peer serving at `http://127.0.0.1:8123/peer-pieces/`, P2P handoff, manifest metadata download, `check-peer-status`, `inspect-peer-status-check`, companion-aware preflight, verified peer-piece import, receipt SHA-256 matching, generated receipt-ledger write/inspection, local browser import of the peer-assembled `.slm`, and Rust/WASM generation without project-hosted model bytes; `hf-p2p-import-receipt-reject` proves tampered receipt artifact SHA-256, companion metadata, receiver-validation gate, receiver-validation contract status, and timestamp sidecars are rejected before local model selection.
   - Direct public .uai and agent-file-handoff access is denied.
+
+credit_window_handoff_2026_08_09:
+  authority: Current private restart account. It overrides incompatible present-tense status in older dated memory without rewriting historical evidence.
+  reason: The user ended the available work window. Publication was deliberately stopped at a recoverable boundary; no success was claimed.
+  repository:
+    clean_release_clone: E:\Source\Worktrees\rust-site-release-20260809\TinyRustLM.MiRust.com
+    branch: master
+    upstream: origin/master
+    head_before_handoff_commit: 08cc78e2730fa5811abe2933c7a95d37ef6aa353
+  frozen_release:
+    version: 1.7.0
+    source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
+    source_tree: cf0ea1442b0fb0dd251276ea602ee7275f35173c
+    file_count: 224
+    total_bytes: 7711238
+    manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
+    local_gate: PHP 8.5.9 lint, route checks, and exact staging validation passed before publication began.
+  publication:
+    status: operator_paused_resumable
+    operation_nonce: efa18f6e4a5a
+    completed_files: 22
+    total_files: 224
+    current_path: docs/reports/memory-systems-domains-research.md
+    authenticated_stage_path: docs/reports/memory-systems-domains-research.deploy-efa18f6e4a5a.md
+    authenticated_stage_bytes: 32768
+    expected_bytes: 39530
+    target_replacement_in_progress: false
+    pause_receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
+    resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
+    truth_boundary: Some individual files reached their targets, including the 4915911-byte GGUF review bundle, but the 1.7.0 site release is incomplete and must not be described as published.
+  next_actions:
+    - Confirm this repository is clean and exactly synchronized with origin/master.
+    - Resume only with the recorded nonce; the publisher must authenticate the staged prefix before appending.
+    - Run the complete authoritative transport and HTTPS readback gate after all 224 files finish.
+    - Commit and push the append-only successful receipt only if every release check passes.
+    - Re-run the Runtime.MiRust.com redirect verifier after the developer-portal routes are current.

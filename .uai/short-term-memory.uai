@@ -1,5 +1,5 @@
 profile: tinyrustlm.short-term-memory.v12
-updated_utc: 2026-07-03T20:10:00Z
+updated_utc: 2026-08-09T22:06:41Z
 current_package_version: 1.5.10
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
 latest_changes:
@@ -26,3 +26,11 @@ next_read:
   - docs/runtime-portal/MANIFEST.md
   - docs/report-index.md
   - docs/long-term-memory.md
+
+credit_window_handoff_2026_08_09:
+  current_truth: TinyRustLM.MiRust.com 1.7.0 is fully staged and locally validated but is not fully published. The operator intentionally stopped the exact publisher after 22 of 224 files when the user ended the work window.
+  source_identity: 5c492e3a8fd96d1c676944755d73755c7b56eddb tree cf0ea1442b0fb0dd251276ea602ee7275f35173c manifest 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
+  resume_identity: nonce efa18f6e4a5a; current authenticated prefix 32768 of 39530 bytes for docs/reports/memory-systems-domains-research.md; no target replacement is in progress.
+  receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
+  resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
+  prohibition: Do not regenerate the closure, invent a success receipt, restart without prefix authentication, or call partial target updates a completed 1.7.0 publication.

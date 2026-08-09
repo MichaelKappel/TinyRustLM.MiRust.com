@@ -1,5 +1,5 @@
 profile: tinyrustlm.file-handoff.v1
-updated_utc: 2026-06-29T22:59:10Z
+updated_utc: 2026-08-09T22:06:41Z
 handoff_root: agent-file-handoff/
 active_buckets:
   content: agent-file-handoff/Content/
@@ -25,3 +25,14 @@ current_scan:
   improvement_non_placeholder_files: 0
   result: no_active_intake_after_package_generation
 note: Future report drops belong in active buckets first. Once reviewed, preserve accepted durable bodies under docs and deep-link them from .uai/long-term-memory.uai.
+
+credit_window_handoff_2026_08_09:
+  status: publication_paused_and_resumable
+  release: TinyRustLM.MiRust.com 1.7.0
+  frozen_source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
+  frozen_manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
+  operation_nonce: efa18f6e4a5a
+  progress: 22 of 224 files completed
+  current_stage: 32768 of 39530 authenticated bytes for docs/reports/memory-systems-domains-research.md
+  pause_receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
+  restart: Run `& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a` from the clean release clone, then require complete transport and public HTTPS verification before writing success evidence.
