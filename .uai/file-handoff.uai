@@ -1,5 +1,5 @@
-profile: tinyrustlm.file-handoff.v2
-updated_utc: 2026-08-09T23:42:44Z
+profile: tinyrustlm.file-handoff.v3
+updated_utc: 2026-08-10T00:00:19Z
 handoff_root: agent-file-handoff/
 active_buckets:
   content: agent-file-handoff/Content/
@@ -27,14 +27,14 @@ current_scan:
 note: Future report drops belong in active buckets first. Once reviewed, preserve accepted durable bodies under docs and deep-link them from .uai/long-term-memory.uai.
 
 credit_window_handoff_2026_08_09:
-  status: publication_failed_and_resumable
+  status: publication_complete_and_readback_verified
   release: TinyRustLM.MiRust.com 1.7.0
   frozen_source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
   frozen_manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
   operation_nonce: efa18f6e4a5a
-  progress: 202 of 224 files receipt-bound as current or published
-  current_path: docs/runtime-portal/runtime-docs/source-memory/log.md
-  failure_code: System.Net.WebException/ProtocolError/ftp-500
-  latest_receipt: deploy/receipts/site-deployment-20260809T231659Z.json
-  latest_receipt_sha256: 264fd154879fd40c76c8f31425ba81bc1fc79270c1745155ac71c08c40bda211
-  restart: From clean upstream-exact commit `c51dda360596d67eb1bbee7ffba5bf6b83aec477` or its documented memory descendant, run `& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a`; require authenticated current targets/stages, complete transport, and public HTTPS verification before writing success evidence.
+  progress: 224 of 224 files authenticated or published; 15 published and 209 already current
+  completed_utc: 2026-08-09T23:59:28.1969079Z
+  latest_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
+  latest_receipt_sha256: 746666fc3b631b8f361c6d57e2debdc167cab0e315556ddc4e50f5cde1c20646
+  receipt_commit: 499f2775582c5cd14ec04a93c0176baace388384
+  restart: Publication is terminally successful for this frozen closure. Revalidate the immutable receipt and public origin before relying on mutable live state; do not replay the operation as ordinary resume work.

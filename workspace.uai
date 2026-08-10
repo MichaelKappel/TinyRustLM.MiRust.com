@@ -1,5 +1,5 @@
-profile: tinyrustlm-site.workspace.v48
-updated_utc: 2026-08-09T23:42:44Z
+profile: tinyrustlm-site.workspace.v49
+updated_utc: 2026-08-10T00:00:19Z
 site: TinyRustLM.MiRust.com
 workspace_root: E:\Source\Rust\TinyRustLM.MiRust.com
 coordinator: E:\Source\Rust\workspace.uai
@@ -136,20 +136,19 @@ credit_window_handoff_2026_08_09:
     manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
     local_gate: PHP 8.5.9 lint, route checks, and exact staging validation passed before publication began.
   publication:
-    status: failed_resumable
+    status: published_and_readback_verified
     operation_nonce: efa18f6e4a5a
-    completed_files: 202
+    completed_files: 224
     total_files: 224
-    current_path: docs/runtime-portal/runtime-docs/source-memory/log.md
-    failure_code: System.Net.WebException/ProtocolError/ftp-500
-    latest_failure_receipt: deploy/receipts/site-deployment-20260809T231659Z.json
-    latest_failure_receipt_sha256: 264fd154879fd40c76c8f31425ba81bc1fc79270c1745155ac71c08c40bda211
+    published_files: 15
+    already_current_files: 209
+    completed_utc: 2026-08-09T23:59:28.1969079Z
+    success_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
+    success_receipt_sha256: 746666fc3b631b8f361c6d57e2debdc167cab0e315556ddc4e50f5cde1c20646
+    prior_failure_receipt: deploy/receipts/site-deployment-20260809T231659Z.json
     prior_pause_receipt: deploy/receipts/site-deployment-20260809T214628Z-paused.json
-    resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
-    truth_boundary: Two hundred two files are receipt-bound as current or newly published, but the 1.7.0 site release is incomplete and must not be described as published. The next resume must reauthenticate every current target and any staged prefix before continuing.
+    truth_boundary: Version 1.7.0 is published and readback-verified for the exact 224-file frozen closure. This receipt proves only this bounded site release; it does not advance any model, browser, memory, P2P, or catalog campaign counter.
   next_actions:
     - Confirm this repository is clean and exactly synchronized with origin/master.
-    - Resume only with the recorded nonce; the publisher must authenticate current targets and any staged prefix before writing.
-    - Run the complete authoritative transport and HTTPS readback gate after all 224 files finish.
-    - Commit and push the append-only successful receipt only if every release check passes.
     - Re-run the Runtime.MiRust.com redirect verifier after the developer-portal routes are current.
+    - Continue with the independently frozen MiniModel.MiRust.com and MiniModel.org releases only after their own complete gates pass.

@@ -1,5 +1,5 @@
-profile: tinyrustlm.short-term-memory.v13
-updated_utc: 2026-08-09T23:42:44Z
+profile: tinyrustlm.short-term-memory.v14
+updated_utc: 2026-08-10T00:00:19Z
 current_package_version: 1.5.10
 current_goal: TinyRustLM.MiRust.com is the TinyRustLM developer portal; TinyRustLM.com is the root browser-local app; Runtime.MiRust.com content is preserved under docs/runtime-portal/ and no longer acts as a separate documentation authority.
 latest_changes:
@@ -28,9 +28,8 @@ next_read:
   - docs/long-term-memory.md
 
 credit_window_handoff_2026_08_09:
-  current_truth: TinyRustLM.MiRust.com 1.7.0 is fully staged and locally validated but not fully published. The third resumable attempt failed with bounded code System.Net.WebException/ProtocolError/ftp-500 after receipt-binding 202 of 224 files.
+  current_truth: TinyRustLM.MiRust.com 1.7.0 is published and readback-verified for its exact 224-file frozen closure. The terminal operation published 15 files, authenticated 209 already-current files, and completed at 2026-08-09T23:59:28.1969079Z.
   source_identity: 5c492e3a8fd96d1c676944755d73755c7b56eddb tree cf0ea1442b0fb0dd251276ea602ee7275f35173c manifest 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
-  resume_identity: nonce efa18f6e4a5a; next path docs/runtime-portal/runtime-docs/source-memory/log.md; resume logic must authenticate all existing targets and any stage before writing.
-  receipt: deploy/receipts/site-deployment-20260809T231659Z.json; SHA256 264fd154879fd40c76c8f31425ba81bc1fc79270c1745155ac71c08c40bda211; pushed in commit c51dda360596d67eb1bbee7ffba5bf6b83aec477.
-  resume_command: '& .\tools\deploy-site.ps1 -Publish -ResumeNonce efa18f6e4a5a'
-  prohibition: Do not regenerate the closure, invent a success receipt, restart without prefix authentication, or call partial target updates a completed 1.7.0 publication.
+  operation_identity: nonce efa18f6e4a5a; terminal status published-and-readback-verified.
+  receipt: deploy/receipts/site-deployment-20260809T234347Z.json; SHA256 746666fc3b631b8f361c6d57e2debdc167cab0e315556ddc4e50f5cde1c20646; pushed in commit 499f2775582c5cd14ec04a93c0176baace388384.
+  prohibition: Do not generalize this site receipt into model-quality, browser-round, live-memory, outside-proof, or catalog-announcement evidence.
