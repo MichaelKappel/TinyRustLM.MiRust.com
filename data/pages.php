@@ -299,17 +299,17 @@ return [
         'badge' => 'Contact',
         'actions' => [
             ['label' => 'Email Mike', 'href' => 'mailto:mike@ns12.com'],
-            ['label' => 'Call Mike', 'href' => 'tel:+16303627576'],
+            ['label' => 'Call Mike', 'href' => 'tel:+17082302304'],
             ['label' => 'Open MJK.tel', 'href' => 'https://mjk.tel/'],
         ],
         'sections' => [
             [
                 'heading' => 'Primary contact route',
                 'body' => 'Use this page for TinyRustLM project questions, browser-local AI runtime review, Rust/WASM architecture discussion, plain PHP site feedback, and collaboration routing. The public contact details mirror Mike Kappel\'s published portfolio and contact hub information.',
-                'points' => ['Email: mike@ns12.com', 'Phone: (630) 362-7576', 'Signal: Mike.7576', 'Location: Cicero, IL'],
+                'points' => ['Email: mike@ns12.com', 'Phone: (708) 230-2304', 'Signal: Mike.7576', 'Location: Cicero, IL'],
                 'links' => [
                     ['label' => 'Email Mike', 'href' => 'mailto:mike@ns12.com'],
-                    ['label' => 'Call Mike', 'href' => 'tel:+16303627576'],
+                    ['label' => 'Call Mike', 'href' => 'tel:+17082302304'],
                 ],
             ],
             [
@@ -335,7 +335,7 @@ return [
         ],
         'cards' => [
             ['title' => 'Email', 'text' => 'Fastest written contact route for TinyRustLM project discussion and architecture review.', 'href' => 'mailto:mike@ns12.com', 'link_label' => 'mike@ns12.com'],
-            ['title' => 'Phone', 'text' => 'Primary public phone contact from the portfolio and contact hub.', 'href' => 'tel:+16303627576', 'link_label' => '(630) 362-7576'],
+            ['title' => 'Phone', 'text' => 'Primary public phone contact from the portfolio and contact hub.', 'href' => 'tel:+17082302304', 'link_label' => '(708) 230-2304'],
             ['title' => 'Contact hub', 'text' => 'Compact public hub for phone, Signal, personal domains, and social profiles.', 'href' => 'https://mjk.tel/', 'link_label' => 'Open MJK.tel'],
             ['title' => 'Code profile', 'text' => 'Public GitHub profile for source and project context.', 'href' => 'https://github.com/MichaelKappel', 'link_label' => 'Open GitHub'],
         ],
