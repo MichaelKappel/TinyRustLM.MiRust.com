@@ -2,10 +2,10 @@
   "schema": "tinyrustlm.mirust.site_deployment_manifest.v1",
   "site": "TinyRustLM.MiRust.com",
   "origin": "https://tinyrustlm.mirust.com",
-  "version": "1.7.0",
-  "release_date": "2026-08-09",
-  "source_commit": "5c492e3a8fd96d1c676944755d73755c7b56eddb",
-  "source_tree": "cf0ea1442b0fb0dd251276ea602ee7275f35173c",
+  "version": "1.8.0",
+  "release_date": "2026-08-28",
+  "source_commit": "d404afc22eb1ac23c99cfff6f6750fd26048c91c",
+  "source_tree": "8d71ceeadc8827e810ffe2291ffa2179aab08d67",
   "transport_profile": "TinyRustLM.MiRust.com",
   "files": [
     {
@@ -22,38 +22,38 @@
     },
     {
       "path": ".uai/index.uai",
-      "bytes": 1422,
-      "sha256": "d8e904645139490a5cb9bd1f308a0a0a1f95583d4d4355a61979a9767b38aa5c",
+      "bytes": 1408,
+      "sha256": "c3aab2e59498a26a67d5958214af6446904915ad3d55a062c50dfb325efa54b0",
       "https_readback_path": "/.uai/index.uai"
     },
     {
       "path": ".uai/long-term-memory.uai",
-      "bytes": 11339,
-      "sha256": "6fb7ce7c0d849c7a347c30a76f0122ac7abaa0700b6feb65eb71ecff242cc818",
+      "bytes": 2159,
+      "sha256": "2816e3c69fb5163a5d79fe699e47012c63abfbca6290cebb17df93c8ef82893d",
       "https_readback_path": "/.uai/long-term-memory.uai"
     },
     {
       "path": ".uai/taboo.uai",
-      "bytes": 1562,
-      "sha256": "cd60ff6f860c832a91291c436bec0469a55a65f688a87f3d2d292be37ceaa0dd",
+      "bytes": 2083,
+      "sha256": "8886d1e14a4fe3fc8a6b0ec17845c64d26755ae4fea9c8a0f00fdab495ab2e07",
       "https_readback_path": "/.uai/taboo.uai"
     },
     {
       "path": ".uai/talisman.uai",
-      "bytes": 732,
-      "sha256": "834d81a29d4bd2e6f339a23f375fb905d8605810b646c3e275c94d1bf704a7d1",
+      "bytes": 734,
+      "sha256": "78c3436b437cd40b106789c985b8cc033502ca38a710e944d34d17ba219ec96e",
       "https_readback_path": "/.uai/talisman.uai"
     },
     {
       "path": ".uai/totem.uai",
-      "bytes": 3737,
-      "sha256": "0c1e00ea87cdc544d47e1d8ec2d97e1cd558d9159fa29dc1113d9d0a157dd9ab",
+      "bytes": 2870,
+      "sha256": "85e283635278191cca992d3cb044223c261d1d393335c95c202ec119602d96ba",
       "https_readback_path": "/.uai/totem.uai"
     },
     {
       "path": ".well-known/uaix-talisman.txt",
-      "bytes": 1796,
-      "sha256": "0ec9a0a3d905a5a37f11368cc5973376b1d4a3caf2edb89c41832c779162b4df",
+      "bytes": 2250,
+      "sha256": "9267c2f879cf686b98c48a4b28a2fb1a5884dbfd831ee9bb68a1b48fd5166499",
       "https_readback_path": "/.well-known/uaix-talisman.txt"
     },
     {
@@ -70,14 +70,14 @@
     },
     {
       "path": "data/pages.php",
-      "bytes": 67840,
-      "sha256": "5ab101be1a70cfaf08705498272e39415e21d9044c8345fddb29e5b6483e79e7",
+      "bytes": 20098,
+      "sha256": "1524c33ec8885d841b9cfd29820f018e3c4c6cec890692886c9273caf4c4b957",
       "https_readback_path": null
     },
     {
       "path": "data/site.php",
-      "bytes": 5478,
-      "sha256": "982c8a10506ddb1b2a7527745b813acea5846f96f448f38d2cd0e115a292436e",
+      "bytes": 5565,
+      "sha256": "737a7e870f3a988f64e6a3d30d2ae2e7f2d66d40366218d9382443dc2e911169",
       "https_readback_path": null
     },
     {
@@ -88,26 +88,26 @@
     },
     {
       "path": "docs/long-term-memory.md",
-      "bytes": 26388,
-      "sha256": "6946e9d211d2ba534caa69cb7556fdd21d117ec7b4e38f9412ee35c711569317",
+      "bytes": 3272,
+      "sha256": "e25f736c027e11e0d8871e8939897963bc022bd80dc3a2480103288a7cfa4c47",
       "https_readback_path": "/docs/long-term-memory.md"
     },
     {
       "path": "docs/package-manifest.md",
-      "bytes": 8064,
-      "sha256": "1c653b9a3b1e41948d89493c45d9de644787366959a119e79a1f25a2e6f14e6c",
+      "bytes": 35473,
+      "sha256": "c12e5c2282305ea0762af5faed14ff8606cbb36463b1a7fbe1becb588ad18006",
       "https_readback_path": "/docs/package-manifest.md"
     },
     {
       "path": "docs/report-index.md",
-      "bytes": 4825,
-      "sha256": "907dd4d4714a914d515fad7b391e8d020e7c244cdeabfd3a6fd7333c7d43a487",
+      "bytes": 4923,
+      "sha256": "1c001c27d54e0939b9ac954ea661fd8dfe548329402199a2e891ad5a3c81ccb1",
       "https_readback_path": "/docs/report-index.md"
     },
     {
       "path": "docs/reports-index.php",
-      "bytes": 6615,
-      "sha256": "ff1babcf85ef7c4f1a61805ec19a17b8fc4f9a4aa076deef63ac14553687880a",
+      "bytes": 6610,
+      "sha256": "bbcd5a3422affb27e32584d48505441c44c2e37134f701ce8159b64c51fd984f",
       "https_readback_path": null
     },
     {
@@ -178,14 +178,14 @@
     },
     {
       "path": "docs/runtime-portal/index.md",
-      "bytes": 1504,
-      "sha256": "108486f3a3a19a281a0359e78ef3356f1109fb5f7c98c2a3c900a00b3934ce90",
+      "bytes": 1677,
+      "sha256": "806208c7ad28e44e9d626f2adc571aa87e513f855d883de46e2291786f4f70f3",
       "https_readback_path": "/docs/runtime-portal/index.md"
     },
     {
       "path": "docs/runtime-portal/MANIFEST.md",
-      "bytes": 5167,
-      "sha256": "36468e5bfca38f76b5e45ea4eb8c45fd81b2b415efb94e55eec8f9daea872ab0",
+      "bytes": 27737,
+      "sha256": "e18498996ecd7ad7ee2ee48a7c90bc20ee2045c6ef941058422c77ed1da72e00",
       "https_readback_path": "/docs/runtime-portal/MANIFEST.md"
     },
     {
@@ -203,7 +203,7 @@
     {
       "path": "docs/runtime-portal/package/llms-full.txt",
       "bytes": 71233,
-      "sha256": "240300e68f6af16e24e394bba32103ca17fc2b1defdd5ec51c726765d071ecc9",
+      "sha256": "edc2460989ae0f3f3ffd99366bc3b7007e6f48dab0a8ab22f9e6108b50a6fb63",
       "https_readback_path": null
     },
     {
@@ -1289,7 +1289,7 @@
     {
       "path": "docs/runtime-portal/runtime-pages.json",
       "bytes": 132936,
-      "sha256": "929ad01ae9eb9b393739b34350e0748367e83c8122a32ff8202c0a0a6f585852",
+      "sha256": "846da7b3f2024fcba4cf1d2457f64974c1d23f9ac0e87a90af1b27cef8c58d89",
       "https_readback_path": null
     },
     {
@@ -1301,7 +1301,7 @@
     {
       "path": "includes/footer.php",
       "bytes": 1644,
-      "sha256": "5e83132999930b42511705dd1ec39da57c25aeb0a15cf0bef01c9582e8ce7073",
+      "sha256": "5dce94a866a7a2cc9b2ad681d07f8e49746f96cd9d22b0b5d7a00ac9ecd8bcfb",
       "https_readback_path": null
     },
     {
@@ -1312,14 +1312,14 @@
     },
     {
       "path": "includes/header.php",
-      "bytes": 6864,
-      "sha256": "8b547a134f63da7af31ce7bcb9ae7eefa84fcb563812a3692f9e2ffb0422bf91",
+      "bytes": 6851,
+      "sha256": "b8ccb633539e1983c484b638d472aae2b8e07eb56a08fd750223f8fe52ae9218",
       "https_readback_path": null
     },
     {
       "path": "index.php",
-      "bytes": 6693,
-      "sha256": "fd38ec7166e3d17113e1d186054ed6f6bb461cbc3140a51ba7b6aa6af41968ca",
+      "bytes": 6694,
+      "sha256": "8bb887bc5665ae7d661519141f789eafa39b5b47143b399e940cf4c54eec9a90",
       "https_readback_path": null
     },
     {
@@ -1330,14 +1330,14 @@
     },
     {
       "path": "llms-full.txt",
-      "bytes": 56081,
-      "sha256": "ce66947928c3c259ec7bd98a4795dfd1324ad3d573f6b21fdec698b9908bba4f",
+      "bytes": 5040,
+      "sha256": "a72c858240d3c74fab32de844efb36a018f8ffc76c7e5a5398a76f3a982e1c64",
       "https_readback_path": "/llms-full.txt"
     },
     {
       "path": "llms.txt",
-      "bytes": 40602,
-      "sha256": "7a8c582a92cb7835b02e62d626d5a98bce55792680aabdd19fd635391707e6db",
+      "bytes": 2009,
+      "sha256": "65165b6c996af48ff5e9d926711c40c3c70f529072acff7a3d51652d68ff3e04",
       "https_readback_path": "/llms.txt"
     },
     {
@@ -1349,18 +1349,18 @@
     {
       "path": "sitemap.xml",
       "bytes": 4081,
-      "sha256": "da78f63a755abad493876ec72071d9d14b8095dcb0271c15ec5cef194ad4e13a",
+      "sha256": "bc0be5c330d2d39cdb065b8536254edb15c93bd962af8d82f8df105acf0f25b1",
       "https_readback_path": "/sitemap.xml"
     }
   ],
   "route_smokes": [
     {
       "path": "/",
-      "contains": "Site package 1.7.0"
+      "contains": "Site package 1.8.0"
     },
     {
       "path": "/updates/",
-      "contains": "1.7.0 - 2026-08-09"
+      "contains": "Last published: 1.8.0"
     },
     {
       "path": "/developer-portal/",
