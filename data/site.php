@@ -2,11 +2,11 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.7.0',
-    'release_date' => '2026-08-09',
-    'last_publish_date' => '2026-08-09',
-    'updated_utc' => '2026-08-09T20:56:36Z',
-    'description' => 'Developer portal for TinyRustLM: a zero-dependency Rust and WebAssembly browser-local small language model runtime built around custom .slm artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, local-only diagnostics, and a preserved historical runtime documentation archive.',
+    'version' => '1.8.0',
+    'release_date' => '2026-08-28',
+    'last_publish_date' => '2026-08-28',
+    'updated_utc' => '2026-08-28T20:20:00Z',
+    'description' => 'Developer portal for the one prelaunch TinyRustLM browser-local Rust and WebAssembly product, its sole six-member SLM2 path, direct-P2P or explicit local-conversion acquisition, evidence boundaries, and two-use MemoryEndpoints.com contract.',
     'public_app' => 'https://TinyRustLM.com/',
     'contact' => [
         'name' => 'Mike Kappel',
@@ -28,7 +28,7 @@ return [
         '/' => 'Overview',
         '/architecture/' => 'Architecture',
         '/runtime/' => 'Runtime',
-        '/slm-format/' => '.slm Format',
+        '/slm-format/' => 'SLM2 Format',
         '/quantization/' => 'Quantization',
         '/browser-runtime/' => 'Browser Runtime',
         '/adapters/' => 'Adapters',
@@ -55,18 +55,18 @@ return [
             'items' => [
                 ['label' => 'Architecture', 'path' => '/architecture/', 'description' => 'System map, boundaries, and claim discipline.'],
                 ['label' => 'Runtime', 'path' => '/runtime/', 'description' => 'Rust/WASM execution, diagnostics, and errors.'],
-                ['label' => '.slm Format', 'path' => '/slm-format/', 'description' => 'Custom model artifact ABI and validation.'],
-                ['label' => 'Browser Runtime', 'path' => '/browser-runtime/', 'description' => 'Local app surface, selectors, and resets.'],
+                ['label' => 'SLM2 Format', 'path' => '/slm-format/', 'description' => 'Six-member composition identity and hostile-safe validation.'],
+                ['label' => 'Browser Runtime', 'path' => '/browser-runtime/', 'description' => 'Worker ownership, bounded memory, cancellation, privacy, and recovery.'],
             ],
         ],
         [
             'type' => 'group',
             'label' => 'Models',
-            'description' => 'Quantization, adapters, and model composition.',
+            'description' => 'Current numerical contract and explicitly separate research lanes.',
             'items' => [
-                ['label' => 'Quantization', 'path' => '/quantization/', 'description' => 'f32, q8_0, q4_0, and the 33.5 MB envelope.'],
-                ['label' => 'Adapters', 'path' => '/adapters/', 'description' => 'ADP1, ASP1, ALR1 sidecars and validation.'],
-                ['label' => 'Model Breeding', 'path' => '/model-breeding/', 'description' => 'Offline candidate lineage and receipts.'],
+                ['label' => 'Quantization', 'path' => '/quantization/', 'description' => 'Explicit mixed-Q8 representation and differential numerical gates.'],
+                ['label' => 'Adapters', 'path' => '/adapters/', 'description' => 'Research-only boundary outside the first-model release path.'],
+                ['label' => 'Model Experiments', 'path' => '/model-breeding/', 'description' => 'Contamination-controlled research outside current release claims.'],
             ],
         ],
         [
@@ -75,7 +75,7 @@ return [
             'description' => 'Testing, roadmap, and reference material.',
             'items' => [
                 ['label' => 'Testing', 'path' => '/testing/', 'description' => 'Rust tests, WASM ABI smoke, and browser smokes.'],
-                ['label' => 'Developer Portal', 'path' => '/developer-portal/', 'description' => 'Consolidated TinyRustLM implementation docs, legacy runtime archive, and operations map.'],
+                ['label' => 'Developer Portal', 'path' => '/developer-portal/', 'description' => 'Current contracts, package boundaries, evidence, and operations.'],
                 ['label' => 'Roadmap', 'path' => '/roadmap/', 'description' => 'Proof-first future work and boundaries.'],
                 ['label' => 'Glossary', 'path' => '/glossary/', 'description' => 'Compact terms for agent and human readers.'],
                 ['label' => 'Updates', 'path' => '/updates/', 'description' => 'Versioned site release notes and publication status.'],
@@ -85,12 +85,12 @@ return [
         [
             'type' => 'group',
             'label' => 'Docs + Memory',
-            'description' => 'Reports, long-term memory, and .uai handoff files.',
+            'description' => 'Current memory policy, reports, and bounded public UAI pointers.',
             'items' => [
                 ['label' => 'Docs Home', 'path' => '/docs/', 'description' => 'Report archive and memory read order.'],
                 ['label' => 'Long-Term Memory', 'href' => '/docs/long-term-memory.md', 'description' => 'Durable project memory body.'],
                 ['label' => 'Report Index', 'href' => '/docs/report-index.md', 'description' => 'Preserved report manifest with checksums.'],
-                ['label' => '.uai Index', 'href' => '/.uai/index.uai', 'description' => 'Agent file-memory read order.'],
+                ['label' => '.uai Index', 'href' => '/.uai/index.uai', 'description' => 'Allowlisted public memory routes; all other UAI remains private.'],
             ],
         ],
         [

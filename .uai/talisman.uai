@@ -1,17 +1,13 @@
-profile: tinyrustlm-site.talisman-client.v1
-updated_utc: 2026-07-01T03:10:00Z
+profile: tinyrustlm-mirust.talisman.current.v1
+updated_utc: 2026-08-28T20:20:00Z
 site: TinyRustLM.MiRust.com
-role: talisman_client_anchor
-talisman_source:
-  site: MiRust.com
-  relationship: one_way_reference_only
-protected_anchors:
-  - .uai/totem.uai
-  - .uai/taboo.uai
-  - .uai/talisman.uai
-agent_rules:
-  - Read local TinyRustLM memory first; use MiRust.com as a one-way Rust-family talisman source.
-  - Do not alter protected anchors without exact human artifact-and-operation authorization.
-  - When an anchor blocks action, no-op and write a talk-back change request for human review.
-talk_back_target: .uai/talisman-change-requests/
-boundary: Active instruction memory only; deployment and runtime controls remain locally owned.
+role: local orientation anchor
+authority_file_mutability: read_only_without_exact_human_artifact_and_operation_authorization
+
+anchors:
+  - .uai/totem.uai is positive operating authority.
+  - .uai/taboo.uai is prohibited-direction authority.
+  - MiRust.com remains a one-way Rust-family orientation source, not a replacement for local authority.
+  - MemoryEndpoints.com has the two separate authorized uses defined in local totem and taboo files.
+
+boundary: Deployment and runtime controls remain locally owned. When an anchor blocks action, no-op and create a bounded human review request rather than weakening the contract.

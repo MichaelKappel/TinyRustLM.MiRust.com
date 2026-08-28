@@ -1,20 +1,16 @@
-profile: tinyrustlm.system-profile.v2
-updated_utc: 2026-07-02T00:12:07Z
+profile: tinyrustlm-mirust.system.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
 project:
-  name: TinyRustLM
-  site: https://TinyRustLM.mirust.com/
-  package_version: 1.5.0
-  implementation: plain PHP developer portal
-  owner_contact_route: /contact/
-collaboration_contract:
-  purpose: Explain TinyRustLM as a zero-dependency Rust/WASM browser-local SLM runtime project and preserve retired Runtime.MiRust.com implementation evidence.
-  source_authority: TinyRustLM source review bundle, TinyRustLM research reports, native web reports, preserved docs folder, and docs/runtime-portal checksum manifest.
-  memory_strategy: Read compact .uai files first, then follow deep links to docs only as needed.
-  completion_standard: Do not claim memory setup complete without .uai index, long-term pointer ledger, report index, docs reports, intake ledger, and verification notes.
-public_claim_boundary:
-  - Plain PHP, not WordPress.
-  - No third-party frontend or PHP dependency.
-  - TinyRustLM.com is the current public app route.
-  - Runtime.MiRust.com is retired as a separate documentation authority.
-  - Browser-local architecture explanation only; no cloud inference claim.
-  - Runtime-smoke evidence is not broad assistant-quality evidence.
+  site: https://TinyRustLM.MiRust.com/
+  package_version: 1.8.0
+  implementation: dependency-free plain PHP developer portal
+  product: one prelaunch browser-local TinyRustLM.com product
+  model_contract: exact six-member SLM2 composition
+
+package_contract:
+  default: TinyRustLM.Abstractions, TinyRustLM.Core, TinyRustLM.P2P
+  separately_optional: TinyRustLM.MemoryEndpoints
+
+memory_contract: Read totem.uai and taboo.uai for the two separately governed MemoryEndpoints.com uses and prelaunch redundancy invariant.
+claim_boundary: Historical runtime evidence, source, tests, packages, configuration, fixtures, mocks, and reachability do not prove a current live product, memory, P2P, browser, deployment, or publication claim.

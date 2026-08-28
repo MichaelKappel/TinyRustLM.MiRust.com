@@ -1,17 +1,14 @@
-profile: tinyrustlm.coding-standards.v1
-updated_utc: 2026-06-29T22:59:10Z
-php:
-  version: PHP 8.0 or newer
-  dependency_policy: No Composer dependencies.
-  rendering_policy: Server-rendered PHP for site pages; static Markdown for docs.
-  security_policy: Escape HTML with includes/functions.php::e before rendering dynamic text.
-css:
-  dependency_policy: Custom CSS only.
-  layout_policy: Responsive, liquid, accessible, no framework classes.
-javascript:
-  dependency_policy: Vanilla JS only.
-  scope: Navigation disclosure behavior only unless explicitly expanded.
-docs:
-  report_bodies: docs/reports
-  long_term_memory_body: docs/long-term-memory.md
-  pointer_ledger: .uai/long-term-memory.uai
+profile: tinyrustlm-mirust.coding-standards.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+site:
+  - Keep the dependency-free PHP, native HTML/CSS, and bounded vanilla-JavaScript architecture.
+  - Escape dynamic HTML, preserve semantic and keyboard-accessible routes, and keep content crawlable.
+  - Keep current public claims synchronized across PHP, Markdown, llms, UAI, sitemap, release records, and deployment readback.
+
+contracts:
+  - Use one clean-slate SLM2 path; delete superseded active readers, aliases, fallbacks, repair, and contradictory prose.
+  - Keep MemoryEndpoints.com direct-agent and TinyRustLM.com Connect user-plugin lanes separately identified, authenticated, consented, scoped, provenance-bound, idempotent, and receipted.
+  - Treat redundant prelaunch memory as maintained copies: current, secret-safe, provenance-labeled, and noncontradictory.
+
+evidence: Never turn source, tests, configuration, fixtures, mocks, reachability, or package creation into a live capability or publication claim.

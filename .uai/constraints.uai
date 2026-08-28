@@ -1,13 +1,14 @@
-profile: tinyrustlm.constraints.v1
-updated_utc: 2026-06-29T22:59:10Z
-constraints:
-  hard:
-    - Plain PHP only; no WordPress.
-    - No Bootstrap, jQuery, Tailwind, React, Vue, Composer, npm, CDN dependencies, page builders, telemetry, analytics, or remote inference APIs.
-    - Keep content server-rendered or static and crawlable.
-    - Keep .uai memory compact and pointer-first.
-    - Keep report bodies in docs/reports.
-    - Do not widen TinyRustLM source claims without source-backed evidence.
-  contact:
-    footer_required_text: Contact Mike Kappel
-    footer_required_link: /contact/
+profile: tinyrustlm-mirust.constraints.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+hard_constraints:
+  - Plain PHP site; no WordPress, front-end framework, telemetry, analytics, or remote inference.
+  - Project sites receive no prompts or model bytes.
+  - One exact six-member SLM2 path; no obsolete format, compatibility, migration, alias, fallback, response repair, hidden retry, best-of-N, or accepted debt.
+  - MemoryEndpoints.com has exactly the two separately governed uses in totem.uai and taboo.uai; neither lane silently acts for the other.
+  - Redundant prelaunch memory copies stay current, secret-safe, provenance-labeled, and noncontradictory.
+  - Publish only clean pushed manifest-bound source, then prove exact HTTPS bytes and headers.
+
+contact:
+  footer_required_text: Contact Mike Kappel
+  footer_required_link: /contact/

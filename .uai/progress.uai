@@ -1,14 +1,16 @@
-profile: tinyrustlm.progress.v2
-updated_utc: 2026-07-02T00:12:07Z
-completed:
-  - Converted mistaken WordPress package direction to plain PHP.
-  - Added /contact/ and footer Contact Mike Kappel link in v1.2.0.
-  - Added /docs folder, all preserved reports, long-term memory body, report index, and .uai file-memory suite in the earlier docs package.
-  - Added top-menu Docs + Memory group.
-  - Updated llms.txt, llms-full.txt, sitemap.xml, and README.
-  - Added /developer-portal/ in v1.5.0.
-  - Preserved retired Runtime.MiRust.com implementation evidence under docs/runtime-portal/ with MANIFEST.md checksums.
-remaining:
-  - Deploy to live TinyRustLM.MiRust.com developer portal.
-  - Verify live /developer-portal/, /docs/runtime-portal/MANIFEST.md, and public .uai exposure policy after deployment.
-  - Add public evidence matrix when source artifacts are ready to publish.
+profile: tinyrustlm-mirust.progress.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+completed_source_work:
+  - Consolidated current public and UAI memory around the sole clean-slate SLM2 contract.
+  - Documented the exact direct-agent and TinyRustLM.com Connect user-plugin MemoryEndpoints.com uses.
+  - Separated the optional TinyRustLM.MemoryEndpoints connector from the default three-package transaction.
+  - Labeled former runtime and .slm material as historical evidence with no current compatibility authority.
+  - Replaced placeholder archive hashes with a deterministic preservation manifest generator.
+
+remaining_release_work:
+  - Generate the final public package manifest from the immutable content commit.
+  - Complete every available site gate, including PHP syntax when PHP is available.
+  - Commit, push, build the exact deployment manifest, deploy, and verify public HTTPS readback.
+
+campaign_truth: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live memory rounds; 0/40 externally proven P2P lanes; 0/20 catalog announcements.

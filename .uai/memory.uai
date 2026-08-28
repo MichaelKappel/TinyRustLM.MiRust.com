@@ -1,9 +1,18 @@
-profile: tinyrustlm.memory.v1
-updated_utc: 2026-06-29T22:59:10Z
-memory_model:
-  hot_memory: .uai/*.uai
-  durable_memory: docs/long-term-memory.md
-  report_archive: docs/reports/*
-  report_manifest: docs/report-index.md
-  active_intake: agent-file-handoff/Content and agent-file-handoff/Improvement
-routing_policy: Read compact .uai files first. Follow deep links to docs only for task-relevant report context.
+profile: tinyrustlm-mirust.memory.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+read_order:
+  - .uai/totem.uai
+  - .uai/taboo.uai
+  - .uai/index.uai
+  - .uai/short-term-memory.uai
+  - .uai/long-term-memory.uai
+  - docs/long-term-memory.md
+
+storage:
+  current_hot_memory: Current compact UAI files.
+  public_memory_policy: docs/long-term-memory.md
+  historical_reports: docs/reports and docs/report-index.md
+  historical_runtime: docs/runtime-portal and its generated manifest.
+
+rule: MemoryEndpoints.com has exactly the two separate uses defined by totem.uai and taboo.uai. Other prelaunch copies are allowed only when every maintained copy is current, secret-safe, provenance-labeled, and noncontradictory.

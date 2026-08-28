@@ -12,7 +12,7 @@ const outputPath = path.resolve(
   repositoryRoot,
   process.argv[3] || "deploy/site-deployment-manifest.v1.json",
 );
-const stagingRoot = path.join(repositoryRoot, "deploy", "staging", "1.7.0");
+const stagingRoot = path.join(repositoryRoot, "deploy", "staging", "1.8.0");
 
 if (!/^[0-9a-f]{40}$/.test(contentCommit || "")) {
   throw new Error("Usage: node tools/build-site-deployment-manifest.js <40-character-content-commit> [output]");
@@ -110,15 +110,15 @@ const manifest = {
   schema: "tinyrustlm.mirust.site_deployment_manifest.v1",
   site: "TinyRustLM.MiRust.com",
   origin: "https://tinyrustlm.mirust.com",
-  version: "1.7.0",
-  release_date: "2026-08-09",
+  version: "1.8.0",
+  release_date: "2026-08-28",
   source_commit: contentCommit,
   source_tree: sourceTree,
   transport_profile: "TinyRustLM.MiRust.com",
   files,
   route_smokes: [
-    { path: "/", contains: "Site package 1.7.0" },
-    { path: "/updates/", contains: "1.7.0 - 2026-08-09" },
+    { path: "/", contains: "Site package 1.8.0" },
+    { path: "/updates/", contains: "Last published: 1.8.0" },
     { path: "/developer-portal/", contains: "Developer Portal" },
     { path: "/docs/", contains: "Docs" },
     { path: "/contact/", contains: "Contact Mike Kappel" },

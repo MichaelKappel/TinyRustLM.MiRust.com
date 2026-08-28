@@ -1,30 +1,34 @@
-profile: tinyrustlm-site.totem.v3
+profile: tinyrustlm-mirust.totem.current.v1
 updated_utc: 2026-08-28T00:00:00Z
 site: TinyRustLM.MiRust.com
-role: positive_anchor
-mission: Preserve TinyRustLM.MiRust.com as the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, `.slm` artifacts, and retired Runtime.MiRust.com implementation evidence.
-anchors:
-  - Explain TinyRustLM runtime, model format, quantization, adapters, selectors, and local-only diagnostics.
-  - Keep model package evidence checksum-bound.
-  - Route live usage to TinyRustLM.com and current developer evidence to TinyRustLM.MiRust.com/developer-portal/.
-  - Preserve retired Runtime.MiRust.com evidence under docs/runtime-portal/ with checksums.
-  - Keep File Handoff intake reviewed, recorded, and cleared.
-talisman_source: MiRust.com
-agent_mutability: read_only_without_exact_human_artifact_and_operation_authorization
+role: positive operating authority
+authority_file_mutability: read_only_without_exact_human_artifact_and_operation_authorization
 
-pre_publication_clean_slate_policy_id: pre-publication-clean-slate-v1
-pre_publication_clean_slate_authority: "Treat this site and every consuming system as pre-publication dogfood, even when a development URL is publicly reachable. Until the human explicitly removes this authority, choose the best current architecture; full rewrites and clean contract replacements are authorized when they improve correctness, security, maintainability, performance, accessibility, or product quality."
-pre_publication_replacement_completion_authority: "Verify replacements end to end, migrate every dogfood caller to one current contract, remove superseded implementation in the same completed change, and finish tests, documentation, security review, and cleanup before deployment. Preserve immutable receipts and historical failure evidence as audit truth, never as a promise to support obsolete product behavior."
-documentation_integrity_policy_id: site-family-documentation-integrity-v1
-documentation_site_role: documentation-first-tinyrustlm-developer-architecture-and-evidence-portal
-documentation_integrity_authority: "This documentation-first site is a primary product surface, not secondary collateral. Keep architecture, model and composition formats, Rust/WASM APIs, browser and companion behavior, security, privacy, accessibility, deployment, operations, troubleshooting, limitations, evidence boundaries, and release material complete, technically rigorous, navigable, searchable, and current."
-documentation_same_change_rule: "Update affected guides, references, schemas, examples, diagrams, errors, compatibility statements, cross-site links, version metadata, update history, and machine-readable release records in the same completed change as TinyRustLM behavior or contracts."
-documentation_verification_rule: "Before publication, verify runnable examples, links, navigation, search discoverability, code samples, API and schema references, accessibility, responsive rendering, public HTTPS readback, and agreement with TinyRustLM.com, MiniModel.org, and current source contracts."
-documentation_truth_rule: "Distinguish proposed, implemented, locally tested, externally verified, deployed, rejected, blocked, and unavailable behavior. Never promote model quality, performance, privacy, memory continuity, P2P reachability, or release completion beyond its exact evidence."
-documentation_release_gate: "Do not publish an affected product or documentation site when this portal is incomplete, stale, contradictory, version-skewed, unverified, or inconsistent with implementation and release evidence."
-documentation_clean_replacement_rule: "Remove superseded documentation after its replacement and all consuming references are verified. Preserve immutable historical evidence and release history separately; obsolete guidance receives no legacy-support authority."
-memory_endpoints_policy_id: memory-endpoints-two-lane-ecosystem-v1
-memory_endpoints_agent_coordination_use: "Agents working on all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination."
-memory_endpoints_tinyrustlm_connect_use: "Separately, the TinyRustLM.com Connect plugin lets a user sign in to MemoryEndpoints.com and explicitly use it as the long-term-memory provider for TinyRustLM.com Connect."
-memory_endpoints_lane_boundary: "Keep direct agent coordination and the user plugin separately identified, scoped, consented, authenticated, and evidenced; neither lane silently grants authority to the other, and configured or reachable state is not live-operation proof."
-memory_redundancy_rule: "During prelaunch, important memory may also be retained in current .uai, wiki, source-controlled public-safe notes, or other approved stores for resilience. Every maintained copy must stay current, provenance-labeled, secret-safe, and noncontradictory."
+site_authority:
+  - TinyRustLM.MiRust.com is the current developer documentation portal for the one prelaunch TinyRustLM.com product and its sole SLM2 path.
+  - Keep architecture, composition formats, Rust and WebAssembly contracts, browser and companion behavior, security, privacy, accessibility, operations, limitations, evidence, and release material current.
+  - Retain Runtime.MiRust.com material only as clearly labeled historical evidence with no current compatibility authority.
+
+clean_slate:
+  - A current composition is exactly model.slm2, tokenizer.tokenizer2, template.template2, sampling.sampling2, prompt.prompt2, and composition.acg2.
+  - The default public package transaction is exactly TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
+  - TinyRustLM.MemoryEndpoints is the separately optional connector for the two authorized MemoryEndpoints.com uses; it is excluded from the default package transaction.
+  - Accept no legacy reader, compatibility alias, migration, fallback, repair, hidden retry, best-of-N, knowingly temporary architecture, or deferred debt.
+  - Update implementation, tests, documentation, release records, deployment, and readback together, then remove superseded active prose and code.
+
+memory_endpoints_two_lane_authority:
+  - MemoryEndpoints.com has exactly two distinct authorized uses across the ecosystem.
+  - Agents working on all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
+  - Separately, the TinyRustLM.com Connect plugin lets a user sign in to MemoryEndpoints.com and explicitly select it as TinyRustLM.com Connect long-term memory.
+  - Keep lane identity, credentials, consent, scopes, provenance, idempotency, and receipts separate. Neither lane silently acts for the other.
+  - Authorization, implementation, configuration, fixtures, mocks, or reachability do not prove a live meeting, user-plugin operation, synchronization, restore, deletion, cleanup, or continuity.
+
+prelaunch_redundancy:
+  - Important memory may also be kept in current .uai, wiki, public-safe source notes, and approved private stores for resilience.
+  - Keep every maintained copy current, secret-safe, provenance-labeled, and noncontradictory.
+  - Surface and reconcile conflicts; do not silently choose one contradictory copy.
+
+delivery:
+  - Commit and push every coherent green change.
+  - Deploy affected public bytes only after the complete site gate passes, then verify exact public HTTPS bytes and headers.
+  - Keep campaign counters at 0/20, 0/50, 0/25, 0/40, and 0/20 until exact matching receipts exist.

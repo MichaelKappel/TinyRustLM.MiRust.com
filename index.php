@@ -61,7 +61,7 @@ require __DIR__ . '/includes/header.php';
         </div>
         <dl class="portal-facts" aria-label="TinyRustLM system facts">
             <div><dt>Execution</dt><dd>Browser-local Rust/WASM</dd></div>
-            <div><dt>Model contract</dt><dd>Verified <code>.slm</code> artifacts</dd></div>
+            <div><dt>Model contract</dt><dd>Verified six-member SLM2 compositions</dd></div>
             <div><dt>Network boundary</dt><dd>No remote inference</dd></div>
             <div><dt>Evidence</dt><dd>Checksums, receipts, and tests</dd></div>
         </dl>

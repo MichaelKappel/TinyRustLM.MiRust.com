@@ -1,5 +1,7 @@
 profile: tinyrustlm.intake-outcome-ledger.v1
 updated_utc: 2026-06-29T22:59:10Z
+status: preserved_historical_report_intake_evidence
+current_authority: Processed reports remain immutable advisory history. They do not override the current SLM2, package, MemoryEndpoints.com, privacy, or evidence contracts in totem.uai, taboo.uai, and docs/long-term-memory.md.
 active_scan:
   scanned_utc: 2026-06-29T22:59:10Z
   content_non_placeholder_files: 0

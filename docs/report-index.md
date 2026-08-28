@@ -1,12 +1,15 @@
 # TinyRustLM Report Index
 
-> Durable report map for TinyRustLM plain PHP site package 1.5.0. Every source report copied into `/docs/reports/` is listed with a source filename, durable route, role, byte count, and checksum.
+> Historical advisory report map retained by TinyRustLM plain PHP site package
+> 1.8.0. Every preserved report is listed with its source filename, durable
+> route, historical role, byte count, and checksum. These reports are not
+> current implementation, release, runtime, compatibility, or live evidence.
 
 | Report | Source filename | Role | Bytes | SHA-256 |
 |---|---|---|---:|---|
 | [Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes](/docs/reports/tiny-language-models-for-wasm.md) | `Tiny Language Models for WASM.md` | Core tiny-model feasibility, micro-model tiers, quantization constraints, deterministic WASM smoke testing, and Rust/WASM runtime pressure. | 46105 | `B823A12562F6DB288C6B16A38A6A9A8C6DD2AF8C02F783BBF34E3C54836FF6FB` |
 | [Architecting Minimalist Neural Inference in WebAssembly](/docs/reports/rust-wasm-neural-model-patterns.md) | `Rust WASM Neural Model Patterns.md` | WASM heap planning, zero-copy tensor views, tokenizer data structures, SIMD matrix-vector kernels, and deterministic neural inference design. | 69793 | `53E988FBCDD51A06A6155A8293CA85113543F20D9F78AF52EE50997B23E5F618` |
-| [Architecture and Engineering of TinyRustLM](/docs/reports/understanding-tinyrustlm-creation-and-purpose.md) | `Understanding TinyRustLM_ Creation and Purpose.md` | Primary TinyRustLM explanation: browser-local runtime, .slm format, q8/q4 quantization, adapters, selector registries, and offline model breeding. | 31890 | `69A94B184F4876B293EF268F22DF5DB63F1DFF5413AFEF03F7A9C6BAB397440D` |
+| [Architecture and Engineering of TinyRustLM](/docs/reports/understanding-tinyrustlm-creation-and-purpose.md) | `Understanding TinyRustLM_ Creation and Purpose.md` | Preserved historical report about the superseded `.slm`, q8/q4, adapter, selector, and model-breeding design; it is not current SLM2 authority. | 31890 | `69A94B184F4876B293EF268F22DF5DB63F1DFF5413AFEF03F7A9C6BAB397440D` |
 | [Tiny Language Models for Rust/WASM](/docs/reports/tiny-language-models-for-rust-wasm.md) | `Tiny Language Models for Rust_WASM.md` | Candidate model analysis, 33.5 MB budget math, Llama and GPT-NeoX topology notes, tokenizer constraints, and converter requirements. | 44102 | `37D6B47ED4284F65C591921F653F3AA4E17672593AE84C09C84E4222FC808AE9` |
 | [GGUF MiRust All Source Review Bundle](/docs/reports/gguf-mirust-all-source-review-bundle.txt) | `GGUF_MiRust_All_Source_Review_Bundle(1).txt` | Large source review bundle containing the TinyRustLM source inventory, hot .uai memory files, docs, runtime, packer, harness, and model-breeding artifacts. | 4922808 | `2B2D72AC23F1D63919C0B744E9586C8AE73C45B26891E8F698DAD1417E8DE931` |
 | [Memory Systems Domains Research](/docs/reports/memory-systems-domains-research.md) | `Memory Systems Domains Research(2).md` | Background research on AI memory domains, UAIX-style short-term handoff, long-term governed memory, and machine-readable knowledge routing. | 39530 | `B400312F9FEB5F5D5D2BF0C77B221B925B7AC091BC618E1B6964D38885D8C9B9` |
@@ -18,6 +21,6 @@
 
 ## Related durable memory
 
-- [Long-term memory](/docs/long-term-memory.md): Durable body memory for project state, boundaries, report routing, and next recursive direction. SHA-256: `0EB1DE901D390EC0E08E150020E6673483B96291E638854DD2476E58E69E8607`
+- [Long-term memory](/docs/long-term-memory.md): Current two-use MemoryEndpoints.com, package, redundancy, privacy, and proof authority. SHA-256: `E25F736C027E11E0D8871E8939897963BC022BD80DC3A2480103288A7CFA4C47`
 - [.uai long-term pointer ledger](../.uai/long-term-memory.uai): Pointer-first memory ledger that deep-links to this report index and every preserved report.
 - [.uai file handoff](../.uai/file-handoff.uai): Active intake and disposition rules for future report drops.

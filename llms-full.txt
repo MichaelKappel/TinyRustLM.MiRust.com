@@ -1,233 +1,117 @@
-# TinyRustLM Full Agent Text
-
-> Condensed full machine-readable bundle for TinyRustLM plain PHP package 1.7.0, released and last published on 2026-08-09. TinyRustLM.MiRust.com is the developer portal, with the historical runtime documentation corpus preserved under `/docs/runtime-portal/`. Versioned release notes are published at `/updates/`. Deep report bodies remain in the linked durable docs rather than duplicated here.
-
-# TinyRustLM
-
-TinyRustLM.MiRust.com is the TinyRustLM developer portal: a plain PHP project website for a zero-dependency Rust/WebAssembly browser-local small language model runtime, custom `.slm` artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, local-only diagnostics, UAI file memory, durable reports, and project contact routing.
-
-The developer docs now track the protected TinyRustLM NuGet SDK distribution in `SLMComposer.com`. `TinyRustLM.Abstractions`, `TinyRustLM.Core`, `TinyRustLM.P2P`, and `TinyRustLM.Memory` expose `.slm` validation/inspection, native-backed runtime harness operations, UAIX `.uai` memory/persona package planning and inspection, metadata-bound P2P share/import workflows with local signed-manifest verification, local manifest-piece verification, `.slm` assembly, typed announcement/catalog application and inspection, announcement JSON handoff helpers, receipt sidecars, and receipt-sidecar inspection, and .NET wrappers, while private conversion internals, quantization authoring, adapter/selector/breeding/premium/telemetry/licensing/private training internals remain outside the public packages. The local UAIX Browser folder feed emits `UAIX.Browser.Core.Abstractions`, `UAIX.Browser.p2pLLM.Runtime`, `UAIX.Browser.p2pRuntime.P2P`, `UAIX.Browser.Memory`, and the controlled local `UAIX.Browser.p2pLLM.Conversion` wrapper. Release verification through `eng/verify-package.ps1` and `eng/verify-package.sh` includes workspace rustfmt/clippy, native build, Rust/.NET tests, package content inspection, package SHA-256/native RID/required metadata/search-term/XML docs/dependency/private-surface/source-debug-generated-output/local-path evidence, clean consumer `.slm` runtime plus UAIX memory/persona and P2P smoke coverage, native-asset gating, dry-run publish-set audits bound to generated SHA256SUMS manifests, readiness reports with top-level package/symbol counts and SHA256SUMS binding fields, feed-current checks, SHA256SUMS-bound package-byte verification, and no push secret in monitoring.
-
-`TinyRustLM.Memory` now reports advanced-persona dimension evidence for `depth_level_0_to_10`, disclosure boundary, source confidence, and non-inference rules through `PersonaDimensions`, `PersonaDimensionsValid`, and `PersonaDimensionWarningCount`, and fails validation when required dimension evidence is missing.
-
-The TinyRustLM browser UI mirrors `UAIX.Browser.Memory` `FileDeck` evidence for local UAIX memory decks. A valid content-triggered Advanced Persona Profile deck renders `UAIX memory active`, `FileDeck 62 required / 22 persona / 5 evidence / 6 exports`, `UAIX exports verified`, and `persona source evidence bound`; browser smoke mode `local-memory-deck-ui` proves generation logs `uaix_memory=advanced_persona_profile` with no Hugging Face or MiniModel network request.
-
-Package-audit reports now record declared package-file entries and package documentation entries, expose `missing_package_file_count`, and fail when declared README/license files are missing from `.nupkg` contents.
-
-Package-audit reports also record expected packaged documentation source hashes and fail when packaged README/license/package docs do not byte-match the current docs/nuget source files.
-
-Package-audit reports now enforce the exact source-versioned package set: TinyRustLM.Abstractions, TinyRustLM.Core, TinyRustLM.P2P, and TinyRustLM.Memory. Missing or unexpected TinyRustLM*.nupkg files fail before publish.
-
-Package-audit reports now enforce matching `.snupkg` symbol package files for the same protected package set. Publish-plan evidence records `symbol_package_count` and `symbol_publish_mode=explicit_snupkg_push_after_primary_package`, and the SHA256SUMS manifest is symbol-hash-bound so NuGet symbol packages are explicitly pushed from the audited package source. NuGet Package Manager generally lists installable `.nupkg` packages; each `.snupkg` is a debug-symbol sidecar verified through the local folder feed, workflow artifacts, `SymbolsPackage`/PDB evidence, SHA256SUMS membership, publish-plan hashes, and feed-hash reports.
-
-Package-audit reports now enforce NuGet discoverability metadata. Built packages must retain required search terms such as TinyRustLM, UAIX, UAIX.Browser, p2pRuntime, p2pLLM, MiniModel, .slm, .uai, memory, ai-memory, persona, P2P, Rust, and package-specific workflow terms.
-
-The local UAIX Browser folder feed also has a dedicated `uaix.browser.nuget.feed_audit.v0` verifier that checks the five branded package IDs, matching `.snupkg` symbol packages, `SymbolsPackage` metadata, PDB evidence, nuspec metadata, required search terms, dependency graph, SHA256SUMS manifest membership, and local absolute path leakage in package text entries.
-
-The Browser package lane has an audited `publish-browser-nuget.ps1` dry run that requires `uaix.browser.nuget.feed_audit.v0`, `SHA256SUMS-UAIX.Browser-<version>.txt`, five `.nupkg` files, and five `.snupkg` files, then writes `uaix-browser-nuget-publish-plan.json` with schema `uaix.browser.nuget.publish_plan.v0`; real pushes send primary packages with `--no-symbols` and then explicitly push every symbol package.
-
-The UAIX Browser feed-current monitor uses `TINYRUSTLM_FEED_PACKAGE_IDS` for the five `UAIX.Browser.*` package IDs, writes `uaix-browser-nuget-feed-current.json`, and can run on schedule when `UAIX_BROWSER_NUGET_MONITOR_VERIFY_CURRENT=true`.
-
-The branded Browser release workflow `.github/workflows/release-browser-nuget.yml` publishes the five-package lane, gates publication with `audit-browser-nuget-release-readiness.ps1`, writes `uaix-browser-nuget-release-readiness.json` with schema `uaix.browser.nuget.release_readiness.v0`, writes the no-push dry-run plan to `uaix-browser-nuget-release-readiness-publish-plan-dry-run.json` by default so retained `uaix-browser-nuget-publish-plan.json` post-push evidence is not overwritten, skips redundant pushes when the feed is already `published_current`, blocks `blocked_remote_hash_mismatch` when an immutable feed version has different bytes, requires `uaix-browser-nuget-feed-current.json` and `uaix-browser-nuget-feed-hashes.json` after publication, and can smoke `UAIX.Browser.p2pLLM.Runtime` plus `UAIX.Browser.p2pRuntime.P2P` through configurable consumer verification. If NuGet.org already lists the declared version with different bytes, bump `VersionPrefix` before publishing corrected Browser packages.
-
-Package-audit reports also fail if any package's nuspec id or version differs from its protected filename and the source-declared package version.
-
-Package-audit reports also enforce the public NuGet dependency graph: Abstractions has no package dependencies, Core depends only on same-version Abstractions, and P2P depends only on same-version Abstractions and Core.
-
-Package-audit dependency checks also require protected package references to retain exclude=Build,Analyzers metadata so build/analyzer assets do not drift through the public package graph.
-
-Package-audit reports also enforce native asset placement: native runtime entries are allowed only in TinyRustLM.Core, while TinyRustLM.Abstractions, TinyRustLM.P2P, and TinyRustLM.Memory remain managed API/metadata packages.
-
-Package-audit reports also allow only the expected Core native filenames: tinyrustlm_native.dll for Windows, libtinyrustlm_native.so for Linux, and libtinyrustlm_native.dylib for macOS.
-
-Package-audit reports also enforce a narrow package-entry allow-list: NuGet metadata, nuspec, README/license, package docs, lib/net8.0 DLL/XML outputs, and approved Core native assets.
-
-Package-audit reports also enforce the public API surface from packaged XML docs, failing if Abstractions/Core/P2P/Memory expose managed members outside the approved SDK contract.
-
-Post-pack package tests also enforce the binary public surface, failing if exported types, public constructor arity, DTO properties, or declared workflow methods drift outside the approved SDK contract.
-
-NuGet P2P announcement URL validation accepts HTTPS or explicit-port loopback HTTP only. `PublicBaseUrl` is validated directly before announcements are written, and credentials, whitespace, query strings, fragments, backslashes, dot-segment traversal, and encoded traversal are rejected before metadata is trusted. Received catalogs deduplicate honest announcement replays but reject conflicting same-peer/same-manifest metadata before mutation. `InspectAnnouncementCatalog` reports catalog SHA/count/byte evidence and rejects catalog JSON above 4 MiB before parsing.
-
-The protected NuGet P2P SDK exposes `VerifySignedManifest` and `VerifySignedManifestJson` for local `tinyrustlm.p2p_signed_manifest.v0` envelopes against metadata-only `minimodel.public_key.v0` public-key JSON. It checks wrapped manifest validity, canonical payload SHA-256, `external-signature-v0`, `ed25519-base64:` signature bytes, matching publisher/key/route/SHA usage, and `revoked=false`, while signing, key hosting, remote key discovery, transparency-log checks, and publisher services remain outside the package.
-
-MiniModel signed-manifest verification now accepts only `signature.kind=external-signature-v0`, rejects comments and unsafe or missing key routes, requires `signature.payload_sha256` to match the canonical sorted non-signature manifest body, and prints the canonical digest from `minimodel verify-manifest` for publisher review. `minimodel verify-signed-manifest <manifest> <public-key-json>` now performs local Ed25519 verification against metadata-only `minimodel.public_key.v0` public-key JSON; transparency-log inclusion and remote key-discovery policy remain future work.
-
-MiniModel catalog and peer-source announcement feed inspectors now report exact metadata byte counts plus SHA-256 values and reject catalog/feed JSON above 4 MiB before parsing. Generated TinyRustLM conversion and share kits call `inspect-peer-source-announcement-feed` and `inspect-catalog-snapshot` before feed-bound catalog publication or metadata sharing, so oversized metadata fails before it can be treated as P2P-ready evidence.
-
-NuGet SDK wrapper update: `TinyRustLmRuntimeFactory.GetVersion()` exposes native SDK/ABI version diagnostics, `PrepareLocalShareKit` returns typed `P2PShareKitReport`, `ExportShareMetadata` returns typed `P2PShareMetadata`, `VerifySignedManifest` returns typed `P2PSignedManifestVerification`, `ValidateAnnouncement` / `ApplyReceivedAnnouncement` return typed `P2PAnnouncement` / `P2PAnnouncementCatalog` records, `InspectAnnouncementCatalog` returns typed `P2PAnnouncementCatalogInspection`, and raw `PrepareLocalShareKitJson` / `ExportShareMetadataJson` / `VerifySignedManifestJson` / `ValidateAnnouncementJson` / `ApplyReceivedAnnouncementJson` / `InspectAnnouncementCatalogJson` methods remain available for exact JSON handoff documents. The .NET wrapper and native public runtime SDK validate generation options before runtime mutation so non-positive `MaxNewTokens` / `max_new_tokens`, non-finite or negative `Temperature` / `temperature`, `TopK` / `top_k` outside `1..1024`, and non-finite or out-of-range `TopP` / `top_p` fail before native casts or sampler calls; direct native callers receive an `invalid_generation_options` JSON envelope. The .NET wrapper rejects embedded NUL characters in paths, prompts, JSON handoff documents, optional catalog JSON, and share-kit request fields before P/Invoke, preserves empty managed strings as native empty strings rather than null pointers, validates `PrepareShareKitRequest` shape before native JSON serialization, rejecting missing model/output paths and piece sizes outside 1 KiB through 16 MiB as managed argument errors, and mirrors Rust P2P JSON byte budgets before native calls for manifests or signed-manifest envelopes, public-key JSON, announcements, receipts, and announcement catalogs.
-
-Publication status as of 2026-07-07: local package-folder feed-current and SHA256SUMS-bound package-hash verification pass for the protected source-level `TinyRustLM.Abstractions`, `TinyRustLM.Core`, `TinyRustLM.P2P`, and `TinyRustLM.Memory` lane at source version `0.1.8`. Public NuGet.org availability is currently carried by the branded `UAIX.Browser.Core.Abstractions`, `UAIX.Browser.p2pLLM.Runtime`, `UAIX.Browser.p2pRuntime.P2P`, `UAIX.Browser.Memory`, and `UAIX.Browser.p2pLLM.Conversion` package IDs, all published and post-publish verified at version `0.1.8` with matching `.snupkg` symbol sidecars, feed-current evidence, SHA256SUMS-bound feed-hash evidence, and `published_current` release-readiness status.
-
-Current local release-gate evidence for 2026-07-06 is green for `cargo fmt --all --check`, `cargo clippy --workspace --all-targets -- -D warnings`, `cargo test --workspace`, and `eng\verify-package.ps1`. The package verifier itself now runs workspace rustfmt and clippy before Rust tests, rebuilt the native bridge, ran Rust/.NET tests, packed the four protected packages, wrote the package audit with required search-term evidence, and passed clean consumer `.slm` runtime plus UAIX memory/persona and P2P share/import/receipt smoke from local package references.
-
-TinyRustLM UI verification now writes `tinyrustlm.ui_verification.v0` evidence through `eng\verify-tinyrustlm-ui.ps1 -RunBrowserSmoke` and its Bash parity script. CI runs the static browser harness, loopback HTTP harness, and `source-options-ui`, `local-memory-deck-ui`, `local-connect-approval-ui`, `local-connect-endpoint-ui`, `local-connect-rust-endpoint-ui`, and `peer-status-live-ui` browser smokes for Local .slm, UAIX memory FileDeck evidence, Hugging Face, P2P import, Advanced tools, Local Connect approval presets, endpoint app inventory, digest-bound dry-run action flow, the actual Rust `serve-approval-endpoint` path, and live Known-peer status metadata checks that fetch only `minimodel.peer_status.v0.json`, then uploads the verifier report plus per-mode browser-smoke reports.
-
-TinyRustLM.com root verification writes `tinyrustlm.public_root_verification.v0` evidence through `eng\verify-tinyrustlm-public-root.ps1` and `eng/verify-tinyrustlm-public-root.sh`. It serves mapped `http://tinyrustlm.com:<port>/` with `tinyrustlm.com-loopback-browser-smoke`, runs `public-default-demo`, `catalog-local-import`, `local-import-ambiguous-selection`, `peer-url-unsafe-ui`, `local-memory-deck-ui`, `local-connect-approval-ui`, `local-connect-endpoint-ui`, `local-connect-rust-endpoint-ui`, and `peer-status-live-ui`, and writes `tinyrustlm-public-root-verification.json`.
-
-Current public app route:
-
-- <https://TinyRustLM.com/>
-
-Generated local P2P share kits now include peer contact book and peer companion inventory steps for consenting known-peer flows. `write-peer-contact-book` / `inspect-peer-contact-book` and `write-peer-companion-inventory` / `inspect-peer-companion-inventory` produce and revalidate metadata-only JSON that binds contact-card SHA-256 evidence, companion state, manifest/piece metadata, sender-side receipt ledger evidence, local piece-store byte/quota/SHA-256 checks, optional peer contact cards, and a `ready-after-rust-reverify` serve plan without carrying `.slm` bytes, peer-piece payloads, or catalog availability claims.
-
-The TinyRustLM browser can load local peer companion inventory JSON in the simple P2P panel and Advanced source details. It validates inventory kind/version, strict UTC timestamp, safe peer URL, state/piece-store/receipt-ledger/contact-card metadata including piece-store SHA-256, command hints, serve-plan routes/preflight flags, quota evidence, and no-model-byte/no-peer-piece-byte flags, then shows a Rust-reverify-required summary with the peer URL and peer status route. A valid inventory fills and persists the Known peer URL for later P2P import request/script generation without contacting Hugging Face or MiniModel or fetching peer-piece bytes. Mapped public-root browser-smoke `hf-peer-companion-inventory-ui` proves a proof-ready Hugging Face row uses that inventory-derived peer URL in the downloaded `minimodel.peer_import_request.v0` plus `.minimodel-peer-import.ps1` route/gate script.
-
-Current developer portal route:
-
-- <https://TinyRustLM.mirust.com/developer-portal/>
-
-## Core Routes
-
-- [Overview](https://TinyRustLM.mirust.com/): project summary, constraints, runtime surfaces, and deployment posture.
-- [Architecture](https://TinyRustLM.mirust.com/architecture/): static browser UI, Rust/WASM runtime, offline packer, local server, harness, and claim boundaries.
-- [Runtime](https://TinyRustLM.mirust.com/runtime/): Rust/WASM runtime responsibilities, byte transfer, generation, diagnostics, and error states.
-- [.slm Format](https://TinyRustLM.mirust.com/slm-format/): custom model artifact contract for headers, tensor directory, tokenizer metadata, quantization fields, and checksums.
-- [Quantization](https://TinyRustLM.mirust.com/quantization/): f32, q8_0, q4_0, and the 33,554,432-byte browser selector budget.
-- [Browser Runtime](https://TinyRustLM.mirust.com/browser-runtime/): TinyRustLM Chat mode, honest first-run empty transcript and implemented composer controls only, real Model Setup sidebar actions for Local .slm/Hugging Face/P2P import/Advanced tools, local/Hugging Face/P2P source choices, Local Connect approval policy UI with app-category risk warnings, endpoint policy JSON export, endpoint app-list risk/decision rows, and real Rust endpoint browser smoke, `hf-search-ui` coverage for blank top 100 TinyRustLM-ready Hugging Face browse by Popular or New releases from a bounded top 500 model-card scan, Hugging Face P2P-on-by-default source list with availability summary buckets for P2P-ready, proof-ready-needs-peer, local-.slm-needed, external-.slm-review, and Rust-conversion-needed rows, shared simple/advanced source-row actions, safe `.safetensors` source-file hints for local conversion, `minimodel.huggingface_conversion_request.v0` plus self-contained local conversion script downloads that embed/recreate the request sidecar, one-command `convert-huggingface-request` local conversion receipt flow with MiniModel share-directory, `prepare-peer-share`, catalog snapshot, peer-source announcement/feed, local peer-serving, metadata-only publication hints, and public binary `huggingface_conversion_cli` coverage for deterministic single-file and sharded fixture conversion, reviewed file and shard-directory pass paths, SHA-drift fail-closed behavior, and unsafe request identifier/known-peer rejection, generated local `.minimodel-serve-peer-pieces.ps1` helpers that re-inspect companion state with `inspect-peer-companion-state` before preferring `serve-peer-companion` when state exists and support path-prefixed peer base URLs, `peer-source-announcements.v0.json`, feed-bound `models.with-announcement-feed.v0.json`, metadata-only `write-peer-companion-state` handoff JSON plus `inspect-peer-companion-state` validation and `write-peer-contact-card` URL handoff JSON, local peer contact card loading to set Known peer URL after no-project-server/Rust-reverify validation with root-package `hf-peer-contact-card-ui` smoke coverage plus fail-closed `hf-peer-contact-card-reject-ui` coverage, `converted-once-p2p-publish.README.txt`, `P2P Import` for MiniModel matches with complete peer-offer proof plus catalog peer source or Known peer URL, `Set Peer URL` fallback, one-command `prepare-peer-share` sender execution, `add-peer-source` for later consenting peer availability metadata, `write-peer-source-announcement` for portable availability metadata, `write-peer-source-announcement-feed` plus `inspect-peer-source-announcement-feed` for availability feed write/preflight, `write-catalog-snapshot-with-announcement-feed` for feed-bound snapshots, local peer-source announcement JSON overlay on loaded `models.v0.json`, same-origin SHA-256-bound catalog announcement feed routes with feed-envelope/no-project-server/duplicate model-peer/peer-offer route and chunk proof checks including valid empty feeds that do not make rows P2P-ready, `apply-peer-source-announcements` for maintainer drift checks, batch `write-catalog-snapshot-with-announcements` publication, metadata-only `write-catalog-snapshot` reuse, local `models.v0.json` loading before Hugging Face search, self-locating `check-peer-status`/preflight/`import-peer-request` receiver execution that validates peer-status metadata and advertised companion state when present, writes final peer-transfer receipt evidence, resolves `MINIMODEL_WORKSPACE`, and feeds the peer-assembled `.slm` back through local browser import for Rust/WASM generation, metadata-only share metadata plus share-kit-ready MiniModel P2P bundle export after verified `.slm` import with MiniModel `inspect-share-metadata` validation for bundle shape/chunk proof/no-live-transfer boundaries, `share-metadata-ui` coverage against the actual browser downloads, and source plus mapped public-root `share-metadata-import-ui` coverage proving local share metadata reimports as checksum-bound `Use Metadata` rows until generated catalog/manifest metadata exists, including chunk-list drift rejection, wrong local `.slm` rejection, matching local `.slm` generation, and no remote model/catalog requests, optional future user-run MiniModel Peer Companion for advanced local peer duties, local-only imports, live public smoke proof that only app/runtime assets load before user action, transcript state, and reset boundaries.
-- [Adapters](https://TinyRustLM.mirust.com/adapters/): ADP1, ASP1, and ALR1 adapter sidecars with Rust validation before apply.
-- [Model Breeding](https://TinyRustLM.mirust.com/model-breeding/): offline candidate lineage, parent compatibility, operator receipts, manifests, runtime-smoke, eval evidence, and selector admission.
-- [Testing](https://TinyRustLM.mirust.com/testing/): Rust tests, browser harness checks, WASM ABI smoke, browser smoke modes, and performance soak.
-- [Developer Portal](https://TinyRustLM.mirust.com/developer-portal/): consolidated implementation docs, legacy runtime archive, preserved checksum manifest, proof routes, operations notes, and current app boundary.
-- [Roadmap](https://TinyRustLM.mirust.com/roadmap/): proof-first expansion plan and explicit future boundaries.
-- [Glossary](https://TinyRustLM.mirust.com/glossary/): compact terms for humans and agents.
-- [Docs + UAI Memory](https://TinyRustLM.mirust.com/docs/): durable report archive, long-term memory body, report index, and `.uai` read order.
-- [Contact Mike Kappel](https://TinyRustLM.mirust.com/contact/): direct project and architecture contact route.
-
-## Durable Memory
-
-- [Long-term memory](https://TinyRustLM.mirust.com/docs/long-term-memory.md): durable project state, current scope, public claim boundaries, report routing, and next recursive direction.
-- [Report index](https://TinyRustLM.mirust.com/docs/report-index.md): preserved report manifest with source filenames, roles, byte counts, and checksums.
-- [Legacy runtime archive](https://TinyRustLM.mirust.com/docs/runtime-portal/index.md): current index for the former runtime documentation corpus absorbed into this developer portal.
-- [Runtime portal preservation manifest](https://TinyRustLM.mirust.com/docs/runtime-portal/MANIFEST.md): checksum-bearing manifest for the absorbed legacy runtime corpus.
-- [Runtime implementation archive](https://TinyRustLM.mirust.com/docs/runtime-portal/runtime-docs/implementation/index.md): preserved implementation docs.
-- [.uai index](https://TinyRustLM.mirust.com/.uai/index.uai): agent file-memory read order.
-- [.uai long-term pointer ledger](https://TinyRustLM.mirust.com/.uai/long-term-memory.uai): pointer ledger deep-linking report and durable memory targets.
-
-## Runtime Documentation Consolidation
-
-The former standalone runtime documentation lane is retired as a separate documentation authority. Its public implementation corpus is preserved under `/docs/runtime-portal/` with a checksum-bearing manifest at `/docs/runtime-portal/MANIFEST.md` and a current archive index at `/docs/runtime-portal/index.md`.
-
-Use `/developer-portal/` as the current human-readable route for TinyRustLM developer evidence. Use `https://TinyRustLM.com/` as the current public app route. SLMComposer.com is no longer the canonical public app identity.
-
-## Truth Boundary
-
-TinyRustLM is a browser-local Rust/WebAssembly small language model runtime project. It is not a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, GGUF runtime claim, or remote inference service.
-
-Project servers do not run user model bytes. Project servers do not serve runnable user model bytes. TinyRustLM.com remains browser-local and imports local `.slm` files through the browser file picker.
-
-Root-package public-host `public-default-demo` smoke maps `http://tinyrustlm.com:<port>/` to loopback for tests and proves the default MiniModel demo autoload path loads `catalog/default-demo.v0.json`, fetches `artifacts/demo/tiny-test-model-q8.slm`, validates byte count and SHA-256 before Rust/WASM `load_model`, reaches `Ready`, and generates before user file selection. The local import smoke still imports a real fixture `.slm`, verifies SHA-256/provenance, and proves private/user model paths use local files. The paired `local-import-ambiguous-selection` smoke rejects duplicate `.slm` or duplicate receipt selections before local model selection. The paired `peer-url-unsafe-ui` smoke rejects unsafe Known peer URLs, including project/Hugging Face root-dot and subdomain host variants, before request/script generation. The paired `local-connect-approval-ui` smoke proves Local Connect approval defaults, per-category risk warnings, browser/email trust preset, approved-app dedupe, high-risk full-control acknowledgement and warning, reset, and no Hugging Face/MiniModel network access. The paired `local-connect-endpoint-ui` smoke proves endpoint policy JSON export, endpoint app-list risk/decision/inventory-source rows with visible warnings and approve/block controls, no-path inventory validation, loopback endpoint health/category/apps validation, browser dry-run decisions, digest-bound `/v0/action` browser `open-url` dry-run with no app execution, and unsafe endpoint URL rejection; `local-connect-rust-endpoint-ui` repeats that browser flow against the actual Rust endpoint process. Root-package public-host share-kit smoke runs `share-metadata-kit-exec` against the same mapped root and proves the packaged root can save and execute the exact local P2P share kit, write and inspect a local import receipt plus sender-side receipt ledger, inspect peer-companion state, re-inspect it in the serve helper, start local MiniModel companion serving only after both the printed serve hint and helper inspect companion state, and validate peer-status metadata without fetching peer-piece or artifact bytes. Root-package public-host share-metadata receiver smoke runs `share-metadata-import-ui` against the same mapped root and proves the packaged root rejects chunk-list drift and wrong local `.slm` artifacts, keeps valid local share metadata at `Use Metadata`, loads/generates from the matching local `.slm`, and makes only app/runtime network requests. Root-package public-host P2P smoke runs `hf-p2p-import-kit-exec` against the same mapped root and proves catalog/manifest/feed metadata, a consenting path-prefixed MiniModel peer at `http://127.0.0.1:8123/peer-pieces/`, peer-status/status-check-inspection/preflight/preflight-inspection/import verification, receipt-chain inspection, generated receipt-ledger inspection, receipt-matched `.slm` output, local browser import, and Rust/WASM generation without project-hosted private/user model bytes; `hf-p2p-import-receipt-reject` uses the same path but tampers the receipt artifact SHA-256, companion metadata flag, final receiver-validation gate, receiver-validation contract status, and strict UTC timestamp and proves browser import fails closed.
-
-Local Connect approvals are a browser-local policy surface for a user-run endpoint app. The Advanced Tools drawer exposes `Ask every time`, `Always approve selected`, `Trust Browsers + Email`, and high-risk `Full local-control lab mode`; category warnings cover browsers, email apps, docs/office, files/folders, terminal/scripts, and passwords/payments/settings; approved app names stay in local storage; the UI renders a `tinyrustlm.local_connect_approval_policy.v0` JSON preview with `full_control_non_sensitive_machine_acknowledged` and can save `tinyrustlm-local-connect-policy.v0.json` without sending the policy to project servers; and the Rust `tinyrustlm-local-connect` gate validates that JSON, rejects unacknowledged full-control policies, exposes a `127.0.0.1` `serve-approval-endpoint` health/categories/apps/decision/action API, revalidates the watched policy file before each request, applies valid saved-policy replacements without restart, fails closed with `policy-reload-failed` when the watched policy is invalid, returns app-list rows with risk, supported actions, dry-run decisions, and bounded local app-name discovery, and returns deterministic `allow`, `ask`, or `deny` decisions. `/v0/apps` combines approved names, known local app names discovered through PATH/curated locations/optional bounded scan roots, and common fallbacks; the browser renders `Found locally` when present, rejects any app-list response that exposes executable paths, requires endpoint contract IDs for `bounded-name-discovery-no-paths-v1`, `never` path exposure, `app-and-category-v1` approval binding, and `typed-action-dry-run-default-execution-consent-v1` action execution, lets the user approve a listed app, approve its category, or block its category before saving a refreshed endpoint policy over the watched file, and immediately recomputes visible decisions when acknowledged full local-control lab mode is selected while preserving explicit category blocks. `/v0/decision` and `/v0/action` both bind app-level approvals to the approved app's known category, preventing browser app approval from authorizing email, file, terminal, or secrets requests by app-name reuse. `/v0/action` also requires matching policy SHA-256 in JSON and `x-tinyrustlm-policy-sha256`, supports typed `open-url`, `compose-email`, and `open-path`, dry-runs by default, includes the approval-binding and action-execution contract IDs in `action_request_sha256`, and starts the OS native opener only after an `allow` decision with explicit `dry_run:false` and HTTP `x-tinyrustlm-execution-consent: native-opener-v1`. Endpoint identity is hash-bound: the browser and Rust gate compute the canonical exported policy SHA-256, endpoint routes return `policy_sha256`, and the UI refuses responses whose digest does not match the current browser policy.
-
-Local Connect `/v0/action` also returns `action_request_sha256`; CLI `execute-action` prints `action.request_sha256`, and browser validation requires a valid request fingerprint plus the `app-and-category-v1` / `typed-action-dry-run-default-execution-consent-v1` contract IDs before trusting action dry-run evidence.
-
-Local Connect endpoint app approvals preserve the row-selected category for an unknown endpoint-listed app in exported `approved_app_bindings`, while known app category drift fails closed before app-level approval.
-
-The local browser picker can select the peer-assembled `.slm` and its `.minimodel-receipt` sidecar together. TinyRustLM validates receipt shape, strict UTC timestamp, model id, manifest/artifact SHA-256 values, artifact byte count, SLM shape/quantization/evidence fields, `import.next_gate`, peer path hints, peer base URL, companion-state URL/status, fixed chunk mode, final receiver-validation contract gates, peer-transfer evidence, companion metadata flag, and no-project-server-byte flags before showing `MiniModel P2P receipt` status and `minimodel-p2p-import-receipt` provenance. After Rust/WASM accepts the model, the Provenance panel shows the receipt hash/time, receipt sidecar, evidence status, manifest SHA-256, quantization, receiver-validation status, peer URL, companion route/status, chunk count, artifact SHA-256, and browser-load readiness summary. The picker accepts exactly one `.slm` and at most one receipt sidecar; ambiguous selections are reported instead of guessed.
-Receipt-drift smoke mutates the sidecar artifact SHA-256, `peer_companion_state_metadata_fetched`, `receiver_validation.import_receipt_required_before_browser_load`, `receiver_validation_contract.status`, and `receipt.created_utc`, proving TinyRustLM reports the expected MiniModel receipt error before selecting the local model or rendering P2P receipt provenance.
-
-Import receipt ledgers are browser metadata only: the simple P2P panel and Advanced source details load `minimodel.import_receipt_ledger.v0`, validate the metadata-only/no-byte boundary, strict UTC timestamp, counts, SHA-256 fields, duplicate receipt paths, peer-import gates, and direct peer URL shape, show the ledger digest with `Rust reverify required`, and leave `minimodel inspect-import-receipt-ledger` as the local Rust trust gate before the ledger is authoritative. Generated P2P import scripts write `import-receipts.v0.json` and inspect it before local browser import.
-
-Peer status checks are browser metadata only: the simple P2P panel and Advanced source details load `minimodel.peer_status_check` reports from `minimodel check-peer-status`, validate strict UTC status, normalized peer base URL, exact `minimodel.peer_status.v0.json` status URL, peer-status/piece-set/companion route agreement, manifest/artifact/piece SHA-256 fields, artifact byte count, piece count, and no-peer-piece/no-artifact/no-project-server-byte boundaries, then show the peer URL, piece count, artifact size, companion route, report SHA-256, and `Rust reverify required`. Generated receiver scripts revalidate saved reports with MiniModel `inspect-peer-status-check <status-check-json> <manifest>` before preflight. Browser smoke `peer-status-check-ui` rejects drifted byte-transfer claims and accepts valid local reports without Hugging Face or MiniModel network requests.
-
-## Source Options
-
-TinyRustLM should explain model source choices as user-controlled import paths:
-
-- Local: users choose local `.slm` files through the browser file picker.
-- Hugging Face: blank browse scans a bounded top 500 text-generation model-card page by Popular or New releases and shows up to the top 100 TinyRustLM-ready candidates it finds before showing rows; typed metadata discovery may help users find source candidates, including safe `.safetensors` and reviewable `.gguf` sibling hints for local conversion, but rows are not runnable unless MiniModel metadata names an admitted `.slm` with complete peer-offer proof and a catalog-listed or user-supplied consenting peer source. The Model Setup sidebar routes Hugging Face, P2P import, Local .slm, and Advanced tools to implemented panels rather than placeholder navigation. The simple and advanced result rows share action/source-note helpers so `P2P Import`, `Set Peer URL`, `Start Conversion`, disabled-P2P fallback, and source hints stay aligned. The simple list defaults P2P on, shows `P2P Import` only for proof-ready matches with a validated `peer_sources` row or saved Known peer URL, shows `Set Peer URL` for proof-ready matches without a known source, shows `Start Conversion` for normal supported `.safetensors` source rows, shows `Review Conversion` for large, unknown-size, or GGUF source rows, warns once when P2P is disabled, and reports status buckets for P2P-ready, proof-ready-needs-peer, local-.slm-needed, external-.slm-review, and Rust-conversion-needed rows. P2P import writes that consenting direct `http://` peer into the local Rust reverify handoff; the self-locating receiver script resolves `MINIMODEL_WORKSPACE`, keeps request/manifest/status/preflight/output files beside the script, may download small MiniModel manifest metadata, then calls `minimodel check-peer-status`, `minimodel inspect-peer-status-check`, `preflight-peer-import-request`, and `minimodel import-peer-request <request-json> <manifest> <output-dir>`, which validates peer-status metadata and advertised companion state when present before piece transfer and writes final receipt evidence for peer transport, piece-set SHA-256, companion-state status, fetched peer pieces, assembled-from-peer-pieces status, and no-project-server-byte flags. Catalog peer sources and catalog-declared announcement feeds are metadata, not hosted bytes; TinyRustLM verifies feed route origin, SHA-256, metadata-only feed envelope, no-project-server flags, duplicate model/peer rows, and peer-offer route/checksum/chunk-count/Merkle match before applying peer-source announcements, and valid empty feeds leave proof-ready rows at `Set Peer URL`. MiniModel `inspect-peer-source-announcement-feed <feed-json>` gives maintainers and receivers the same local Rust preflight for existing feed files. Start Conversion saves both a `minimodel.huggingface_conversion_request.v0` JSON file and self-contained local conversion script while reporting `Rust conversion script saved`; the script embeds the request JSON so it can recreate the sidecar if missing, resolves workspaces/source files from environment variables, nearby paths, or a reviewed `.safetensors` file/shard directory beside the script, then runs one TinyRustLM packer command, `convert-huggingface-request <request.json> <input.safetensors-or-directory> <output-dir> [source-shape] [quantization]`, against a user-owned local source path, writes `tinyrustlm-conversion.receipt`, discovers the actual Rust-produced `.slm` and receipt paths, and that receipt now preserves MiniModel model id, share-directory, `prepare-peer-share` command variants, catalog-entry and peer-piece globs, catalog snapshot and peer-source announcement/feed commands, local peer-serving command shape, and metadata-only publication rule. The script calls `minimodel prepare-peer-share` before discovering the generated MiniModel manifest, catalog entry, and peer-piece directory. The conversion handoff also writes a `.minimodel-serve-peer-pieces.ps1` helper into the output directory so the sender can later run `serve-peer-companion` when peer-companion state exists, falling back to `serve-peer-pieces` locally after explicit consent. If a consenting peer URL is available, `minimodel add-peer-source <catalog-entry-json> <output-json> <known-peer-base-url>` writes a with-peer entry, `minimodel write-peer-source-announcement <catalog-entry-json> <announcement-json> <known-peer-base-url>` writes portable availability metadata, `minimodel write-peer-source-announcement-feed <feed-json> <announcement-json>...` writes `peer-source-announcements.v0.json`, and `minimodel write-catalog-snapshot-with-announcement-feed <models.v0.json> <feed-route> <feed-json> <catalog-entry-json>...` writes a feed-bound `models.with-announcement-feed.v0.json` snapshot; `converted-once-p2p-publish.README.txt` tells converters which metadata is safe for catalog maintainers and that `.slm` plus peer-piece directories stay local. Catalog maintainers can also use `minimodel apply-peer-source-announcements <catalog-entry-json> <output-json> <announcement-json>...` to reject drift before shared catalog publication or `minimodel write-catalog-snapshot-with-announcements <models.v0.json> <catalog-entry-json>... --announcements <announcement-json>...` to batch-publish checked metadata. `minimodel write-catalog-snapshot` then produces metadata-only `models.v0.json` without downloading or hosting model bytes. Users can load that local snapshot before Hugging Face search and can apply a local peer-source announcement JSON/feed overlay when the snapshot is proof-ready but lacks a peer URL, so matching rows become P2P-ready without a default catalog fetch. Project servers still must not run, proxy, or serve user model bytes.
-- Source `hf-conversion-kit-exec` now executes the exact generated `Review Conversion` script against unreconciled mismatched shard metadata and proves Rust preflight records `source_contract_status=fail` and `conversion_decision=source-contract-rejected-before-conversion` with no `.slm`, no receipt, and no MiniModel peer-share output.
-- When `KnownPeerBaseUrl` is set in the generated Hugging Face conversion script, it also writes and inspects a local `.minimodel-receipt`, sender-side `import-receipts.v0.json`, `minimodel write-peer-companion-state <manifest> <piece-dir> <state-json> <known-peer-base-url>`, `minimodel write-peer-contact-card <output-json> <known-peer-base-url> [peer-label]`, `minimodel write-peer-contact-book <book-json> <card-json>`, and `minimodel write-peer-companion-inventory <inventory-json> ...` after `prepare-peer-share`. The receipt ledger, state, card, book, and inventory JSON files are metadata-only handoff data, not catalog model bytes; `serve-peer-companion` honors validated path-prefixed peer base URLs, and the `hf-conversion-kit-exec` browser smoke now verifies the exact generated kit produces and inspects those JSON files with no project-server model-byte proxy claim.
-- Generated conversion/share kits run `inspect-peer-source-announcement-feed` immediately after writing `peer-source-announcements.v0.json`; feed-bound catalog snapshots are created only after that Rust preflight passes. They also run `inspect-catalog-snapshot` after writing normal and feed-bound `models.v0.json` snapshots, `inspect-peer-companion-state` after writing companion handoff state, `inspect-peer-contact-book` after writing contact-book metadata, `inspect-import-receipt-ledger` after writing sender-side `import-receipts.v0.json`, and `inspect-peer-companion-inventory` after writing companion inventory metadata. Feed/catalog inspectors report exact byte/SHA evidence and reject JSON above 4 MiB before parsing. Generated share kits honor `MINIMODEL_KNOWN_PEER_BASE_URL` for reviewed local automation, and source plus mapped public-root `share-metadata-kit-exec` executes the exact browser-downloaded `.minimodel-share-kit.ps1`, verifies local artifact byte count and SHA-256 evidence plus generated MiniModel manifest, local import receipt, sender-side receipt ledger, catalog snapshot, peer-source announcement/feed, receipt-ledger validation PASS output, feed validation PASS output, catalog validation PASS output, peer-companion state inspection PASS output, peer contact card, peer contact book, contact-book validation PASS output, peer companion inventory, inventory validation PASS output, and serve-helper companion-state inspection, starts the local companion server only after both the printed serve hint and helper inspect companion state, and runs `check-peer-status` with no peer-piece or artifact bytes fetched.
-- Peer contact books are supported beside peer contact cards: TinyRustLM can load local `minimodel.peer_contact_book.v0` metadata, validate embedded card SHA-256s, duplicate peer rejection, and no-model-byte/no-peer-piece/no-catalog-claim boundaries, render all reviewed peers as a chooser, set Known peer URL from the selected reviewed peer, and `hf-peer-contact-book-ui` / `hf-peer-contact-book-reject-ui` prove accept/reject behavior. Generated conversion/share kits now write and inspect those books when `KnownPeerBaseUrl` is set.
-- Generated P2P import scripts run MiniModel `inspect-peer-import-request` before `check-peer-status`, then `inspect-peer-status-check` before preflight, followed by saved-preflight inspection, import, `inspect-import-receipt`, `inspect-peer-import-receipt` with receipt-after-preflight timestamp ordering, `write-import-receipt-ledger`, `inspect-import-receipt-ledger`, and local `.slm` browser import. The executed P2P smoke asserts the request-inspection PASS output before peer status, the saved status-check PASS output before preflight, both receipt-inspection PASS outputs, and generated receipt-ledger validation before browser import.
-- Known peer URLs must be direct `http://` peer URLs with plain DNS/IPv4 host text and safe absolute paths. TinyRustLM rejects query strings, fragments, traversal paths, whitespace/control paths, non-plain host text, canonical project/Hugging Face hosts, `www` aliases, subdomains, and trailing DNS-root-dot variants before saving the URL or writing generated handoff scripts; `peer-url-unsafe-ui` proves the source and mapped public-host behavior.
-- The local `Peer-source announcement/feed JSON` picker accepts full `peer-source-announcements.v0.json` feed envelopes as well as single announcements; `hf-peer-announcement-ui` proves the feed file path validates and applies a matching peer source before `P2P Import`, `hf-peer-announcement-reject-ui` proves duplicate same-model/same-peer feeds fail closed at `Set Peer URL` without saving a peer import kit, `hf-peer-announcement-budget-ui` proves oversized local feeds fail at the browser metadata budget before JSON parse or peer-source application with no peer import request/script, `hf-catalog-announcement-route-budget-ui` proves oversized catalog-declared feed routes report `Peer-source announcement metadata exceeded browser budget`, stay at `Set Peer URL`, and save no peer import kit, and MiniModel `inspect-peer-source-announcement-feed` covers the matching Rust preflight for existing feeds.
-- Peer URL, peer contact card/book, and P2P toggle refreshes preserve accepted Hugging Face `.safetensors` source metadata, so source-backed `Start Conversion` / `Review Conversion` fallbacks remain available after P2P import handoffs or KnownPeerBaseUrl changes.
-- Source `hf-search-ui` coverage captures three Hugging Face conversion-kit branches: the normal single-file `.safetensors` `Start Conversion` request/script/README, the large two-shard `.safetensors` `Review Conversion` request/script/README with `source_input_mode=safetensors-shard-directory`, and the GGUF `Review Conversion` request/script/README with `source_format=gguf`, `TINYRUSTLM_SOURCE_GGUF`, `inspect-gguf`, `plan-gguf-source`, `convert-gguf-trained`, reviewed F32/F16/BF16/Q2_K/Q3_K/Q4_0/Q4_1/Q4_K/Q5_0/Q5_1/Q5_K/Q6_K/Q8_0/Q8_1/Q8_K guidance, GGUF tensor-routing and tokenizer boundary warnings, SHA-256/byte hints, PowerShell source resolution, and no Hugging Face `/resolve/` byte fetch.
-- `inspect-gguf`, `plan-gguf-source`, `extract-gguf-source`, and `convert-gguf-trained` are the Rust GGUF intake and F32/F16/BF16/Q2_K/Q3_K/Q4_0/Q4_1/Q4_K/Q5_0/Q5_1/Q5_K/Q6_K/Q8_0/Q8_1/Q8_K conversion path for standard-model breadth. The packer streams GGUF metadata and tensor directories, validates supported GGML tensor encodings, alignment, byte ranges, and overlap-free tensor spans, maps supported F32/F16/BF16/Q2_K/Q3_K/Q4_0/Q4_1/Q4_K/Q5_0/Q5_1/Q5_K/Q6_K/Q8_0/Q8_1/Q8_K tensors into the raw f32 trained-source layout, validates that source manifest, and writes final f32/q8_0/q4_0 `.slm` artifacts. GGUF conversion still requires supported tensor names/shapes, tokenizer token-count compatibility, and Rust validation before .slm import; `plan-gguf-source` fails closed when `tokenizer.ggml.tokens` contradicts the target vocab, and BPE source shapes import `tokenizer.ggml.tokens`/`tokenizer.ggml.merges` into the raw source manifest when both are declared.
-- Source `gguf_cli` coverage proves BPE GGUF token/merge rows are preserved into `source.manifest`, and that tokenizer vocab-count drift fails closed through `plan-gguf-source` before conversion.
-- `convert-huggingface-request` preflight evidence records `request_sha256`, successful conversion receipts record `output_slm_sha256` plus `output_manifest_sha256` beside existing hex64 checksums, and `inspect-huggingface-conversion-receipt` revalidates the request, preflight, receipt, `.slm`, and manifest chain before MiniModel sharing.
-- Source `hf-conversion-kit-exec` coverage executes all three generated conversion branches, including sharded `.safetensors` `Review Conversion` against a reviewed deterministic shard directory with local shard hash/byte evidence and GGUF `Review Conversion` against a reviewed deterministic Q3_K GGUF fixture; it verifies Rust `.slm` conversion, safetensors `source_file_count=2` receipt evidence, GGUF inspect/plan/dequant-q3_k evidence, MiniModel peer-share metadata, local import receipt plus receipt-ledger inspection, peer-source feed/catalog/companion-state inspection, contact card, inspected contact book, peer companion inventory inspection, and no project-server model bytes.
-- Share metadata: after a verified local `.slm`, TinyRustLM can save `minimodel.local_slm_share_metadata.v0` with a catalog-entry candidate, artifact SHA256, fixed-size chunk hashes, chunk-list SHA256, Merkle root, and live transfer flags set unavailable.
-- Peer-to-peer: future transfer work must start with secure metadata, Rust `.minimodel-peer-offer` proof, checksums, consent, one-command `prepare-peer-share` sender output, late `add-peer-source` metadata publication, portable `write-peer-source-announcement` metadata, maintainer-side `apply-peer-source-announcements` drift checks, batch `write-catalog-snapshot-with-announcements` publication, metadata-only `write-catalog-snapshot` reuse, optional user-run MiniModel Peer Companion design, and Rust verification before any broader peer networking.
-
-All source options must converge on local Rust validation before a model is admitted.
-
-## Rust Responsibilities
-
-Rust owns `.slm` parsing, tokenizer behavior, tensor validation, quantization math, KV cache state, sampling, generation, diagnostics, error codes, adapter validation, adapter application, checksum verification, and local import receipts.
-
-JavaScript owns browser controls, local file selection, byte transfer into WASM memory, transcript rendering, and diagnostics display. JavaScript must not parse tensor payloads or make model-quality claims.
-
-## Artifact Rules
-
-`.slm` is the custom local model artifact. Public copy should keep the following fields visible:
-
-- magic and schema version
-- model id and artifact kind
-- byte count
-- tensor directory
-- tokenizer metadata
-- quantization fields
-- artifact checksum
-- tokenizer and config checksums
-- bounded runtime state
-- optional adapter and selector compatibility metadata
-
-Adapters ADP1, ASP1, and ALR1 are sidecars, not replacement models. They are not applied until Rust validates shape, identity, checksums, tokenizer agreement, tensor layout, and finite payload values.
-
-## Model Exchange Boundary
-
-The future MiniModel/TinyRustLM exchange architecture is metadata-first:
-
-- catalogs may publish schemas, manifests, public keys, model-card routes, license routes, eval routes, and takedown or contact routes
-- manifests must be checksum-bound and signature-aware
-- Hugging Face source ids can become MiniModel metadata only after review, conversion, Rust validation, runtime smoke, and admission evidence
-- verified local `.slm` imports can export metadata-only share bundles plus share-kit-ready bundles with `generated-local-minimodel-share-kit-v0` protocol hints and local share/serve helper scripts, MiniModel `inspect-share-metadata` can validate those bundle shapes plus chunk-list/Merkle/no-server-byte boundaries, `share-metadata-ui` now runs that Rust validator against the actual browser downloads, source and mapped public-root `share-metadata-import-ui` prove local share metadata reimports as checksum-bound `Use Metadata` rows until generated catalog/manifest metadata exists, including chunk-list drift rejection, wrong local `.slm` rejection, matching local `.slm` generation, and no remote model/catalog requests, and converted `.slm` files can use MiniModel `prepare-peer-share`, local `.minimodel-serve-peer-pieces.ps1` helpers that re-inspect companion state with `inspect-peer-companion-state` before preferring `serve-peer-companion` when state exists, `add-peer-source`, `write-peer-source-announcement`, `write-peer-source-announcement-feed`, `write-catalog-snapshot-with-announcement-feed`, `write-peer-companion-state`, `inspect-peer-companion-state`, metadata-only `write-peer-contact-card`, `apply-peer-source-announcements`, `write-catalog-snapshot-with-announcements`, and `write-catalog-snapshot` to carry Rust peer-offer proof, local pieces, locally loadable metadata-only catalog reuse, consenting peer-source metadata, companion/contact handoff state, and chunk/Merkle fields before broader networking exists
-- users must consent before transfer or import
-- third-party model entries are not endorsements
-- project infrastructure must not host, run, or serve user model bytes
-
-Peer networking remains a later phase. Rust-native QUIC/blob transfer, Rust-libp2p, BitTorrent-style chunking, Iroh, Pear/Bare/Hypercore, and Hugging Face-assisted discovery can be compared later without making a JavaScript runtime a core dependency by default.
-
-The optional MiniModel Peer Companion is the likely later home for local peer identity, local piece stores, cache quotas, consent prompts, direct serve/fetch controls, receipts, and TinyRustLM handoff. It must be user-run local software that reuses Rust verifier contracts, not a project-hosted byte service.
-
-## Public Claim Boundaries
-
-- Do not infer cloud inference or remote model execution.
-- Do not claim trained assistant quality unless an evaluation sidecar with passed cases exists.
-- Do not claim broad GGUF import support beyond the current local inspection plus F32/F16/BF16/Q2_K/Q3_K/Q4_0/Q4_1/Q4_K/Q5_0/Q5_1/Q5_K/Q6_K/Q8_0/Q8_1/Q8_K conversion path and its `hf-search-ui` handoff evidence.
-- Do not describe this package as WordPress.
-- Do not introduce Bootstrap, jQuery, Tailwind, React, Vue, Composer, npm, CDN dependencies, analytics, telemetry, remote inference APIs, or external model downloads by default.
-- Treat model and adapter licenses as artifact-specific.
-
-## Preserved Reports
-
-The report bodies are linked from [report index](https://TinyRustLM.mirust.com/docs/report-index.md) and are not duplicated here. Key preserved reports include:
-
-- Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes
-- Architecting Minimalist Neural Inference in WebAssembly
-- Architecture and Engineering of TinyRustLM
-- Tiny Language Models for Rust/WASM
-- GGUF MiRust All Source Review Bundle
-- Memory Systems Domains Research
-- Future-Proof Native HTML5 Techniques
-- Future-Proof JavaScript Without Dependencies
-- Innovative Vanilla Web Design
-- Agent-Native Vanilla Web Architecture
-- Analyzing Website Virality
-
-## Machine Formats
-
-- [llms.txt](https://TinyRustLM.mirust.com/llms.txt): compact machine-readable route map.
-- [llms-full.txt](https://TinyRustLM.mirust.com/llms-full.txt): this condensed full agent bundle.
-- [sitemap.xml](https://TinyRustLM.mirust.com/sitemap.xml): canonical route list.
-- [robots.txt](https://TinyRustLM.mirust.com/robots.txt): crawl policy.
-- [Package manifest](https://TinyRustLM.mirust.com/docs/package-manifest.md): checksum-bearing package file list.
-
-## Agent Behavior
-
-TinyRustLM.com first-run behavior includes `MiniModel demo autoload`: browser smoke `public-default-demo` proves the default MiniModel demo loads `catalog/default-demo.v0.json`, fetches `artifacts/demo/tiny-test-model-q8.slm`, validates byte count/SHA-256 before Rust/WASM `load_model`, reaches Ready, and generates while private/user models remain local or P2P.
-
-Read visible pages, cite canonical routes, follow robots and terms, respect the narrow public-demo exception plus the private/user no-server-model-bytes boundary, and no-op unsupported requests. When durable memory and a UI page disagree, prefer the newest checksum-bearing durable memory entry and flag the discrepancy for review.
+# TinyRustLM.MiRust.com Full Agent Context
+
+TinyRustLM.MiRust.com documents the current prelaunch TinyRustLM.com product.
+TinyRustLM is browser-local: Rust owns the model, tokenizer, template, prompt,
+sampling, inference, conversion, and direct-piece admission semantics; the
+browser presents the user experience and communicates with bounded typed
+interfaces. This site does not host inference, model weights, prompts, private
+receipts, credentials, or raw memory payloads.
+
+## Clean-Slate Contract
+
+There is one product and one current path. SLM2, Tokenizer2, Template2,
+Sampling2, Prompt2, and ACG2 are exact technical identities. They do not imply
+released product generations. Current code must not carry obsolete readers,
+aliases, migrations, compatibility shims, permissive repair, hidden fallback,
+hidden retry, or best-of-N behavior.
+
+An installed composition contains exactly:
+
+- model.slm2
+- tokenizer.tokenizer2
+- template.template2
+- sampling.sampling2
+- prompt.prompt2
+- composition.acg2
+
+Independent inspection, numerical parity, browser execution, model quality,
+peer availability, and publication are separate gates. Passing an earlier gate
+does not imply a later one.
+
+## Managed Package Boundary
+
+The default public package transaction is exactly TinyRustLM.Abstractions,
+TinyRustLM.Core, and TinyRustLM.P2P. TinyRustLM.MemoryEndpoints is the
+separately optional connector for the two authorized MemoryEndpoints.com uses
+and is excluded from that default transaction. Conversion authoring and other
+private implementation details are not public packages. Package creation,
+local folder-feed restore, or local tests do not constitute public readback or
+publication.
+
+## P2P And Local Conversion
+
+Acquisition is P2P-first. A peer path is eligible only for an exact qualified
+composition with matching identity and evidence. Bytes move directly between
+consenting peers, not through TinyRustLM or MiniModel project sites. When no
+exact qualified peer composition is available, an installed local companion
+may perform one explicit conversion from a pinned and verified public source.
+The user must see which route is active. There is no remote-inference fallback
+or instruction-file download masquerading as acquisition.
+
+Project sites receive no prompts and do not proxy model bytes. Catalog rows,
+configured peers, local probes, or loopback health do not prove outside-network
+availability.
+
+## MemoryEndpoints Two-Lane Authority
+
+MemoryEndpoints.com is authorized and strongly recommended for two separate
+uses:
+
+1. Direct ecosystem-agent coordination. Agents working on all maintained
+   ecosystem sites use MemoryEndpoints.com for agent-to-agent long-term
+   memory, meetings, handoffs, and coordination.
+2. TinyRustLM.com Connect user plugin. Separately, a user explicitly signs in
+   to MemoryEndpoints.com through the TinyRustLM.com Connect plugin and selects
+   it as TinyRustLM.com Connect long-term memory.
+
+The direct agent lane and the user plugin lane must never share identity,
+credentials, consent, scopes, provenance, idempotency keys, or receipts by
+implication. Neither may silently act for the other. Prompts, transcripts,
+meetings, invitation URLs, credentials, tokens, and raw hosted-memory payloads
+must not be silently uploaded or published.
+
+Prelaunch resilience may duplicate important memory in current .uai files,
+wiki records, source-controlled public-safe notes, and approved private stores.
+Every maintained copy must remain current, secret-safe, provenance-labeled,
+and noncontradictory. A conflict is surfaced and reconciled; no implementation
+silently chooses a convenient copy.
+
+Authorization, configured code, and service reachability are not live proof.
+Meetings, synchronization, restores, deletes, cleanup, and continuity require
+exact authorized receipts.
+
+## Preserved Evidence And Claims
+
+Qwen3 composition attempt /10 remains an immutable terminal failure. Its bytes
+are not eligible for repair, retry, adoption, promotion, or publication. A
+source-level contract correction is input to a wholly new operation, not
+retrospective proof.
+
+Current campaign counters remain:
+
+- 0/20 qualified models
+- 0/50 deletion-backed clean browser rounds
+- 0/25 authorized live MemoryEndpoints rounds
+- 0/40 externally proven P2P lanes
+- 0/20 live catalog announcements
+
+## Publication Record
+
+Last published: 1.8.0.
+Release date: 2026-08-28.
+Update: replaced contradictory legacy package/runtime prose with the current
+SLM2, P2P, privacy, evidence, and MemoryEndpoints contract.
+
+Publication requires one clean committed source revision, complete tests and
+documentation, deployment from the verified closure, and exact public HTTPS
+readback. Development reachability, package creation, or a local smoke test is
+not enough.
+
+Current routes:
+
+- https://TinyRustLM.com/
+- https://TinyRustLM.MiRust.com/developer-portal/
+- /docs/long-term-memory.md
+
+Historical documentation may be retained only as clearly identified evidence.
+It does not authorize obsolete executable behavior or current claims.

@@ -1,137 +1,28 @@
-# TinyRustLM Full Agent Text
+profile: tinyrustlm-mirust.llms-full-export.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+canonical_public_source: /llms-full.txt
 
-> Condensed full machine-readable bundle for TinyRustLM plain PHP package 1.5.0. TinyRustLM.MiRust.com is the developer portal, with the legacy runtime documentation corpus preserved under `/docs/runtime-portal/`. Deep report bodies remain in the linked durable docs rather than duplicated here.
+product_contract:
+  - TinyRustLM is one clean-slate prelaunch browser-local product.
+  - A current composition is exactly model.slm2, tokenizer.tokenizer2, template.template2, sampling.sampling2, prompt.prompt2, and composition.acg2.
+  - There is no legacy reader, compatibility alias, migration, fallback, response repair, hidden retry, best-of-N, or accepted debt.
+  - Project sites do not receive prompts or model bytes; model bytes remain local or move directly between consenting peers.
 
-# TinyRustLM
+package_contract:
+  - The default public package transaction is exactly TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
+  - TinyRustLM.MemoryEndpoints is separately optional, excluded from the default transaction, and does not become model-byte transport.
 
-TinyRustLM.MiRust.com is the TinyRustLM developer portal: a plain PHP project website for a zero-dependency Rust/WebAssembly browser-local small language model runtime, custom `.slm` artifacts, deterministic validation, quantized execution, adapter sidecars, selector registries, local-only diagnostics, UAI file memory, durable reports, and project contact routing.
+memory_endpoints_two_uses:
+  - Direct agent lane: agents across every maintained ecosystem site use MemoryEndpoints.com for agent-to-agent long-term memory, meetings, handoffs, and coordination.
+  - User plugin lane: a TinyRustLM.com Connect user signs in to MemoryEndpoints.com and explicitly selects it as TinyRustLM.com Connect long-term memory.
+  - Keep identity, credentials, consent, scopes, provenance, idempotency, and receipts separate; neither lane silently acts for the other.
+  - Authorization, implementation, configuration, fixtures, mocks, or reachability do not prove a live operation.
 
-Current public app route:
+prelaunch_redundancy:
+  - Important memory may also be kept in current .uai, wiki, public-safe source notes, and approved private stores.
+  - Keep every maintained copy current, secret-safe, provenance-labeled, and noncontradictory; surface and reconcile conflicts.
 
-- <https://TinyRustLM.com/>
-
-Current developer portal route:
-
-- <https://TinyRustLM.mirust.com/developer-portal/>
-
-## Core Routes
-
-- [Overview](https://TinyRustLM.mirust.com/): project summary, constraints, runtime surfaces, and deployment posture.
-- [Architecture](https://TinyRustLM.mirust.com/architecture/): static browser UI, Rust/WASM runtime, offline packer, local server, harness, and claim boundaries.
-- [Runtime](https://TinyRustLM.mirust.com/runtime/): Rust/WASM runtime responsibilities, byte transfer, generation, diagnostics, and error states.
-- [.slm Format](https://TinyRustLM.mirust.com/slm-format/): custom model artifact contract for headers, tensor directory, tokenizer metadata, quantization fields, and checksums.
-- [Quantization](https://TinyRustLM.mirust.com/quantization/): f32, q8_0, q4_0, and the 33,554,432-byte browser selector budget.
-- [Browser Runtime](https://TinyRustLM.mirust.com/browser-runtime/): TinyRustLM Chat mode, local/Hugging Face/P2P source choices, local-only imports, honest transcript state, Hugging Face `Start Conversion`, Rust `convert-huggingface-request` receipts with MiniModel share-directory and metadata-only publication hints, generated `peer-source-announcements.v0.json`, feed-bound `models.with-announcement-feed.v0.json`, `converted-once-p2p-publish.README.txt`, P2P handoffs, live public smoke proof that only app/runtime assets load before user action, and reset boundaries.
-- [Adapters](https://TinyRustLM.mirust.com/adapters/): ADP1, ASP1, and ALR1 adapter sidecars with Rust validation before apply.
-- [Model Breeding](https://TinyRustLM.mirust.com/model-breeding/): offline candidate lineage, parent compatibility, operator receipts, manifests, runtime-smoke, eval evidence, and selector admission.
-- [Testing](https://TinyRustLM.mirust.com/testing/): Rust tests, browser harness checks, WASM ABI smoke, browser smoke modes, and performance soak.
-- [Developer Portal](https://TinyRustLM.mirust.com/developer-portal/): consolidated implementation docs, legacy runtime archive, preserved checksum manifest, proof routes, operations notes, and current app boundary.
-- [Roadmap](https://TinyRustLM.mirust.com/roadmap/): proof-first expansion plan and explicit future boundaries.
-- [Glossary](https://TinyRustLM.mirust.com/glossary/): compact terms for humans and agents.
-- [Docs + UAI Memory](https://TinyRustLM.mirust.com/docs/): durable report archive, long-term memory body, report index, and `.uai` read order.
-- [Contact Mike Kappel](https://TinyRustLM.mirust.com/contact/): direct project and architecture contact route.
-
-## Durable Memory
-
-- [Long-term memory](https://TinyRustLM.mirust.com/docs/long-term-memory.md): durable project state, current scope, public claim boundaries, report routing, and next recursive direction.
-- [Report index](https://TinyRustLM.mirust.com/docs/report-index.md): preserved report manifest with source filenames, roles, byte counts, and checksums.
-- [Legacy runtime archive](https://TinyRustLM.mirust.com/docs/runtime-portal/index.md): current index for the former runtime documentation corpus absorbed into this developer portal.
-- [Runtime portal preservation manifest](https://TinyRustLM.mirust.com/docs/runtime-portal/MANIFEST.md): checksum-bearing manifest for the absorbed legacy runtime corpus.
-- [Runtime implementation archive](https://TinyRustLM.mirust.com/docs/runtime-portal/runtime-docs/implementation/index.md): preserved implementation docs.
-- [.uai index](https://TinyRustLM.mirust.com/.uai/index.uai): agent file-memory read order.
-- [.uai long-term pointer ledger](https://TinyRustLM.mirust.com/.uai/long-term-memory.uai): pointer ledger deep-linking report and durable memory targets.
-
-## Runtime Documentation Consolidation
-
-The former standalone runtime documentation lane is retired as a separate documentation authority. Its public implementation corpus is preserved under `/docs/runtime-portal/` with a checksum-bearing manifest at `/docs/runtime-portal/MANIFEST.md` and a current archive index at `/docs/runtime-portal/index.md`.
-
-Use `/developer-portal/` as the current human-readable route for TinyRustLM developer evidence. Use `https://TinyRustLM.com/` as the current public app route. SLMComposer.com is no longer the canonical public app identity.
-
-## Truth Boundary
-
-TinyRustLM is a browser-local Rust/WebAssembly small language model runtime project. It is not a cloud assistant, hosted chatbot, WordPress theme, generic Rust site, GGUF runtime claim, or remote inference service.
-
-Project servers do not run user model bytes. Project servers do not serve runnable user model bytes. TinyRustLM.com remains browser-local and imports local `.slm` files through the browser file picker.
-
-## Source Options
-
-TinyRustLM should explain model source choices as user-controlled import paths:
-
-- Local: users choose local `.slm` files through the browser file picker.
-- Hugging Face: metadata discovery may help users find source candidates, but rows are not runnable until Rust converts and validates a user-owned local source file into `.slm` or MiniModel metadata names an admitted `.slm` plus a consenting peer source. `Start Conversion` saves a local request/script handoff, and the Rust conversion receipt now preserves MiniModel `prepare-peer-share`, catalog snapshot, peer-source announcement/feed, local peer-serving, and metadata-only publication hints; generated scripts can write `peer-source-announcements.v0.json`, feed-bound `models.with-announcement-feed.v0.json`, and `converted-once-p2p-publish.README.txt` without sending model bytes to project servers.
-- Peer-to-peer: transfer work starts with secure metadata, checksums, consent, and Rust verification before browser import. Broader discovery remains later; project servers still must not host, proxy, run, cache, or serve model bytes.
-
-All source options must converge on local Rust validation before a model is admitted.
-
-## Rust Responsibilities
-
-Rust owns `.slm` parsing, tokenizer behavior, tensor validation, quantization math, KV cache state, sampling, generation, diagnostics, error codes, adapter validation, adapter application, checksum verification, and local import receipts.
-
-JavaScript owns browser controls, local file selection, byte transfer into WASM memory, transcript rendering, and diagnostics display. JavaScript must not parse tensor payloads or make model-quality claims.
-
-## Artifact Rules
-
-`.slm` is the custom local model artifact. Public copy should keep the following fields visible:
-
-- magic and schema version
-- model id and artifact kind
-- byte count
-- tensor directory
-- tokenizer metadata
-- quantization fields
-- artifact checksum
-- tokenizer and config checksums
-- bounded runtime state
-- optional adapter and selector compatibility metadata
-
-Adapters ADP1, ASP1, and ALR1 are sidecars, not replacement models. They are not applied until Rust validates shape, identity, checksums, tokenizer agreement, tensor layout, and finite payload values.
-
-## Model Exchange Boundary
-
-The future MiniModel/TinyRustLM exchange architecture is metadata-first:
-
-- catalogs may publish schemas, manifests, public keys, model-card routes, license routes, eval routes, and takedown or contact routes
-- manifests must be checksum-bound and signature-aware
-- chunk and Merkle fields are reserved for later peer transfer
-- users must consent before transfer or import
-- third-party model entries are not endorsements
-- project infrastructure must not host, run, or serve user model bytes
-
-Peer networking remains a later phase. Rust-native QUIC/blob transfer, Rust-libp2p, BitTorrent-style chunking, Iroh, Pear/Bare/Hypercore, and Hugging Face-assisted discovery can be compared later without making a JavaScript runtime a core dependency by default.
-
-## Public Claim Boundaries
-
-- Do not infer cloud inference or remote model execution.
-- Do not claim trained assistant quality unless an evaluation sidecar with passed cases exists.
-- Do not claim GGUF import support unless a specific conversion path and smoke evidence are added.
-- Do not describe this package as WordPress.
-- Do not introduce Bootstrap, jQuery, Tailwind, React, Vue, Composer, npm, CDN dependencies, analytics, telemetry, remote inference APIs, or external model downloads by default.
-- Treat model and adapter licenses as artifact-specific.
-
-## Preserved Reports
-
-The report bodies are linked from [report index](https://TinyRustLM.mirust.com/docs/report-index.md) and are not duplicated here. Key preserved reports include:
-
-- Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes
-- Architecting Minimalist Neural Inference in WebAssembly
-- Architecture and Engineering of TinyRustLM
-- Tiny Language Models for Rust/WASM
-- GGUF MiRust All Source Review Bundle
-- Memory Systems Domains Research
-- Future-Proof Native HTML5 Techniques
-- Future-Proof JavaScript Without Dependencies
-- Innovative Vanilla Web Design
-- Agent-Native Vanilla Web Architecture
-- Analyzing Website Virality
-
-## Machine Formats
-
-- [llms.txt](https://TinyRustLM.mirust.com/llms.txt): compact machine-readable route map.
-- [llms-full.txt](https://TinyRustLM.mirust.com/llms-full.txt): this condensed full agent bundle.
-- [sitemap.xml](https://TinyRustLM.mirust.com/sitemap.xml): canonical route list.
-- [robots.txt](https://TinyRustLM.mirust.com/robots.txt): crawl policy.
-- [Package manifest](https://TinyRustLM.mirust.com/docs/package-manifest.md): checksum-bearing package file list.
-
-## Agent Behavior
-
-Read visible pages, cite canonical routes, follow robots and terms, respect the no-server-model-bytes boundary, and no-op unsupported requests. When durable memory and a UI page disagree, prefer the newest checksum-bearing durable memory entry and flag the discrepancy for review.
+evidence_and_history:
+  - Historical runtime documents are retained only as clearly labeled immutable evidence and have no current compatibility authority.
+  - The Qwen3 attempt /10 remains terminal failure and cannot be rerun, repaired, adopted, promoted, deleted, or reinterpreted.
+  - Campaign counters remain 0/20 qualified models, 0/50 clean browser rounds, 0/25 live memory rounds, 0/40 externally proven P2P lanes, and 0/20 catalog announcements until exact receipts exist.

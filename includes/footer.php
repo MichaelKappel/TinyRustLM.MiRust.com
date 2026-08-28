@@ -11,7 +11,7 @@
             <h2>Engineering</h2>
             <a href="/architecture/">Architecture</a>
             <a href="/runtime/">Runtime</a>
-            <a href="/slm-format/">.slm format</a>
+            <a href="/slm-format/">SLM2 format</a>
             <a href="/testing/">Testing</a>
         </nav>
         <nav aria-label="Footer evidence navigation">

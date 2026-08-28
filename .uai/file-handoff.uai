@@ -1,5 +1,6 @@
-profile: tinyrustlm.file-handoff.v3
-updated_utc: 2026-08-10T00:00:19Z
+profile: tinyrustlm-mirust.file-handoff.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+current_authority: New intake is reviewed against the clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, and no-compatibility contracts in totem.uai and taboo.uai.
 handoff_root: agent-file-handoff/
 active_buckets:
   content: agent-file-handoff/Content/
@@ -26,7 +27,7 @@ current_scan:
   result: no_active_intake_after_package_generation
 note: Future report drops belong in active buckets first. Once reviewed, preserve accepted durable bodies under docs and deep-link them from .uai/long-term-memory.uai.
 
-credit_window_handoff_2026_08_09:
+preserved_historical_release_evidence_2026_08_09:
   status: publication_complete_and_readback_verified
   release: TinyRustLM.MiRust.com 1.7.0
   frozen_source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
@@ -37,4 +38,4 @@ credit_window_handoff_2026_08_09:
   latest_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
   latest_receipt_sha256: 746666fc3b631b8f361c6d57e2debdc167cab0e315556ddc4e50f5cde1c20646
   receipt_commit: 499f2775582c5cd14ec04a93c0176baace388384
-  restart: Publication is terminally successful for this frozen closure. Revalidate the immutable receipt and public origin before relying on mutable live state; do not replay the operation as ordinary resume work.
+  restart: This frozen 1.7.0 publication is historical evidence only. Revalidate its immutable receipt when auditing it; do not replay it or use it as evidence for package 1.8.0.

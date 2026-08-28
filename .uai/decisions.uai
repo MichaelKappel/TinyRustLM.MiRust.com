@@ -1,12 +1,10 @@
-profile: tinyrustlm.decisions.v1
-updated_utc: 2026-06-29T22:59:10Z
-decisions:
-  - id: D001
-    decision: Keep TinyRustLM as a plain PHP site, not WordPress.
-    reason: User corrected the platform after the initial WordPress package.
-  - id: D002
-    decision: Preserve full report bodies under docs/reports and keep .uai memory pointer-first.
-    reason: UAIX-style long-term memory should route to durable bodies rather than bulk-loading reports into hot memory.
-  - id: D003
-    decision: Add Docs + Memory top-menu group.
-    reason: The site now has first-class documentation and UAI memory surfaces.
+profile: tinyrustlm-mirust.decisions.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+current_decisions:
+  - Keep TinyRustLM.MiRust.com as the plain-PHP current developer portal.
+  - Use only the clean-slate six-member SLM2 contract; preserve superseded material solely as labeled historical evidence.
+  - Keep the default three-package transaction separate from the optional TinyRustLM.MemoryEndpoints connector.
+  - Define MemoryEndpoints.com as two isolated uses: direct ecosystem-agent coordination and the TinyRustLM.com Connect user plugin.
+  - Permit redundant prelaunch memory only with active synchronization, provenance, secret safety, and conflict reconciliation.
+  - Bind every release claim to clean pushed source, deterministic artifacts, deployment receipt, and exact HTTPS readback.

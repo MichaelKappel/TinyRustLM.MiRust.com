@@ -1,26 +1,18 @@
-profile: tinyrustlm.architecture.v1
-updated_utc: 2026-06-29T22:59:10Z
+profile: tinyrustlm-mirust.architecture.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+site: TinyRustLM.MiRust.com
+
 site_architecture:
-  root_files:
-    - index.php
-    - .htaccess
-    - data/site.php
-    - data/pages.php
-    - includes/header.php
-    - includes/footer.php
-    - includes/functions.php
-    - assets/css/site.css
-    - assets/js/site.js
-    - docs/index.php
-  content_sources:
-    - data/pages.php for public PHP routes
-    - docs/long-term-memory.md for durable memory body
-    - docs/report-index.md for durable report manifest
-    - docs/reports/* for preserved reports
-  machine_files:
-    - llms.txt
-    - llms-full.txt
-    - robots.txt
-    - sitemap.xml
-    - .uai/*.uai
-runtime_architecture_summary: Rust/WASM runtime owns inference, model parsing, tensor validation, quantization, tokenizer, sampler, diagnostics, and adapter apply. Browser JavaScript owns local fetch, manifest/receipt checks, byte transfer, UI controls, and text-safe rendering.
+  rendering: Plain PHP routes, native HTML/CSS, and bounded vanilla JavaScript.
+  current_content: data/pages.php, README.md, llms.txt, llms-full.txt, and current docs.
+  public_uai: Allowlisted orientation and pointer files only.
+  historical_evidence: docs/reports and docs/runtime-portal are labeled non-authoritative archives.
+  release: Content-addressed committed bytes, deterministic manifest, bounded deployment, and exact HTTPS readback.
+
+product_architecture:
+  - One clean-slate prelaunch browser-local TinyRustLM.com product.
+  - One exact six-member SLM2 composition path with independent validation.
+  - One dedicated worker owns model, tokenizer, generation, and KV state.
+  - Project sites receive no prompts or model bytes.
+
+memory_authority: Read .uai/totem.uai and .uai/taboo.uai for the exact two separate MemoryEndpoints.com uses and prelaunch redundancy rules.

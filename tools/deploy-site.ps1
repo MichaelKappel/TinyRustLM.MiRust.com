@@ -441,7 +441,7 @@ $manifest = Get-Content -Raw -LiteralPath $manifestItem.FullName | ConvertFrom-J
 if ($manifest.schema -cne "tinyrustlm.mirust.site_deployment_manifest.v1" -or
     $manifest.site -cne "TinyRustLM.MiRust.com" -or
     $manifest.origin -cne "https://tinyrustlm.mirust.com" -or
-    $manifest.version -cne "1.7.0" -or
+    $manifest.version -cne "1.8.0" -or
     $manifest.source_commit -notmatch "^[0-9a-f]{40}$" -or
     $manifest.source_tree -notmatch "^[0-9a-f]{40}$" -or
     @($manifest.files).Count -lt 200 -or @($manifest.files).Count -gt 300) {

@@ -22,7 +22,7 @@ return [
     ],
     [
         'title' => 'Architecture and Engineering of TinyRustLM',
-        'summary' => 'Primary TinyRustLM explanation: browser-local runtime, .slm format, q8/q4 quantization, adapters, selector registries, and offline model breeding.',
+        'summary' => 'Preserved historical report about the superseded .slm, q8/q4, adapter, selector, and model-breeding design; it is not current SLM2 authority.',
         'source_filename' => 'Understanding TinyRustLM_ Creation and Purpose.md',
         'path' => 'docs/reports/understanding-tinyrustlm-creation-and-purpose.md',
         'url' => '/docs/reports/understanding-tinyrustlm-creation-and-purpose.md',

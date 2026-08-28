@@ -1,13 +1,12 @@
-profile: tinyrustlm.context.v1
-updated_utc: 2026-06-29T22:59:10Z
-context_summary: TinyRustLM is the entire focus of this site. It is not a generic MiRust, WordPress, or GGUF-only project page.
-project_context:
-  - Custom Rust/WASM browser-local SLM runtime.
-  - Custom .slm artifact format and strict validation.
-  - q8_0 and q4_0 quantized execution under a 33.5 MB model budget.
-  - ADP1, ASP1, and ALR1 adapter sidecars with Rust validation-before-apply.
-  - Selector registries, module-plan receipts, deterministic smoke tests, and local-only diagnostics.
-site_context:
-  - Plain PHP route shell with static docs.
-  - Native HTML/CSS/vanilla JS only.
-  - Contact route remains /contact/ with footer link text Contact Mike Kappel.
+profile: tinyrustlm-mirust.context.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+
+current_context:
+  - TinyRustLM.MiRust.com is the current developer portal for the one prelaunch TinyRustLM.com product.
+  - The sole model contract is the exact six-member SLM2 composition.
+  - The default package transaction is TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
+  - TinyRustLM.MemoryEndpoints is separately optional and serves only the two authorized MemoryEndpoints.com uses.
+  - Historical .slm, adapter, selector, q4/q8, and prior runtime materials remain labeled evidence only and have no current compatibility authority.
+
+memory_context: Read totem.uai and taboo.uai; duplicate prelaunch memory is allowed only while all maintained copies stay current and noncontradictory.
+campaign_truth: 0/20; 0/50; 0/25; 0/40; 0/20 until exact receipts exist.

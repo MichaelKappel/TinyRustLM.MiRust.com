@@ -1,60 +1,14 @@
-# TinyRustLM
+profile: tinyrustlm-mirust.llms-export.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+canonical_public_source: /llms.txt
 
-> TinyRustLM.MiRust.com is the TinyRustLM developer portal: a plain PHP project website explaining a zero-dependency Rust/WebAssembly browser-local small language model runtime, an absorbed legacy runtime documentation archive, custom .slm artifacts, strict validation, quantized execution, adapter sidecars, selector registries, deterministic test evidence, UAI file memory, durable reports, and a direct project contact route for Mike Kappel.
+summary:
+  - TinyRustLM.MiRust.com is the current developer portal for the one prelaunch TinyRustLM.com product and its sole six-member SLM2 path.
+  - The default package transaction is TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P; TinyRustLM.MemoryEndpoints is separately optional.
+  - MemoryEndpoints.com has exactly two separate uses: direct ecosystem-agent coordination and the explicit TinyRustLM.com Connect user plugin.
+  - Project sites do not receive prompts or model bytes. No live capability, publication, or campaign progress is claimed without exact evidence.
+  - Historical `.slm` material is labeled evidence only and has no current runtime or compatibility authority.
 
-## Core Pages
-
-- [Overview](https://TinyRustLM.mirust.com/): Project summary, constraints, runtime surfaces, and deployment posture.
-- [Architecture](https://TinyRustLM.mirust.com/architecture/): System map covering the static browser UI, Rust/WASM runtime, offline packer, local server, harness, and claim boundaries.
-- [Runtime](https://TinyRustLM.mirust.com/runtime/): Rust/WASM runtime responsibilities, memory transfer, generation, diagnostics, and explicit error states.
-- [.slm Format](https://TinyRustLM.mirust.com/slm-format/): Custom model artifact contract for header, tensor directory, tokenizer metadata, quantization fields, and checksum validation.
-- [Quantization](https://TinyRustLM.mirust.com/quantization/): f32, q8_0, and q4_0 memory math under the 33,554,432-byte browser selector budget.
-- [Browser Runtime](https://TinyRustLM.mirust.com/browser-runtime/): Local browser app behavior, TinyRustLM Chat mode at https://TinyRustLM.com/, honest first-run empty transcript, local/Hugging Face/P2P source choices, Hugging Face `Start Conversion` handoff, Rust `convert-huggingface-request` receipt with MiniModel share-directory and metadata-only publication hints, generated `peer-source-announcements.v0.json`, feed-bound `models.with-announcement-feed.v0.json`, `converted-once-p2p-publish.README.txt`, selector registry routing, local-only imports, live public smoke proof that only app/runtime assets load before user action, transcript state, and reset boundaries.
-- [Adapters](https://TinyRustLM.mirust.com/adapters/): ADP1, ASP1, and ALR1 adapter sidecars with Rust validation-before-apply.
-- [Model Breeding](https://TinyRustLM.mirust.com/model-breeding/): Offline candidate lineage, parent compatibility, operator receipts, manifests, runtime-smoke, eval evidence, and selector admission.
-- [Testing](https://TinyRustLM.mirust.com/testing/): Rust tests, browser harness checks, WASM ABI smoke, browser smoke modes, and performance soak.
-- [Developer Portal](https://TinyRustLM.mirust.com/developer-portal/): Consolidated TinyRustLM implementation docs, legacy runtime archive, preserved checksum manifest, proof routes, operations notes, and current TinyRustLM.com app boundary.
-- [Roadmap](https://TinyRustLM.mirust.com/roadmap/): Proof-first expansion plan and explicit future boundaries.
-- [Glossary](https://TinyRustLM.mirust.com/glossary/): Definitions for .slm, q8_0, q4_0, ADP1, ASP1, ALR1, selector registry, and runtime-smoke.
-- [Docs + UAI Memory](https://TinyRustLM.mirust.com/docs/): Durable report archive, long-term memory body, report index, and .uai read order.
-- [Contact Mike Kappel](https://TinyRustLM.mirust.com/contact/): Direct project contact route with email, phone, portfolio, contact hub, LinkedIn, GitHub, and NuGet links.
-
-## Durable Memory
-
-- [Long-term memory](https://TinyRustLM.mirust.com/docs/long-term-memory.md): Durable project memory body for current scope, public claim boundaries, report routing, and next recursive direction.
-- [Report index](https://TinyRustLM.mirust.com/docs/report-index.md): Preserved report manifest with source filenames, roles, byte counts, and checksums.
-- [Legacy runtime archive](https://TinyRustLM.mirust.com/docs/runtime-portal/index.md): Current index for the runtime documentation corpus absorbed into this developer portal.
-- [Runtime portal preservation manifest](https://TinyRustLM.mirust.com/docs/runtime-portal/MANIFEST.md): Checksum-bearing manifest for the absorbed legacy runtime corpus.
-- [Runtime implementation archive](https://TinyRustLM.mirust.com/docs/runtime-portal/runtime-docs/implementation/index.md): Preserved implementation docs.
-- [.uai index](https://TinyRustLM.mirust.com/.uai/index.uai): Agent file-memory read order.
-- [.uai long-term pointer ledger](https://TinyRustLM.mirust.com/.uai/long-term-memory.uai): Pointer ledger deep-linking every report and durable memory target.
-
-## Preserved Reports
-
-- [Engineering Tiny Language Models for Deterministic WebAssembly and Rust Runtimes](https://TinyRustLM.mirust.com/docs/reports/tiny-language-models-for-wasm.md): Core tiny-model feasibility, micro-model tiers, quantization constraints, deterministic WASM smoke testing, and Rust/WASM runtime pressure.
-- [Architecting Minimalist Neural Inference in WebAssembly](https://TinyRustLM.mirust.com/docs/reports/rust-wasm-neural-model-patterns.md): WASM heap planning, zero-copy tensor views, tokenizer data structures, SIMD matrix-vector kernels, and deterministic neural inference design.
-- [Architecture and Engineering of TinyRustLM](https://TinyRustLM.mirust.com/docs/reports/understanding-tinyrustlm-creation-and-purpose.md): Primary TinyRustLM explanation: browser-local runtime, .slm format, q8/q4 quantization, adapters, selector registries, and offline model breeding.
-- [Tiny Language Models for Rust/WASM](https://TinyRustLM.mirust.com/docs/reports/tiny-language-models-for-rust-wasm.md): Candidate model analysis, 33.5 MB budget math, Llama and GPT-NeoX topology notes, tokenizer constraints, and converter requirements.
-- [GGUF MiRust All Source Review Bundle](https://TinyRustLM.mirust.com/docs/reports/gguf-mirust-all-source-review-bundle.txt): Large source review bundle containing the TinyRustLM source inventory, hot .uai memory files, docs, runtime, packer, harness, and model-breeding artifacts.
-- [Memory Systems Domains Research](https://TinyRustLM.mirust.com/docs/reports/memory-systems-domains-research.md): Background research on AI memory domains, UAIX-style short-term handoff, long-term governed memory, and machine-readable knowledge routing.
-- [Future-Proof Native HTML5 Techniques](https://TinyRustLM.mirust.com/docs/reports/future-proof-native-html5-techniques.md): Native HTML5, semantic structure, progressive enhancement, declarative shadow DOM, popovers, dialogs, and accessible no-framework web patterns.
-- [Future-Proof JavaScript Without Dependencies](https://TinyRustLM.mirust.com/docs/reports/vanilla-js-future-proof-techniques.md): Native JavaScript standards, import maps, async control flow, reactive stores, navigation, view transitions, and security primitives.
-- [Innovative Vanilla Web Design](https://TinyRustLM.mirust.com/docs/reports/innovative-vanilla-web-design.md): Advanced vanilla design ideas, view transitions, Web Components, Houdini, WebGPU, Web Audio, and immersive zero-dependency interaction patterns.
-- [Agent-Native Vanilla Web Architecture](https://TinyRustLM.mirust.com/docs/reports/mememtech-vanilla-web-architecture.md): Agent-readable web architecture, semantic HTML, llms.txt, content negotiation, robots policy, and machine-readable site surfaces.
-- [Analyzing Website Virality](https://TinyRustLM.mirust.com/docs/reports/analyzing-website-virality.md): Sharing psychology, growth loops, friction reduction, dark social, interactive microsites, and resilient infrastructure for public project sites.
-
-## Machine Formats
-
-- [Full text](https://TinyRustLM.mirust.com/llms-full.txt): Bundled Markdown content for agent readers.
-- [Sitemap](https://TinyRustLM.mirust.com/sitemap.xml): Canonical route list.
-- [Robots](https://TinyRustLM.mirust.com/robots.txt): Crawl policy.
-
-## Boundaries
-
-- This is a plain PHP site, not WordPress.
-- Do not infer cloud inference or remote model execution.
-- Do not infer trained assistant quality from runtime-smoke claims.
-- Treat model and adapter licenses as artifact-specific.
-- The contact page is for project and professional routing, not an automated support system.
-- The former standalone runtime documentation lane is retired; use TinyRustLM.MiRust.com/developer-portal/ for current developer evidence.
-- TinyRustLM.com is the current public app route; SLMComposer.com is no longer the canonical public app identity.
+redundancy:
+  - Current .uai, wiki, public-safe notes, and approved private stores may duplicate prelaunch memory for resilience.
+  - Every maintained copy must remain current, secret-safe, provenance-labeled, and noncontradictory.

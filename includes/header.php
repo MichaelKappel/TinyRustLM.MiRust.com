@@ -55,7 +55,7 @@
 <header class="site-header">
     <div class="status-bar">
         <div class="shell status-inner">
-            <p><strong>TinyRustLM developer portal</strong><span>Rust/WASM runtime, <code>.slm</code> contracts, and proof evidence</span></p>
+            <p><strong>TinyRustLM developer portal</strong><span>Rust/WASM runtime, SLM2 contracts, and proof evidence</span></p>
             <nav aria-label="Utility navigation">
                 <a href="/docs/">Docs</a>
                 <a href="/llms.txt">llms.txt</a>

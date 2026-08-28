@@ -1,40 +1,28 @@
-profile: tinyrustlm.uai-index.v3
-updated_utc: 2026-07-02T00:12:07Z
-package: TinyRustLM developer portal plain PHP site 1.5.0
-workspace_coordinator: workspace.uai
-public_export: .well-known/uaix-talisman.txt
-public_uai_policy: denied
-setup_mode:
-  agent_file_handoff: enabled
-  long_term_pointer_ledger: enabled
-  durable_docs_folder: docs/
+profile: tinyrustlm-mirust.public-uai-index.current.v1
+updated_utc: 2026-08-28T20:20:00Z
+site: TinyRustLM.MiRust.com
+release: 1.8.0
+public_uai_policy: allowlisted_orientation_and_pointer_records_only
+
 read_order:
-  - workspace.uai
-  - .uai/system-profile.uai
-  - .uai/startup-packet.uai
-  - .uai/receiver-brief.uai
-  - .uai/context.uai
-  - .uai/constraints.uai
-  - .uai/architecture.uai
-  - .uai/coding-standards.uai
-  - .uai/operations.uai
-  - .uai/test-plan.uai
-  - .uai/progress.uai
-  - .uai/decisions.uai
-  - .uai/memory.uai
-  - .uai/short-term-memory.uai
+  - .uai/totem.uai
+  - .uai/taboo.uai
+  - .uai/talisman.uai
   - .uai/long-term-memory.uai
-  - .uai/file-handoff.uai
-  - .uai/intake-outcome-ledger.uai
-  - .uai/next-recursive-prompt.uai
-primary_deep_links:
+
+current_routes:
   developer_portal: /developer-portal/
-  docs_home: /docs/
-  runtime_portal_manifest: /docs/runtime-portal/MANIFEST.md
-  runtime_portal_archive: /docs/runtime-portal/
-  long_term_memory_body: /docs/long-term-memory.md
+  documentation: /docs/
+  memory_policy: /docs/long-term-memory.md
   report_index: /docs/report-index.md
-  reports_folder: /docs/reports/
+  historical_runtime_evidence: /docs/runtime-portal/
   machine_index: /llms.txt
-  full_machine_text: /llms-full.txt
-note: Hot .uai records are compact routing memory. TinyRustLM.MiRust.com is now the TinyRustLM developer portal; preserved Runtime.MiRust.com implementation evidence lives under docs/runtime-portal/ with a checksum manifest.
+  full_machine_context: /llms-full.txt
+
+memory_endpoints_two_uses:
+  direct_agent_coordination: Agents across all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
+  tinyrustlm_connect_user_plugin: Separately, a TinyRustLM.com Connect user signs in to MemoryEndpoints.com and explicitly selects it as TinyRustLM.com Connect long-term memory.
+  lane_boundary: Identity, credentials, consent, scopes, provenance, idempotency, and receipts remain separate.
+  redundancy: Synchronized prelaunch memory copies in current UAI, wiki, public-safe notes, and approved private stores are allowed for resilience.
+
+privacy: Every UAI file not named in the public allowlist remains private. Never publish credentials, invitation URLs, prompts, model bytes, private paths, or raw hosted-memory payloads.

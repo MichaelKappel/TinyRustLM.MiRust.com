@@ -1,6 +1,7 @@
-# TinyRustLM Legacy Runtime Archive
+# TinyRustLM Historical Runtime Archive
 
-The standalone runtime documentation lane has been absorbed into TinyRustLM.MiRust.com.
+The former standalone runtime documentation lane has been absorbed into
+TinyRustLM.MiRust.com and frozen as historical evidence.
 
 Use this archive for historical implementation evidence only. The current developer portal is:
 
@@ -40,6 +41,12 @@ The preservation manifest records byte counts and SHA-256 checksums:
 
 ## Boundary
 
-This archive is not a second live product site. It is retained so links, evidence, and agent memory remain auditable while TinyRustLM.MiRust.com becomes the single developer documentation home.
+This archive is not a second live product site, a current specification, or a
+compatibility promise. References inside it to `.slm`, old packages, adapters,
+selectors, scripts, or earlier runtime behavior describe superseded historical
+work only. They do not authorize a reader, fallback, migration, alias, or
+shipping path.
 
-Project servers do not run user model bytes. Project servers do not serve runnable user model bytes. TinyRustLM.com remains browser-local and accepts local `.slm` imports through the browser file picker.
+The sole current clean-slate composition path is SLM2. Current authority lives
+in the developer portal and its current contracts. Project sites do not run or
+proxy user model bytes or receive prompts.

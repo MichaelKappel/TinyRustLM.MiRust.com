@@ -1,20 +1,21 @@
-profile: tinyrustlm-site.taboo.v1
+profile: tinyrustlm-mirust.taboo.current.v1
 updated_utc: 2026-08-28T00:00:00Z
 site: TinyRustLM.MiRust.com
-role: negative_anchor
-taboo:
-  - Do not claim TinyRustLM.MiRust.com runs hosted inference.
-  - Do not publish or imply unreviewed model-quality claims.
-  - Do not host or route model weights without checksum-bound evidence and explicit local-use boundaries.
-  - Do not mutate totem.uai, taboo.uai, or talisman.uai without exact human artifact-and-operation authorization.
-agent_mutability: read_only_without_exact_human_artifact_and_operation_authorization
+role: prohibited directions
+authority_file_mutability: read_only_without_exact_human_artifact_and_operation_authorization
 
-pre_publication_no_debt_policy_id: pre-publication-clean-slate-v1
-pre_publication_no_debt_prohibition: "Until the human explicitly removes this prohibition, do not add or retain technical debt, legacy or backward-compatibility support, compatibility shims, deprecated aliases, dual contracts, migration branches, fallback paths for superseded code, low-quality patches, knowingly temporary architecture, or deferred cleanup."
-pre_publication_obsolete_contract_prohibition: "Do not preserve obsolete routes, schemas, behavior, or code merely because a dogfood client used them. Update every dogfood client to the verified current design and remove the obsolete path."
-pre_publication_release_integrity_prohibition: "Do not deploy from a dirty, partially validated, or ambiguous release closure. A reachable dogfood or development surface is not evidence of a public release. Do not call work complete while known in-scope correctness, security, accessibility, test, documentation, or cleanup defects remain."
-memory_endpoints_false_policy_prohibition: "Do not describe MemoryEndpoints.com as unauthorized, disconnected, or outside the ecosystem product plan."
-memory_endpoints_lane_conflation_prohibition: "Do not conflate direct agent-to-agent coordination with the TinyRustLM.com Connect user plugin, share credentials between them, or let either lane silently act for the other."
-memory_endpoints_silent_upload_prohibition: "Do not silently upload prompts, transcripts, local memory, meetings, credentials, or private payloads; user plugin memory requires explicit sign-in, consent, scope, and truthful status."
-memory_endpoints_false_evidence_prohibition: "Do not claim live communication, account correctness, restore, deletion, continuity, or synchronization from source code, configuration, reachability, mocks, or fixtures."
-memory_redundancy_drift_prohibition: "Do not let redundant prelaunch memory copies drift or contradict one another; secrets and raw hosted-memory payloads remain in approved private storage."
+memory_endpoints_two_use_context:
+  - Direct use: ecosystem agents use MemoryEndpoints.com for agent-to-agent long-term memory, meetings, handoffs, and coordination across all sites.
+  - Separate plugin use: a TinyRustLM.com Connect user signs in to MemoryEndpoints.com and explicitly selects it as TinyRustLM.com Connect long-term memory.
+  - Lane boundary: keep identity, credentials, consent, scopes, provenance, idempotency, and receipts separate; neither lane silently acts for the other.
+
+prohibitions:
+  - Do not claim hosted inference, hosted model bytes, prompt collection, unreviewed quality, public P2P, live memory continuity, deployment, or publication without exact evidence.
+  - Do not retain legacy readers, compatibility, migration, aliases, dual protocols, fallback, response repair, hidden retry, best-of-N, low-quality patches, or deferred cleanup.
+  - Do not rerun, repair, adopt, promote, delete, or reinterpret immutable failed operations, including Qwen3 attempt /10.
+  - Do not describe MemoryEndpoints.com as unauthorized, disconnected, or outside the ecosystem plan.
+  - Do not conflate the direct agent lane with the user plugin lane, share credentials or consent across lanes, or let either lane silently act for the other.
+  - Do not silently upload prompts, transcripts, local memory, meeting content, credentials, invitation URLs, tokens, model bytes, or raw hosted-memory payloads.
+  - Do not claim live use, account correctness, synchronization, restore, deletion, cleanup, continuity, deployment, or publication from source, configuration, reachability, fixtures, or mocks.
+  - Do not let redundant prelaunch memory copies drift or contradict one another; keep every maintained copy current, secret-safe, and provenance-labeled.
+  - Do not deploy from dirty, partially tested, ambiguous, stale, or undocumented source.

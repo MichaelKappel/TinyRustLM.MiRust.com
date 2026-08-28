@@ -1,31 +1,26 @@
 UAIX Talisman Public Export
 site: TinyRustLM.MiRust.com
-role: talisman-client
-source: MiRust.com
-updated_utc: 2026-07-03T20:10:00Z
+role: TinyRustLM developer documentation portal
+release: 1.8.0
+updated_utc: 2026-08-28T20:20:00Z
 
-Purpose
-TinyRustLM.MiRust.com is the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, .slm artifacts, and the absorbed legacy runtime documentation archive. This file is a public orientation export only.
+Current Authority
+- TinyRustLM is one prelaunch browser-local product with one six-member SLM2 path.
+- SLM2, Tokenizer2, Template2, Sampling2, Prompt2, and ACG2 are technical identities, not product generations.
+- Current product paths have no legacy reader, compatibility alias, migration, fallback, response repair, hidden retry, or best-of-N behavior.
+- Exact qualified model bytes move directly between consenting peers, or an installed local companion performs explicit pinned local conversion.
+- Project sites receive no prompts and do not proxy model bytes.
 
-Public Anchors
-- Explain TinyRustLM runtime, .slm format, quantization, adapters, selectors, and local-only diagnostics.
-- Keep model package evidence checksum-bound.
-- Route live local use to https://TinyRustLM.com/.
-- Treat TinyRustLM.com as the root-domain app route, not an /app/ subpath.
-- Route current developer evidence to https://TinyRustLM.MiRust.com/developer-portal/.
-- Preserve the retired standalone runtime documentation corpus under /docs/runtime-portal/ with checksums.
-- Document Hugging Face local conversion handoffs, converted-once peer-source announcement feeds, feed-bound catalog snapshots, and MiniModel metadata-only P2P reuse without implying hosted model bytes.
-- Document that live TinyRustLM.com smoke checks use real DNS and load only app/runtime assets before user action.
+MemoryEndpoints.com Two-Use Authority
+- Agents working on every ecosystem site use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
+- Separately, the TinyRustLM.com Connect plugin lets a user sign in to MemoryEndpoints.com and explicitly select it as TinyRustLM.com Connect long-term memory.
+- The lanes keep identity, credentials, consent, scopes, provenance, idempotency, and receipts separate. Neither silently acts for the other.
+- Prelaunch memory may also be duplicated in current UAI, wiki, public-safe source notes, and approved private stores only while every maintained copy remains current, secret-safe, provenance-labeled, and noncontradictory.
 
-Public Boundaries
-- TinyRustLM.MiRust.com is a documentation site, not a hosted inference service.
-- Project servers do not run user model bytes and do not serve runnable .slm artifacts.
-- The former standalone runtime documentation lane is no longer a separate authority.
-- SLMComposer.com is no longer the canonical public app identity.
-- Public quality claims must stay evidence-bound.
+Evidence Boundaries
+- Source, configuration, reachability, fixtures, local probes, packages, and reports do not prove live MemoryEndpoints use, model quality, public P2P, browser release, deployment, or campaign credit.
+- Runtime.MiRust.com material is retained only as clearly labeled historical evidence and creates no current compatibility authority.
+- The default public package transaction is exactly TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P. TinyRustLM.MemoryEndpoints is separately optional.
 
-Private Memory Boundary
-The .uai directory is internal operational memory and should not be crawled or served as public documentation.
-
-File Handoff Boundary
-agent-file-handoff is an operational intake path, not a public content API.
+Public UAI Boundary
+Only index.uai, long-term-memory.uai, talisman.uai, taboo.uai, and totem.uai are allowlisted public orientation or pointer records. Every other UAI record and all credentials, prompts, model bytes, invitation URLs, private paths, and raw hosted-memory payloads remain private.
