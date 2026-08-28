@@ -1,5 +1,5 @@
-profile: tinyrustlm-mirust.file-handoff.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+profile: tinyrustlm-mirust.file-handoff.current.v2
+updated_utc: 2026-08-28T21:23:10Z
 current_authority: New intake is reviewed against the clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, and no-compatibility contracts in totem.uai and taboo.uai.
 handoff_root: agent-file-handoff/
 active_buckets:
@@ -20,22 +20,26 @@ durable_targets:
   report_index: docs/report-index.md
   long_term_memory_body: docs/long-term-memory.md
   pointer_ledger: .uai/long-term-memory.uai
-current_scan:
-  scanned_utc: 2026-06-29T22:59:10Z
-  content_non_placeholder_files: 0
-  improvement_non_placeholder_files: 0
-  result: no_active_intake_after_package_generation
-note: Future report drops belong in active buckets first. Once reviewed, preserve accepted durable bodies under docs and deep-link them from .uai/long-term-memory.uai.
 
-preserved_historical_release_evidence_2026_08_09:
-  status: publication_complete_and_readback_verified
+current_publication_handoff:
+  status: published_and_readback_verified
+  release: TinyRustLM.MiRust.com 1.8.0
+  source_commit: d404afc22eb1ac23c99cfff6f6750fd26048c91c
+  publisher_commit: f44af0d7ed6ffd2348b514a30f5bfa0652f153a4
+  manifest_sha256: 47b74f9195973c1d16a5f883368a0e31960ffa1859a88b2ac4665a0d9ba4bf79
+  closure: 224 files, 7591982 bytes; 22 published and 202 already current
+  success_receipt: deploy/receipts/site-deployment-20260828T210322Z.json
+  success_receipt_sha256: 34d5db343dd8dacc2160331142707b91dd6120fb65ff7b2b8469ed89fd52c3be
+  receipt_commit: 2479652ef06e617dffa855d22bb3062e2b50538d
+  proof: Exact public file readbacks and six route smokes passed.
+  restart: Treat 1.8.0 as terminally published; any public-byte change requires a new versioned closure and receipt.
+
+memory_endpoints:
+  direct_agent_lane: Ecosystem agents use MemoryEndpoints.com directly for long-term memory, meetings, handoffs, and coordination across all maintained sites.
+  user_plugin_lane: A TinyRustLM.com Connect user signs in to MemoryEndpoints.com and explicitly selects its plugin for TinyRustLM.com Connect long-term memory.
+  duplicate_memory: Additional prelaunch copies are allowed for resilience only while synchronized, secret-safe, provenance-labeled, and noncontradictory.
+
+historical_release_evidence:
   release: TinyRustLM.MiRust.com 1.7.0
-  frozen_source_commit: 5c492e3a8fd96d1c676944755d73755c7b56eddb
-  frozen_manifest_sha256: 6407606c8ffcf5b4f966b77c54f511d25e1afa236ad1b148350d6e2bd4314500
-  operation_nonce: efa18f6e4a5a
-  progress: 224 of 224 files authenticated or published; 15 published and 209 already current
-  completed_utc: 2026-08-09T23:59:28.1969079Z
-  latest_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
-  latest_receipt_sha256: 746666fc3b631b8f361c6d57e2debdc167cab0e315556ddc4e50f5cde1c20646
-  receipt_commit: 499f2775582c5cd14ec04a93c0176baace388384
-  restart: This frozen 1.7.0 publication is historical evidence only. Revalidate its immutable receipt when auditing it; do not replay it or use it as evidence for package 1.8.0.
+  status: superseded_historical_evidence_only
+  success_receipt: deploy/receipts/site-deployment-20260809T234347Z.json

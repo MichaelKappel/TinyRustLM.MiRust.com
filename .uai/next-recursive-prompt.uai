@@ -1,7 +1,7 @@
-profile: tinyrustlm-mirust.next-work.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+profile: tinyrustlm-mirust.next-work.current.v2
+updated_utc: 2026-08-28T21:23:10Z
 
 instruction: |
-  Continue from TinyRustLM.MiRust.com package 1.8.0. Read workspace.uai, .uai/totem.uai, .uai/taboo.uai, .uai/short-term-memory.uai, and .uai/long-term-memory.uai first. Maintain one clean-slate six-member SLM2 product path. Keep the default three-package transaction separate from optional TinyRustLM.MemoryEndpoints. Preserve the two separate MemoryEndpoints.com lanes and synchronized prelaunch redundancy rules. Historical .slm and former runtime material is evidence only. Run the complete site gate, commit and push exact source, deploy only the manifest-bound closure, and require exact HTTPS readback before claiming publication.
+  TinyRustLM.MiRust.com 1.8.0 is terminally published and exact HTTPS readback is verified. Do not replay it as an ordinary resume operation. Source commit d404afc22eb1ac23c99cfff6f6750fd26048c91c and publisher commit f44af0d7ed6ffd2348b514a30f5bfa0652f153a4 bind a 224-file, 7591982-byte closure. Success receipt deploy/receipts/site-deployment-20260828T210322Z.json has SHA256 34d5db343dd8dacc2160331142707b91dd6120fb65ff7b2b8469ed89fd52c3be; every manifest-bound readback and six current route smokes passed. Maintain one clean-slate six-member SLM2 product path and keep the default three-package transaction separate from optional TinyRustLM.MemoryEndpoints. Preserve both MemoryEndpoints.com uses: direct ecosystem-agent long-term memory/meetings/coordination, and the user-selected plugin for TinyRustLM.com Connect long-term memory. Additional prelaunch memory copies are allowed only while all maintained copies stay current, secret-safe, provenance-labeled, and noncontradictory. Continue the ecosystem audit without claiming qualified models, live peers, live MemoryEndpoints rounds, or campaign progress from source/configuration alone.
 
-terminal_history: TinyRustLM.MiRust.com 1.7.0 publication evidence remains preserved in file-handoff.uai and must not be replayed as a new operation.
+terminal_history: TinyRustLM.MiRust.com 1.7.0 publication evidence remains preserved in file-handoff.uai and is historical only.

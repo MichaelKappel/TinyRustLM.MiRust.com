@@ -1,16 +1,17 @@
-profile: tinyrustlm-mirust.progress.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+profile: tinyrustlm-mirust.progress.current.v2
+updated_utc: 2026-08-28T21:23:10Z
 
-completed_source_work:
+completed:
   - Consolidated current public and UAI memory around the sole clean-slate SLM2 contract.
-  - Documented the exact direct-agent and TinyRustLM.com Connect user-plugin MemoryEndpoints.com uses.
-  - Separated the optional TinyRustLM.MemoryEndpoints connector from the default three-package transaction.
+  - Documented the direct ecosystem-agent and TinyRustLM.com Connect user-plugin MemoryEndpoints.com uses everywhere they are authoritative.
+  - Separated optional TinyRustLM.MemoryEndpoints from the default three-package transaction.
   - Labeled former runtime and .slm material as historical evidence with no current compatibility authority.
-  - Replaced placeholder archive hashes with a deterministic preservation manifest generator.
+  - Generated deterministic package/archive and deployment manifests from immutable source.
+  - Pushed exact source, published the 224-file TinyRustLM.MiRust.com 1.8.0 closure, and verified every manifest-bound HTTPS file plus six current routes.
+  - Committed the immutable success receipt deploy/receipts/site-deployment-20260828T210322Z.json.
 
-remaining_release_work:
-  - Generate the final public package manifest from the immutable content commit.
-  - Complete every available site gate, including PHP syntax when PHP is available.
-  - Commit, push, build the exact deployment manifest, deploy, and verify public HTTPS readback.
+remaining:
+  - Continue the cross-site source, receipt, remote-equality, and public-state audit.
+  - Do not replay 1.8.0; use a new complete versioned closure for a future public-byte change.
 
 campaign_truth: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live memory rounds; 0/40 externally proven P2P lanes; 0/20 catalog announcements.
