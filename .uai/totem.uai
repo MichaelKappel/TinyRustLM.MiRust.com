@@ -1,5 +1,5 @@
 profile: tinyrustlm-site.totem.v3
-updated_utc: 2026-08-09T05:14:02Z
+updated_utc: 2026-08-28T00:00:00Z
 site: TinyRustLM.MiRust.com
 role: positive_anchor
 mission: Preserve TinyRustLM.MiRust.com as the TinyRustLM developer portal for browser-local Rust/WASM tiny language models, `.slm` artifacts, and retired Runtime.MiRust.com implementation evidence.
@@ -23,3 +23,8 @@ documentation_verification_rule: "Before publication, verify runnable examples, 
 documentation_truth_rule: "Distinguish proposed, implemented, locally tested, externally verified, deployed, rejected, blocked, and unavailable behavior. Never promote model quality, performance, privacy, memory continuity, P2P reachability, or release completion beyond its exact evidence."
 documentation_release_gate: "Do not publish an affected product or documentation site when this portal is incomplete, stale, contradictory, version-skewed, unverified, or inconsistent with implementation and release evidence."
 documentation_clean_replacement_rule: "Remove superseded documentation after its replacement and all consuming references are verified. Preserve immutable historical evidence and release history separately; obsolete guidance receives no legacy-support authority."
+memory_endpoints_policy_id: memory-endpoints-two-lane-ecosystem-v1
+memory_endpoints_agent_coordination_use: "Agents working on all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination."
+memory_endpoints_tinyrustlm_connect_use: "Separately, the TinyRustLM.com Connect plugin lets a user sign in to MemoryEndpoints.com and explicitly use it as the long-term-memory provider for TinyRustLM.com Connect."
+memory_endpoints_lane_boundary: "Keep direct agent coordination and the user plugin separately identified, scoped, consented, authenticated, and evidenced; neither lane silently grants authority to the other, and configured or reachable state is not live-operation proof."
+memory_redundancy_rule: "During prelaunch, important memory may also be retained in current .uai, wiki, source-controlled public-safe notes, or other approved stores for resilience. Every maintained copy must stay current, provenance-labeled, secret-safe, and noncontradictory."
