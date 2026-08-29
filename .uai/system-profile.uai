@@ -1,9 +1,9 @@
 profile: tinyrustlm-mirust.system.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-08-29T23:02:03Z
 
 project:
   site: https://TinyRustLM.MiRust.com/
-  package_version: 1.8.0
+  package_version: 1.8.1
   implementation: dependency-free plain PHP developer portal
   product: one prelaunch browser-local TinyRustLM.com product
   model_contract: exact six-member SLM2 composition
@@ -13,4 +13,5 @@ package_contract:
   separately_optional: TinyRustLM.MemoryEndpoints
 
 memory_contract: Read totem.uai and taboo.uai for the two separately governed MemoryEndpoints.com uses and prelaunch redundancy invariant.
+source_authority: Exactly one canonical TinyRustLM.com source checkout may be authoritative; fail closed before work when identity is ambiguous or a second writable checkout exists.
 claim_boundary: Historical runtime evidence, source, tests, packages, configuration, fixtures, mocks, and reachability do not prove a current live product, memory, P2P, browser, deployment, or publication claim.

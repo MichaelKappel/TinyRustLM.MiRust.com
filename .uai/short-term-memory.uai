@@ -1,25 +1,26 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-08-28T21:23:10Z
+updated_utc: 2026-08-29T23:02:03Z
 site: TinyRustLM.MiRust.com
 status: published_and_readback_verified
-current_site_package: 1.8.0
+current_site_package: 1.8.1
 
 current_publication:
-  version: 1.8.0
-  release_date: 2026-08-28
-  source_commit: d404afc22eb1ac23c99cfff6f6750fd26048c91c
-  source_tree: 8d71ceeadc8827e810ffe2291ffa2179aab08d67
-  publisher_commit: f44af0d7ed6ffd2348b514a30f5bfa0652f153a4
-  manifest_sha256: 47b74f9195973c1d16a5f883368a0e31960ffa1859a88b2ac4665a0d9ba4bf79
-  success_receipt: deploy/receipts/site-deployment-20260828T210322Z.json
-  success_receipt_sha256: 34d5db343dd8dacc2160331142707b91dd6120fb65ff7b2b8469ed89fd52c3be
-  receipt_commit: 2479652ef06e617dffa855d22bb3062e2b50538d
-  closure: 224 files, 7591982 bytes
-  transport: 22 published, 202 already current
-  proof: Every manifest-bound HTTPS readback and six current route smokes passed.
+  version: 1.8.1
+  release_date: 2026-08-29
+  source_commit: 3109ba801165e76114a03308cf07a88772041e13
+  source_tree: a706cf86934926f4cddc7d1fd3ea2fd6fc790b0b
+  publisher_commit: e1503d3ae65b669bf5d49f2ad58a41e1de3fb3f9
+  manifest_sha256: d67a76fc175e5ba82804302bb273648ae007a0480d277c0af04cd2722abdeeed
+  success_receipt: deploy/receipts/site-deployment-20260829T224120Z.json
+  success_receipt_sha256: 95eb6f79f16924c9b08111fddac03c613de73d876be5347f786d105a2e89a29f
+  receipt_commit: 9e18153340ed85aee4eb196d51756b69de012f51
+  closure: 224 files, 7596489 bytes
+  transport: 11 published, 213 already current
+  proof: All 22 manifest-bound HTTPS readbacks and six current route smokes passed independently after publication.
 
 current_authority:
   - TinyRustLM.MiRust.com is the current developer documentation portal for the one prelaunch TinyRustLM.com product.
+  - Exactly one canonical writable TinyRustLM.com source checkout may be authoritative; ambiguity or a second writable checkout blocks all product and release work.
   - The sole current model path is the six-member SLM2 composition.
   - The default package transaction is TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
   - TinyRustLM.MemoryEndpoints is separately optional and excluded from the default transaction.
@@ -36,12 +37,15 @@ evidence_boundary:
   - Campaign counters remain 0/20, 0/50, 0/25, 0/40, and 0/20 until exact matching receipts exist.
   - Historical runtime material is evidence only and has no current compatibility authority.
 
-historical_publication:
-  version: 1.7.0
-  status: superseded_historical_evidence_only
-  success_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
+historical_publications:
+  - version: 1.8.0
+    status: superseded_historical_evidence_only
+    success_receipt: deploy/receipts/site-deployment-20260828T210322Z.json
+  - version: 1.7.0
+    status: superseded_historical_evidence_only
+    success_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
 
 next_work:
-  - Treat 1.8.0 as terminally published; do not replay its deployment.
+  - Treat 1.8.1 as terminally published; do not replay its deployment.
   - Continue ecosystem source, memory, receipt, remote-equality, and public-state reconciliation.
   - Use a new complete versioned closure for any future public-byte change.

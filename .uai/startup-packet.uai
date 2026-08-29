@@ -1,6 +1,6 @@
 profile: tinyrustlm-mirust.startup.current.v1
-updated_utc: 2026-08-28T20:20:00Z
-current_package: tinyrustlm-developer-portal-1.8.0
+updated_utc: 2026-08-29T23:02:03Z
+current_package: tinyrustlm-developer-portal-1.8.1
 
 first_steps:
   - Read workspace.uai, then .uai/totem.uai and .uai/taboo.uai.
@@ -9,4 +9,4 @@ first_steps:
   - Open docs/report-index.md or docs/runtime-portal only for task-relevant historical evidence.
   - Scan the agent-file-handoff buckets before processing new intake.
 
-authority: One SLM2 path; exactly two separate MemoryEndpoints.com uses; synchronized prelaunch memory copies; no live claim without exact evidence.
+authority: One canonical TinyRustLM.com source checkout; one SLM2 path; exactly two separate MemoryEndpoints.com uses; synchronized prelaunch memory copies; no live claim without exact evidence.
