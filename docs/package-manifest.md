@@ -1,11 +1,11 @@
 # TinyRustLM Public Package Manifest
 
-- Version: `1.8.0`
-- Release date: `2026-08-28`
-- Content-basis commit: `92bcddb03dee86217d847824bd6d4f38b21509df`
-- Content-basis tree: `916709830cff5c661138111b494d1ae80c38dec7`
+- Version: `1.8.1`
+- Release date: `2026-08-29`
+- Content-basis commit: `4d096819fe1f6237dbe4181acced0c02268ef94d`
+- Content-basis tree: `fa61e7293a3e19cffdcaccdaab2a339a34112d8f`
 - Public files, excluding this manifest: 223
-- Public bytes, excluding this manifest: 7556509
+- Public bytes, excluding this manifest: 7561016
 
 This manifest excludes itself to avoid a recursive checksum. Historical
 runtime files are included only as labeled preservation evidence; they do not
@@ -16,19 +16,19 @@ claim.
 | --- | ---: | --- |
 | `.htaccess` | 403 | `b57ff32b496771703ced66b2b167319ee178dd79a4f4002540423db4b36e5df7` |
 | `.uai/.htaccess` | 256 | `4268ee353e8ae2a97969cb8e03f17d6ad5d0b74b5c93c61a31f547038780c54f` |
-| `.uai/index.uai` | 1408 | `c3aab2e59498a26a67d5958214af6446904915ad3d55a062c50dfb325efa54b0` |
+| `.uai/index.uai` | 1408 | `b3258c08dabcc13b83ce098a5e855d92b2e6c57a5bfea4e5a2e55218b8abdff5` |
 | `.uai/long-term-memory.uai` | 2159 | `2816e3c69fb5163a5d79fe699e47012c63abfbca6290cebb17df93c8ef82893d` |
-| `.uai/taboo.uai` | 2083 | `8886d1e14a4fe3fc8a6b0ec17845c64d26755ae4fea9c8a0f00fdab495ab2e07` |
+| `.uai/taboo.uai` | 4097 | `6ba2e7a59b04b749ba88d05343ffeb890b4f755ae191b8aa845844c27df5ee39` |
 | `.uai/talisman.uai` | 734 | `78c3436b437cd40b106789c985b8cc033502ca38a710e944d34d17ba219ec96e` |
 | `.uai/totem.uai` | 2870 | `85e283635278191cca992d3cb044223c261d1d393335c95c202ec119602d96ba` |
-| `.well-known/uaix-talisman.txt` | 2250 | `9267c2f879cf686b98c48a4b28a2fb1a5884dbfd831ee9bb68a1b48fd5166499` |
+| `.well-known/uaix-talisman.txt` | 2840 | `512c6d4e6a0283d3d124de468028899e8830f17ea8342ae0161b8c6a837f6342` |
 | `assets/css/site.css` | 21543 | `35bddf4c03d28e62e812424686b27cc208c173db5c7fd3fac97da965e9bfd730` |
 | `assets/js/site.js` | 6971 | `b01e2871e1cacc430ff065b5edea964a37810a342b84b3326aa20fa4466f1024` |
-| `data/pages.php` | 20098 | `1524c33ec8885d841b9cfd29820f018e3c4c6cec890692886c9273caf4c4b957` |
-| `data/site.php` | 5565 | `737a7e870f3a988f64e6a3d30d2ae2e7f2d66d40366218d9382443dc2e911169` |
+| `data/pages.php` | 21268 | `a2befbeef06645292ff377cba1bea178a50e232c917f5d6b31da7a190342cc53` |
+| `data/site.php` | 5565 | `b8eff76dbf838808e03b728e8d50826272740222ee6e6348f703c5646f031ede` |
 | `docs/index.php` | 5242 | `a7a6b275602a714f0849febfcfd4723721fdaaab7fee1862ee8cfd339b9cd6b4` |
-| `docs/long-term-memory.md` | 3272 | `e25f736c027e11e0d8871e8939897963bc022bd80dc3a2480103288a7cfa4c47` |
-| `docs/report-index.md` | 4923 | `1c001c27d54e0939b9ac954ea661fd8dfe548329402199a2e891ad5a3c81ccb1` |
+| `docs/long-term-memory.md` | 3278 | `03e7186b50f79c726d2c3583f3371a38eb33d924e6a768e0a357749d5947dca5` |
+| `docs/report-index.md` | 4923 | `04912ab3f720b913469055ec3d8e3ee81f00187972edfbf569db188aa014174a` |
 | `docs/reports-index.php` | 6610 | `bbcd5a3422affb27e32584d48505441c44c2e37134f701ce8159b64c51fd984f` |
 | `docs/reports/analyzing-website-virality.md` | 62253 | `5cdb3c8c9fa714af0c44b48ec58b3c885846d5c8d7b1e5dde869442b83da95ef` |
 | `docs/reports/future-proof-native-html5-techniques.md` | 53751 | `a152a89b4575ddb990ddb5300dae0ac44bc424abded40c9adb7ca87045461879` |
@@ -233,7 +233,7 @@ claim.
 | `includes/header.php` | 6851 | `b8ccb633539e1983c484b638d472aae2b8e07eb56a08fd750223f8fe52ae9218` |
 | `index.php` | 6694 | `8bb887bc5665ae7d661519141f789eafa39b5b47143b399e940cf4c54eec9a90` |
 | `LICENSE.txt` | 11357 | `c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4` |
-| `llms-full.txt` | 5040 | `a72c858240d3c74fab32de844efb36a018f8ffc76c7e5a5398a76f3a982e1c64` |
-| `llms.txt` | 2009 | `65165b6c996af48ff5e9d926711c40c3c70f529072acff7a3d51652d68ff3e04` |
+| `llms-full.txt` | 5531 | `1b3c27ef62a32258202c80b969a2b8cf0585a9f8d5d9e384a309b71eb8fbcd75` |
+| `llms.txt` | 2245 | `50d59a8cea51b2863d44ced42f250de1cd7644766f88832028417bb4971dcd6c` |
 | `robots.txt` | 103 | `70561bf66075a8b7562d2ff17e1e497d6372ceb91736008dd4cf417a2d1d4556` |
-| `sitemap.xml` | 4081 | `bc0be5c330d2d39cdb065b8536254edb15c93bd962af8d82f8df105acf0f25b1` |
+| `sitemap.xml` | 4081 | `ea9ad7b0a7ba8b4e1a82c6edb177c4b449869d2b1d1911ca37e948333529cb5f` |
