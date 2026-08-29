@@ -2,10 +2,10 @@
   "schema": "tinyrustlm.mirust.site_deployment_manifest.v1",
   "site": "TinyRustLM.MiRust.com",
   "origin": "https://tinyrustlm.mirust.com",
-  "version": "1.8.0",
-  "release_date": "2026-08-28",
-  "source_commit": "d404afc22eb1ac23c99cfff6f6750fd26048c91c",
-  "source_tree": "8d71ceeadc8827e810ffe2291ffa2179aab08d67",
+  "version": "1.8.1",
+  "release_date": "2026-08-29",
+  "source_commit": "3109ba801165e76114a03308cf07a88772041e13",
+  "source_tree": "a706cf86934926f4cddc7d1fd3ea2fd6fc790b0b",
   "transport_profile": "TinyRustLM.MiRust.com",
   "files": [
     {
@@ -23,7 +23,7 @@
     {
       "path": ".uai/index.uai",
       "bytes": 1408,
-      "sha256": "c3aab2e59498a26a67d5958214af6446904915ad3d55a062c50dfb325efa54b0",
+      "sha256": "b3258c08dabcc13b83ce098a5e855d92b2e6c57a5bfea4e5a2e55218b8abdff5",
       "https_readback_path": "/.uai/index.uai"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "path": ".uai/taboo.uai",
-      "bytes": 2083,
-      "sha256": "8886d1e14a4fe3fc8a6b0ec17845c64d26755ae4fea9c8a0f00fdab495ab2e07",
+      "bytes": 4097,
+      "sha256": "6ba2e7a59b04b749ba88d05343ffeb890b4f755ae191b8aa845844c27df5ee39",
       "https_readback_path": "/.uai/taboo.uai"
     },
     {
@@ -52,8 +52,8 @@
     },
     {
       "path": ".well-known/uaix-talisman.txt",
-      "bytes": 2250,
-      "sha256": "9267c2f879cf686b98c48a4b28a2fb1a5884dbfd831ee9bb68a1b48fd5166499",
+      "bytes": 2840,
+      "sha256": "512c6d4e6a0283d3d124de468028899e8830f17ea8342ae0161b8c6a837f6342",
       "https_readback_path": "/.well-known/uaix-talisman.txt"
     },
     {
@@ -70,14 +70,14 @@
     },
     {
       "path": "data/pages.php",
-      "bytes": 20098,
-      "sha256": "1524c33ec8885d841b9cfd29820f018e3c4c6cec890692886c9273caf4c4b957",
+      "bytes": 21268,
+      "sha256": "a2befbeef06645292ff377cba1bea178a50e232c917f5d6b31da7a190342cc53",
       "https_readback_path": null
     },
     {
       "path": "data/site.php",
       "bytes": 5565,
-      "sha256": "737a7e870f3a988f64e6a3d30d2ae2e7f2d66d40366218d9382443dc2e911169",
+      "sha256": "b8eff76dbf838808e03b728e8d50826272740222ee6e6348f703c5646f031ede",
       "https_readback_path": null
     },
     {
@@ -88,20 +88,20 @@
     },
     {
       "path": "docs/long-term-memory.md",
-      "bytes": 3272,
-      "sha256": "e25f736c027e11e0d8871e8939897963bc022bd80dc3a2480103288a7cfa4c47",
+      "bytes": 3278,
+      "sha256": "03e7186b50f79c726d2c3583f3371a38eb33d924e6a768e0a357749d5947dca5",
       "https_readback_path": "/docs/long-term-memory.md"
     },
     {
       "path": "docs/package-manifest.md",
       "bytes": 35473,
-      "sha256": "c12e5c2282305ea0762af5faed14ff8606cbb36463b1a7fbe1becb588ad18006",
+      "sha256": "8891fc068e705d9b5b347bd92c1ed8e2b1bd15bece2ca3f5bf65d46ef62011da",
       "https_readback_path": "/docs/package-manifest.md"
     },
     {
       "path": "docs/report-index.md",
       "bytes": 4923,
-      "sha256": "1c001c27d54e0939b9ac954ea661fd8dfe548329402199a2e891ad5a3c81ccb1",
+      "sha256": "04912ab3f720b913469055ec3d8e3ee81f00187972edfbf569db188aa014174a",
       "https_readback_path": "/docs/report-index.md"
     },
     {
@@ -1330,14 +1330,14 @@
     },
     {
       "path": "llms-full.txt",
-      "bytes": 5040,
-      "sha256": "a72c858240d3c74fab32de844efb36a018f8ffc76c7e5a5398a76f3a982e1c64",
+      "bytes": 5531,
+      "sha256": "1b3c27ef62a32258202c80b969a2b8cf0585a9f8d5d9e384a309b71eb8fbcd75",
       "https_readback_path": "/llms-full.txt"
     },
     {
       "path": "llms.txt",
-      "bytes": 2009,
-      "sha256": "65165b6c996af48ff5e9d926711c40c3c70f529072acff7a3d51652d68ff3e04",
+      "bytes": 2245,
+      "sha256": "50d59a8cea51b2863d44ced42f250de1cd7644766f88832028417bb4971dcd6c",
       "https_readback_path": "/llms.txt"
     },
     {
@@ -1349,18 +1349,18 @@
     {
       "path": "sitemap.xml",
       "bytes": 4081,
-      "sha256": "bc0be5c330d2d39cdb065b8536254edb15c93bd962af8d82f8df105acf0f25b1",
+      "sha256": "ea9ad7b0a7ba8b4e1a82c6edb177c4b449869d2b1d1911ca37e948333529cb5f",
       "https_readback_path": "/sitemap.xml"
     }
   ],
   "route_smokes": [
     {
       "path": "/",
-      "contains": "Site package 1.8.0"
+      "contains": "Site package 1.8.1"
     },
     {
       "path": "/updates/",
-      "contains": "Last published: 1.8.0"
+      "contains": "Last published: 1.8.1"
     },
     {
       "path": "/developer-portal/",
