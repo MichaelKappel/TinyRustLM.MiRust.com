@@ -8,11 +8,13 @@ const { execFileSync } = require("node:child_process");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const contentCommit = process.argv[2];
+const releaseVersion = "1.8.1";
+const releaseDate = "2026-08-29";
 const outputPath = path.resolve(
   repositoryRoot,
   process.argv[3] || "deploy/site-deployment-manifest.v1.json",
 );
-const stagingRoot = path.join(repositoryRoot, "deploy", "staging", "1.8.0");
+const stagingRoot = path.join(repositoryRoot, "deploy", "staging", releaseVersion);
 
 if (!/^[0-9a-f]{40}$/.test(contentCommit || "")) {
   throw new Error("Usage: node tools/build-site-deployment-manifest.js <40-character-content-commit> [output]");
@@ -83,6 +85,52 @@ const httpsReadbacks = new Set([
 
 git(["cat-file", "-e", `${contentCommit}^{commit}`]);
 const sourceTree = git(["rev-parse", `${contentCommit}^{tree}`]).trim();
+const requiredMarkers = new Map([
+  [".uai/index.uai", [`release: ${releaseVersion}`]],
+  [".uai/taboo.uai", [
+    "single_tinyrustlm_source_prohibitions:",
+    "Fail closed before editing",
+    "automated gates must reject pointers",
+    "Historical source belongs only in Git history",
+  ]],
+  [".well-known/uaix-talisman.txt", [
+    `release: ${releaseVersion}`,
+    "Single Source Authority",
+    "Historical executable source belongs only in Git history",
+  ]],
+  ["README.md", [
+    `Last published: \`${releaseVersion}\``,
+    "exactly one authoritative source checkout",
+  ]],
+  ["data/pages.php", [
+    `Last published: ${releaseVersion}`,
+    "One canonical checkout",
+    "1.8.0 was published on 2026-08-28",
+  ]],
+  ["data/site.php", [
+    `'version' => '${releaseVersion}'`,
+    `'release_date' => '${releaseDate}'`,
+  ]],
+  ["docs/long-term-memory.md", [`Last published: \`${releaseVersion}\``]],
+  ["llms-full.txt", [
+    `Last published: ${releaseVersion}`,
+    "exactly one authoritative source checkout",
+  ]],
+  ["llms.txt", [
+    `Last published: ${releaseVersion}`,
+    "exactly one canonical TinyRustLM.com checkout",
+  ]],
+]);
+
+for (const [relativePath, markers] of requiredMarkers) {
+  const committed = git(["show", `${contentCommit}:${relativePath}`]);
+  for (const marker of markers) {
+    if (!committed.includes(marker)) {
+      throw new Error(`Missing release marker in ${relativePath}: ${marker}`);
+    }
+  }
+}
+
 const tracked = git(["ls-tree", "-r", "--name-only", contentCommit])
   .split(/\r?\n/)
   .filter(Boolean)
@@ -110,15 +158,15 @@ const manifest = {
   schema: "tinyrustlm.mirust.site_deployment_manifest.v1",
   site: "TinyRustLM.MiRust.com",
   origin: "https://tinyrustlm.mirust.com",
-  version: "1.8.0",
-  release_date: "2026-08-28",
+  version: releaseVersion,
+  release_date: releaseDate,
   source_commit: contentCommit,
   source_tree: sourceTree,
   transport_profile: "TinyRustLM.MiRust.com",
   files,
   route_smokes: [
-    { path: "/", contains: "Site package 1.8.0" },
-    { path: "/updates/", contains: "Last published: 1.8.0" },
+    { path: "/", contains: `Site package ${releaseVersion}` },
+    { path: "/updates/", contains: `Last published: ${releaseVersion}` },
     { path: "/developer-portal/", contains: "Developer Portal" },
     { path: "/docs/", contains: "Docs" },
     { path: "/contact/", contains: "Contact Mike Kappel" },

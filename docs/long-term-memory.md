@@ -65,10 +65,10 @@ matching evidence exists.
 
 ## Publication
 
-- Last published: `1.8.0`.
-- Release date: `2026-08-28`.
-- Update: established the direct agent-coordination lane, the separate
-  TinyRustLM.com Connect user-plugin lane, and synchronized redundancy rules.
+- Last published: `1.8.1`.
+- Release date: `2026-08-29`.
+- Update: retained both MemoryEndpoints lanes while enforcing one fail-closed
+  TinyRustLM.com source authority across every current ecosystem repository.
 
 This policy is documentation authority. It is not a claim that a live meeting,
 user login, synchronization, restore, deletion, or continuity round occurred.

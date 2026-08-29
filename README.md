@@ -13,6 +13,12 @@ generations. Current production code and documentation must not retain legacy
 readers, aliases, compatibility branches, hidden fallback, response repair,
 hidden retry, or best-of-N behavior.
 
+TinyRustLM.com has exactly one authoritative source checkout. Source work stops
+unless its canonical path, branch, origin, local HEAD, tracking ref,
+`FETCH_HEAD`, direct remote ref, and clean status agree. Duplicate trees are
+frozen, audited, semantically consolidated only for valid current work, and
+retired; historical executable source belongs only in Git history.
+
 A complete installed model composition has exactly these semantic members:
 
 - `model.slm2`
@@ -80,10 +86,11 @@ Campaign counters remain `0/20` qualified models, `0/50` clean browser rounds,
 
 ## Publication
 
-- Last published: `1.8.0`.
-- Release date: `2026-08-28`.
-- Update: removed superseded runtime/package claims and documented the current
-  SLM2, P2P, privacy, and two-lane MemoryEndpoints authority.
+- Last published: `1.8.1`.
+- Release date: `2026-08-29`.
+- Update: enforced one fail-closed TinyRustLM.com source authority across the
+  ecosystem and prohibited duplicate, retired, quarantined, or protected trees
+  from building, testing, releasing, or deploying.
 
 Publication requires a clean committed revision, complete affected-site gates,
 deployment from that revision, and exact public readback of the HTTPS bytes. A

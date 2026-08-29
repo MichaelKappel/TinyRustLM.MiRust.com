@@ -10,6 +10,8 @@ const repositoryRoot = path.resolve(__dirname, "..");
 const contentCommit = process.argv[2];
 const outputPath = path.join(repositoryRoot, "docs", "package-manifest.md");
 const excludedPath = "docs/package-manifest.md";
+const releaseVersion = "1.8.1";
+const releaseDate = "2026-08-29";
 
 if (!/^[0-9a-f]{40}$/.test(contentCommit || "")) {
   throw new Error("Usage: node tools/build-public-package-manifest.js <40-character-content-commit>");
@@ -80,8 +82,8 @@ const rows = files.map(
 const document = [
   "# TinyRustLM Public Package Manifest",
   "",
-  "- Version: `1.8.0`",
-  "- Release date: `2026-08-28`",
+  `- Version: \`${releaseVersion}\``,
+  `- Release date: \`${releaseDate}\``,
   `- Content-basis commit: \`${contentCommit}\``,
   `- Content-basis tree: \`${sourceTree}\``,
   `- Public files, excluding this manifest: ${files.length}`,

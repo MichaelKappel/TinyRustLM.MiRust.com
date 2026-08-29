@@ -2,10 +2,10 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.8.0',
-    'release_date' => '2026-08-28',
-    'last_publish_date' => '2026-08-28',
-    'updated_utc' => '2026-08-28T20:20:00Z',
+    'version' => '1.8.1',
+    'release_date' => '2026-08-29',
+    'last_publish_date' => '2026-08-29',
+    'updated_utc' => '2026-08-29T22:27:17Z',
     'description' => 'Developer portal for the one prelaunch TinyRustLM browser-local Rust and WebAssembly product, its sole six-member SLM2 path, direct-P2P or explicit local-conversion acquisition, evidence boundaries, and two-use MemoryEndpoints.com contract.',
     'public_app' => 'https://TinyRustLM.com/',
     'contact' => [

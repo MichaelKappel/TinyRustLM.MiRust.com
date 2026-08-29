@@ -1,7 +1,7 @@
 profile: tinyrustlm-mirust.public-uai-index.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-08-29T22:27:17Z
 site: TinyRustLM.MiRust.com
-release: 1.8.0
+release: 1.8.1
 public_uai_policy: allowlisted_orientation_and_pointer_records_only
 
 read_order:

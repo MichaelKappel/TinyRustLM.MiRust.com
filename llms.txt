@@ -4,6 +4,9 @@ Site role: prelaunch TinyRustLM developer portal.
 Product route: https://TinyRustLM.com/
 Lifecycle: one clean-slate product; no released predecessor or compatibility
 surface.
+Source authority: exactly one canonical TinyRustLM.com checkout; fail closed
+on ambiguous Git identity or any second writable checkout. Historical source
+exists only in Git history.
 
 Current format: SLM2.
 Current composition: model.slm2, tokenizer.tokenizer2, template.template2,
@@ -34,10 +37,10 @@ Evidence boundary: source, fixtures, local probes, configuration, package
 creation, or service reachability do not prove public readback, live memory,
 P2P availability, model quality, browser release, or deployment.
 
-Last published: 1.8.0.
-Release date: 2026-08-28.
-Update: current SLM2, package, acquisition, privacy, and two-lane
-MemoryEndpoints authority documented.
+Last published: 1.8.1.
+Release date: 2026-08-29.
+Update: one fail-closed TinyRustLM.com source authority is enforced across the
+ecosystem; duplicate and retired trees cannot build, test, release, or deploy.
 
 Campaign counters: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live
 MemoryEndpoints rounds; 0/40 externally proven P2P lanes; 0/20 catalog

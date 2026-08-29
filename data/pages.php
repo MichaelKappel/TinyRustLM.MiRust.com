@@ -219,8 +219,13 @@ return [
                 'points' => ['Two distinct uses', 'No credential sharing', 'No silent uploads', 'Receipt-backed claims'],
             ],
             [
+                'heading' => 'Single source authority',
+                'body' => 'TinyRustLM.com has exactly one authoritative source checkout. Work fails closed when its path, branch, origin, local HEAD, tracking ref, FETCH_HEAD, direct remote ref, or clean status cannot be proved. A duplicate is frozen, audited, semantically consolidated only for valid current work, and retired; historical executable source remains only in Git history.',
+                'points' => ['One canonical checkout', 'Fail-closed identity proof', 'No wholesale stale-tree merge', 'History is not runtime authority'],
+            ],
+            [
                 'heading' => 'Publication status',
-                'body' => 'Last published: 1.8.0. Release date: 2026-08-28. Update: current SLM2, acquisition, privacy, evidence, package, and MemoryEndpoints contracts replace superseded active prose.',
+                'body' => 'Last published: 1.8.1. Release date: 2026-08-29. Update: one canonical TinyRustLM.com source authority is now fail-closed across the ecosystem, and duplicate or retired trees cannot build, test, release, or deploy.',
                 'points' => ['Clean committed source required', 'Complete site gate required', 'Deployment from exact revision required', 'Public HTTPS readback required'],
             ],
         ],
@@ -249,8 +254,13 @@ return [
         'sections' => [
             [
                 'heading' => 'Current source update',
-                'body' => 'Last published: 1.8.0. Release date: 2026-08-28. Update: stale active runtime/package prose was replaced with current clean-slate SLM2, direct-P2P, privacy, evidence, and two-lane MemoryEndpoints authority.',
+                'body' => 'Last published: 1.8.1. Release date: 2026-08-29. Update: every current ecosystem policy now requires one canonical TinyRustLM.com checkout, complete Git identity proof before work, semantic duplicate consolidation, and retirement of every non-authoritative tree.',
                 'points' => ['Documentation release only', 'No package publication claim', 'No model release claim', 'No campaign credit'],
+            ],
+            [
+                'heading' => 'Previous release',
+                'body' => '1.8.0 was published on 2026-08-28. It replaced stale active runtime and package prose with the current clean-slate SLM2, direct-P2P, privacy, evidence, and two-lane MemoryEndpoints authority.',
+                'points' => ['Immutable release history', 'No runtime compatibility path', 'No evidence reinterpretation', 'No campaign credit'],
             ],
             [
                 'heading' => 'Release gate',
