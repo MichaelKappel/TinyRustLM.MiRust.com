@@ -1,0 +1,1364 @@
+{
+    "schema":  "tinyrustlm.mirust.site_deployment_receipt.v1",
+    "site":  "TinyRustLM.MiRust.com",
+    "origin":  "https://tinyrustlm.mirust.com",
+    "version":  "1.8.2",
+    "source_commit":  "2547720541dfb927a81a85ae3eac3222908b9771",
+    "source_tree":  "bc7b4a9d5c74e4f94fb7a168211a865fb099dadc",
+    "publisher_commit":  "9cabac4f7e5e8f8037593ee473afd9b43232d7fb",
+    "manifest_sha256":  "7a82ca67ebf9101c24e374a5d030173c5b135f5062d00574887fa6d614b10d20",
+    "operation_nonce":  "a3e75b57cf55",
+    "started_utc":  "2026-08-30T01:46:35.5586989Z",
+    "completed_utc":  "2026-08-30T02:00:51.0300592Z",
+    "status":  "published-and-readback-verified",
+    "file_count":  224,
+    "total_bytes":  7597962,
+    "published_count":  10,
+    "already_current_count":  214,
+    "files":  [
+                  {
+                      "path":  ".htaccess",
+                      "status":  "already-current",
+                      "bytes":  403,
+                      "sha256":  "b57ff32b496771703ced66b2b167319ee178dd79a4f4002540423db4b36e5df7"
+                  },
+                  {
+                      "path":  ".uai/.htaccess",
+                      "status":  "already-current",
+                      "bytes":  256,
+                      "sha256":  "4268ee353e8ae2a97969cb8e03f17d6ad5d0b74b5c93c61a31f547038780c54f"
+                  },
+                  {
+                      "path":  ".uai/index.uai",
+                      "status":  "published",
+                      "bytes":  1408,
+                      "sha256":  "d42499579ae930fd1904420804ecd8e52bd8c3152c21061c54046f528a5d9409"
+                  },
+                  {
+                      "path":  ".uai/long-term-memory.uai",
+                      "status":  "already-current",
+                      "bytes":  2159,
+                      "sha256":  "2816e3c69fb5163a5d79fe699e47012c63abfbca6290cebb17df93c8ef82893d"
+                  },
+                  {
+                      "path":  ".uai/taboo.uai",
+                      "status":  "published",
+                      "bytes":  4515,
+                      "sha256":  "e9d87bd04351dbe52d2804ef7213b199fa2e2b7f1c95a8dc0753d0bccbd7bf70"
+                  },
+                  {
+                      "path":  ".uai/talisman.uai",
+                      "status":  "already-current",
+                      "bytes":  734,
+                      "sha256":  "78c3436b437cd40b106789c985b8cc033502ca38a710e944d34d17ba219ec96e"
+                  },
+                  {
+                      "path":  ".uai/totem.uai",
+                      "status":  "already-current",
+                      "bytes":  2870,
+                      "sha256":  "85e283635278191cca992d3cb044223c261d1d393335c95c202ec119602d96ba"
+                  },
+                  {
+                      "path":  ".well-known/uaix-talisman.txt",
+                      "status":  "published",
+                      "bytes":  3268,
+                      "sha256":  "da4570444088642c9e644287b56cefe252244955b65fe1d280e7a5f180f323c8"
+                  },
+                  {
+                      "path":  "assets/css/site.css",
+                      "status":  "already-current",
+                      "bytes":  21543,
+                      "sha256":  "35bddf4c03d28e62e812424686b27cc208c173db5c7fd3fac97da965e9bfd730"
+                  },
+                  {
+                      "path":  "assets/js/site.js",
+                      "status":  "already-current",
+                      "bytes":  6971,
+                      "sha256":  "b01e2871e1cacc430ff065b5edea964a37810a342b84b3326aa20fa4466f1024"
+                  },
+                  {
+                      "path":  "data/pages.php",
+                      "status":  "published",
+                      "bytes":  21733,
+                      "sha256":  "dcaebffbaa21ed164ce8a9f3353bb468a81483a127f699482f2c1e403c64f62b"
+                  },
+                  {
+                      "path":  "data/site.php",
+                      "status":  "published",
+                      "bytes":  5565,
+                      "sha256":  "8cdfeac5a0ba0ed7311fa9ce09a4cb029711e5cbad88bd9c274f2290d0786466"
+                  },
+                  {
+                      "path":  "docs/index.php",
+                      "status":  "already-current",
+                      "bytes":  5242,
+                      "sha256":  "a7a6b275602a714f0849febfcfd4723721fdaaab7fee1862ee8cfd339b9cd6b4"
+                  },
+                  {
+                      "path":  "docs/long-term-memory.md",
+                      "status":  "published",
+                      "bytes":  3356,
+                      "sha256":  "291c9b06022fa6c5ae31bbb19d39fc2c5b7fcb4dbff347042bca3e01fc20ce47"
+                  },
+                  {
+                      "path":  "docs/package-manifest.md",
+                      "status":  "published",
+                      "bytes":  35473,
+                      "sha256":  "4bea43f2e542b7bce2ac8d77bd867cfd6f95e9ee4ed879074a4be463263c40e4"
+                  },
+                  {
+                      "path":  "docs/report-index.md",
+                      "status":  "published",
+                      "bytes":  4923,
+                      "sha256":  "bac1508d7adf6c48978712b84458fc2c95f9216f7bb3475627d25089de9b7d7a"
+                  },
+                  {
+                      "path":  "docs/reports-index.php",
+                      "status":  "already-current",
+                      "bytes":  6610,
+                      "sha256":  "bbcd5a3422affb27e32584d48505441c44c2e37134f701ce8159b64c51fd984f"
+                  },
+                  {
+                      "path":  "docs/reports/analyzing-website-virality.md",
+                      "status":  "already-current",
+                      "bytes":  62253,
+                      "sha256":  "5cdb3c8c9fa714af0c44b48ec58b3c885846d5c8d7b1e5dde869442b83da95ef"
+                  },
+                  {
+                      "path":  "docs/reports/future-proof-native-html5-techniques.md",
+                      "status":  "already-current",
+                      "bytes":  53751,
+                      "sha256":  "a152a89b4575ddb990ddb5300dae0ac44bc424abded40c9adb7ca87045461879"
+                  },
+                  {
+                      "path":  "docs/reports/gguf-mirust-all-source-review-bundle.txt",
+                      "status":  "already-current",
+                      "bytes":  4915911,
+                      "sha256":  "8be2f5781fbc3db4ae5c5af6a167b5dd16b6e19df6ecbdcd82b87367b56c6de0"
+                  },
+                  {
+                      "path":  "docs/reports/innovative-vanilla-web-design.md",
+                      "status":  "already-current",
+                      "bytes":  47461,
+                      "sha256":  "fe68269f39258fa1e3bfecb7f78c153f4ca24c0f08432d3f193f91087b12122c"
+                  },
+                  {
+                      "path":  "docs/reports/mememtech-vanilla-web-architecture.md",
+                      "status":  "already-current",
+                      "bytes":  42941,
+                      "sha256":  "4e3acaa0d568c201c56e8f74e0016004743d04e553b9aec8e83152e0f8b4e47a"
+                  },
+                  {
+                      "path":  "docs/reports/memory-systems-domains-research.md",
+                      "status":  "already-current",
+                      "bytes":  39530,
+                      "sha256":  "b400312f9feb5f5d5d2bf0c77b221b925b7ac091bc618e1b6964d38885d8c9b9"
+                  },
+                  {
+                      "path":  "docs/reports/rust-wasm-neural-model-patterns.md",
+                      "status":  "already-current",
+                      "bytes":  69793,
+                      "sha256":  "53e988fbcdd51a06a6155a8293ca85113543f20d9f78af52ee50997b23e5f618"
+                  },
+                  {
+                      "path":  "docs/reports/tiny-language-models-for-rust-wasm.md",
+                      "status":  "already-current",
+                      "bytes":  44102,
+                      "sha256":  "37d6b47ed4284f65c591921f653f3aa4e17672593ae84c09c84e4222fc808ae9"
+                  },
+                  {
+                      "path":  "docs/reports/tiny-language-models-for-wasm.md",
+                      "status":  "already-current",
+                      "bytes":  46105,
+                      "sha256":  "b823a12562f6db288c6b16a38a6a9a8c6dd2af8c02f783bbf34e3c54836ff6fb"
+                  },
+                  {
+                      "path":  "docs/reports/understanding-tinyrustlm-creation-and-purpose.md",
+                      "status":  "already-current",
+                      "bytes":  31890,
+                      "sha256":  "69a94b184f4876b293ef268f22df5db63f1dff5413afef03f7a9c6bab397440d"
+                  },
+                  {
+                      "path":  "docs/reports/vanilla-js-future-proof-techniques.md",
+                      "status":  "already-current",
+                      "bytes":  47621,
+                      "sha256":  "5bcc36711c08d1072c857b01e025d7fff946615349bdeeb340e70fa8677f92b3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/index.md",
+                      "status":  "already-current",
+                      "bytes":  1677,
+                      "sha256":  "806208c7ad28e44e9d626f2adc571aa87e513f855d883de46e2291786f4f70f3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/MANIFEST.md",
+                      "status":  "already-current",
+                      "bytes":  27737,
+                      "sha256":  "e18498996ecd7ad7ee2ee48a7c90bc20ee2045c6ef941058422c77ed1da72e00"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/DEPLOYMENT.md",
+                      "status":  "already-current",
+                      "bytes":  804,
+                      "sha256":  "86c364cb9bd11eb3e44e415c7f9768982a15b6824546ce4f613319bf27b60167"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/healthz",
+                      "status":  "already-current",
+                      "bytes":  38,
+                      "sha256":  "ef358dcfd4b663e050fa29230d0324f60002a128ad5f2008ef6c38203c20be6e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/llms-full.txt",
+                      "status":  "already-current",
+                      "bytes":  71233,
+                      "sha256":  "edc2460989ae0f3f3ffd99366bc3b7007e6f48dab0a8ab22f9e6108b50a6fb63"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/llms.txt",
+                      "status":  "already-current",
+                      "bytes":  4236,
+                      "sha256":  "df57edd3f5fab76232aea902c3d5dbd38b367c04ffcb4b6ced3bb9adb159e3b8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/PACKAGE-MANIFEST.md",
+                      "status":  "already-current",
+                      "bytes":  28376,
+                      "sha256":  "b6cd4151d4a59b92f593dfc73d1f8d5e64fda905abd754b4051285628e9bc75e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/README.md",
+                      "status":  "already-current",
+                      "bytes":  985,
+                      "sha256":  "daa2b38aaccef4a51d54d1d17464a6d0af433347aaf8137b097f9f6996b87a78"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/robots.txt",
+                      "status":  "already-current",
+                      "bytes":  472,
+                      "sha256":  "2506d62b48e313887fdcc56d54beb789a94794c79c3a963194bfa3382cce6437"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/sitemap.xml",
+                      "status":  "already-current",
+                      "bytes":  4470,
+                      "sha256":  "69fa33665640f4851f1409516208f4d0c1209e7734de5aff7ec76f9da4745943"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/package/version.json",
+                      "status":  "already-current",
+                      "bytes":  567,
+                      "sha256":  "2e3731fb2cca5c38106faea784678d55ee9a168720c1822739f87b74b0ff05c8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/dogfood/index.md",
+                      "status":  "already-current",
+                      "bytes":  992,
+                      "sha256":  "eaf73d6d9596e21f13bc0f99386aa1537a2c79b58b64ef18fda4cf3a7a232ea7"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/dogfood/uaix-file-handoff-memory-strategy-2026-06-26.md",
+                      "status":  "already-current",
+                      "bytes":  5587,
+                      "sha256":  "ac98d281728cc05e17cf735aa2186a6183a3b27dce96e3257fba360ed4c52fbc"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/dogfood/uaix-llm-wiki-crawlability-failure-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  3389,
+                      "sha256":  "8fbd6ac478e7e8d4a02196aff5cc9ffa7e6e31ea3fd00787d329c3fc40eb6725"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/dogfood/uaix-llmwikis-setup-experience-2026-06-24.md",
+                      "status":  "already-current",
+                      "bytes":  1691,
+                      "sha256":  "442aa49fa3b747b762c27da31e85e4c1a852b7fbbe9c7c42d11436e044548b15"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/aiwikis-routing.md",
+                      "status":  "already-current",
+                      "bytes":  887,
+                      "sha256":  "eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/architecture.md",
+                      "status":  "already-current",
+                      "bytes":  18117,
+                      "sha256":  "6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/browser-harness.md",
+                      "status":  "already-current",
+                      "bytes":  1266,
+                      "sha256":  "50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/browser-runtime.md",
+                      "status":  "already-current",
+                      "bytes":  59363,
+                      "sha256":  "e23ef272fce14bff32e2d37092a5f4fb8de2703f298b9032ab7d90abf091c1d9"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/index.md",
+                      "status":  "already-current",
+                      "bytes":  3988,
+                      "sha256":  "6f0198f3f1fdf2dd641f3b97bc5a15b5ffc314ea1510ee7bb2eefbb925d2280d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/performance.md",
+                      "status":  "already-current",
+                      "bytes":  3603,
+                      "sha256":  "07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/quantization.md",
+                      "status":  "already-current",
+                      "bytes":  2032,
+                      "sha256":  "1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/runtime-mirust-continuation-v1.0.6.md",
+                      "status":  "already-current",
+                      "bytes":  1212,
+                      "sha256":  "0a76e16385c8766a39e31a8de62872859672ce3fdc8cc2a228ebf6e997ae5119"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/runtime-mirust-plain-php-rebuild-v1.0.5.md",
+                      "status":  "already-current",
+                      "bytes":  1295,
+                      "sha256":  "3bfd31fba0a74a346f89b98bdc550a9b83bcefcb9c5a5df2b591f4623b799185"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/runtime-mirust-rebrand-v1.0.4.md",
+                      "status":  "already-current",
+                      "bytes":  923,
+                      "sha256":  "52373a54f97f15101034cf620c295043be7124424303b601247d8326546dc88e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/site-audit-response-v1.0.4.md",
+                      "status":  "already-current",
+                      "bytes":  1264,
+                      "sha256":  "38e401f82fc1764d0f8297d7ecab33accdc7718a90a20c3dd602fedc3efe7fd3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/slm-format.md",
+                      "status":  "already-current",
+                      "bytes":  29798,
+                      "sha256":  "85d727daf994d68f98ff6c7b370235b23698f1bfe2c436dd58d3521e40f8cf36"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md",
+                      "status":  "already-current",
+                      "bytes":  17958,
+                      "sha256":  "59e982ebbc82358892e68592fd38240829219f2668f19afccad80cbe989bfd36"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/testing.md",
+                      "status":  "already-current",
+                      "bytes":  45456,
+                      "sha256":  "aa705b1e3ff223fc3aaa0a0e5c7ee19d895b00f79b5915b4cd2c26313b03fa5f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/tinyrustlm-models-readme.md",
+                      "status":  "already-current",
+                      "bytes":  37451,
+                      "sha256":  "58b136954e3227cb9b15801df742ee36511f44a505f65b4fa148001f8b26eaa8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/tinyrustlm-readme.md",
+                      "status":  "already-current",
+                      "bytes":  71237,
+                      "sha256":  "0c4ea4af9c787099be762807752e01cf2cc7d7efca25b4158bb38aa9efe72cfb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/tokenizer.md",
+                      "status":  "already-current",
+                      "bytes":  3421,
+                      "sha256":  "b133955180a0af4f260c81f6438e1c586a27a4863068ad4b6e82c32dcb14d18f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/visual-studio.md",
+                      "status":  "already-current",
+                      "bytes":  4387,
+                      "sha256":  "4eb9659bebd8c33799a384dee81415bccb13304f2d2e67cfdc1a3d0d9976abdb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/implementation/workspace-readme.md",
+                      "status":  "already-current",
+                      "bytes":  29632,
+                      "sha256":  "3f3e0b212a5ca54433ebae6061124d0d2798b2472cec8d789b2f23fbc24fde10"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/index.html",
+                      "status":  "already-current",
+                      "bytes":  186,
+                      "sha256":  "fd38054d2bb5a04f6fd6dc19c75ab22eb7814bf1e5e7fadf3bf3492679de9bc1"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/index.md",
+                      "status":  "already-current",
+                      "bytes":  3317,
+                      "sha256":  "e604e0372f0a816144b0d9b213555a2fc3c9dbfb11f72804bb5748db0e46677d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/long-term-memory.uai",
+                      "status":  "already-current",
+                      "bytes":  343834,
+                      "sha256":  "9188267d9c6ab5299a1b3356576ace1c4685e3016f5466652d1739e81ef761c5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/MANIFEST.md",
+                      "status":  "already-current",
+                      "bytes":  33790,
+                      "sha256":  "1afeeaaa0e98cc50c1fef19146ea75a07a26f9f3e4f894ae432f67a49e626a1a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/README-site-package.md",
+                      "status":  "already-current",
+                      "bytes":  1417,
+                      "sha256":  "6db41d4cdd03e65f5fa4ab2e437f70232bb4f5bb8cdf653d07831e8bb2e7ff3a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/adapter-family-receipt-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  5967,
+                      "sha256":  "5794a57c60f0ef1e8e61079e4d4bc0335e0dca6a933ed87be599b424e95bdebe"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4820,
+                      "sha256":  "821543e27a431a2377dbbd7606702957f721a151282d35165cd6e079abcd54fd"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/assembly-receipt-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  4646,
+                      "sha256":  "322c5fcae1e5de8b24957fef773ca9f8e769e195fa10dd6cbb668046c0e5cabb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/brand-product-positioning-memory-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  2721,
+                      "sha256":  "5ed9d5f4e0e0fba812deff2ea0511f01b058df507d168ab8d9b3091b2bd28150"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-artifact-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3422,
+                      "sha256":  "f0d3e5cdbc75973f4cdfbce152b17e07a0ff6fd4bb296071c2caad1797347c46"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-family-receipt-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3266,
+                      "sha256":  "035e509031786b25523dcec5a0dc6cb2f919ba06627d8c0d8ced1f0a40587da8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-manifest-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3139,
+                      "sha256":  "c19277a19295895c8b75528661c1f226ec57d5158c881a15acb0560db13167ea"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-sidecar-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  4388,
+                      "sha256":  "9c787a926c05c7cab7deaa4b3f77b999c7ddabf2fbb6a6fc5e635e4188f6359a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-stack-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2490,
+                      "sha256":  "e9dce6259b392104b83400866ba2929f5efd46949f81a0db802dfc3505b5675a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-stack-prefetch-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3078,
+                      "sha256":  "81dfcce117f2ac31c6b129f359e087aee8bdee8b46dbd1fa5580af16807e750c"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-stack-rust-validate-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4035,
+                      "sha256":  "b622dde613d41ebf569e674d0a774bb21ff67711a68395f7bd66e79bb70224da"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-adapter-stack-rust-validate-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3894,
+                      "sha256":  "ea109ebd123cce713ed38b964e2fca5e9570fe8d02d6d1a60c62be5d08c87c54"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-assembly-eval-case-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3038,
+                      "sha256":  "8ea090025d3aeae857be5232a1747076c17c45f3ca013c4e01057516b42fc465"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-assembly-evidence-file-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3470,
+                      "sha256":  "db3cc8682ed891618ddaf08d54aefec100e63496219a8fb5b23ee84738f10e56"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-assembly-trace-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3675,
+                      "sha256":  "21665dbecb9436da6ae6eaeee73e0bccbce4647c3894e7d55427140c8f5726cc"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-auto-assembly-budget-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3781,
+                      "sha256":  "992e0d4bf8b1f2c02daf1607d3f426cf4b425d2823618857039d322da5af03de"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-auto-assembly-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3897,
+                      "sha256":  "19efbd6d01d44bf799383bf04a17c16dc4ae9d7331b2328e8784708463eddd11"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-assembly-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3139,
+                      "sha256":  "ad2304413ad78d5e0cd478f817225b81f91e2a8aabe1c4804d299215642da30d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-cycle-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4172,
+                      "sha256":  "51a161f2ae9c9ff4cc4d0a4329ca1733b91cbbdcfe5983b72fe434db3c6c30a1"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-extended-route-soak-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2894,
+                      "sha256":  "d3afbf767c5d248eac460c3cc02c248d33ec68666dcde8ab8824c79e06cf21d8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-reload-soak-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3662,
+                      "sha256":  "c565c1f4585fdee3ece7caf941e474d5f8cd648da7ab84d4c30923f90b614a5a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-route-soak-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2766,
+                      "sha256":  "95d19525d8de112ac0f3c15273307e6d428317a49dc903ec0d764514da5c5aa3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-combined-selector-stress-route-soak-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2733,
+                      "sha256":  "3b8fef0ac1e9ea692ac8cdd5c886c2ae7872e9b3a4a4d40a61a359933426d8af"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-converted-trained-all-route-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3453,
+                      "sha256":  "42a6f370271ec6797fc0d0524f1d801241d8ab47307603b801e2dbb4d8f3fbf8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-converted-trained-file-route-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3282,
+                      "sha256":  "149461852aa3af42a72cf9acf2676b278c4564170e6d85194033691a8a5c16c3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-converted-trained-provenance-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2403,
+                      "sha256":  "c076b77ad135a4c06848d6d1c5c04aaa46737c3676db8d40deecee1ca4c11efc"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-eval-case-evidence-checksum-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3173,
+                      "sha256":  "9bea78c794c47627cfc0a77123666390cb15766c48b636fabbdd236031dd3d5c"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-frugal-selector-default-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3109,
+                      "sha256":  "a3b9a50285cdf23f151c9714ee679dea408e04ce5149627ce63c1f4ba9cfbb93"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-local-runtime-memory-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  4117,
+                      "sha256":  "37544631412e245dfc35c9007cf32ea87f461e98c0cb394328f5b740a9bdfee1"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-low-rank-adapter-route-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2620,
+                      "sha256":  "5179c9fc03449a9021edbcf455c09dba6753a5732d0bd7cfed01b897331b3c28"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-mixed-operator-selector-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  9899,
+                      "sha256":  "38c6d11698eb0991fc95d3a661a13407729062a329e90ab6a941b71adbcd2827"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-actual-fetch-count-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2755,
+                      "sha256":  "eafecd1af9b594586585e41ddfc22271d19d3b53b6d14f4c1065d0995a13db54"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-actual-module-bytes-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3035,
+                      "sha256":  "c0445cef5e666ff70d0de95d5cbe08f026130aec527ce68bab123ec9ff5a667e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-actual-module-checksums-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  5245,
+                      "sha256":  "9c8293d30abf28a287910989ff141782e34e54d4d3f1bc7fa5eef30c2c842472"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-adapter-apply-count-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3704,
+                      "sha256":  "2caa25ef243e7441a46e3ff42fb40ff78c42aaa99def30713845d7155a93a016"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-adapter-stack-budget-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2463,
+                      "sha256":  "03e4c4d936e93accd449f1834de1c9d531bc40d0b3bfdb367acb46b372a8a802"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-adapter-validation-count-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3613,
+                      "sha256":  "799331349e1aed2ca357fa45bd4cdd679795f312a2e3f092b0b2d41e8a305f30"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-adapter-validation-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3195,
+                      "sha256":  "4559cfca94879ce971cdd15824619068364a6bdf577fd85aed7f79d46fec7b7d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-budget-display-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2679,
+                      "sha256":  "3cacbe9bd4c893fd19f1358f5d6055d6f4bdb4266f3dba8d31418c8fe986bf03"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-byte-counts-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3694,
+                      "sha256":  "cf874570d00a80b43716fb647d687770d950ed87f55717cfb8dea3917a8bc7b2"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-checksums-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3665,
+                      "sha256":  "d5bbfb29e69d2d775430b30af5cbfbfa639bf0fdee62df60b07dcd3c8519bc2a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-context-token-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2904,
+                      "sha256":  "2e8f1046060f666b7ed7d028f3e3cda082ee5fd8d2e85820669c94223e666bd3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-count-drift-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2373,
+                      "sha256":  "ecdf22e60d73d9648e220ca74fb1ffba55256dfdded859257b9dda7e2afcea36"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-dependencies-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2563,
+                      "sha256":  "3110a860ede9cfa733fa59e1fbc280be4b3856135fdc7a8b5e3031041e29cdc5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-display-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3100,
+                      "sha256":  "830e6b943fd1e7050ea79681620fdad8c1ba9ff0b51629b7baaad45cb53347cc"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-execution-profile-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3735,
+                      "sha256":  "30648a55b0380359a3da09be0ef64f24bd485bb2c57750a4f6ce62ff224b0966"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-fetch-count-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3824,
+                      "sha256":  "f9efb5c8f83f4e3bf2602acd2945685922659b27c0da5639863643570c3a9ebc"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-fetch-policy-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3780,
+                      "sha256":  "6781048c8342123fd0aee23df436d91959272f8548bd4b96fe76468835e92f50"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-graph-drift-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2485,
+                      "sha256":  "3b2cea3c8f99eab8142740f2d0a04842818490ea94c93aeee04bde5ef6a08fb3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-kv-cache-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3851,
+                      "sha256":  "67ec39e577d43d22d0e47e61716f3939bbba5742b597611295db3a3eae920fcb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2762,
+                      "sha256":  "8217db41bbb1558d9fa05e127abe570e01338cdbf46cf42f3d5616f062c253ba"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-model-release-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2971,
+                      "sha256":  "0b5fe7af325dd0c42db9142c218a7385e0ff42c51eccd37d4a3dcd3e18f5d13e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-observed-route-set-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2931,
+                      "sha256":  "d3e06cd557f474354da29c071c5e8582419ac112e9cde4144f3376b15f6accd3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-operator-receipt-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  5608,
+                      "sha256":  "0416d75d0fed8333e75b57872e6ea6d49d31c65d36aa594c1b896cb43eabad52"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-origin-policy-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4897,
+                      "sha256":  "9e377f051b95f02bcea0e524809d87d53d0bf203a9c3dbb26fff7e54c8e3a5b2"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-output-limit-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4301,
+                      "sha256":  "2738e97a0c608c709a61ee80ff2f508667d5e3aa95093f7cba014521427a1a9f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-phases-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3257,
+                      "sha256":  "49b206ea6d5748c4bc4cffe0dda643c219eda0e0897eb81c53a7ab1a4a4d9048"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-planned-fetch-count-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3517,
+                      "sha256":  "974e51f21b424389c4f0b25b4fc93511e03e1028d91371117ad8fc4da469c982"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-profile-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3475,
+                      "sha256":  "d7e364b72289d453c8da507cda8e28da781c865cb077bdfcfaddb158fe3dff3b"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-prompt-limit-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2195,
+                      "sha256":  "e3c71037c665948834f5eace9ceda9e88590bcd149b4cf975a2c202a8832639c"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-resource-drift-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2692,
+                      "sha256":  "c1693ef8c3ed7695ec134feb985c5cba85dc4ab80c09d5767830f1c86ae1a511"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-resource-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3098,
+                      "sha256":  "ffef5b38d4fed225e87ea0084a9dcc78d84798931817c500056ead8f9f43d4f9"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-role-display-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3221,
+                      "sha256":  "deb178f29835981955ff077d94ac6dfffd73844fcd0dde5a98e3074c4066fdd8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-role-drift-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2753,
+                      "sha256":  "09e4b7161f18493d15602726e1115d30d952cc0775d239258f0bd6f61f5e00c1"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-route-set-algorithm-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  5145,
+                      "sha256":  "fff62d2778f1ba419afc3e1eba6823e2c1fc711b4f5997311ae1cc1500c7e07d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-route-set-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4223,
+                      "sha256":  "522901241995d31ebef3db1e7d8b9e4170e842634e07c35680a17ebde4fb3a29"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-route-set-version-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4807,
+                      "sha256":  "9de455bbd4432a3760b1f9e3752b67e4243d2c3dcb3e783e685ab97c793c330b"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-runtime-reset-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3178,
+                      "sha256":  "99318a970abaa9324a5c141cf78697ecc603e2b60b5b80eee07d5f820f537301"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-runtime-scratch-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3741,
+                      "sha256":  "8c4eef479967f6aa29d3806be2bb4212c8239744266506019b6fb8b25e2aed9d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-sampler-cap-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3470,
+                      "sha256":  "35d0a337c25885ffe2322b109f41b72c7bcea388f3ca499157cf7413234a1049"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-slots-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2563,
+                      "sha256":  "f96f60042441f838ca058f85ab628dba4a48ff2ac211293a86a51c65bad62ebb"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-stack-drift-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2820,
+                      "sha256":  "3198d97b29a5d169e931eadd201d398f815f4eac98140a8532d8e09e41f0e033"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-tokenizer-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3204,
+                      "sha256":  "25b42816bbf5d4ebac1c3ce073cb38a3b6a3481e21bf41b0ccfd59844e5fd362"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-total-budget-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3572,
+                      "sha256":  "5159d34820ed1a924813aa870589980360526329758bee233476984cc6ee0296"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-total-limit-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3770,
+                      "sha256":  "53ff7e3ffc4fb85900ade075787eef385df027289ad438783117f242fd2359b5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-export-set-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3930,
+                      "sha256":  "47ff56137499c1e08419557a2c2452ffae1c61c3193e879ccc0f85d69922f292"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-heap-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2998,
+                      "sha256":  "d674aca30be14eddd171e1e98cb6e045f6082d44c4398c2d80ab620a935bcdb3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-memory-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4360,
+                      "sha256":  "39046cd9ca10a28518eeda64a59f8cf38eae56b5a4910a6c0edf5146999a13ba"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-module-plan-wasm-transfer-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3079,
+                      "sha256":  "071e1c816b8f5a5715ef183d40832e81adbff036038a62928a8f268e28dba92d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-multi-parent-operator-provenance-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  14247,
+                      "sha256":  "2edb7d9c76f396b1fc0b8151d7e259e7a04757df158c7e9febeaab88cea868b6"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-multi-quant-selector-root-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3537,
+                      "sha256":  "14a20214fb78a028589d56faf5c975819a93c8eb373c515b09b857bcbf186ef7"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-parent-pool-soup-bundle-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  6561,
+                      "sha256":  "3f0a65d9cf63ee36d195ac6ebf51edbf6bb3bbd7aee935363bb49e64cdadd79e"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-preferred-adapter-route-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3672,
+                      "sha256":  "a13deedfdce7a2e38126142a91a60dd9e5233176f98af6995d6d27b1f2ecccbf"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-runtime-assembly-diagnostics-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2988,
+                      "sha256":  "71ddb3ee33a1538711fedf86f5aa67f254e291ca9d4bc597b121563c421d6d3a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-runtime-manifest-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3876,
+                      "sha256":  "6c53ed9e13272f0f151b003d005c0e65dd905a6cd21884123e31b8e680f0574f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-budget-contract-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3471,
+                      "sha256":  "854fbbda988a443c426284742ff87b73567f110fdfb8e90d0178697ca6c9de94"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-budget-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2380,
+                      "sha256":  "103c88e7d17c9622569a1577eca2a07b4d58f61ac66f2909f7c92f7cd2b3d8d4"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-genome-fitness-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2466,
+                      "sha256":  "7801ab9db31575b8e5435b940263169b339e73858ede858f2015d8b14867f9a4"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-heritable-artifact-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3758,
+                      "sha256":  "2347abd8a2298f594a1e6086cace7ad4bfc901f61163c5fe3995c2edcbcafda0"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-mate-selection-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3650,
+                      "sha256":  "92fd4f6c06d8cb9998daeb77d6e104523fa8e493d96a26b58af43d994abfbc31"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-novelty-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2843,
+                      "sha256":  "2a14fe6ac122b95dcc2905f79f4bbba077891de963d37959bebc9652c61f587a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-phenotype-evidence-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3609,
+                      "sha256":  "967f661f9e6c9d02c16f4d6e189149d596e7ec760e843a645c4664597d216d11"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-population-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3289,
+                      "sha256":  "14c063fca375a70ea090fedc9357d892e32f288690187ff233cbc5046c3c623a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-selector-species-fit-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2609,
+                      "sha256":  "39c113e7ec03fd794d5a7fdeaf9b37967c8934b773c34186f424c6d81e80edd5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-source-backed-alr1-contract-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2738,
+                      "sha256":  "943c3617e1f1090b1ccb455e22694d56e87076e5ee3cd2ec4c6bd909165c0690"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-source-backed-alr1-route-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2292,
+                      "sha256":  "e68d782aa14a7142234f5f83fea061bd6af8d7cfb10f39a9e2c46a91fc7d0031"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-sparse-adapter-route-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  5618,
+                      "sha256":  "fb231f01d63dfb3d65291bd0773a92b198ad87cac28011b3ea08e9b9b3d82b76"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-text-sidecar-budget-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3293,
+                      "sha256":  "2d9f6a8a7829431ffc2ad4798fa2f4853f76a9dbe1ed35f3f614ac5a4d0aab54"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/browser-text-sidecar-contract-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3267,
+                      "sha256":  "061af93bc1919c788012e7922c98a4fe5fa36c93ed0ea3106bddabfc67cd1042"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/candidate-operator-receipt-binding-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4106,
+                      "sha256":  "bcc0ce140845e101ab11106e1e0bfe00efdde70b4f15ec9e5b589efdeaa613af"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/crossover-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4824,
+                      "sha256":  "3b521e640ee0554a28ab84510f6e4395d75561697377be9bf20c0bd9b0a04d7b"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/dare-browser-operator-provenance-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2278,
+                      "sha256":  "6c3201a5557c24d687b1286cd133a679b9e8614b30c1ab6b6d2a7f3b04846f4d"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/dare-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4354,
+                      "sha256":  "4a11bcc1f129c7321b6d2fa15a35fa29982a51df7e0526d687199afdc12dc4d3"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/enterprise-rust-governance-memory-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  4540,
+                      "sha256":  "4e8303ac7ca4355a96234e06de3069a1a8b598bb6e3b2dad773385710d54b7c0"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/federated-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3641,
+                      "sha256":  "e885d2fe26065577ae873c0100d6ee4b9188a6bdc374c3c549953b67440d9492"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/federated-selector-receipt-route-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4851,
+                      "sha256":  "1d552e90e3cb4cfb4df739ba8268d2c0a924650679f45ba08776846db84c9cb6"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/index.md",
+                      "status":  "already-current",
+                      "bytes":  42366,
+                      "sha256":  "0e29cf89bd26386d2a835c449b558f34ed1ef3d651a0ad3d0c663e8d48f96801"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/low-rank-adapter-package-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2533,
+                      "sha256":  "3b0f47977fae9a67f5a44ace6c63b85f5f29983d471fee7a78b8351a369e9e79"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/model-breeding-ecology-memory-2026-06-26.md",
+                      "status":  "already-current",
+                      "bytes":  9120,
+                      "sha256":  "1b19a908a786e52a9a9c372f6b550bf69fdaf6e1e4351c97cfa4a08041b81d9c"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/multi-parent-soup-manifest-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2166,
+                      "sha256":  "6155417b072178ac5cfaae585d636bcf3589984d0d3d58c81036546603c1b958"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/mutation-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  5362,
+                      "sha256":  "3dbb42dd18ab044c01cd28401f9ab3b63d651c1fbf9b67dfc061c536bbffdb99"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/operator-schedule-carry-forward-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3091,
+                      "sha256":  "1b0f90a6021c61202114e22b412ba85e738ba24169ee0cdff7c808511257311f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/parent-pool-evolution-schedule-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  2002,
+                      "sha256":  "a9a6783f561ab1a5ad734b336ef154b925d4e840bc068d42284f37fcee413118"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/promotion-operator-receipt-binding-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4561,
+                      "sha256":  "c32389433efa8e20c1375140129b5d410a784da00f259a1b93d847b0e2d687bd"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/prune-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  6217,
+                      "sha256":  "ecb4d77a48add836c4e8807e7af16f53c8e5c04a825e214bd5cc106522958f62"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/registry-adapter-family-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3237,
+                      "sha256":  "98cd1b5ebc3810f7e53799a6dfe4da724c0996c8296f2aab0a2326edd2ef617b"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/registry-adapter-sidecar-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  4112,
+                      "sha256":  "bc77d73eb9a97070baa591887bde8c175656f222cc9b21b561e0beef81893926"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/report-intake-index-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  6444,
+                      "sha256":  "1c14d8b9832abcfdccf34a456c84c709f4ceae4e342bceef63dd2584cffccfbd"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/report-intake-index-2026-06-26.md",
+                      "status":  "already-current",
+                      "bytes":  6451,
+                      "sha256":  "315e907ae2f60db530ae47b409e02abc88785a47cdfdc0ff70fb0bc53eda7049"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/report-intake-index-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  3083,
+                      "sha256":  "280ad63643e25c8e7a3543ac3d691632078a44b7c6afcfb5225d8f8ef43ea3d7"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/runtime-adapter-apply-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  3208,
+                      "sha256":  "f81edd958cc202496740236b91c74bb5c88c490209f56b1a3414060fad7a5af2"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/selector-operator-receipt-binding-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  3566,
+                      "sha256":  "b420a9343c6c48aad2c33c8d63a2e0f09d28fbe1734bc9db31d7dba3ac03191c"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/sparse-adapter-package-memory-2026-06-27.md",
+                      "status":  "already-current",
+                      "bytes":  2897,
+                      "sha256":  "3ea5bfd6b0d41a92d30b2683fcd4f840247a24f803f74f38458b402ddf567883"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/teleodynamic-resource-bounded-memory-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  3567,
+                      "sha256":  "a235ebdbd055ee51b11d4ffe52706d2e9a623f84e5b8aec4112a8967e2b863d6"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/tinylm-modular-architecture-memory-2026-06-25.md",
+                      "status":  "already-current",
+                      "bytes":  4020,
+                      "sha256":  "1a09a5063a20fa84293b6da59cf23316d4aa51e89334d7cdad574c0924000bb8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/trained-adapter-source-alr1-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2799,
+                      "sha256":  "b86565f2cc143421dd42b015d6be77e8b018a31b155c02ebc7cc8778445695a8"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/trained-adapter-source-memory-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  2501,
+                      "sha256":  "a0433c078ef64a914a94eee612ca1e54b7fb7c02d8dc71860d0ce74152ac7284"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/two-parent-operator-browser-provenance-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4235,
+                      "sha256":  "683062e366444656560dc46069063656fd4b7b0c0dfa9635942759245c2a5add"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/reports/weighted-soup-operator-memory-2026-06-29.md",
+                      "status":  "already-current",
+                      "bytes":  4307,
+                      "sha256":  "845a2e3c2fc890c1330a4674c98f823eea887c16503a563fdccd4c80e1a85227"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/research/index.md",
+                      "status":  "already-current",
+                      "bytes":  916,
+                      "sha256":  "a2db1724945d9dd19ba4d0a117a885c5410e1f2bfb17f9d7cf4967ae1b1bdd10"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/research/model-breeding-reference-ideas-2026-06-26.md",
+                      "status":  "already-current",
+                      "bytes":  11359,
+                      "sha256":  "759eb154a07cfe463f17990b070999ed8d459d58afb43d0b3c4d4e89aa221286"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/research/modelbreeder-zero-dependency-reference-ideas-2026-06-28.md",
+                      "status":  "already-current",
+                      "bytes":  4649,
+                      "sha256":  "162afc09e80651913b241a75d5f0b7622789c7ec22bc9c08b8fdfbced4eb7c46"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-analysis-summary.md",
+                      "status":  "already-current",
+                      "bytes":  1997,
+                      "sha256":  "d34c2aa68daebe2e03745ad08d0761a7c4786b6f754572938cda95b4bb0f2c80"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-memory/index.md",
+                      "status":  "already-current",
+                      "bytes":  1191,
+                      "sha256":  "3c170411ee3dc1b95b1167d0eebc75eae57a487c34392cf975ddf45340e87f95"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-memory/knowledge-map.md",
+                      "status":  "already-current",
+                      "bytes":  32133,
+                      "sha256":  "44f021caa67a7b532195e8d9773858f4369668c09e215dacab4f82198fd3bfee"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-memory/log.md",
+                      "status":  "already-current",
+                      "bytes":  38048,
+                      "sha256":  "029dcd61d4d80d169ad9e189ff6637ad52e50fd44664b7cd965396582d0206a5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-memory/rust-browser-harness-standards.md",
+                      "status":  "already-current",
+                      "bytes":  523,
+                      "sha256":  "b3db7f1a90a1b52db76d324e488c1a345291a95c56f9ec4a4fad4777f759109a"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/source-memory/source-memory-guide.md",
+                      "status":  "already-current",
+                      "bytes":  36797,
+                      "sha256":  "f2211d0e70f89e9980ed0c7df858171d9996478234f9b245a40c32992b49e5c5"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/analyzing-website-virality-1.md",
+                      "status":  "already-current",
+                      "bytes":  62254,
+                      "sha256":  "6d9c11aff76aa0b3505016958bcbe0ede3dd1c8cded1d749fed9da5a798a5fab"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/future-proof-native-html5-techniques-1.md",
+                      "status":  "already-current",
+                      "bytes":  53752,
+                      "sha256":  "012ac971c92c0ef592c3517c3db794379eccd05f4a2e062034bc82803d24431f"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/index.md",
+                      "status":  "already-current",
+                      "bytes":  2642,
+                      "sha256":  "5761b934d96f43ceb5d7388b3076cfe9cad683b21defafe9164b9fe4be5a71ad"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/innovative-vanilla-web-design-1.md",
+                      "status":  "already-current",
+                      "bytes":  47462,
+                      "sha256":  "58a6db0d6fa9226e9ec35a8dcb697b1d48644ec865158529631ab6552b4a2645"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/mememtech-vanilla-web-architecture-1.md",
+                      "status":  "already-current",
+                      "bytes":  42942,
+                      "sha256":  "a8b1105bff91a8e9230ed54a8643e6b8ac99556a448bf16285ed3fe5b5f49274"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/vanilla-js-future-proof-techniques-1.md",
+                      "status":  "already-current",
+                      "bytes":  47622,
+                      "sha256":  "e3e7722bbb3369a374c8fdded48a40cd37b2b3bde03bedb4e86ece69915ff3e2"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/web-research/website-review-and-improvement-plan.md",
+                      "status":  "already-current",
+                      "bytes":  41422,
+                      "sha256":  "ca08e99d0d21776760813d2253bdc923b02248a63585635a475a61b0daf62607"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-docs/workspace.uai",
+                      "status":  "already-current",
+                      "bytes":  74217,
+                      "sha256":  "5d8b08c561d6660d6eb8ace22b30baafc2ed8d9e8ec5a27334b304038d4480ff"
+                  },
+                  {
+                      "path":  "docs/runtime-portal/runtime-pages.json",
+                      "status":  "already-current",
+                      "bytes":  132936,
+                      "sha256":  "846da7b3f2024fcba4cf1d2457f64974c1d23f9ac0e87a90af1b27cef8c58d89"
+                  },
+                  {
+                      "path":  "docs/ui-ux-25-rounds-2026-07-12.md",
+                      "status":  "already-current",
+                      "bytes":  4574,
+                      "sha256":  "653b716c5970fef4b6bf2762c3ff482b3d34b0e684696de870f4e1e9f66c6fa0"
+                  },
+                  {
+                      "path":  "includes/footer.php",
+                      "status":  "already-current",
+                      "bytes":  1644,
+                      "sha256":  "5dce94a866a7a2cc9b2ad681d07f8e49746f96cd9d22b0b5d7a00ac9ecd8bcfb"
+                  },
+                  {
+                      "path":  "includes/functions.php",
+                      "status":  "already-current",
+                      "bytes":  4508,
+                      "sha256":  "f7625c436c5ec785c60e0a6f71da088595262b3b05770de047abbf99b6d90b69"
+                  },
+                  {
+                      "path":  "includes/header.php",
+                      "status":  "already-current",
+                      "bytes":  6851,
+                      "sha256":  "b8ccb633539e1983c484b638d472aae2b8e07eb56a08fd750223f8fe52ae9218"
+                  },
+                  {
+                      "path":  "index.php",
+                      "status":  "already-current",
+                      "bytes":  6694,
+                      "sha256":  "8bb887bc5665ae7d661519141f789eafa39b5b47143b399e940cf4c54eec9a90"
+                  },
+                  {
+                      "path":  "LICENSE.txt",
+                      "status":  "already-current",
+                      "bytes":  11357,
+                      "sha256":  "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+                  },
+                  {
+                      "path":  "llms-full.txt",
+                      "status":  "published",
+                      "bytes":  5571,
+                      "sha256":  "8ff133517e2b945d9d82375c59fa1b5af17da8d6cde78629ad9af5edc6ce7268"
+                  },
+                  {
+                      "path":  "llms.txt",
+                      "status":  "published",
+                      "bytes":  2289,
+                      "sha256":  "4c18256c2508f7614d61d0992ae5c39929e9452067b38796d3ef4ca8d76a3e92"
+                  },
+                  {
+                      "path":  "robots.txt",
+                      "status":  "already-current",
+                      "bytes":  103,
+                      "sha256":  "70561bf66075a8b7562d2ff17e1e497d6372ceb91736008dd4cf417a2d1d4556"
+                  },
+                  {
+                      "path":  "sitemap.xml",
+                      "status":  "already-current",
+                      "bytes":  4081,
+                      "sha256":  "ea9ad7b0a7ba8b4e1a82c6edb177c4b449869d2b1d1911ca37e948333529cb5f"
+                  }
+              ]
+}
