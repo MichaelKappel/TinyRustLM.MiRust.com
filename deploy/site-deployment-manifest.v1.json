@@ -2,10 +2,10 @@
   "schema": "tinyrustlm.mirust.site_deployment_manifest.v1",
   "site": "TinyRustLM.MiRust.com",
   "origin": "https://tinyrustlm.mirust.com",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "release_date": "2026-08-29",
-  "source_commit": "3109ba801165e76114a03308cf07a88772041e13",
-  "source_tree": "a706cf86934926f4cddc7d1fd3ea2fd6fc790b0b",
+  "source_commit": "2547720541dfb927a81a85ae3eac3222908b9771",
+  "source_tree": "bc7b4a9d5c74e4f94fb7a168211a865fb099dadc",
   "transport_profile": "TinyRustLM.MiRust.com",
   "files": [
     {
@@ -23,7 +23,7 @@
     {
       "path": ".uai/index.uai",
       "bytes": 1408,
-      "sha256": "b3258c08dabcc13b83ce098a5e855d92b2e6c57a5bfea4e5a2e55218b8abdff5",
+      "sha256": "d42499579ae930fd1904420804ecd8e52bd8c3152c21061c54046f528a5d9409",
       "https_readback_path": "/.uai/index.uai"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "path": ".uai/taboo.uai",
-      "bytes": 4097,
-      "sha256": "6ba2e7a59b04b749ba88d05343ffeb890b4f755ae191b8aa845844c27df5ee39",
+      "bytes": 4515,
+      "sha256": "e9d87bd04351dbe52d2804ef7213b199fa2e2b7f1c95a8dc0753d0bccbd7bf70",
       "https_readback_path": "/.uai/taboo.uai"
     },
     {
@@ -52,8 +52,8 @@
     },
     {
       "path": ".well-known/uaix-talisman.txt",
-      "bytes": 2840,
-      "sha256": "512c6d4e6a0283d3d124de468028899e8830f17ea8342ae0161b8c6a837f6342",
+      "bytes": 3268,
+      "sha256": "da4570444088642c9e644287b56cefe252244955b65fe1d280e7a5f180f323c8",
       "https_readback_path": "/.well-known/uaix-talisman.txt"
     },
     {
@@ -70,14 +70,14 @@
     },
     {
       "path": "data/pages.php",
-      "bytes": 21268,
-      "sha256": "a2befbeef06645292ff377cba1bea178a50e232c917f5d6b31da7a190342cc53",
+      "bytes": 21733,
+      "sha256": "dcaebffbaa21ed164ce8a9f3353bb468a81483a127f699482f2c1e403c64f62b",
       "https_readback_path": null
     },
     {
       "path": "data/site.php",
       "bytes": 5565,
-      "sha256": "b8eff76dbf838808e03b728e8d50826272740222ee6e6348f703c5646f031ede",
+      "sha256": "8cdfeac5a0ba0ed7311fa9ce09a4cb029711e5cbad88bd9c274f2290d0786466",
       "https_readback_path": null
     },
     {
@@ -88,20 +88,20 @@
     },
     {
       "path": "docs/long-term-memory.md",
-      "bytes": 3278,
-      "sha256": "03e7186b50f79c726d2c3583f3371a38eb33d924e6a768e0a357749d5947dca5",
+      "bytes": 3356,
+      "sha256": "291c9b06022fa6c5ae31bbb19d39fc2c5b7fcb4dbff347042bca3e01fc20ce47",
       "https_readback_path": "/docs/long-term-memory.md"
     },
     {
       "path": "docs/package-manifest.md",
       "bytes": 35473,
-      "sha256": "8891fc068e705d9b5b347bd92c1ed8e2b1bd15bece2ca3f5bf65d46ef62011da",
+      "sha256": "4bea43f2e542b7bce2ac8d77bd867cfd6f95e9ee4ed879074a4be463263c40e4",
       "https_readback_path": "/docs/package-manifest.md"
     },
     {
       "path": "docs/report-index.md",
       "bytes": 4923,
-      "sha256": "04912ab3f720b913469055ec3d8e3ee81f00187972edfbf569db188aa014174a",
+      "sha256": "bac1508d7adf6c48978712b84458fc2c95f9216f7bb3475627d25089de9b7d7a",
       "https_readback_path": "/docs/report-index.md"
     },
     {
@@ -1330,14 +1330,14 @@
     },
     {
       "path": "llms-full.txt",
-      "bytes": 5531,
-      "sha256": "1b3c27ef62a32258202c80b969a2b8cf0585a9f8d5d9e384a309b71eb8fbcd75",
+      "bytes": 5571,
+      "sha256": "8ff133517e2b945d9d82375c59fa1b5af17da8d6cde78629ad9af5edc6ce7268",
       "https_readback_path": "/llms-full.txt"
     },
     {
       "path": "llms.txt",
-      "bytes": 2245,
-      "sha256": "50d59a8cea51b2863d44ced42f250de1cd7644766f88832028417bb4971dcd6c",
+      "bytes": 2289,
+      "sha256": "4c18256c2508f7614d61d0992ae5c39929e9452067b38796d3ef4ca8d76a3e92",
       "https_readback_path": "/llms.txt"
     },
     {
@@ -1356,11 +1356,11 @@
   "route_smokes": [
     {
       "path": "/",
-      "contains": "Site package 1.8.1"
+      "contains": "Site package 1.8.2"
     },
     {
       "path": "/updates/",
-      "contains": "Last published: 1.8.1"
+      "contains": "Last published: 1.8.2"
     },
     {
       "path": "/developer-portal/",
