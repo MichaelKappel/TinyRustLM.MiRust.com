@@ -11,6 +11,7 @@ memory_endpoints_two_use_context:
 
 single_tinyrustlm_source_prohibitions:
   - Do not create, adopt, maintain, edit, build, test, release, deploy, or describe more than one authoritative TinyRustLM.com source checkout.
+  - The sole local TinyRustLM.com source root is E:\Source\Rust\TinyRustLM.com; fail closed if that path is absent, points through a reparse point, is not the declared remote-exact worktree, or any recovered, dated, hidden, backup, Worktrees, or quarantine source copy exists.
   - Do not treat a clone, copied directory, recovery tree, Git worktree, generated package, deployed web root, backup, evidence root, or protected damaged snapshot as a second source authority.
   - Before any TinyRustLM.com work, resolve the canonical root from its current workspace.uai and verify the canonical path, branch, origin URL, local HEAD, tracking ref, FETCH_HEAD, direct remote ref, and worktree status; do not edit while identity is ambiguous.
   - Fail closed before editing, building, testing, committing, releasing, or deploying when canonical authority cannot be proved or any second writable TinyRustLM.com checkout is discovered; consolidation and retirement must finish before work resumes.
