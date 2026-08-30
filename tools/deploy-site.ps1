@@ -434,6 +434,30 @@ function Write-Receipt {
     Move-Item -LiteralPath $temporary -Destination $resolved
 }
 
+function Assert-EvidenceGitAttributes {
+    $required = @(
+        "deploy/site-deployment-manifest.v1.json binary",
+        "deploy/receipts/*.json binary"
+    )
+    $committed = @(git -C $repositoryRoot show "HEAD:.gitattributes")
+    if ($LASTEXITCODE -ne 0) { throw "Evidence byte-preservation attributes are not committed." }
+    foreach ($line in $required) {
+        if ($committed -cnotcontains $line) {
+            throw "Evidence byte-preservation attributes are incomplete."
+        }
+    }
+
+    $effective = @(git -C $repositoryRoot check-attr binary -- `
+        "deploy/site-deployment-manifest.v1.json" `
+        "deploy/receipts/__future-receipt__.json")
+    if ($LASTEXITCODE -ne 0 -or
+        $effective -cnotcontains "deploy/site-deployment-manifest.v1.json: binary: set" -or
+        $effective -cnotcontains "deploy/receipts/__future-receipt__.json: binary: set") {
+        throw "Evidence byte-preservation attributes are not effective."
+    }
+}
+
+Assert-EvidenceGitAttributes
 $manifestItem = Get-Item -LiteralPath $ManifestPath
 if ($manifestItem.Length -lt 1 -or $manifestItem.Length -gt 2097152) { throw "Deployment manifest size is invalid." }
 $manifestSha256 = Get-FileSha256 -Path $manifestItem.FullName
