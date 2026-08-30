@@ -117,7 +117,7 @@ const requiredMarkers = new Map([
   ]],
   ["docs/long-term-memory.md", [
     `Last published: \`${releaseVersion}\``,
-    "changed declared public artifact",
+    "declared public artifact",
   ]],
   ["llms-full.txt", [
     `Last published: ${releaseVersion}`,
