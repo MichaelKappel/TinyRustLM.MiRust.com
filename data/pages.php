@@ -225,7 +225,7 @@ return [
             ],
             [
                 'heading' => 'Publication status',
-                'body' => 'Last published: 1.8.1. Release date: 2026-08-29. Update: one canonical TinyRustLM.com source authority is now fail-closed across the ecosystem, and duplicate or retired trees cannot build, test, release, or deploy.',
+                'body' => 'Last published: 1.8.2. Release date: 2026-08-29. Update: a committed change to any declared public artifact now invalidates deployed-current status until a strictly newer clean-commit release passes exact HTTPS readback, retired-route closure, and release-record agreement.',
                 'points' => ['Clean committed source required', 'Complete site gate required', 'Deployment from exact revision required', 'Public HTTPS readback required'],
             ],
         ],
@@ -254,11 +254,16 @@ return [
         'sections' => [
             [
                 'heading' => 'Current source update',
-                'body' => 'Last published: 1.8.1. Release date: 2026-08-29. Update: every current ecosystem policy now requires one canonical TinyRustLM.com checkout, complete Git identity proof before work, semantic duplicate consolidation, and retirement of every non-authoritative tree.',
+                'body' => 'Last published: 1.8.2. Release date: 2026-08-29. Update: every committed declared-public change now forces a strictly newer clean-commit release with byte-exact HTTPS readback, retired-route absence, and synchronized public release records.',
                 'points' => ['Documentation release only', 'No package publication claim', 'No model release claim', 'No campaign credit'],
             ],
             [
                 'heading' => 'Previous release',
+                'body' => '1.8.1 was published on 2026-08-29. It established one fail-closed TinyRustLM.com source authority, semantic duplicate consolidation, and retirement of non-authoritative trees.',
+                'points' => ['Immutable release history', 'No runtime compatibility path', 'No evidence reinterpretation', 'No campaign credit'],
+            ],
+            [
+                'heading' => 'Earlier release',
                 'body' => '1.8.0 was published on 2026-08-28. It replaced stale active runtime and package prose with the current clean-slate SLM2, direct-P2P, privacy, evidence, and two-lane MemoryEndpoints authority.',
                 'points' => ['Immutable release history', 'No runtime compatibility path', 'No evidence reinterpretation', 'No campaign credit'],
             ],

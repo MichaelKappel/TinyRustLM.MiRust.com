@@ -10,7 +10,7 @@ const repositoryRoot = path.resolve(__dirname, "..");
 const contentCommit = process.argv[2];
 const outputPath = path.join(repositoryRoot, "docs", "package-manifest.md");
 const excludedPath = "docs/package-manifest.md";
-const releaseVersion = "1.8.1";
+const releaseVersion = "1.8.2";
 const releaseDate = "2026-08-29";
 
 if (!/^[0-9a-f]{40}$/.test(contentCommit || "")) {

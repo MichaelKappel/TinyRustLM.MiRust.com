@@ -8,7 +8,7 @@ const { execFileSync } = require("node:child_process");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const contentCommit = process.argv[2];
-const releaseVersion = "1.8.1";
+const releaseVersion = "1.8.2";
 const releaseDate = "2026-08-29";
 const outputPath = path.resolve(
   repositoryRoot,
@@ -92,33 +92,42 @@ const requiredMarkers = new Map([
     "Fail closed before editing",
     "automated gates must reject pointers",
     "Historical source belongs only in Git history",
+    "Any committed change to a declared public artifact invalidates deployed-current status",
   ]],
   [".well-known/uaix-talisman.txt", [
     `release: ${releaseVersion}`,
     "Single Source Authority",
     "Historical executable source belongs only in Git history",
+    "Any committed change to a declared public artifact invalidates deployed-current status",
   ]],
   ["README.md", [
     `Last published: \`${releaseVersion}\``,
     "exactly one authoritative source checkout",
+    "invalidate deployed-current",
   ]],
   ["data/pages.php", [
     `Last published: ${releaseVersion}`,
     "One canonical checkout",
+    "1.8.1 was published on 2026-08-29",
     "1.8.0 was published on 2026-08-28",
   ]],
   ["data/site.php", [
     `'version' => '${releaseVersion}'`,
     `'release_date' => '${releaseDate}'`,
   ]],
-  ["docs/long-term-memory.md", [`Last published: \`${releaseVersion}\``]],
+  ["docs/long-term-memory.md", [
+    `Last published: \`${releaseVersion}\``,
+    "changed declared public artifact",
+  ]],
   ["llms-full.txt", [
     `Last published: ${releaseVersion}`,
     "exactly one authoritative source checkout",
+    "invalidates",
   ]],
   ["llms.txt", [
     `Last published: ${releaseVersion}`,
     "exactly one canonical TinyRustLM.com checkout",
+    "invalidate deployed-current status",
   ]],
 ]);
 

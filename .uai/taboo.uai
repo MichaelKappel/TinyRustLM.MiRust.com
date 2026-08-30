@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.taboo.current.v1
-updated_utc: 2026-08-29T22:27:17Z
+updated_utc: 2026-08-30T01:36:19Z
 site: TinyRustLM.MiRust.com
 role: prohibited directions
 authority_file_mutability: read_only_without_exact_human_artifact_and_operation_authorization
@@ -18,6 +18,7 @@ single_tinyrustlm_source_prohibitions:
   - Temporary scratch or test worktrees must be explicitly owned, bounded, non-authoritative, contain no unique uncommitted product work, never deploy, and be removed after their operation.
   - If duplication or divergence appears, make no new edits in the duplicate. Inventory its commits and local diff, move only valid current clean-slate work into the canonical tree, reject legacy, compatibility, fallback, and debt, run every affected gate, commit and push the canonical tree, and then retire the duplicate safely.
   - Do not pull both trees forward, merge stale branches wholesale, preserve a second checkout as history, or keep obsolete executable code, schemas, routes, docs, or configuration active. Historical source belongs only in Git history; bounded evidence may describe it but must not execute or compete with current authority.
+  - Any committed change to a declared public artifact invalidates deployed-current status until a strictly newer release is published from one clean canonical commit, every declared readable file passes byte-for-byte HTTPS readback, every retired route is absent, and the public release records agree. Never mask drift with stale metadata, a partial upload, an overwrite under an old version, or source-only success.
 
 prohibitions:
   - Do not claim hosted inference, hosted model bytes, prompt collection, unreviewed quality, public P2P, live memory continuity, deployment, or publication without exact evidence.

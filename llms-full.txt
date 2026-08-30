@@ -104,11 +104,12 @@ Current campaign counters remain:
 
 ## Publication Record
 
-Last published: 1.8.1.
+Last published: 1.8.2.
 Release date: 2026-08-29.
-Update: enforced one fail-closed TinyRustLM.com source authority across every
-current ecosystem repository while retaining the clean-slate SLM2, P2P,
-privacy, evidence, and MemoryEndpoints contracts.
+Update: a committed change to any declared public artifact invalidates
+deployed-current status until a strictly newer release from one clean canonical
+commit passes exact HTTPS readback, retired-route closure, and release-record
+agreement.
 
 Publication requires one clean committed source revision, complete tests and
 documentation, deployment from the verified closure, and exact public HTTPS

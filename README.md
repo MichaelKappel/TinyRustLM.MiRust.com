@@ -86,11 +86,11 @@ Campaign counters remain `0/20` qualified models, `0/50` clean browser rounds,
 
 ## Publication
 
-- Last published: `1.8.1`.
+- Last published: `1.8.2`.
 - Release date: `2026-08-29`.
-- Update: enforced one fail-closed TinyRustLM.com source authority across the
-  ecosystem and prohibited duplicate, retired, quarantined, or protected trees
-  from building, testing, releasing, or deploying.
+- Update: declared public-artifact changes now invalidate deployed-current
+  status until a strictly newer release from one clean canonical commit passes
+  exact HTTPS readback, retired-route closure, and release-record agreement.
 
 Publication requires a clean committed revision, complete affected-site gates,
 deployment from that revision, and exact public readback of the HTTPS bytes. A

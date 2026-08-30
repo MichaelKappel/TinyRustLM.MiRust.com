@@ -37,10 +37,11 @@ Evidence boundary: source, fixtures, local probes, configuration, package
 creation, or service reachability do not prove public readback, live memory,
 P2P availability, model quality, browser release, or deployment.
 
-Last published: 1.8.1.
+Last published: 1.8.2.
 Release date: 2026-08-29.
-Update: one fail-closed TinyRustLM.com source authority is enforced across the
-ecosystem; duplicate and retired trees cannot build, test, release, or deploy.
+Update: declared public-artifact changes invalidate deployed-current status
+until a strictly newer clean-commit release passes exact HTTPS readback,
+retired-route closure, and release-record agreement.
 
 Campaign counters: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live
 MemoryEndpoints rounds; 0/40 externally proven P2P lanes; 0/20 catalog

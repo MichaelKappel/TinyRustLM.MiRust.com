@@ -65,10 +65,11 @@ matching evidence exists.
 
 ## Publication
 
-- Last published: `1.8.1`.
+- Last published: `1.8.2`.
 - Release date: `2026-08-29`.
-- Update: retained both MemoryEndpoints lanes while enforcing one fail-closed
-  TinyRustLM.com source authority across every current ecosystem repository.
+- Update: retained both MemoryEndpoints lanes while requiring every changed
+  declared public artifact to receive a strictly newer clean-commit release,
+  exact HTTPS readback, retired-route closure, and synchronized public records.
 
 This policy is documentation authority. It is not a claim that a live meeting,
 user login, synchronization, restore, deletion, or continuity round occurred.
