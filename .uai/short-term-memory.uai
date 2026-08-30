@@ -1,26 +1,28 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-08-29T23:02:03Z
+updated_utc: 2026-08-30T02:00:51Z
 site: TinyRustLM.MiRust.com
 status: published_and_readback_verified
-current_site_package: 1.8.1
+current_site_package: 1.8.2
 
 current_publication:
-  version: 1.8.1
+  version: 1.8.2
   release_date: 2026-08-29
-  source_commit: 3109ba801165e76114a03308cf07a88772041e13
-  source_tree: a706cf86934926f4cddc7d1fd3ea2fd6fc790b0b
-  publisher_commit: e1503d3ae65b669bf5d49f2ad58a41e1de3fb3f9
-  manifest_sha256: d67a76fc175e5ba82804302bb273648ae007a0480d277c0af04cd2722abdeeed
-  success_receipt: deploy/receipts/site-deployment-20260829T224120Z.json
-  success_receipt_sha256: 95eb6f79f16924c9b08111fddac03c613de73d876be5347f786d105a2e89a29f
-  receipt_commit: 9e18153340ed85aee4eb196d51756b69de012f51
-  closure: 224 files, 7596489 bytes
-  transport: 11 published, 213 already current
-  proof: All 22 manifest-bound HTTPS readbacks and six current route smokes passed independently after publication.
+  source_commit: 2547720541dfb927a81a85ae3eac3222908b9771
+  source_tree: bc7b4a9d5c74e4f94fb7a168211a865fb099dadc
+  publisher_commit: 9cabac4f7e5e8f8037593ee473afd9b43232d7fb
+  manifest_sha256: 7a82ca67ebf9101c24e374a5d030173c5b135f5062d00574887fa6d614b10d20
+  success_receipt: deploy/receipts/site-deployment-20260830T014629Z.json
+  success_receipt_sha256: e762a900aad256d5783ea5fbdec68307f95b08d4e0f1f76db6765329fa172cf2
+  receipt_commit: 6d56e6d4a1811a7d7b94d10ff384071ea866974e
+  closure: 224 files, 7597962 bytes
+  transport: 10 published, 214 already current
+  proof: All 22 manifest-bound HTTPS readbacks and six current route smokes passed; a remote-exact clean clone preserved the evidence hashes and reproduced the complete validation gate.
 
 current_authority:
   - TinyRustLM.MiRust.com is the current developer documentation portal for the one prelaunch TinyRustLM.com product.
   - Exactly one canonical writable TinyRustLM.com source checkout may be authoritative; ambiguity or a second writable checkout blocks all product and release work.
+  - A committed change to a declared public artifact invalidates deployed-current status until a strictly newer clean-commit release passes complete readback, retired-route closure, and synchronized release records.
+  - Deployment manifests and receipts are binary Git artifacts; publication fails when their byte-preservation attributes are missing or ineffective.
   - The sole current model path is the six-member SLM2 composition.
   - The default package transaction is TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
   - TinyRustLM.MemoryEndpoints is separately optional and excluded from the default transaction.
@@ -38,6 +40,9 @@ evidence_boundary:
   - Historical runtime material is evidence only and has no current compatibility authority.
 
 historical_publications:
+  - version: 1.8.1
+    status: superseded_historical_evidence_only
+    success_receipt: deploy/receipts/site-deployment-20260829T224120Z.json
   - version: 1.8.0
     status: superseded_historical_evidence_only
     success_receipt: deploy/receipts/site-deployment-20260828T210322Z.json
@@ -46,6 +51,6 @@ historical_publications:
     success_receipt: deploy/receipts/site-deployment-20260809T234347Z.json
 
 next_work:
-  - Treat 1.8.1 as terminally published; do not replay its deployment.
+  - Treat 1.8.2 as terminally published; do not replay its deployment.
   - Continue ecosystem source, memory, receipt, remote-equality, and public-state reconciliation.
   - Use a new complete versioned closure for any future public-byte change.

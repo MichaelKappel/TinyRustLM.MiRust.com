@@ -1,6 +1,6 @@
 profile: tinyrustlm-mirust.file-handoff.current.v2
-updated_utc: 2026-08-29T23:02:03Z
-current_authority: New intake is reviewed against exactly one canonical TinyRustLM.com source, clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, and no-compatibility contracts in totem.uai and taboo.uai.
+updated_utc: 2026-08-30T02:00:51Z
+current_authority: New intake is reviewed against exactly one canonical TinyRustLM.com source, clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, no-compatibility, and declared-public deployment-current invalidation contracts in totem.uai and taboo.uai.
 handoff_root: agent-file-handoff/
 active_buckets:
   content: agent-file-handoff/Content/
@@ -23,16 +23,17 @@ durable_targets:
 
 current_publication_handoff:
   status: published_and_readback_verified
-  release: TinyRustLM.MiRust.com 1.8.1
-  source_commit: 3109ba801165e76114a03308cf07a88772041e13
-  publisher_commit: e1503d3ae65b669bf5d49f2ad58a41e1de3fb3f9
-  manifest_sha256: d67a76fc175e5ba82804302bb273648ae007a0480d277c0af04cd2722abdeeed
-  closure: 224 files, 7596489 bytes; 11 published and 213 already current
-  success_receipt: deploy/receipts/site-deployment-20260829T224120Z.json
-  success_receipt_sha256: 95eb6f79f16924c9b08111fddac03c613de73d876be5347f786d105a2e89a29f
-  receipt_commit: 9e18153340ed85aee4eb196d51756b69de012f51
-  proof: All 22 exact public file readbacks and six route smokes passed independently after publication.
-  restart: Treat 1.8.1 as terminally published; any public-byte change requires a new versioned closure and receipt.
+  release: TinyRustLM.MiRust.com 1.8.2
+  source_commit: 2547720541dfb927a81a85ae3eac3222908b9771
+  source_tree: bc7b4a9d5c74e4f94fb7a168211a865fb099dadc
+  publisher_commit: 9cabac4f7e5e8f8037593ee473afd9b43232d7fb
+  manifest_sha256: 7a82ca67ebf9101c24e374a5d030173c5b135f5062d00574887fa6d614b10d20
+  closure: 224 files, 7597962 bytes; 10 published and 214 already current
+  success_receipt: deploy/receipts/site-deployment-20260830T014629Z.json
+  success_receipt_sha256: e762a900aad256d5783ea5fbdec68307f95b08d4e0f1f76db6765329fa172cf2
+  receipt_commit: 6d56e6d4a1811a7d7b94d10ff384071ea866974e
+  proof: All 22 exact public file readbacks and six route smokes passed after publication; a remote-exact clean clone preserved every referenced evidence hash and reproduced the complete validation gate.
+  restart: Treat 1.8.2 as terminally published. Any committed declared-public change requires a strictly newer clean-commit closure, complete readback, retired-route closure, synchronized release records, and a new append-only receipt.
 
 memory_endpoints:
   direct_agent_lane: Ecosystem agents use MemoryEndpoints.com directly for long-term memory, meetings, handoffs, and coordination across all maintained sites.
@@ -40,6 +41,9 @@ memory_endpoints:
   duplicate_memory: Additional prelaunch copies are allowed for resilience only while synchronized, secret-safe, provenance-labeled, and noncontradictory.
 
 historical_release_evidence:
+  - release: TinyRustLM.MiRust.com 1.8.1
+    status: superseded_historical_evidence_only
+    success_receipt: deploy/receipts/site-deployment-20260829T224120Z.json
   - release: TinyRustLM.MiRust.com 1.8.0
     status: superseded_historical_evidence_only
     success_receipt: deploy/receipts/site-deployment-20260828T210322Z.json
