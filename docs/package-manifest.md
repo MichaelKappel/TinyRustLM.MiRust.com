@@ -2,8 +2,8 @@
 
 - Version: `1.8.2`
 - Release date: `2026-08-29`
-- Content-basis commit: `d096b58063513434f907582e9537bb967b91025e`
-- Content-basis tree: `7f9b7e3b5f8d309267cb492250fba15908567b8d`
+- Content-basis commit: `b5c370ba9a4d608771934521f0e404c4fba16cff`
+- Content-basis tree: `8f64eec863f72b948a06517ac97052fa76640916`
 - Public files, excluding this manifest: 223
 - Public bytes, excluding this manifest: 7562489
 
