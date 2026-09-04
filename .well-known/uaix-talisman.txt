@@ -1,8 +1,11 @@
 UAIX Talisman Public Export
 site: TinyRustLM.MiRust.com
 role: TinyRustLM developer documentation portal
-release: 1.8.2
-updated_utc: 2026-08-30T01:36:19Z
+prepared_release: 1.8.3
+prepared_release_date: 2026-08-31
+prepared_status: awaiting_content_commit_and_publication_proof
+last_verified_release: 1.8.2
+updated_utc: 2026-08-31T12:02:33Z
 
 Current Authority
 - TinyRustLM is one prelaunch browser-local product with one six-member SLM2 path.
@@ -15,19 +18,17 @@ MemoryEndpoints.com Two-Use Authority
 - Agents working on every ecosystem site use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
 - Separately, the TinyRustLM.com Connect plugin lets a user sign in to MemoryEndpoints.com and explicitly select it as TinyRustLM.com Connect long-term memory.
 - The lanes keep identity, credentials, consent, scopes, provenance, idempotency, and receipts separate. Neither silently acts for the other.
-- Prelaunch memory may also be duplicated in current UAI, wiki, public-safe source notes, and approved private stores only while every maintained copy remains current, secret-safe, provenance-labeled, and noncontradictory.
+- This public export does not enumerate repository governance, workstation topology, credentials, evidence storage, or non-public memory locations.
 
 Evidence Boundaries
 - Source, configuration, reachability, fixtures, local probes, packages, and reports do not prove live MemoryEndpoints use, model quality, public P2P, browser release, deployment, or campaign credit.
 - Runtime.MiRust.com material is retained only as clearly labeled historical evidence and creates no current compatibility authority.
 - The default public package transaction is exactly TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P. TinyRustLM.MemoryEndpoints is separately optional.
 
-Single Source Authority
-- TinyRustLM.com has exactly one authoritative source checkout. Recovery trees, clones, generated packages, deployed roots, backups, evidence roots, and protected snapshots never become a second authority.
-- Source work fails closed unless the canonical path, branch, origin, local HEAD, tracking ref, FETCH_HEAD, direct remote ref, and clean status agree.
-- A discovered duplicate is frozen, audited, semantically consolidated into the canonical tree only when its work is current and valid, then retired. Historical executable source belongs only in Git history.
-- Any committed change to a declared public artifact invalidates deployed-current status until a strictly newer release from one clean canonical commit passes byte-for-byte HTTPS readback for every declared readable file, confirms every retired route is absent, and agrees with the public release records.
-- Stale metadata, partial upload, overwrite under an old version, and source-only success are never publication evidence.
+Public Release Boundary
+- Repository governance remains local and is not exported through the public site.
+- The raw historical Runtime documentation mirror remains preserved as repository evidence but is excluded from current public package and deployment closure.
+- A prepared package is not a publication. Current status requires a newer clean-commit release, exact HTTPS readback, retired-route proof, and matching public release records.
 
 Public UAI Boundary
-Only index.uai, long-term-memory.uai, talisman.uai, taboo.uai, and totem.uai are allowlisted public orientation or pointer records. Every other UAI record and all credentials, prompts, model bytes, invitation URLs, private paths, and raw hosted-memory payloads remain private.
+Only index.uai and long-term-memory.uai are public pointer records. Every other UAI record and all credentials, prompts, model bytes, invitation URLs, local paths, and raw hosted-memory payloads are excluded from public closure.

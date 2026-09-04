@@ -1,10 +1,10 @@
 Options -Indexes
 AddType text/plain .uai
 
-<FilesMatch "^(index|long-term-memory|talisman|taboo|totem)\.uai$">
+<FilesMatch "^(index|long-term-memory)\.uai$">
   Require all granted
 </FilesMatch>
 
-<FilesMatch "^(?!(index|long-term-memory|talisman|taboo|totem)\.uai$).+">
+<FilesMatch "^(?!(index|long-term-memory)\.uai$).+">
   Require all denied
 </FilesMatch>

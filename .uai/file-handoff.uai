@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.file-handoff.current.v2
-updated_utc: 2026-08-30T02:00:51Z
+updated_utc: 2026-08-31T12:02:33Z
 current_authority: New intake is reviewed against exactly one canonical TinyRustLM.com source, clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, no-compatibility, and declared-public deployment-current invalidation contracts in totem.uai and taboo.uai.
 handoff_root: agent-file-handoff/
 active_buckets:
@@ -21,7 +21,17 @@ durable_targets:
   long_term_memory_body: docs/long-term-memory.md
   pointer_ledger: .uai/long-term-memory.uai
 
-current_publication_handoff:
+prepared_publication_handoff:
+  status: prepared_not_published
+  release: TinyRustLM.MiRust.com 1.8.3
+  release_date: 2026-08-31
+  source_commit: pending
+  source_tree: pending
+  manifest_sha256: pending
+  receipt: none
+  next_gate: Commit coherent source, generate exact commit-bound manifests, prove remote equality, validate exact staging, publish, and complete GET/HEAD retired-route plus byte readback before any verified claim.
+
+last_verified_publication_handoff:
   status: published_and_readback_verified
   release: TinyRustLM.MiRust.com 1.8.2
   source_commit: 2547720541dfb927a81a85ae3eac3222908b9771

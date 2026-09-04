@@ -28,20 +28,20 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/implementation/architecture.md](implementation/architecture.md): sha256:6EE3C495E1E518E249AD38BE548F98DF31B86B82614A9AFB93C5778F6233E269
 - [docs/implementation/browser-harness.md](implementation/browser-harness.md): sha256:50921079ECFA7B65DBC562FBBA64C1174E4450C98CD8995399B61982A354ECDB
 - [docs/implementation/browser-runtime.md](implementation/browser-runtime.md): sha256:2E4B5BF263768B7ABB42E388FC80D99F6AB29CE8ADDB14C70D6C26FB218C9F44
-- [docs/implementation/index.md](implementation/index.md): sha256:6F0198F3F1FDF2DD641F3B97BC5A15B5FFC314EA1510EE7BB2EEFBB925D2280D
+- [docs/implementation/index.md](implementation/index.md): sha256:0CABFE51B0A5476DE32B383BF90630B6E82AB29949742EA2AABCE084F525F1D2
 - [docs/implementation/performance.md](implementation/performance.md): sha256:07A74898373F6807DE99BB1BCB3748A16460F0CB4CCE45D857CB56533A2A1B33
 - [docs/implementation/quantization.md](implementation/quantization.md): sha256:1B1AFD7292FFD7FE5F023EE9BBF33169E1A2A839673434AE481603DAFA55A700
 - [docs/implementation/runtime-mirust-rebrand-v1.0.4.md](implementation/runtime-mirust-rebrand-v1.0.4.md): sha256:52373A54F97F15101034CF620C295043BE7124424303B601247D8326546DC88E
 - [docs/implementation/site-audit-response-v1.0.4.md](implementation/site-audit-response-v1.0.4.md): sha256:38E401F82FC1764D0F8297D7ECAB33ACCDC7718A90A20C3DD602FEDC3EFE7FD3
 - [docs/implementation/slm-format.md](implementation/slm-format.md): sha256:85D727DAF994D68F98FF6C7B370235B23698F1BFE2C436DD58D3521E40F8CF36
-- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:A4E27D35266412BC1CC7F425FFCA0D6BE976F8AEB752249237F4797A5B86E92C
+- [docs/implementation/slmcomposer-source-options-ui-v1.0.7.md](implementation/slmcomposer-source-options-ui-v1.0.7.md): sha256:30E8BE4BBB4F1CBE815624FBED0F856C96308E26EA71D8A7307D07CA753B6730
 - [docs/implementation/testing.md](implementation/testing.md): sha256:AA705B1E3FF223FC3AAA0A0E5C7EE19D895B00F79B5915B4CD2C26313B03FA5F
 - [docs/implementation/tinyrustlm-models-readme.md](implementation/tinyrustlm-models-readme.md): sha256:58B136954E3227CB9B15801DF742EE36511F44A505F65B4FA148001F8B26EAA8
 - [docs/implementation/tinyrustlm-readme.md](implementation/tinyrustlm-readme.md): sha256:81B74E7913BF45245AA707D04162B2F009EEF906DB2BFCF6C6C7705F2B1A9768
 - [docs/implementation/tokenizer.md](implementation/tokenizer.md): sha256:B133955180A0AF4F260C81F6438E1C586A27A4863068AD4B6E82C32DCB14D18F
 - [docs/implementation/visual-studio.md](implementation/visual-studio.md): sha256:4EB9659BEBD8C33799A384DEE81415BCCB13304F2D2E67CFDC1A3D0D9976ABDB
 - [docs/implementation/workspace-readme.md](implementation/workspace-readme.md): sha256:C80FF12021E9E7C7FE622A8E36779221CE4564397B1353F05A2B1818E3BBFBBA
-- [docs/index.md](index.md): sha256:E604E0372F0A816144B0D9B213555A2FC3C9DBFB11F72804BB5748DB0E46677D
+- [docs/index.md](index.md): sha256:DE5C4B6BE49850A23FC36881B66D97A6F468E6B7AFCBE21E2EC6A3C910F8DDA7
 - [docs/long-term-memory.uai](long-term-memory.uai): sha256:9188267D9C6AB5299A1B3356576ACE1C4685E3016F5466652D1739E81EF761C5
 - [docs/reports/adapter-family-receipt-memory-2026-06-27.md](reports/adapter-family-receipt-memory-2026-06-27.md): sha256:5794A57C60F0EF1E8E61079E4D4BC0335E0DCA6A933ED87BE599B424E95BDEBE
 - [docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md](reports/admission-operator-receipt-binding-memory-2026-06-29.md): sha256:821543E27A431A2377DBBD7606702957F721A151282D35165CD6E079ABCD54FD
@@ -188,13 +188,12 @@ This manifest lists the public `/docs/` files packaged with the plain PHP root d
 - [docs/web-research/mememtech-vanilla-web-architecture-1.md](web-research/mememtech-vanilla-web-architecture-1.md): sha256:A8B1105BFF91A8E9230ED54A8643E6B8AC99556A448BF16285ED3FE5B5F49274
 - [docs/web-research/vanilla-js-future-proof-techniques-1.md](web-research/vanilla-js-future-proof-techniques-1.md): sha256:E3E7722BBB3369A374C8FDDED48A40CD37B2B3BDE03BEDB4E86ECE69915FF3E2
 - [docs/web-research/website-review-and-improvement-plan.md](web-research/website-review-and-improvement-plan.md): sha256:CA08E99D0D21776760813D2253BDC923B02248A63585635A475A61B0DAF62607
-- [docs/workspace.uai](workspace.uai): sha256:5D8B08C561D6660D6EB8ACE22B30BAAFC2ED8D9E8EC5A27334B304038D4480FF
 
 
 ## Plain PHP rebuild v1.0.5
 
 The WordPress deployment path is superseded. Runtime.MiRust.com now ships as a root-extractable plain PHP site with `/index.php`, `/inc/site.php`, `/data/pages.json`, `/assets/`, `/docs/`, and `/.uai/`. See `/docs/implementation/runtime-mirust-plain-php-rebuild-v1.0.5.md`.
 
-- `docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` - SLMComposer.com Chat-first source-options UI note for v1.0.7.
+- `docs/implementation/slmcomposer-source-options-ui-v1.0.7.md` - Historical and superseded SLMComposer.com source-options UI snapshot for v1.0.7.
 
 - `docs/implementation/runtime-mirust-continuation-v1.0.6.md` — continuation package note for v1.0.6.

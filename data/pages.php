@@ -31,7 +31,7 @@ return [
         'cards' => [
             ['title' => 'Current composition', 'text' => 'Six exact SLM2 members bind model, tokenizer, template, sampling, prompt, and composition identity.'],
             ['title' => 'Evidence first', 'text' => 'Structure, numerical parity, quality, browser execution, P2P availability, memory continuity, and release are separate gates.'],
-            ['title' => 'Prelaunch redundancy', 'text' => 'Current .uai, wiki, public-safe notes, and approved private stores may duplicate memory only while synchronized and secret-safe.'],
+            ['title' => 'Public record boundary', 'text' => 'Public policy records stay bounded and do not enumerate repository governance, workstation topology, credentials, evidence storage, or non-public memory locations.'],
         ],
     ],
     '/architecture/' => [
@@ -225,7 +225,7 @@ return [
             ],
             [
                 'heading' => 'Publication status',
-                'body' => 'Last published: 1.8.2. Release date: 2026-08-29. Update: a committed change to any declared public artifact now invalidates deployed-current status until a strictly newer clean-commit release passes exact HTTPS readback, retired-route closure, and release-record agreement.',
+                'body' => 'Prepared source package: 1.8.3, dated 2026-08-31. It is awaiting a real content commit, commit-bound manifest, deployment, and HTTPS readback, so it is not publication evidence. The last verified publication remains 1.8.2 from 2026-08-29.',
                 'points' => ['Clean committed source required', 'Complete site gate required', 'Deployment from exact revision required', 'Public HTTPS readback required'],
             ],
         ],
@@ -253,9 +253,14 @@ return [
         'badge' => 'Updates',
         'sections' => [
             [
-                'heading' => 'Current source update',
-                'body' => 'Last published: 1.8.2. Release date: 2026-08-29. Update: every committed declared-public change now forces a strictly newer clean-commit release with byte-exact HTTPS readback, retired-route absence, and synchronized public release records.',
+                'heading' => 'Prepared source update',
+                'body' => 'Prepared source package: 1.8.3, dated 2026-08-31. It retires tracked public source copies and strengthens publication, closure, and terminal-route validation. It has no source commit, deployment, or HTTPS readback claim yet.',
                 'points' => ['Documentation release only', 'No package publication claim', 'No model release claim', 'No campaign credit'],
+            ],
+            [
+                'heading' => 'Last verified publication',
+                'body' => '1.8.2 was published on 2026-08-29. Its exact commit, tree, manifest, readbacks, and append-only receipt remain immutable historical evidence and are not rewritten by the prepared 1.8.3 source.',
+                'points' => ['Immutable verified identity', 'No receipt mutation', 'No retrospective claim', 'No campaign credit'],
             ],
             [
                 'heading' => 'Previous release',

@@ -1,9 +1,11 @@
 profile: tinyrustlm-mirust.system.current.v1
-updated_utc: 2026-08-30T02:00:51Z
+updated_utc: 2026-08-31T12:02:33Z
 
 project:
   site: https://TinyRustLM.MiRust.com/
-  package_version: 1.8.2
+  prepared_package_version: 1.8.3
+  prepared_status: awaiting_content_commit_and_publication_proof
+  last_verified_package_version: 1.8.2
   implementation: dependency-free plain PHP developer portal
   product: one prelaunch browser-local TinyRustLM.com product
   model_contract: exact six-member SLM2 composition

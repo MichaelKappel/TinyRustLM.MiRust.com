@@ -1,5 +1,5 @@
 profile: tinyrustlm.intake-outcome-ledger.v1
-updated_utc: 2026-06-29T22:59:10Z
+updated_utc: 2026-08-31T12:02:33Z
 status: preserved_historical_report_intake_evidence
 current_authority: Processed reports remain immutable advisory history. They do not override the current SLM2, package, MemoryEndpoints.com, privacy, or evidence contracts in totem.uai, taboo.uai, and docs/long-term-memory.md.
 active_scan:
@@ -38,11 +38,12 @@ processed_sources:
     proof_of_use: Report copied into /docs/reports, included in /docs/report-index.md, and deep-linked from .uai/long-term-memory.uai.
     checksum_hash: sha256:37D6B47ED4284F65C591921F653F3AA4E17672593AE84C09C84E4222FC808AE9
   - source_filename: GGUF_MiRust_All_Source_Review_Bundle(1).txt
-    disposition: preserved-to-durable-memory
-    processed_outcome: incorporated
-    durable_path: docs/reports/gguf-mirust-all-source-review-bundle.txt
-    deep_link: /docs/reports/gguf-mirust-all-source-review-bundle.txt
-    proof_of_use: Report copied into /docs/reports, included in /docs/report-index.md, and deep-linked from .uai/long-term-memory.uai.
+    disposition: retired-source-copy
+    processed_outcome: historical-identity-retained
+    retired_utc: 2026-08-31T09:39:32Z
+    historical_git_commit: a0ebe994464d1d749134dfd359b70b7958a4f13c
+    historical_git_blob: sha1:27eecde92548ac737f1e1c951ffc4e55da426bae
+    history_authority: Git history and immutable deployment receipts retain the prior identity; there is no live durable path or public route.
     checksum_hash: sha256:2B2D72AC23F1D63919C0B744E9586C8AE73C45B26891E8F698DAD1417E8DE931
   - source_filename: Memory Systems Domains Research(2).md
     disposition: preserved-to-durable-memory

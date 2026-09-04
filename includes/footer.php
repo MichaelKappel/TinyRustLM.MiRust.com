@@ -25,7 +25,7 @@
         <section>
             <h2>Project</h2>
             <p><a href="/contact/">Contact Mike Kappel</a></p>
-            <p class="version">Site package <?= e($site['version']) ?><br>Released <?= e($site['release_date']) ?><br>Last published <?= e($site['last_publish_date']) ?></p>
+            <p class="version">Prepared package <?= e($site['version']) ?><br>Prepared <?= e($site['release_date']) ?><br>Last verified publication <?= e($site['last_verified_version']) ?> (<?= e($site['last_publish_date']) ?>)</p>
         </section>
     </div>
 </footer>

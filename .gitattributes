@@ -1,2 +1,22 @@
+/.gitattributes text eol=lf
 deploy/site-deployment-manifest.v1.json binary
+deploy/ftps-transport-authority.v1.json binary
 deploy/receipts/*.json binary
+deploy/source-retirement-receipts/*.json binary
+/.htaccess text eol=lf
+/.uai/.htaccess text eol=lf
+/.uai/index.uai text eol=lf
+/.uai/long-term-memory.uai text eol=lf
+/.well-known/uaix-talisman.txt text eol=lf
+docs/long-term-memory.md text eol=lf
+docs/report-index.md text eol=lf
+docs/retired-source-copy-gone.txt text eol=lf
+docs/reports/.htaccess text eol=lf
+docs/runtime-portal/.htaccess text eol=lf
+docs/runtime-portal/index.md text eol=lf
+docs/runtime-portal/MANIFEST.md text eol=lf
+docs/runtime-portal/runtime-docs/index.md text eol=lf
+docs/runtime-portal/runtime-docs/.htaccess text eol=lf
+docs/runtime-portal/runtime-docs/implementation/index.md text eol=lf
+docs/runtime-portal/runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md text eol=lf
+tools/build-runtime-archive-manifest.js text eol=lf

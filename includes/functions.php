@@ -2,6 +2,84 @@
 /** Returns a safe HTML-escaped string. */
 function e(string $value): string { return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 
+/** Decodes one bounded URI-path layer without canonicalizing unrelated paths. */
+function safely_decoded_request_path(string $request_uri): ?string
+{
+    if ($request_uri === '' || strlen($request_uri) > 2048 || $request_uri[0] !== '/') { return null; }
+    $path = parse_url($request_uri, PHP_URL_PATH);
+    if (!is_string($path) || $path === '' || strlen($path) > 2048) { return null; }
+    if (preg_match('/%(?![0-9A-Fa-f]{2})/', $path) === 1) { return null; }
+
+    $decoded = rawurldecode($path);
+    if (
+        $decoded === '' ||
+        strlen($decoded) > 2048 ||
+        $decoded[0] !== '/' ||
+        str_contains($decoded, '\\') ||
+        preg_match('/[\x00-\x1F\x7F]/', $decoded) === 1 ||
+        preg_match('//u', $decoded) !== 1
+    ) {
+        return null;
+    }
+    return $decoded;
+}
+
+/** Matches retired source copies, local UAI records, and the non-public raw archive. */
+function retired_public_source_path(string $request_uri): ?string
+{
+    $decoded = safely_decoded_request_path($request_uri);
+    if ($decoded === null) { return null; }
+
+    $retired = [
+        '/docs/reports/analyzing-website-virality.md',
+        '/docs/reports/future-proof-native-html5-techniques.md',
+        '/docs/reports/gguf-mirust-all-source-review-bundle.txt',
+        '/docs/reports/innovative-vanilla-web-design.md',
+        '/docs/reports/mememtech-vanilla-web-architecture.md',
+        '/docs/reports/memory-systems-domains-research.md',
+        '/docs/reports/rust-wasm-neural-model-patterns.md',
+        '/docs/reports/tiny-language-models-for-rust-wasm.md',
+        '/docs/reports/tiny-language-models-for-wasm.md',
+        '/docs/reports/understanding-tinyrustlm-creation-and-purpose.md',
+        '/docs/reports/vanilla-js-future-proof-techniques.md',
+    ];
+    foreach ($retired as $path) {
+        if (strcasecmp($decoded, $path) === 0) { return $path; }
+    }
+    $lower = strtolower($decoded);
+    if (
+        str_starts_with($lower, '/.uai/') &&
+        $lower !== '/.uai/index.uai' &&
+        $lower !== '/.uai/long-term-memory.uai'
+    ) {
+        return '/.uai/non-public';
+    }
+    if (
+        str_starts_with($lower, '/docs/runtime-portal/') &&
+        $lower !== '/docs/runtime-portal/index.md'
+    ) {
+        return '/docs/runtime-portal/non-public';
+    }
+    return null;
+}
+
+/** Emits the fixed terminal response for a retired public source copy. */
+function serve_retired_public_source_copy_if_requested(string $request_uri): void
+{
+    if (retired_public_source_path($request_uri) === null) { return; }
+
+    $body = "This public source copy has been permanently retired.\n";
+    http_response_code(410);
+    header_remove('Location');
+    header('Content-Type: text/plain; charset=utf-8', true);
+    header('Content-Length: ' . strlen($body), true);
+    header('Cache-Control: no-store', true);
+    header('X-Robots-Tag: noindex, nofollow', true);
+    header('X-Content-Type-Options: nosniff', true);
+    if (strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'HEAD') { echo $body; }
+    exit;
+}
+
 /** Normalizes the request URI into a canonical route key. */
 function current_route(array $pages): string
 {
@@ -39,7 +117,9 @@ function page_markdown(array $site, string $route, array $page): string
     $lines[] = '';
     $lines[] = '- Site: ' . $site['name'];
     $lines[] = '- Canonical: ' . rtrim($site['domain'], '/') . $route;
-    $lines[] = '- Version: ' . $site['version'];
+    $lines[] = '- Prepared version: ' . $site['version'];
+    $lines[] = '- Prepared status: ' . $site['release_status'];
+    $lines[] = '- Last verified publication: ' . $site['last_verified_version'] . ' (' . $site['last_publish_date'] . ')';
     $lines[] = '- Updated UTC: ' . $site['updated_utc'];
     $lines[] = '';
     if (!empty($page['actions'])) {

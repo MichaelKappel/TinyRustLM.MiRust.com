@@ -1,17 +1,17 @@
 profile: tinyrustlm-mirust.public-long-term-memory.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-08-31T18:06:02Z
 storage_mode: checksum_bound_current_pointers
 
 current_pointers:
   memory_policy:
     path: docs/long-term-memory.md
-    sha256: e25f736c027e11e0d8871e8939897963bc022bd80dc3a2480103288a7cfa4c47
+    sha256: 68290fd6e2107c1be86ff957d5df4d1668e859d533509e13665f6447aba7a073
   report_index:
     path: docs/report-index.md
-    sha256: 1c001c27d54e0939b9ac954ea661fd8dfe548329402199a2e891ad5a3c81ccb1
-  historical_runtime_manifest:
-    path: docs/runtime-portal/MANIFEST.md
-    sha256: e18498996ecd7ad7ee2ee48a7c90bc20ee2045c6ef941058422c77ed1da72e00
+    sha256: 24aee48040077548499788e7d9a6e25057e00027bc720f5c4c238fc85047d42d
+  historical_runtime_boundary:
+    path: docs/runtime-portal/index.md
+    sha256: e5790b1b8913a611e5abb808e58d9d6f3016cb3ae992d11915fffd49d2c6ca14
 
 current_product:
   - One prelaunch TinyRustLM product and one exact six-member SLM2 composition path.
@@ -23,7 +23,7 @@ memory_endpoints_two_uses:
   direct_agent_coordination: Agents on all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
   tinyrustlm_connect_user_plugin: Separately, a user signs in through the TinyRustLM.com Connect plugin and explicitly selects MemoryEndpoints.com as TinyRustLM.com Connect long-term memory.
   separation: Keep identity, credentials, consent, scopes, provenance, idempotency, and receipts separate. Neither lane silently acts for the other.
-  prelaunch_redundancy: Current UAI, wiki, public-safe source notes, and approved private stores may duplicate important memory only while every maintained copy stays current, secret-safe, provenance-labeled, and noncontradictory.
+  public_record_boundary: Public records describe policy and evidence status without enumerating repository governance, workstation topology, credentials, evidence storage, or non-public memory locations.
   proof: Authorization, source, configuration, fixtures, mocks, or reachability do not prove live meetings, plugin use, synchronization, restore, deletion, cleanup, or continuity.
 
 campaign_truth: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live MemoryEndpoints rounds; 0/40 externally proven P2P lanes; 0/20 catalog announcements.

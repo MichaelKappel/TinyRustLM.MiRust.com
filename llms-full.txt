@@ -77,11 +77,11 @@ implication. Neither may silently act for the other. Prompts, transcripts,
 meetings, invitation URLs, credentials, tokens, and raw hosted-memory payloads
 must not be silently uploaded or published.
 
-Prelaunch resilience may duplicate important memory in current .uai files,
-wiki records, source-controlled public-safe notes, and approved private stores.
-Every maintained copy must remain current, secret-safe, provenance-labeled,
-and noncontradictory. A conflict is surfaced and reconciled; no implementation
-silently chooses a convenient copy.
+Public records may describe current policy, but they do not enumerate
+repository governance, workstation topology, credentials, evidence storage,
+or non-public memory locations. Every maintained public record must remain
+current, secret-safe, provenance-labeled, and noncontradictory. A conflict is
+surfaced and reconciled; no implementation silently chooses a convenient copy.
 
 Authorization, configured code, and service reachability are not live proof.
 Meetings, synchronization, restores, deletes, cleanup, and continuity require
@@ -104,8 +104,10 @@ Current campaign counters remain:
 
 ## Publication Record
 
-Last published: 1.8.2.
-Release date: 2026-08-29.
+Prepared source package: 1.8.3 (2026-08-31).
+Prepared status: awaiting a real content commit, commit-bound manifest,
+deployment, and HTTPS readback; source preparation is not publication evidence.
+Last verified publication: 1.8.2 (2026-08-29).
 Update: a committed change to any declared public artifact invalidates
 deployed-current status until a strictly newer release from one clean canonical
 commit passes exact HTTPS readback, retired-route closure, and release-record

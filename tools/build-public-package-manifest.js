@@ -1,104 +1,54 @@
 #!/usr/bin/env node
 "use strict";
 
-const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
-const { execFileSync } = require("node:child_process");
+const { assertPublishableArtifact } = require("./public-artifact-policy.js");
+const { assertCanonicalSourceAuthority } = require("./source-authority-preflight.js");
+const {
+  PACKAGE_MANIFEST_PATH,
+  RELEASE_DATE,
+  RELEASE_VERSION,
+  buildPackageManifestDocument,
+  readHistoricalPublicationAuthority,
+} = require("./verify-site-deployment-input.js");
 
 const repositoryRoot = path.resolve(__dirname, "..");
+assertCanonicalSourceAuthority(repositoryRoot);
 const contentCommit = process.argv[2];
 const outputPath = path.join(repositoryRoot, "docs", "package-manifest.md");
-const excludedPath = "docs/package-manifest.md";
-const releaseVersion = "1.8.2";
-const releaseDate = "2026-08-29";
+const historicalPublication = readHistoricalPublicationAuthority(repositoryRoot).publication;
+
+if (contentCommit === "--check-prepared") {
+  const prepared = fs.readFileSync(outputPath, "utf8");
+  for (const marker of [
+    `Prepared version: \`${RELEASE_VERSION}\``,
+    `Prepared release date: \`${RELEASE_DATE}\``,
+    "Status: `awaiting-content-commit`",
+    "Content-basis commit: `pending`",
+    `Last verified publication: \`${historicalPublication.version}\``,
+    `Last verified receipt: \`${historicalPublication.receipt}\``,
+  ]) {
+    if (!prepared.includes(marker)) {
+      throw new Error(`Prepared package manifest marker is missing: ${marker}`);
+    }
+  }
+  process.stdout.write(`PREPARED ${RELEASE_VERSION}; commit-bound package manifest pending\n`);
+  process.exit(0);
+}
 
 if (!/^[0-9a-f]{40}$/.test(contentCommit || "")) {
-  throw new Error("Usage: node tools/build-public-package-manifest.js <40-character-content-commit>");
+  throw new Error("Usage: node tools/build-public-package-manifest.js <40-character-content-commit>|--check-prepared");
 }
 
-function git(args, encoding = "utf8") {
-  return execFileSync("git", args, {
-    cwd: repositoryRoot,
-    encoding,
-    maxBuffer: 128 * 1024 * 1024,
-  });
-}
-
-function isPublicPath(relativePath) {
-  const publicUai = new Set([
-    ".uai/.htaccess",
-    ".uai/index.uai",
-    ".uai/long-term-memory.uai",
-    ".uai/talisman.uai",
-    ".uai/taboo.uai",
-    ".uai/totem.uai",
-  ]);
-  const rootFiles = new Set([
-    ".htaccess",
-    "LICENSE.txt",
-    "index.php",
-    "llms-full.txt",
-    "llms.txt",
-    "robots.txt",
-    "sitemap.xml",
-  ]);
-
-  return (
-    publicUai.has(relativePath) ||
-    rootFiles.has(relativePath) ||
-    relativePath.startsWith(".well-known/") ||
-    relativePath.startsWith("assets/") ||
-    relativePath.startsWith("data/") ||
-    relativePath.startsWith("docs/") ||
-    relativePath.startsWith("includes/")
-  ) && !relativePath.endsWith("/.gitkeep");
-}
-
-git(["cat-file", "-e", `${contentCommit}^{commit}`]);
-const sourceTree = git(["rev-parse", `${contentCommit}^{tree}`]).trim();
-const files = git(["ls-tree", "-r", "--name-only", contentCommit])
-  .split(/\r?\n/)
-  .filter(Boolean)
-  .filter((relativePath) => relativePath !== excludedPath && isPublicPath(relativePath))
-  .sort((left, right) => left.localeCompare(right))
-  .map((relativePath) => {
-    const bytes = git(["show", `${contentCommit}:${relativePath}`], null);
-    return {
-      path: relativePath,
-      bytes: bytes.length,
-      sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
-    };
-  });
-
-if (files.length < 200 || files.length > 300) {
-  throw new Error(`Unexpected public package closure size: ${files.length}`);
-}
-
-const totalBytes = files.reduce((sum, file) => sum + file.bytes, 0);
-const rows = files.map(
-  (file) => `| \`${file.path}\` | ${file.bytes} | \`${file.sha256}\` |`,
-);
-const document = [
-  "# TinyRustLM Public Package Manifest",
-  "",
-  `- Version: \`${releaseVersion}\``,
-  `- Release date: \`${releaseDate}\``,
-  `- Content-basis commit: \`${contentCommit}\``,
-  `- Content-basis tree: \`${sourceTree}\``,
-  `- Public files, excluding this manifest: ${files.length}`,
-  `- Public bytes, excluding this manifest: ${totalBytes}`,
-  "",
-  "This manifest excludes itself to avoid a recursive checksum. Historical",
-  "runtime files are included only as labeled preservation evidence; they do not",
-  "create a current reader, compatibility path, fallback, migration, or product",
-  "claim.",
-  "",
-  "| Path | Bytes | SHA-256 |",
-  "| --- | ---: | --- |",
-  ...rows,
-  "",
-].join("\n");
-
-fs.writeFileSync(outputPath, document, "utf8");
-process.stdout.write(`${outputPath}\n${files.length} files\n${totalBytes} bytes\n`);
+const built = buildPackageManifestDocument(repositoryRoot, contentCommit, {
+  historicalPublication,
+  releaseDate: RELEASE_DATE,
+  releaseVersion: RELEASE_VERSION,
+});
+const documentBytes = Buffer.from(built.document, "utf8");
+assertPublishableArtifact(PACKAGE_MANIFEST_PATH, documentBytes, {
+  allowSiteSource: true,
+});
+fs.writeFileSync(outputPath, documentBytes);
+process.stdout.write(`${outputPath}\n${built.files.length} files\n${built.totalBytes} bytes\n`);

@@ -1,0 +1,10 @@
+{
+  "schema": "tinyrustlm.mirust.ftps_transport_authority.v1",
+  "site": "TinyRustLM.MiRust.com",
+  "origin": "https://tinyrustlm.mirust.com",
+  "profile_name": "TinyRustLM.MiRust.com",
+  "tuple_format": "tinyrustlm.mirust.ftps_transport_tuple.v1",
+  "status": "blocked-pending-independent-attestation",
+  "tuple_sha256": null,
+  "contains_secrets": false
+}

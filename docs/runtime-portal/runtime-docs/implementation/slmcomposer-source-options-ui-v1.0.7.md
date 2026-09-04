@@ -2,6 +2,16 @@
 
 Updated UTC: 2026-07-04T00:40:00Z
 
+> **Historical and superseded (2026-07-01).** This document preserves the
+> SLM Composer v1.0.7 source-options UI as it existed on the date above.
+> Present-tense wording below describes that archived implementation, not the
+> current TinyRustLM model-acquisition contract. Its local-file, Hugging Face,
+> manual-import, and "future P2P" descriptions are retained only as history.
+> Use the [TinyRustLM app](https://tinyrustlm.com/) and the
+> [current developer portal](https://tinyrustlm.mirust.com/developer-portal/)
+> for current behavior. This archive makes no claim that peers or qualified
+> models are live.
+
 This note records the SLMComposer.com UI change driven by the 2026-07-01 UI improvement report. The source change belongs in the active Rust/WASM workspace at `E:\Source\Rust\SLMComposer.com`; Runtime.MiRust.com documents the runtime and public claim boundary.
 
 ## What Changed

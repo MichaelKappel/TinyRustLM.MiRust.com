@@ -86,9 +86,12 @@ Campaign counters remain `0/20` qualified models, `0/50` clean browser rounds,
 
 ## Publication
 
-- Last published: `1.8.2`.
-- Release date: `2026-08-29`.
-- Update: declared public-artifact changes now invalidate deployed-current
+- Prepared source package: `1.8.3` (`2026-08-31`).
+- Prepared status: awaiting a real content commit, commit-bound manifest,
+  deployment, and HTTPS readback; this working tree is not publication evidence.
+- Last verified publication: `1.8.2` (`2026-08-29`), preserved by its immutable
+  deployment receipt.
+- Update: declared public-artifact changes invalidate deployed-current
   status until a strictly newer release from one clean canonical commit passes
   exact HTTPS readback, retired-route closure, and release-record agreement.
 

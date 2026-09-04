@@ -1,4 +1,7 @@
 <?php
+require __DIR__ . '/includes/functions.php';
+serve_retired_public_source_copy_if_requested($_SERVER['REQUEST_URI'] ?? '/');
+
 if (PHP_SAPI === 'cli-server') {
     $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
     $candidate = __DIR__ . $requestPath;
@@ -8,7 +11,6 @@ if (PHP_SAPI === 'cli-server') {
 }
 $site = require __DIR__ . '/data/site.php';
 $pages = require __DIR__ . '/data/pages.php';
-require __DIR__ . '/includes/functions.php';
 $route = current_route($pages);
 if ($route === '/404/') {
     http_response_code(404);

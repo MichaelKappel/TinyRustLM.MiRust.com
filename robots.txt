@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 Allow: /docs/
-Allow: /.uai/
+Allow: /.uai/index.uai
+Allow: /.uai/long-term-memory.uai
+Disallow: /.uai/
+Disallow: /docs/reports/
+Disallow: /docs/runtime-portal/
 
 Sitemap: https://TinyRustLM.mirust.com/sitemap.xml

@@ -1,13 +1,12 @@
 profile: tinyrustlm-mirust.public-uai-index.current.v1
-updated_utc: 2026-08-30T01:36:19Z
+updated_utc: 2026-08-31T12:02:33Z
 site: TinyRustLM.MiRust.com
-release: 1.8.2
+prepared_release: 1.8.3
+prepared_status: awaiting_content_commit_and_publication_proof
+last_verified_release: 1.8.2
 public_uai_policy: allowlisted_orientation_and_pointer_records_only
 
 read_order:
-  - .uai/totem.uai
-  - .uai/taboo.uai
-  - .uai/talisman.uai
   - .uai/long-term-memory.uai
 
 current_routes:
@@ -15,7 +14,7 @@ current_routes:
   documentation: /docs/
   memory_policy: /docs/long-term-memory.md
   report_index: /docs/report-index.md
-  historical_runtime_evidence: /docs/runtime-portal/
+  historical_runtime_boundary: /docs/runtime-portal/index.md
   machine_index: /llms.txt
   full_machine_context: /llms-full.txt
 
@@ -23,6 +22,6 @@ memory_endpoints_two_uses:
   direct_agent_coordination: Agents across all ecosystem sites use MemoryEndpoints.com directly for agent-to-agent long-term memory, meetings, handoffs, and coordination.
   tinyrustlm_connect_user_plugin: Separately, a TinyRustLM.com Connect user signs in to MemoryEndpoints.com and explicitly selects it as TinyRustLM.com Connect long-term memory.
   lane_boundary: Identity, credentials, consent, scopes, provenance, idempotency, and receipts remain separate.
-  redundancy: Synchronized prelaunch memory copies in current UAI, wiki, public-safe notes, and approved private stores are allowed for resilience.
+  public_record_boundary: This index does not enumerate repository governance, workstation topology, credentials, evidence storage, or non-public memory locations.
 
-privacy: Every UAI file not named in the public allowlist remains private. Never publish credentials, invitation URLs, prompts, model bytes, private paths, or raw hosted-memory payloads.
+privacy: Only index.uai and long-term-memory.uai are public. Every other UAI file is repository-local and excluded from package, deployment, navigation, and readback closure.

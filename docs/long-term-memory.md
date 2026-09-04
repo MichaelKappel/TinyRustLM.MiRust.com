@@ -33,9 +33,10 @@ public readback.
 
 ## Prelaunch Redundancy
 
-Important long-term memory may also be retained in current `.uai`, wiki,
-source-controlled public-safe notes, and approved private stores while the
-product is prelaunch. Redundancy is resilience, not competing authority.
+Public policy may be represented in bounded public records while the product
+is prelaunch. Those records do not enumerate repository governance,
+workstation topology, credentials, evidence storage, or non-public memory
+locations. Redundancy is resilience, not competing authority.
 
 Every maintained copy must be:
 
@@ -65,8 +66,10 @@ matching evidence exists.
 
 ## Publication
 
-- Last published: `1.8.2`.
-- Release date: `2026-08-29`.
+- Prepared source package: `1.8.3` (`2026-08-31`).
+- Prepared status: awaiting a real content commit, commit-bound manifest,
+  deployment, and HTTPS readback; preparation is not publication evidence.
+- Last verified publication: `1.8.2` (`2026-08-29`).
 - Update: retained both MemoryEndpoints lanes while requiring every changed
   declared public artifact to receive a strictly newer clean-commit release,
   exact HTTPS readback, retired-route closure, and synchronized public records.

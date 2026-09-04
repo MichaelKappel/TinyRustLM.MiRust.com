@@ -1,6 +1,8 @@
 profile: tinyrustlm-mirust.startup.current.v1
-updated_utc: 2026-08-30T02:00:51Z
-current_package: tinyrustlm-developer-portal-1.8.2
+updated_utc: 2026-08-31T12:02:33Z
+prepared_package: tinyrustlm-developer-portal-1.8.3
+prepared_status: awaiting_content_commit_and_publication_proof
+last_verified_package: tinyrustlm-developer-portal-1.8.2
 
 first_steps:
   - Read workspace.uai, then .uai/totem.uai and .uai/taboo.uai.

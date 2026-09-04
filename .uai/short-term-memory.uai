@@ -1,10 +1,20 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-08-30T02:00:51Z
+updated_utc: 2026-08-31T12:02:33Z
 site: TinyRustLM.MiRust.com
-status: published_and_readback_verified
-current_site_package: 1.8.2
+status: prepared_not_published
+prepared_site_package: 1.8.3
 
-current_publication:
+prepared_publication:
+  version: 1.8.3
+  release_date: 2026-08-31
+  status: awaiting_content_commit_manifest_deployment_and_readback
+  source_commit: pending
+  source_tree: pending
+  manifest_sha256: pending
+  receipt: none
+  claim_boundary: Working-source preparation and local tests are not publication evidence.
+
+last_verified_publication:
   version: 1.8.2
   release_date: 2026-08-29
   source_commit: 2547720541dfb927a81a85ae3eac3222908b9771
@@ -52,5 +62,5 @@ historical_publications:
 
 next_work:
   - Treat 1.8.2 as terminally published; do not replay its deployment.
-  - Continue ecosystem source, memory, receipt, remote-equality, and public-state reconciliation.
-  - Use a new complete versioned closure for any future public-byte change.
+  - Commit the coherent 1.8.3 source only after every local gate passes, then generate its exact package and deployment manifests from that commit.
+  - Do not publish 1.8.3 until clean remote equality, exact staging closure, deployment, retired-route GET/HEAD proof, and a new append-only receipt all pass.

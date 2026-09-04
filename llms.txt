@@ -29,16 +29,18 @@ MemoryEndpoints.com has two distinct uses:
    memory.
 
 The lanes have separate identities, credentials, consent, scopes, provenance,
-idempotency, and receipts. Prelaunch memory may also be duplicated in current
-.uai, wiki, public-safe source notes, and approved private stores when every
-copy remains current, secret-safe, provenance-labeled, and noncontradictory.
+idempotency, and receipts. Public records do not enumerate repository
+governance, workstation topology, credentials, evidence storage, or non-public
+memory locations.
 
 Evidence boundary: source, fixtures, local probes, configuration, package
 creation, or service reachability do not prove public readback, live memory,
 P2P availability, model quality, browser release, or deployment.
 
-Last published: 1.8.2.
-Release date: 2026-08-29.
+Prepared source package: 1.8.3 (2026-08-31).
+Prepared status: awaiting a real content commit, commit-bound manifest,
+deployment, and HTTPS readback; source preparation is not publication evidence.
+Last verified publication: 1.8.2 (2026-08-29).
 Update: declared public-artifact changes invalidate deployed-current status
 until a strictly newer clean-commit release passes exact HTTPS readback,
 retired-route closure, and release-record agreement.

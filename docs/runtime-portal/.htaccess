@@ -1,0 +1,6 @@
+ErrorDocument 410 /docs/retired-source-copy-gone.txt
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?!index\.md$).+ - [G,NC]
+</IfModule>

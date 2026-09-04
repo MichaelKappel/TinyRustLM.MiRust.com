@@ -1,0 +1,6 @@
+ErrorDocument 410 /docs/retired-source-copy-gone.txt
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?:analyzing-website-virality\.md|future-proof-native-html5-techniques\.md|gguf-mirust-all-source-review-bundle\.txt|innovative-vanilla-web-design\.md|mememtech-vanilla-web-architecture\.md|memory-systems-domains-research\.md|rust-wasm-neural-model-patterns\.md|tiny-language-models-for-rust-wasm\.md|tiny-language-models-for-wasm\.md|understanding-tinyrustlm-creation-and-purpose\.md|vanilla-js-future-proof-techniques\.md)$ - [G,NC]
+</IfModule>

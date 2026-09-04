@@ -1,7 +1,7 @@
 # TinyRustLM Historical Runtime Archive
 
 The former standalone runtime documentation lane has been absorbed into
-TinyRustLM.MiRust.com and frozen as historical evidence.
+TinyRustLM.MiRust.com and frozen as repository-retained historical evidence.
 
 Use this archive for historical implementation evidence only. The current developer portal is:
 
@@ -11,23 +11,16 @@ The current browser-local app is:
 
 - <https://TinyRustLM.com/>
 
-## What Was Preserved
+## What Is Preserved
 
-The archive keeps the former runtime documentation corpus as static reference material:
+The repository retains the former runtime documentation corpus and its byte
+identities. The raw mirror is not part of the current public package or
+deployment closure because historical records include obsolete operator
+directions and machine-local details.
 
-- implementation docs
-- report memory
-- source-memory notes
-- web-research notes
-- dogfood notes
-- package metadata
-- page registry export
-- llms exports
-- sitemap, version, and health markers
-
-The preservation manifest records byte counts and SHA-256 checksums:
-
-- [MANIFEST.md](MANIFEST.md)
+The records remain available for repository audit without becoming current
+instructions, public navigation, or compatibility authority. Immutable release
+receipts remain unchanged.
 
 ## Current Reading Order
 
@@ -35,17 +28,14 @@ The preservation manifest records byte counts and SHA-256 checksums:
 2. [Current docs home](/docs/)
 3. [Long-term memory](/docs/long-term-memory.md)
 4. [Report index](/docs/report-index.md)
-5. [Preservation manifest](MANIFEST.md)
-6. [Implementation docs archive](runtime-docs/implementation/index.md)
-7. [Former page registry](runtime-pages.json)
 
 ## Boundary
 
-This archive is not a second live product site, a current specification, or a
-compatibility promise. References inside it to `.slm`, old packages, adapters,
-selectors, scripts, or earlier runtime behavior describe superseded historical
-work only. They do not authorize a reader, fallback, migration, alias, or
-shipping path.
+This boundary page is not a second live product site, a current specification,
+or a compatibility promise. References inside the retained corpus to `.slm`,
+old packages, adapters, selectors, scripts, or earlier runtime behavior
+describe superseded historical work only. They do not authorize a reader,
+fallback, migration, alias, or shipping path.
 
 The sole current clean-slate composition path is SLM2. Current authority lives
 in the developer portal and its current contracts. Project sites do not run or

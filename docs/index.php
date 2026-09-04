@@ -4,9 +4,9 @@ $reports = require __DIR__ . '/reports-index.php';
 require __DIR__ . '/../includes/functions.php';
 $route = '/docs/';
 $page = [
-    'title' => 'TinyRustLM Docs and UAI Memory',
-    'summary' => 'Durable report archive, long-term memory, and .uai file-memory routes for the TinyRustLM plain PHP project site.',
-    'badge' => 'Docs + Memory',
+    'title' => 'TinyRustLM Docs and Public Records',
+    'summary' => 'Current boundary documentation, long-term policy, and bounded public pointer records for the TinyRustLM plain PHP project site.',
+    'badge' => 'Docs + Records',
     'actions' => [
         ['label' => 'Open long-term memory', 'href' => '/docs/long-term-memory.md'],
         ['label' => 'Open report index', 'href' => '/docs/report-index.md'],
@@ -15,13 +15,13 @@ $page = [
     'sections' => [
         [
             'heading' => 'What lives here',
-            'body' => 'The docs folder preserves the report bodies and long-term project memory that support the public TinyRustLM site. The .uai folder acts as compact agent memory and deep-links into these durable Markdown targets instead of duplicating all report text inside hot memory files.',
-            'points' => ['Report bodies in /docs/reports/', 'Long-term memory in /docs/long-term-memory.md', 'Pointer ledger in /.uai/long-term-memory.uai', 'File handoff state in /.uai/file-handoff.uai'],
+            'body' => 'The docs folder publishes current boundary records and long-term policy. Historical report bodies remain repository-retained outside the public deployment closure, while two bounded public pointer records link only to current durable targets.',
+            'points' => ['Historical report identity boundary in /docs/report-index.md', 'Long-term policy in /docs/long-term-memory.md', 'Public index in /.uai/index.uai', 'Public pointer ledger in /.uai/long-term-memory.uai'],
         ],
         [
             'heading' => 'How agents should read it',
-            'body' => 'Start with /.uai/index.uai, then read /.uai/startup-packet.uai, /.uai/short-term-memory.uai, and /.uai/long-term-memory.uai. Use /docs/report-index.md to locate full source reports only when needed.',
-            'points' => ['Load hot .uai files first', 'Follow pointer records to docs', 'Avoid bulk-loading all reports unless the task requires it', 'Keep report bodies in docs and summaries in .uai'],
+            'body' => 'Start with /.uai/index.uai, follow /.uai/long-term-memory.uai to current public policy, and use /docs/report-index.md only for historical report identities and retirement status.',
+            'points' => ['Use only the two public pointer records', 'Follow pointer records to current docs', 'Do not treat retired reports as live evidence', 'Treat repository governance as non-public'],
         ],
     ],
     'cards' => []
@@ -41,12 +41,12 @@ require __DIR__ . '/../includes/header.php';
                 <?php endforeach; ?>
             </div>
         </div>
-        <aside class="runtime-card" aria-label="Memory package summary">
-            <h2>Memory surfaces</h2>
+        <aside class="runtime-card" aria-label="Public records summary">
+            <h2>Public records</h2>
             <dl>
-                <div><dt>Hot memory</dt><dd>.uai files</dd></div>
-                <div><dt>Durable memory</dt><dd>/docs/*.md</dd></div>
-                <div><dt>Reports</dt><dd><?= count($reports) ?> preserved</dd></div>
+                <div><dt>Pointers</dt><dd>2 public .uai files</dd></div>
+                <div><dt>Durable docs</dt><dd>/docs/*.md</dd></div>
+                <div><dt>Reports</dt><dd><?= count($reports) ?> repository-retained</dd></div>
                 <div><dt>Mode</dt><dd>Pointer ledger</dd></div>
             </dl>
         </aside>
@@ -68,15 +68,15 @@ require __DIR__ . '/../includes/header.php';
     <article class="content-section" id="reports">
         <p class="section-index">03</p>
         <div>
-            <h2>Preserved reports</h2>
-            <p>All attached TinyRustLM, Rust/WASM, native web, agent-readable web, and virality reports are copied into the docs folder with stable relative paths and checksums.</p>
+            <h2>Historical report identities</h2>
+            <p>The report bodies are retained outside the public deployment closure. This current boundary lists their historical roles and checksums without exposing direct content routes.</p>
             <div class="docs-table-wrap">
                 <table class="docs-table">
                     <thead><tr><th>Report</th><th>Role</th><th>Checksum</th></tr></thead>
                     <tbody>
                     <?php foreach ($reports as $report): ?>
                         <tr>
-                            <td><a href="<?= e($report['url']) ?>"><?= e($report['title']) ?></a><br><small><?= e($report['source_filename']) ?></small></td>
+                            <td><?= e($report['title']) ?><br><small><?= e($report['source_filename']) ?></small></td>
                             <td><?= e($report['summary']) ?></td>
                             <td><code><?= e(substr($report['sha256'], 0, 16)) ?></code></td>
                         </tr>
@@ -88,11 +88,11 @@ require __DIR__ . '/../includes/header.php';
     </article>
 </section>
 <section class="shell proof-panel">
-    <h2>UAI memory read order</h2>
+    <h2>Public record read order</h2>
     <div class="proof-grid">
-        <p><a href="/.uai/index.uai">.uai/index.uai</a> lists the file-memory suite and the recommended read order.</p>
-        <p><a href="/.uai/long-term-memory.uai">.uai/long-term-memory.uai</a> is the semantic pointer ledger with deep links to each durable report and long-term memory body.</p>
-        <p><a href="/docs/report-index.md">docs/report-index.md</a> is the human- and agent-readable report manifest with checksums.</p>
+        <p><a href="/.uai/index.uai">.uai/index.uai</a> lists the two public pointer records and their read order.</p>
+        <p><a href="/.uai/long-term-memory.uai">.uai/long-term-memory.uai</a> is the semantic pointer ledger for current public boundary documents.</p>
+        <p><a href="/docs/report-index.md">docs/report-index.md</a> is the human- and agent-readable historical identity and retirement manifest.</p>
     </div>
 </section>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

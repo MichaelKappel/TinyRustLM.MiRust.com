@@ -1,8 +1,12 @@
 Options -Indexes
 DirectoryIndex index.php
+ErrorDocument 410 /docs/retired-source-copy-gone.txt
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule ^\.uai/(?!index\.uai$|long-term-memory\.uai$).+ - [G,NC]
+RewriteRule ^docs/reports/(?:analyzing-website-virality\.md|future-proof-native-html5-techniques\.md|gguf-mirust-all-source-review-bundle\.txt|innovative-vanilla-web-design\.md|mememtech-vanilla-web-architecture\.md|memory-systems-domains-research\.md|rust-wasm-neural-model-patterns\.md|tiny-language-models-for-rust-wasm\.md|tiny-language-models-for-wasm\.md|understanding-tinyrustlm-creation-and-purpose\.md|vanilla-js-future-proof-techniques\.md)$ - [G,NC]
+RewriteRule ^docs/runtime-portal/(?!index\.md$).+ - [G,NC]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
@@ -13,4 +17,21 @@ RewriteRule ^ index.php [L]
 Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set X-Frame-Options "SAMEORIGIN"
+
+<Files "retired-source-copy-gone.txt">
+Header onsuccess unset Location
+Header always unset Location
+Header onsuccess unset Cache-Control
+Header always unset Cache-Control
+Header always set Cache-Control "no-store"
+Header onsuccess unset X-Robots-Tag
+Header always unset X-Robots-Tag
+Header always set X-Robots-Tag "noindex, nofollow"
+Header onsuccess unset X-Content-Type-Options
+Header always unset X-Content-Type-Options
+Header always set X-Content-Type-Options "nosniff"
+Header onsuccess unset Content-Type
+Header always unset Content-Type
+Header always set Content-Type "text/plain; charset=utf-8"
+</Files>
 </IfModule>

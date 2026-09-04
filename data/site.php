@@ -2,10 +2,12 @@
 return [
     'name' => 'TinyRustLM',
     'domain' => 'https://TinyRustLM.mirust.com',
-    'version' => '1.8.2',
-    'release_date' => '2026-08-29',
+    'version' => '1.8.3',
+    'release_date' => '2026-08-31',
+    'release_status' => 'prepared-awaiting-content-commit',
+    'last_verified_version' => '1.8.2',
     'last_publish_date' => '2026-08-29',
-    'updated_utc' => '2026-08-30T01:36:19Z',
+    'updated_utc' => '2026-08-31T12:02:33Z',
     'description' => 'Developer portal for the one prelaunch TinyRustLM browser-local Rust and WebAssembly product, its sole six-member SLM2 path, direct-P2P or explicit local-conversion acquisition, evidence boundaries, and two-use MemoryEndpoints.com contract.',
     'public_app' => 'https://TinyRustLM.com/',
     'contact' => [
@@ -38,7 +40,7 @@ return [
         '/roadmap/' => 'Roadmap',
         '/glossary/' => 'Glossary',
         '/updates/' => 'Updates',
-        '/docs/' => 'Docs + UAI Memory',
+        '/docs/' => 'Docs + Public Records',
         '/contact/' => 'Contact Mike Kappel',
     ],
     'nav_groups' => [
@@ -84,13 +86,13 @@ return [
         ],
         [
             'type' => 'group',
-            'label' => 'Docs + Memory',
-            'description' => 'Current memory policy, reports, and bounded public UAI pointers.',
+            'label' => 'Docs + Records',
+            'description' => 'Current public policy, historical report identities, and bounded public pointer records.',
             'items' => [
-                ['label' => 'Docs Home', 'path' => '/docs/', 'description' => 'Report archive and memory read order.'],
+                ['label' => 'Docs Home', 'path' => '/docs/', 'description' => 'Current boundary records and pointer read order.'],
                 ['label' => 'Long-Term Memory', 'href' => '/docs/long-term-memory.md', 'description' => 'Durable project memory body.'],
-                ['label' => 'Report Index', 'href' => '/docs/report-index.md', 'description' => 'Preserved report manifest with checksums.'],
-                ['label' => '.uai Index', 'href' => '/.uai/index.uai', 'description' => 'Allowlisted public memory routes; all other UAI remains private.'],
+                ['label' => 'Report Index', 'href' => '/docs/report-index.md', 'description' => 'Historical report identity and retirement manifest.'],
+                ['label' => 'Public Pointer Index', 'href' => '/.uai/index.uai', 'description' => 'Two bounded public pointer records; repository governance is excluded.'],
             ],
         ],
         [

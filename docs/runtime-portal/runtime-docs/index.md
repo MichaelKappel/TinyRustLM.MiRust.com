@@ -43,6 +43,6 @@ The WordPress deployment path is superseded. Runtime.MiRust.com now ships as a r
 
 - [Runtime.MiRust.com continuation v1.0.6](/docs/implementation/runtime-mirust-continuation-v1.0.6.md): health endpoints, origin fix page, stale WordPress interception, verification tools, and updated agent discovery routes.
 
-## SLM Composer UI source-options update
+## Historical SLM Composer source-options snapshot
 
-- [SLM Composer Source Options UI v1.0.7](/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Chat mode now starts with starter profiles and local, Hugging Face, and P2P source choices, including request-driven Hugging Face conversion handoff, while Advanced Tools retains model selection, diagnostics, provenance, and module-plan details.
+- [Historical: SLM Composer Source Options UI v1.0.7](/docs/implementation/slmcomposer-source-options-ui-v1.0.7.md): Superseded 2026-07-01 implementation snapshot. Its local-file, Hugging Face, manual-import, and future-P2P wording is preserved as history, not current model-acquisition guidance; it makes no live peer or model claim. The retained mirror later accumulated request-driven conversion and P2P handoff details while preserving that historical boundary.

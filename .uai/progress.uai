@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.progress.current.v2
-updated_utc: 2026-08-30T02:00:51Z
+updated_utc: 2026-08-31T12:02:33Z
 
 completed:
   - Consolidated current public and UAI memory around the sole clean-slate SLM2 contract.
@@ -15,6 +15,7 @@ completed:
 
 remaining:
   - Continue the cross-site source, receipt, remote-equality, and public-state audit.
-  - Do not replay 1.8.2; use a new complete versioned closure for a future declared-public change.
+  - Finish and commit the prepared 1.8.3 retirement closure; its content commit, tree, generated manifests, deployment, readbacks, and receipt remain pending.
+  - Preserve 1.8.2 as the last verified publication and never replay or rewrite its receipt.
 
 campaign_truth: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live memory rounds; 0/40 externally proven P2P lanes; 0/20 catalog announcements.
