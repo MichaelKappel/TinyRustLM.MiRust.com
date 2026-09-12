@@ -4,6 +4,14 @@ site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
 
+ecosystem_cleanup_2026_09_12:
+  change: The local PHP preview no longer delegates arbitrary repository files to the built-in file server. Only manifest-declared static HTTPS readback paths are served, through direct files with canonical paths; normal page rendering is retained.
+  boundary: Exact loopback Host plus GET or HEAD; private files, path aliases, linked files and directories, and other methods are rejected without reflecting paths or file content.
+  verification: Eight executable checks passed, including every declared static GET and HEAD byte, live PHP negative requests, retired-route behavior, and a real directory-link probe. No fixtures remain in artifacts.
+  coverage_gap: PHP has no Xdebug or PCOV coverage extension; real PHP and HTTP behavior checks are the closest automated evidence, not a percentage claim.
+  publication: index.php changed. Existing package and deployment byte bindings require regeneration after the next content checkpoint; no publication or deployed-current claim is made.
+  pending: Existing deployment-verifier edits and historical-copy cleanup remain under review; the broader ecosystem goal is still active.
+
 prepared_publication:
   version: 1.8.3
   release_date: 2026-08-31

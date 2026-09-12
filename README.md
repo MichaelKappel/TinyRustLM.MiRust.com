@@ -99,6 +99,20 @@ Publication requires a clean committed revision, complete affected-site gates,
 deployment from that revision, and exact public readback of the HTTPS bytes. A
 reachable development page is not release evidence.
 
+## Local Preview
+
+Run `php -S 127.0.0.1:8080 index.php` from this repository. The preview accepts
+GET and HEAD with an exact loopback Host header. Static responses are limited to
+the existing deployment manifest's declared HTTPS readback paths; private files,
+PHP implementation files, path aliases, and links are never delegated to PHP's
+built-in file server. Clean page routes still use the existing page renderer.
+The preview reads current working files and does not establish that their bytes
+match a published release. Stop the preview process when finished.
+
+Run `node --test tools/preview-router_test.js tools/retired-public-route.test.js`
+for real PHP path and HTTP checks. The path probe uses bounded owned artifacts
+and removes them before returning.
+
 ## Current Routes
 
 - Product: <https://TinyRustLM.com/>

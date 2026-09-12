@@ -44,3 +44,13 @@ prohibitions:
   - Do not claim live use, account correctness, synchronization, restore, deletion, cleanup, continuity, deployment, or publication from source, configuration, reachability, fixtures, or mocks.
   - Do not let redundant prelaunch memory copies drift or contradict one another; keep every maintained copy current, secret-safe, and provenance-labeled.
   - Do not deploy from dirty, partially tested, ambiguous, stale, or undocumented source.
+
+# User directive 2026-09-12: TinyRustLM storage and replacement policy
+# TinyRustLM editable source has one home: E:\Source\Rust\TinyRustLM.com.
+# TinyRustLM models have one home: D:\LLMs\TinyRustLM; model payloads stay out of Git.
+# Never create extra source clones, worktrees, backups, dated copies, proof copies, or scattered tool/build folders.
+# Check in coherent source changes regularly; Git history replaces backup source directories.
+# Keep bounded temporary build/test output under the canonical repository and remove it when its operation ends.
+# When a verified new version replaces an old version, retain only the current copy and remove the superseded bytes.
+# Preserve useful unique work in the canonical source or model root before deleting duplicates; keep receipts, not junk copies.
+# This explicit user directive supersedes older instructions allowing TinyRustLM source/model sprawl or forbidding the designated D: model store.

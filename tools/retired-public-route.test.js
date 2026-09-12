@@ -73,20 +73,21 @@ async function availablePort() {
 }
 
 // Makes one non-following request and returns the raw status, headers, and bounded body.
-function request(port, requestPath, method = "GET") {
+function request(port, requestPath, method = "GET", headers = {}) {
   return new Promise((resolve, reject) => {
     const operation = http.request({
       host: "127.0.0.1",
       port,
       path: requestPath,
       method,
+      headers,
       timeout: 3000,
     }, (response) => {
       const chunks = [];
       let bytes = 0;
       response.on("data", (chunk) => {
         bytes += chunk.length;
-        if (bytes > 4096) {
+        if (bytes > 2 * 1024 * 1024) {
           response.destroy(new Error("Response exceeded the route-test body bound."));
           return;
         }
@@ -186,7 +187,7 @@ test("deployment readback requires production GET and HEAD retirement proof", ()
 const phpBinary = findPhpBinary();
 test("non-public UAI and raw archive routes return bounded 410 responses while public boundaries remain available", {
   skip: phpBinary ? false : "PHP CLI is unavailable",
-}, async () => {
+}, async (t) => {
   const port = await availablePort();
   const server = spawn(phpBinary, ["-S", `127.0.0.1:${port}`, "index.php"], {
     cwd: repositoryRoot,
@@ -202,6 +203,60 @@ test("non-public UAI and raw archive routes return bounded 410 responses while p
 
   try {
     await waitUntilReady(server, port, () => diagnosticText);
+    await t.test("preview serves every declared static GET and HEAD byte exactly", async () => {
+      const manifest = JSON.parse(fs.readFileSync(path.join(repositoryRoot,
+        "deploy/site-deployment-manifest.v1.json"), "utf8"));
+      const readable = manifest.files.filter((entry) => entry.https_readback_path);
+      assert.ok(readable.length > 0);
+      for (const entry of readable) {
+        const expected = fs.readFileSync(path.join(repositoryRoot, entry.path), "utf8");
+        for (const method of ["GET", "HEAD"]) {
+          const response = await request(port, entry.https_readback_path, method);
+          assert.equal(response.status, 200, entry.path);
+          assert.equal(response.body, method === "HEAD" ? "" : expected, entry.path);
+          assert.equal(response.headers["content-length"], String(Buffer.byteLength(expected)));
+          assert.equal(response.headers["cache-control"], "no-store");
+          assert.equal(response.headers["x-content-type-options"], "nosniff");
+        }
+      }
+      const css = await request(port, "/assets/css/site.css?cache=preview");
+      assert.equal(css.status, 200);
+      assert.equal(css.headers["content-type"], "text/css; charset=utf-8");
+      const script = await request(port, "/assets/js/site.js");
+      assert.equal(script.headers["content-type"], "text/javascript; charset=utf-8");
+    });
+    await t.test("preview refuses private files and path aliases without reflection", async () => {
+      for (const route of [
+        "/.git/HEAD", "/workspace.uai", "/.htaccess", "/README.md",
+        "/deploy/site-deployment-manifest.v1.json", "/tools/public-artifact-policy.js",
+        "/data/site.php", "/includes/functions.php", "/docs/reports-index.php",
+        "/index.php", "/assets/css/site.css:stream", "/assets/css/SITE.CSS",
+        "/assets/css/../css/site.css", "/assets/css/%73ite.css", "/assets\\css\\site.css",
+        "/assets//css/site.css", "/assets/css/site.css/child", "/.git/HEAD/",
+        "/%2e%2e/README.md", "/llms.txt%00", "/llms.txt.", "/llms.txt%20",
+      ]) {
+        for (const method of ["GET", "HEAD"]) {
+          const response = await request(port, route, method);
+          assert.equal(response.status, 404, route);
+          assert.equal(response.body, method === "HEAD" ? "" : "Not found.\n", route);
+        }
+      }
+    });
+    await t.test("preview enforces its read-only loopback Host boundary", async () => {
+      for (const host of ["foreign.example", `foreign.example:${port}`, "127.0.0.1:1",
+        `localhost:${port}.evil.example`, `127.0.0.1:${port}@foreign.example`]) {
+        const response = await request(port, "/llms.txt", "GET", { Host: host });
+        assert.equal(response.status, 421, host);
+        assert.equal(response.body, "Request rejected.\n");
+      }
+      assert.equal((await request(port, "/llms.txt", "HEAD", { Host: `localhost:${port}` })).status, 200);
+      for (const method of ["POST", "PUT", "DELETE", "OPTIONS"]) {
+        const response = await request(port, "/llms.txt", method);
+        assert.equal(response.status, 405, method);
+        assert.equal(response.headers.allow, "GET, HEAD");
+        assert.equal(response.body, "Request rejected.\n");
+      }
+    });
     const retiredRequests = [
       ...retiredReportNames.flatMap(reportRouteVariants),
       "/docs/runtime-portal/runtime-docs/workspace.uai",
