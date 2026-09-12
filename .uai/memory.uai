@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.memory.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-09-12T21:08:29.177Z
 
 read_order:
   - .uai/totem.uai
@@ -13,6 +13,6 @@ storage:
   current_hot_memory: Current compact UAI files.
   public_memory_policy: docs/long-term-memory.md
   historical_reports: docs/reports and docs/report-index.md
-  historical_runtime: docs/runtime-portal and its generated manifest.
+  historical_runtime: Git history plus artifacts/ecosystem-cleanup-20260912/historical-runtime-retirement-review.json; useful lessons are in the canonical TinyRust experiment record. Do not regenerate the raw mirror.
 
 rule: MemoryEndpoints.com has exactly the two separate uses defined by totem.uai and taboo.uai. Other prelaunch copies are allowed only when every maintained copy is current, secret-safe, provenance-labeled, and noncontradictory.

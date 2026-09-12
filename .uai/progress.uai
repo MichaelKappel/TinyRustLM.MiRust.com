@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.progress.current.v2
-updated_utc: 2026-08-31T12:02:33Z
+updated_utc: 2026-09-12T21:10:57.802Z
 
 completed:
   - Consolidated current public and UAI memory around the sole clean-slate SLM2 contract.
@@ -13,9 +13,11 @@ completed:
   - Committed the exact immutable success receipt deploy/receipts/site-deployment-20260830T014629Z.json at 6d56e6d4a1811a7d7b94d10ff384071ea866974e.
   - Marked deployment manifests and receipts as binary Git artifacts, restored every historical receipt to its original byte stream, and proved all referenced hashes from a remote-exact clean clone.
 
+  - Removed the obsolete raw Runtime mirror generator and copied-repository test setup; current tests bind the compact review to all 184 immutable Git blobs. The raw files remain policy-blocked.
+
 remaining:
   - Continue the cross-site source, receipt, remote-equality, and public-state audit.
-  - Finish and commit the prepared 1.8.3 retirement closure; its content commit, tree, generated manifests, deployment, readbacks, and receipt remain pending.
+  - Resolve policy-blocked physical stage/mirror removals, finish remaining transport-test cleanup, and regenerate the 1.8.3 canonical C1/C2 metadata sequence after current public edits. Full-site publishing remains disabled.
   - Preserve 1.8.2 as the last verified publication and never replay or rewrite its receipt.
 
 campaign_truth: 0/20 qualified models; 0/50 clean browser rounds; 0/25 live memory rounds; 0/40 externally proven P2P lanes; 0/20 catalog announcements.

@@ -1,0 +1,1679 @@
+{
+  "schema": "tinyrustlm-mirust.historical-runtime-retirement-review/1",
+  "reviewedUtc": "2026-09-12T21:01:32.007Z",
+  "root": "E:\\Source\\Rust\\TinyRustLM.MiRust.com\\docs\\runtime-portal",
+  "retainedGitCommit": "7a6f9db1d33d9d19700af180917de2d45ccf9f89",
+  "fileCount": 184,
+  "logicalBytes": 1963723,
+  "normalizedDuplicateFiles": 165,
+  "retainedCurrentFiles": [
+    ".htaccess",
+    "index.md",
+    "runtime-docs/.htaccess"
+  ],
+  "files": [
+    {
+      "relativePath": "MANIFEST.md",
+      "byteLength": 27819,
+      "sha256": "0e9356b6cbb267ecd231f07e6f69f6eb607633d8a323fd6362560d9ced214cd7",
+      "retainedGitBlob": "8688f8e3ada895b01906baee32a03bbba22fd5b0",
+      "retainedGitSha256": "0e9356b6cbb267ecd231f07e6f69f6eb607633d8a323fd6362560d9ced214cd7",
+      "worktreeEqualsGit": true,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/DEPLOYMENT.md",
+      "byteLength": 815,
+      "sha256": "6a05e84a3bb423e9a9ce8ff95f759d20ea66375820f3232f1cf3af7d11870c03",
+      "retainedGitBlob": "334d79496ab21a070b51aa62bafb78a8bf2ad710",
+      "retainedGitSha256": "86c364cb9bd11eb3e44e415c7f9768982a15b6824546ce4f613319bf27b60167",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/healthz",
+      "byteLength": 39,
+      "sha256": "91c10e79517c8c22f46e20f0dd7d830cc2052e437a9a23cb8d5226a7b55a2766",
+      "retainedGitBlob": "0a7154331a2e35e2eaf7bae0157fef5acc99f9eb",
+      "retainedGitSha256": "ef358dcfd4b663e050fa29230d0324f60002a128ad5f2008ef6c38203c20be6e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/llms-full.txt",
+      "byteLength": 72396,
+      "sha256": "900d7eb1b2672994f481563ee19efa70490819df498548e37fd0a221b2a80cb4",
+      "retainedGitBlob": "df89a8377c742ecf4651f99ceb5546efdc0213ec",
+      "retainedGitSha256": "edc2460989ae0f3f3ffd99366bc3b7007e6f48dab0a8ab22f9e6108b50a6fb63",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/llms.txt",
+      "byteLength": 4269,
+      "sha256": "e9f8603fd1aa9394bdc9a8e67790d0a8d43b421b8de8e2d8c7d4082b0f967b8f",
+      "retainedGitBlob": "8d99f9dd51ba432e019c549d0206205ce526586e",
+      "retainedGitSha256": "df57edd3f5fab76232aea902c3d5dbd38b367c04ffcb4b6ced3bb9adb159e3b8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/PACKAGE-MANIFEST.md",
+      "byteLength": 28602,
+      "sha256": "26bbbc4de71fa16d4b9a9a1a2fe171d3da751ac2e4221fd4c9db32ca66a15aa0",
+      "retainedGitBlob": "4fe9007260e0873047d9c56ecbf1fa6160f944dc",
+      "retainedGitSha256": "b6cd4151d4a59b92f593dfc73d1f8d5e64fda905abd754b4051285628e9bc75e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/README.md",
+      "byteLength": 1032,
+      "sha256": "9d24074bb8e3850b879c688cb503cfa5ac6eeb3b3d4ee235911884fc637ad5a9",
+      "retainedGitBlob": "8cc22740d2d6815c8fca7808fb84db3cd0687c7d",
+      "retainedGitSha256": "daa2b38aaccef4a51d54d1d17464a6d0af433347aaf8137b097f9f6996b87a78",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/robots.txt",
+      "byteLength": 498,
+      "sha256": "2344cfe51fc232418466338b3ea44c7726cab98e5d3242257d0e660b306276be",
+      "retainedGitBlob": "f81ce390e386ed3c1f328de8fa57abaadfa2cc66",
+      "retainedGitSha256": "2506d62b48e313887fdcc56d54beb789a94794c79c3a963194bfa3382cce6437",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/sitemap.xml",
+      "byteLength": 4628,
+      "sha256": "5782426b2577f2caddaeac175f2576119480991487a025898b3ae0671c76f0bd",
+      "retainedGitBlob": "87a1ddcde84e99c743d0f1757390f963fce8c679",
+      "retainedGitSha256": "69fa33665640f4851f1409516208f4d0c1209e7734de5aff7ec76f9da4745943",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "package/version.json",
+      "byteLength": 587,
+      "sha256": "419e791afc0b463b4d39ed1b201ddbfd3e165cc61957a9550e56c7f993cd6e68",
+      "retainedGitBlob": "d01e1c58f7c2bf5f916c081ca1c20b06b23ae2f4",
+      "retainedGitSha256": "2e3731fb2cca5c38106faea784678d55ee9a168720c1822739f87b74b0ff05c8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/dogfood/index.md",
+      "byteLength": 1006,
+      "sha256": "444b9c4a9f2813b1adb1e630610252f243a70278eadda14427fa2986e508e59d",
+      "retainedGitBlob": "1f55b3c3f69510c60fdd9860d6c02e177fd4734e",
+      "retainedGitSha256": "eaf73d6d9596e21f13bc0f99386aa1537a2c79b58b64ef18fda4cf3a7a232ea7",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\dogfood\\index.md"
+    },
+    {
+      "relativePath": "runtime-docs/dogfood/uaix-file-handoff-memory-strategy-2026-06-26.md",
+      "byteLength": 5641,
+      "sha256": "5b4ba6e80194e391a67b9c81e7969ea510efcb7ac99e7c9d4b4e060ee2e297f9",
+      "retainedGitBlob": "8d525aedddead300e02dd90bb87342b78a866d7e",
+      "retainedGitSha256": "ac98d281728cc05e17cf735aa2186a6183a3b27dce96e3257fba360ed4c52fbc",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\dogfood\\uaix-file-handoff-memory-strategy-2026-06-26.md"
+    },
+    {
+      "relativePath": "runtime-docs/dogfood/uaix-llm-wiki-crawlability-failure-2026-06-25.md",
+      "byteLength": 3453,
+      "sha256": "df19abba6bdbb5e4ed69c11f469b790ac4ba35cef4f0a7b06b22c5f2ffc56df6",
+      "retainedGitBlob": "59345e256327c69d7a4f312eec21a883df2e957d",
+      "retainedGitSha256": "8fbd6ac478e7e8d4a02196aff5cc9ffa7e6e31ea3fd00787d329c3fc40eb6725",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\dogfood\\uaix-llm-wiki-crawlability-failure-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/dogfood/uaix-llmwikis-setup-experience-2026-06-24.md",
+      "byteLength": 1714,
+      "sha256": "a80662a615bdae6a39d07e5168ecefd920dca12e534c122be6a3099bdb70fe6c",
+      "retainedGitBlob": "987cf49242a7f2e73d37398f479775414357b83a",
+      "retainedGitSha256": "442aa49fa3b747b762c27da31e85e4c1a852b7fbbe9c7c42d11436e044548b15",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\dogfood\\uaix-llmwikis-setup-experience-2026-06-24.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/aiwikis-routing.md",
+      "byteLength": 912,
+      "sha256": "2995467b9cc26191dfaeda0e87fd8724ba3317f08cd6f066c568ca194b99f6de",
+      "retainedGitBlob": "f23de0cb27753b254ee5108256cdb024d352cb85",
+      "retainedGitSha256": "eeb62e3e9279187ea3d766dbb92cb468913b50366b58952cc5731a127dd391db",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\aiwikis-routing.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/architecture.md",
+      "byteLength": 18162,
+      "sha256": "6e89ce44f36b3c8c4db19a60285e4b58ed0baf3ee743b58a9560f0db89f67a54",
+      "retainedGitBlob": "d6ed0374949f321fb6138595f741e9f036aa1e1f",
+      "retainedGitSha256": "6ee3c495e1e518e249ad38be548f98df31b86b82614a9afb93c5778f6233e269",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\architecture.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/browser-harness.md",
+      "byteLength": 1288,
+      "sha256": "e7ec14a48f9033e4c70a2a8856c3f7f3bafea50e67ffc614d96ae58dc7680214",
+      "retainedGitBlob": "b3e1fe69d73964708cfb14829f5d2aa6e1ded251",
+      "retainedGitSha256": "50921079ecfa7b65dbc562fbba64c1174e4450c98cd8995399b61982a354ecdb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\browser-harness.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/browser-runtime.md",
+      "byteLength": 59482,
+      "sha256": "e2cf1182454b7282e3adf1b4e2e08a70e9f3ade61760500b3857161fe4a5c695",
+      "retainedGitBlob": "3e2233d1c4ed68d77d58ce00f622e70c408daa5d",
+      "retainedGitSha256": "e23ef272fce14bff32e2d37092a5f4fb8de2703f298b9032ab7d90abf091c1d9",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/index.md",
+      "byteLength": 3681,
+      "sha256": "0cabfe51b0a5476de32b383bf90630b6e82ab29949742ea2aabce084f525f1d2",
+      "retainedGitBlob": "86f4b3863539db4dbb060b8f00d96ec4a2ad5896",
+      "retainedGitSha256": "0cabfe51b0a5476de32b383bf90630b6e82ab29949742ea2aabce084f525f1d2",
+      "worktreeEqualsGit": true,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/performance.md",
+      "byteLength": 3636,
+      "sha256": "a8c277b43ad12b0766876021460f6a3ff49ab5b584890064f2876894da3cedb4",
+      "retainedGitBlob": "bcb8482e7525574196f1da07424612ab8c9275ea",
+      "retainedGitSha256": "07a74898373f6807de99bb1bcb3748a16460f0cb4cce45d857cb56533a2a1b33",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\performance.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/quantization.md",
+      "byteLength": 2061,
+      "sha256": "435235a8488b96d3ea523ae928d43551ff1eccc0940aba757c4e6add5b95af11",
+      "retainedGitBlob": "55fc174b6111c2fca160f4e23b1b99367f4518ed",
+      "retainedGitSha256": "1b1afd7292ffd7fe5f023ee9bbf33169e1a2a839673434ae481603dafa55a700",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\quantization.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/runtime-mirust-continuation-v1.0.6.md",
+      "byteLength": 1226,
+      "sha256": "c74c2155ac3eeb2234986d331d1c1c14e78e247d078b993210b1db35b499dd44",
+      "retainedGitBlob": "d45b6bd9db534fcb420bc905c5b3cdd24e6a73a8",
+      "retainedGitSha256": "0a76e16385c8766a39e31a8de62872859672ce3fdc8cc2a228ebf6e997ae5119",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\runtime-mirust-continuation-v1.0.6.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/runtime-mirust-plain-php-rebuild-v1.0.5.md",
+      "byteLength": 1324,
+      "sha256": "089cf6ef7a2bcd862c12d316c688da7a3e72c4bca0814ef4a4c68fa7a7e50fd6",
+      "retainedGitBlob": "04d306eb5dedfd680517a41a31bdfcabd41ce28d",
+      "retainedGitSha256": "3bfd31fba0a74a346f89b98bdc550a9b83bcefcb9c5a5df2b591f4623b799185",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\runtime-mirust-plain-php-rebuild-v1.0.5.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/runtime-mirust-rebrand-v1.0.4.md",
+      "byteLength": 940,
+      "sha256": "68005bf4b8d8acb7b6edee3192b6c9c336263dd971ba9569aa839e329c823339",
+      "retainedGitBlob": "e2cc5914c3cc008c3b077d40c9f182ab0889eca5",
+      "retainedGitSha256": "52373a54f97f15101034cf620c295043be7124424303b601247d8326546dc88e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\runtime-mirust-rebrand-v1.0.4.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/site-audit-response-v1.0.4.md",
+      "byteLength": 1287,
+      "sha256": "c53505137a5c6a943b8eb59304e4597720d2c5abc9eea0b6f11388d89c451f06",
+      "retainedGitBlob": "a90b46e405a1f23257e06ccfc24fe59354fecd51",
+      "retainedGitSha256": "38e401f82fc1764d0f8297d7ecab33accdc7718a90a20c3dd602fedc3efe7fd3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\site-audit-response-v1.0.4.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/slm-format.md",
+      "byteLength": 29863,
+      "sha256": "214d57b495ffc47da10b2420bdf9d311701b52b8601078d273ddcc70c7ce019c",
+      "retainedGitBlob": "1ddeed1c8121fd02a10b51dec042b510537f633b",
+      "retainedGitSha256": "85d727daf994d68f98ff6c7b370235b23698f1bfe2c436dd58d3521e40f8cf36",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md",
+      "byteLength": 18573,
+      "sha256": "30e8be4bbb4f1cbe815624fbed0f856c96308e26ea71d8a7307d07ca753b6730",
+      "retainedGitBlob": "9e0d28392c2f3b9c4926212bf81064dcdd43a9f4",
+      "retainedGitSha256": "30e8be4bbb4f1cbe815624fbed0f856c96308e26ea71d8a7307d07ca753b6730",
+      "worktreeEqualsGit": true,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/testing.md",
+      "byteLength": 45538,
+      "sha256": "d63308b5a56a972e374bc8445e187fe0bcc3133fd856bb90456bb2f34db98758",
+      "retainedGitBlob": "fe46820b5eb57bbf93f95bd5349c912dec3af0dd",
+      "retainedGitSha256": "aa705b1e3ff223fc3aaa0a0e5c7ee19d895b00f79b5915b4cd2c26313b03fa5f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/tinyrustlm-models-readme.md",
+      "byteLength": 37665,
+      "sha256": "f3aa20ab00c4ecd4f30f05d7b95208fd1e39e6511329889a7aef3636a00bc437",
+      "retainedGitBlob": "cbc29aaf2adfbfbcb761d2bea045ef65c5b35e9b",
+      "retainedGitSha256": "58b136954e3227cb9b15801df742ee36511f44a505f65b4fa148001f8b26eaa8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\tinyrustlm-models-readme.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/tinyrustlm-readme.md",
+      "byteLength": 71632,
+      "sha256": "a7a001256ba3fe95e012aea3bf956eab852e241d8e7102a9840373a4634d51dc",
+      "retainedGitBlob": "51331f734312091be9ac4453db014139f90cd6ad",
+      "retainedGitSha256": "0c4ea4af9c787099be762807752e01cf2cc7d7efca25b4158bb38aa9efe72cfb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/implementation/tokenizer.md",
+      "byteLength": 3462,
+      "sha256": "a36e0e95e304f2254afefb754469ca023dc29a11594138044e9035805d32d61b",
+      "retainedGitBlob": "fb8baab91fb49f00339cf21ce4e934ec9d217f7a",
+      "retainedGitSha256": "b133955180a0af4f260c81f6438e1c586a27a4863068ad4b6e82c32dcb14d18f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\tokenizer.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/visual-studio.md",
+      "byteLength": 4463,
+      "sha256": "300dc3d7e35f2bfe11d9c75f48de5e54fa5e3f539dd98cf965f43883a3265998",
+      "retainedGitBlob": "616ab7da476097ca3d9293eb84d418e69f4fb01f",
+      "retainedGitSha256": "4eb9659bebd8c33799a384dee81415bccb13304f2d2e67cfdc1a3d0d9976abdb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\implementation\\visual-studio.md"
+    },
+    {
+      "relativePath": "runtime-docs/implementation/workspace-readme.md",
+      "byteLength": 29750,
+      "sha256": "f220c74181ed95adf4d05b2cc55da10d40677bf05381056f5093498bf46c0af6",
+      "retainedGitBlob": "d52b0720756f34f29fa59e40216a6e7e4e6069a3",
+      "retainedGitSha256": "3f3e0b212a5ca54433ebae6061124d0d2798b2472cec8d789b2f23fbc24fde10",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/index.html",
+      "byteLength": 187,
+      "sha256": "7863a4e95384f03732b00274aefc0da4c9ce163ae375a2e19f7bde16991a7620",
+      "retainedGitBlob": "e95166bdedd5038f9fc2ce173d5c1d4833885a5b",
+      "retainedGitSha256": "fd38054d2bb5a04f6fd6dc19c75ab22eb7814bf1e5e7fadf3bf3492679de9bc1",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\index.html"
+    },
+    {
+      "relativePath": "runtime-docs/index.md",
+      "byteLength": 3442,
+      "sha256": "de5c4b6be49850a23fc36881b66d97a6f468e6b7afcbe21e2ec6a3c910f8dda7",
+      "retainedGitBlob": "8d98f29fa31b333d01bf3062ba004c10099957b1",
+      "retainedGitSha256": "de5c4b6be49850a23fc36881b66d97a6f468e6b7afcbe21e2ec6a3c910f8dda7",
+      "worktreeEqualsGit": true,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/long-term-memory.uai",
+      "byteLength": 348581,
+      "sha256": "b041c94e73652be0fb9d8f8fc2796e700c2c9c8466a572c3bd35c60e53695a33",
+      "retainedGitBlob": "6f5014ae8ee7b0dc8ee96503146f0537392c70bb",
+      "retainedGitSha256": "9188267d9c6ab5299a1b3356576ace1c4685e3016f5466652d1739e81ef761c5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\long-term-memory.uai"
+    },
+    {
+      "relativePath": "runtime-docs/MANIFEST.md",
+      "byteLength": 33893,
+      "sha256": "76cf2429ecf890be68497e27b9e5649f5f5c2839f1ac70fe241b15493a29197b",
+      "retainedGitBlob": "ccd9714f6b399e6264a7774472ba6c3dae098ca2",
+      "retainedGitSha256": "cf048728409a3e7ce3ba2d36731d4210e62b0f43103dc13eee35e5fa5dd95789",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": null
+    },
+    {
+      "relativePath": "runtime-docs/README-site-package.md",
+      "byteLength": 1455,
+      "sha256": "b2fa453a77caed26ddf57c59b97151720b0450905687a34c8e9eaedf44ee82ff",
+      "retainedGitBlob": "542f2b9a567d69655de7c11cca7f337150ed3331",
+      "retainedGitSha256": "6db41d4cdd03e65f5fa4ab2e437f70232bb4f5bb8cdf653d07831e8bb2e7ff3a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\README-site-package.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/adapter-family-receipt-memory-2026-06-27.md",
+      "byteLength": 6012,
+      "sha256": "7924a5903d51e9a22b99dbcab6d3740f798af4c27da4c9f7df5c733462c45357",
+      "retainedGitBlob": "adf7cee4fa3c2c49ef1d98c96097dc4fd03833e2",
+      "retainedGitSha256": "5794a57c60f0ef1e8e61079e4d4bc0335e0dca6a933ed87be599b424e95bdebe",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\adapter-family-receipt-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/admission-operator-receipt-binding-memory-2026-06-29.md",
+      "byteLength": 4881,
+      "sha256": "5f576d05dff50ed52734c85a8bcdc9f82ed7da00a6c2bbedbbdd21c578d97d01",
+      "retainedGitBlob": "0cd69024d5487ceabab1bbb29c7bba7a64ec6338",
+      "retainedGitSha256": "821543e27a431a2377dbbd7606702957f721a151282d35165cd6e079abcd54fd",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\admission-operator-receipt-binding-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/assembly-receipt-memory-2026-06-27.md",
+      "byteLength": 4688,
+      "sha256": "97ba513fa5adea84729b88fde49b6fc78deddec37c251f30ad7feddca6371952",
+      "retainedGitBlob": "4ff9c8f36c10ce3e0f9e61cd5e4ed6d4fc275b2b",
+      "retainedGitSha256": "322c5fcae1e5de8b24957fef773ca9f8e769e195fa10dd6cbb668046c0e5cabb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\assembly-receipt-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/brand-product-positioning-memory-2026-06-25.md",
+      "byteLength": 2782,
+      "sha256": "dc34a0c937b9d04cd01c703269f5465c747a8f54d2151296933084002891b432",
+      "retainedGitBlob": "aaadfbd2e7220472f49e0cbdf0960769f7b3894b",
+      "retainedGitSha256": "5ed9d5f4e0e0fba812deff2ea0511f01b058df507d168ab8d9b3091b2bd28150",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\brand-product-positioning-memory-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-artifact-drift-memory-2026-06-28.md",
+      "byteLength": 3471,
+      "sha256": "dd382204b8eecc8cf515f96bb4bef43286483639119f0eb381cf9aa16e44ca7a",
+      "retainedGitBlob": "4b0192eee4ef3b4ad62999464b65a8ce9a72cdad",
+      "retainedGitSha256": "f0d3e5cdbc75973f4cdfbce152b17e07a0ff6fd4bb296071c2caad1797347c46",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-artifact-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-family-receipt-drift-memory-2026-06-28.md",
+      "byteLength": 3301,
+      "sha256": "9388ff2f111ca386bb518453ed0d020d0914189c47988dd4dec2a9b920084dd1",
+      "retainedGitBlob": "a9ccb6d60314fe7efbdf19f7c966acb6f4d51b6a",
+      "retainedGitSha256": "035e509031786b25523dcec5a0dc6cb2f919ba06627d8c0d8ced1f0a40587da8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-family-receipt-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-manifest-drift-memory-2026-06-28.md",
+      "byteLength": 3175,
+      "sha256": "ba3b0aab3b0195cd99b32d4c84b372646d7a365b79553cba90eebab14878309a",
+      "retainedGitBlob": "81c60290ddbab6416348abead7735d3f3403aea3",
+      "retainedGitSha256": "c19277a19295895c8b75528661c1f226ec57d5158c881a15acb0560db13167ea",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-manifest-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-sidecar-memory-2026-06-27.md",
+      "byteLength": 4447,
+      "sha256": "5ecfe666c4618fc287723bc386edeec468f892b57067c5d1b2cd932524087c3a",
+      "retainedGitBlob": "6ae4e4e38b0d495b45b13a925b981d8011bc1690",
+      "retainedGitSha256": "9c787a926c05c7cab7deaa4b3f77b999c7ddabf2fbb6a6fc5e635e4188f6359a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-sidecar-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-stack-memory-2026-06-27.md",
+      "byteLength": 2527,
+      "sha256": "4134b9865a135f9ada153e44fdbba51d4b53de62f9d550aa6959d4f20644b41e",
+      "retainedGitBlob": "0f238b01fadd6412cfbe33db0abe84ec6ef8ddef",
+      "retainedGitSha256": "e9dce6259b392104b83400866ba2929f5efd46949f81a0db802dfc3505b5675a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-stack-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-stack-prefetch-drift-memory-2026-06-28.md",
+      "byteLength": 3125,
+      "sha256": "439bfc849410d0621cd8ebc7e2be2571e7c332b0d8dfaf11a5b4c6bfd4f38c7a",
+      "retainedGitBlob": "97cfec910165c6cb69c6977f387b507fa8e26973",
+      "retainedGitSha256": "81dfcce117f2ac31c6b129f359e087aee8bdee8b46dbd1fa5580af16807e750c",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-stack-prefetch-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-stack-rust-validate-drift-memory-2026-06-28.md",
+      "byteLength": 4085,
+      "sha256": "8d7c892507b7970b56a16756439aae422e23a9a1517a9a19086d99f47c39375a",
+      "retainedGitBlob": "de448e494de6f462156ac823db01561b68355ffc",
+      "retainedGitSha256": "b622dde613d41ebf569e674d0a774bb21ff67711a68395f7bd66e79bb70224da",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-stack-rust-validate-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-adapter-stack-rust-validate-memory-2026-06-28.md",
+      "byteLength": 3951,
+      "sha256": "e61f56b2ae8ef3dac5520970dcc66e84eec1e09c79bf0de2cf5b41853e3280d9",
+      "retainedGitBlob": "94f713fec921a8f0961f6b7374bc4129652d6860",
+      "retainedGitSha256": "ea109ebd123cce713ed38b964e2fca5e9570fe8d02d6d1a60c62be5d08c87c54",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-adapter-stack-rust-validate-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-assembly-eval-case-drift-memory-2026-06-28.md",
+      "byteLength": 3073,
+      "sha256": "af770597fb4300d31ddcb2c3ea436df429cb76014c57327dccd4c568de9b227b",
+      "retainedGitBlob": "66be3d7ef1068a0c38b3a501cbb860133208ba28",
+      "retainedGitSha256": "8ea090025d3aeae857be5232a1747076c17c45f3ca013c4e01057516b42fc465",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-assembly-eval-case-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-assembly-evidence-file-drift-memory-2026-06-28.md",
+      "byteLength": 3507,
+      "sha256": "7f4e04544e3e375df36c45e213440e6f12b10bfab76ba20b4d0b438d208dc9c8",
+      "retainedGitBlob": "1e0069335763e40c08c6b75d42868e4ceccd4c74",
+      "retainedGitSha256": "db3cc8682ed891618ddaf08d54aefec100e63496219a8fb5b23ee84738f10e56",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-assembly-evidence-file-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-assembly-trace-memory-2026-06-28.md",
+      "byteLength": 3723,
+      "sha256": "96d5cd7d22b00100353656807164dda94699a8b4e184f7e515dcf62273dcb073",
+      "retainedGitBlob": "e03fd4ab27cb9700262634f8718de5701de61c4b",
+      "retainedGitSha256": "21665dbecb9436da6ae6eaeee73e0bccbce4647c3894e7d55427140c8f5726cc",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-assembly-trace-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-auto-assembly-budget-memory-2026-06-27.md",
+      "byteLength": 3823,
+      "sha256": "22e8eb4842474701fb8900aae0a1598e54d5215cf0da61029d33b3332cd7f626",
+      "retainedGitBlob": "2228baa0c381fe3c447937f00901c8231cec40f7",
+      "retainedGitSha256": "992e0d4bf8b1f2c02daf1607d3f426cf4b425d2823618857039d322da5af03de",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-auto-assembly-budget-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-auto-assembly-memory-2026-06-27.md",
+      "byteLength": 3939,
+      "sha256": "2672b8cd61695a44bf2ac5717c69c03e82452a282b54e903d492f6fa60f131a4",
+      "retainedGitBlob": "83104c6cc1e65ccb65c3c19dbca3736ecd5e1cbb",
+      "retainedGitSha256": "19efbd6d01d44bf799383bf04a17c16dc4ae9d7331b2328e8784708463eddd11",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-auto-assembly-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-assembly-memory-2026-06-28.md",
+      "byteLength": 3178,
+      "sha256": "df62736ca7245991c03ebf7608a48bfd7ee1980239b09201f415d6e3092ed12b",
+      "retainedGitBlob": "636b7d770bfa9718850644229d4abd5856e56c20",
+      "retainedGitSha256": "ad2304413ad78d5e0cd478f817225b81f91e2a8aabe1c4804d299215642da30d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-assembly-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-cycle-memory-2026-06-28.md",
+      "byteLength": 4221,
+      "sha256": "7d75985a696562e8d6e4fa1abaa6512d36932b3c7ad430c23931ee5e0e9a030b",
+      "retainedGitBlob": "37e8dcc3c997f8ae2f5056fc41a6091d844edab7",
+      "retainedGitSha256": "51a161f2ae9c9ff4cc4d0a4329ca1733b91cbbdcfe5983b72fe434db3c6c30a1",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-cycle-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-extended-route-soak-memory-2026-06-28.md",
+      "byteLength": 2940,
+      "sha256": "2fe9be14cf7167dafe34c618d271a8ac48775cf6bd71111cb7d61112b5f50706",
+      "retainedGitBlob": "a164f6a6263c3458d9a6e9279d2397cb09c647b3",
+      "retainedGitSha256": "d3afbf767c5d248eac460c3cc02c248d33ec68666dcde8ab8824c79e06cf21d8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-extended-route-soak-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-reload-soak-memory-2026-06-28.md",
+      "byteLength": 3713,
+      "sha256": "80a89ff97eb314646a897ba38bfd4481eaa7063ba40a9e1b11ee26d8f21673c4",
+      "retainedGitBlob": "edba825d763297a6a39555dd8740e6308836b16f",
+      "retainedGitSha256": "c565c1f4585fdee3ece7caf941e474d5f8cd648da7ab84d4c30923f90b614a5a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-reload-soak-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-route-soak-memory-2026-06-28.md",
+      "byteLength": 2811,
+      "sha256": "145759cc0dbde7162dd963993441e9a71fff2d172d899df6b29d807f58c686b5",
+      "retainedGitBlob": "367fbec17581ddaa69e71baf6d961cf81f4f9493",
+      "retainedGitSha256": "95d19525d8de112ac0f3c15273307e6d428317a49dc903ec0d764514da5c5aa3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-route-soak-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-combined-selector-stress-route-soak-memory-2026-06-28.md",
+      "byteLength": 2777,
+      "sha256": "cd9ee66d2b5c5995712064373c4ec4f357650d12a345213cdecdff87968f189f",
+      "retainedGitBlob": "1e5dc30f3d91a59558ab7bce243b80d4a05429e0",
+      "retainedGitSha256": "3b8fef0ac1e9ea692ac8cdd5c886c2ae7872e9b3a4a4d40a61a359933426d8af",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-combined-selector-stress-route-soak-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-converted-trained-all-route-memory-2026-06-29.md",
+      "byteLength": 3493,
+      "sha256": "5a2af13500981ea3c7d6b65ada733de4c0133b7c62b09d46e85a0bc42a672eec",
+      "retainedGitBlob": "f638f05d377c9192b49f48d06359f033a28d35c9",
+      "retainedGitSha256": "42a6f370271ec6797fc0d0524f1d801241d8ab47307603b801e2dbb4d8f3fbf8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-converted-trained-all-route-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-converted-trained-file-route-memory-2026-06-29.md",
+      "byteLength": 3323,
+      "sha256": "81a39a62992c58e7c0a6fbe6f27464a609288c89f12c318f39cef877dcf73ffe",
+      "retainedGitBlob": "81c6d2ed37263c3148d0a71749b321d4dd6cc22f",
+      "retainedGitSha256": "149461852aa3af42a72cf9acf2676b278c4564170e6d85194033691a8a5c16c3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-converted-trained-file-route-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-converted-trained-provenance-memory-2026-06-29.md",
+      "byteLength": 2439,
+      "sha256": "812997d8049f30615037318c30ac59aa791d32cb688de05c0cc5c13e244a5093",
+      "retainedGitBlob": "d69eb342f7fb9616ff43fb82a16772a951b29b1f",
+      "retainedGitSha256": "c076b77ad135a4c06848d6d1c5c04aaa46737c3676db8d40deecee1ca4c11efc",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-converted-trained-provenance-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-eval-case-evidence-checksum-memory-2026-06-28.md",
+      "byteLength": 3218,
+      "sha256": "94bb2be64ae5ffb07c6ca9cfe454a3d4edcfc267f8427022cfbc0735587aa3af",
+      "retainedGitBlob": "61b8754dd50a254a9deb869124aea5b9b0109cbc",
+      "retainedGitSha256": "9bea78c794c47627cfc0a77123666390cb15766c48b636fabbdd236031dd3d5c",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-eval-case-evidence-checksum-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-frugal-selector-default-memory-2026-06-27.md",
+      "byteLength": 3146,
+      "sha256": "c125df2e02b80150a8a848dc212021b09cd094660d8956d73497b2d4c0a50ac4",
+      "retainedGitBlob": "b6bcd9a8df1507f56c5cb265da6cc913c97f591d",
+      "retainedGitSha256": "a3b9a50285cdf23f151c9714ee679dea408e04ce5149627ce63c1f4ba9cfbb93",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-frugal-selector-default-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-local-runtime-memory-2026-06-25.md",
+      "byteLength": 4190,
+      "sha256": "235eb59a57719349822768743fca86ceb51685f5551c721b25caf7b5c308e35e",
+      "retainedGitBlob": "ac4111858f41cc7c75fa3108110c09fb4893784f",
+      "retainedGitSha256": "37544631412e245dfc35c9007cf32ea87f461e98c0cb394328f5b740a9bdfee1",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-local-runtime-memory-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-low-rank-adapter-route-memory-2026-06-28.md",
+      "byteLength": 2658,
+      "sha256": "511ba9361d35478e255706b5f29fa5bc8e4ac10cb11fc0e0af2b87e2dd4714c3",
+      "retainedGitBlob": "9364053f0880b0db86bda570d9e6b842db16734e",
+      "retainedGitSha256": "5179c9fc03449a9021edbcf455c09dba6753a5732d0bd7cfed01b897331b3c28",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-low-rank-adapter-route-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-mixed-operator-selector-memory-2026-06-29.md",
+      "byteLength": 10044,
+      "sha256": "5a75935e9a29a94fe54fa237067661b74bd1e80d96e6738428bedce6a08a5e1a",
+      "retainedGitBlob": "b4085a14f40dbaa2f6124d06c062e8014d9b062b",
+      "retainedGitSha256": "38c6d11698eb0991fc95d3a661a13407729062a329e90ab6a941b71adbcd2827",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-mixed-operator-selector-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-actual-fetch-count-memory-2026-06-29.md",
+      "byteLength": 2803,
+      "sha256": "2a151edc88a11e168f5784acb2a81c4d4f225449d734f5f430658135d1dcf9f2",
+      "retainedGitBlob": "119d01c26ceeaace4a476a0a3a77dc13e6e7b541",
+      "retainedGitSha256": "eafecd1af9b594586585e41ddfc22271d19d3b53b6d14f4c1065d0995a13db54",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-actual-fetch-count-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-actual-module-bytes-memory-2026-06-29.md",
+      "byteLength": 3083,
+      "sha256": "6e7017edcaf63744d97f6e8f9e36623ec18db2aa063c2658815f6c297f78848e",
+      "retainedGitBlob": "35b09566f877de204b40ba5be06e6a4a876268f1",
+      "retainedGitSha256": "c0445cef5e666ff70d0de95d5cbe08f026130aec527ce68bab123ec9ff5a667e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-actual-module-bytes-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-actual-module-checksums-memory-2026-06-29.md",
+      "byteLength": 5298,
+      "sha256": "29d428403ef337120f7ac6bf6cc9606a18dc6a43baa87e3f46ce7c15de8fe1dc",
+      "retainedGitBlob": "d44f14fb4da37b1d2fe6ff772f242d661e02da57",
+      "retainedGitSha256": "9c8293d30abf28a287910989ff141782e34e54d4d3f1bc7fa5eef30c2c842472",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-actual-module-checksums-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-adapter-apply-count-memory-2026-06-29.md",
+      "byteLength": 3740,
+      "sha256": "18f77b6160555e2995fc104604dce24990e16f9d2893c690700a3d8de47f3839",
+      "retainedGitBlob": "a4a969ddf88031479373eba3ff4b9687a9dab5c2",
+      "retainedGitSha256": "2caa25ef243e7441a46e3ff42fb40ff78c42aaa99def30713845d7155a93a016",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-adapter-apply-count-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-adapter-stack-budget-memory-2026-06-28.md",
+      "byteLength": 2506,
+      "sha256": "03c42d87cfb8fcd62ff5a6ca8a11d63737c3d4fa2214d3089b54e271fc477b24",
+      "retainedGitBlob": "f4179314d09841da256f3bec18e1aa908b4b9ad9",
+      "retainedGitSha256": "03e4c4d936e93accd449f1834de1c9d531bc40d0b3bfdb367acb46b372a8a802",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-adapter-stack-budget-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-adapter-validation-count-memory-2026-06-29.md",
+      "byteLength": 3658,
+      "sha256": "8dd6dcba0898e4497a94bc38b3d83a98632f9f15ac8fe03a009520d31bf5a791",
+      "retainedGitBlob": "c739dfc4df439f67303b4338c69509f294046f18",
+      "retainedGitSha256": "799331349e1aed2ca357fa45bd4cdd679795f312a2e3f092b0b2d41e8a305f30",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-adapter-validation-count-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-adapter-validation-memory-2026-06-29.md",
+      "byteLength": 3229,
+      "sha256": "4950de9ff391250badd12e53769e084b89ae9c0e9879fffe1d54b0e939889f4b",
+      "retainedGitBlob": "9db34c178977860db088e8bd5094c31404cd31ab",
+      "retainedGitSha256": "4559cfca94879ce971cdd15824619068364a6bdf577fd85aed7f79d46fec7b7d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-adapter-validation-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-budget-display-memory-2026-06-27.md",
+      "byteLength": 2719,
+      "sha256": "e6a51bb8a41348711ad04a167a040189a740cb69b70cf6c23bd70774329df1f1",
+      "retainedGitBlob": "80b16d95db2f3a037e41e1ad4b37876f62056efb",
+      "retainedGitSha256": "3cacbe9bd4c893fd19f1358f5d6055d6f4bdb4266f3dba8d31418c8fe986bf03",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-budget-display-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-byte-counts-memory-2026-06-27.md",
+      "byteLength": 3749,
+      "sha256": "56e867692cada4cd7d3e8b6037b5424746a30eb9eed1f478d8101975c6558ba5",
+      "retainedGitBlob": "b84deb2a9bdde0b62411d75e7b675997d6405f3b",
+      "retainedGitSha256": "cf874570d00a80b43716fb647d687770d950ed87f55717cfb8dea3917a8bc7b2",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-byte-counts-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-checksums-memory-2026-06-27.md",
+      "byteLength": 3720,
+      "sha256": "dacf8401e2d4deb920034212d60861765668e7280b5f6e430a347c3d61740e83",
+      "retainedGitBlob": "aefc92fe9eddd5f861753fbef6dc1224a07f298c",
+      "retainedGitSha256": "d5bbfb29e69d2d775430b30af5cbfbfa639bf0fdee62df60b07dcd3c8519bc2a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-checksums-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-context-token-memory-2026-06-28.md",
+      "byteLength": 2949,
+      "sha256": "a40c8305dc6fe3a6ce9163a029a644f07490b8bf38a7971372780725250b5123",
+      "retainedGitBlob": "54b2996d60163be5954d6531b682d8ff7a0e5d86",
+      "retainedGitSha256": "2e8f1046060f666b7ed7d028f3e3cda082ee5fd8d2e85820669c94223e666bd3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-context-token-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-count-drift-memory-2026-06-28.md",
+      "byteLength": 2407,
+      "sha256": "45f1e7611081da7c883741c5a5ad4bdecab3502791ca1f4fcca2f0f939902027",
+      "retainedGitBlob": "0b20c9edf389dd913fefeed89b6f1340d8792f12",
+      "retainedGitSha256": "ecdf22e60d73d9648e220ca74fb1ffba55256dfdded859257b9dda7e2afcea36",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-count-drift-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-dependencies-memory-2026-06-27.md",
+      "byteLength": 2594,
+      "sha256": "9feb9496086897297f07a71474686ec7d5ca4e5763173e6c71e6d92144a1326a",
+      "retainedGitBlob": "39fcbe6bec9b5c61223fe41a0071db50cdbe138e",
+      "retainedGitSha256": "3110a860ede9cfa733fa59e1fbc280be4b3856135fdc7a8b5e3031041e29cdc5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-dependencies-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-display-memory-2026-06-27.md",
+      "byteLength": 3140,
+      "sha256": "67d3327773c9a48279032fcb68218c5929e3268a8d0a0ab516cb1678d6073efb",
+      "retainedGitBlob": "611fbbab39e39e37de97a7eeb95efac84e15a990",
+      "retainedGitSha256": "830e6b943fd1e7050ea79681620fdad8c1ba9ff0b51629b7baaad45cb53347cc",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-display-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-execution-profile-memory-2026-06-28.md",
+      "byteLength": 3788,
+      "sha256": "93551404ea4752efa041f23daa956f36972f7b99c79e4dcdc3579552c10fe778",
+      "retainedGitBlob": "afa6454200a90407adfe9e0eba5a06efa9fd9766",
+      "retainedGitSha256": "30648a55b0380359a3da09be0ef64f24bd485bb2c57750a4f6ce62ff224b0966",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-execution-profile-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-fetch-count-memory-2026-06-28.md",
+      "byteLength": 3876,
+      "sha256": "666291244f836093e2308d96c70bba19ab2065445348e6215b5a7115ed3bbb40",
+      "retainedGitBlob": "8e7c50399455e8ca610dac9af5eb38150baefbf3",
+      "retainedGitSha256": "f9efb5c8f83f4e3bf2602acd2945685922659b27c0da5639863643570c3a9ebc",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-fetch-count-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-fetch-policy-memory-2026-06-28.md",
+      "byteLength": 3834,
+      "sha256": "47239f8f4c87aa15d9962e2a32e064205614275d9da22a4d52ed1017e7a9e959",
+      "retainedGitBlob": "85fbcec020f1454a7a0d535acdbdee1ba758167b",
+      "retainedGitSha256": "6781048c8342123fd0aee23df436d91959272f8548bd4b96fe76468835e92f50",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-fetch-policy-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-graph-drift-memory-2026-06-27.md",
+      "byteLength": 2520,
+      "sha256": "56e5f1dd259ebd19084fc97ca90a6c6794e51fca7b92f8ae82233db992faaaa6",
+      "retainedGitBlob": "947c0ac89bdb2de2414cf57bdaa525b4a2c246e3",
+      "retainedGitSha256": "3b2cea3c8f99eab8142740f2d0a04842818490ea94c93aeee04bde5ef6a08fb3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-graph-drift-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-kv-cache-memory-2026-06-28.md",
+      "byteLength": 3901,
+      "sha256": "0456474381f94fac2a8b448b59a4126f33aecf535532cac30338fe4a0cdb9045",
+      "retainedGitBlob": "e94d4c2aca72ab7364d8c152fb6a4b1cd90b86ba",
+      "retainedGitSha256": "67ec39e577d43d22d0e47e61716f3939bbba5742b597611295db3a3eae920fcb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-kv-cache-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-memory-2026-06-27.md",
+      "byteLength": 2803,
+      "sha256": "4eb9a089a3bd50f0ff96b6d7a44c42c1983282f7295f2954a28b90601b63dad8",
+      "retainedGitBlob": "5235797529329ef517a10cefab9185d57e74d5b1",
+      "retainedGitSha256": "8217db41bbb1558d9fa05e127abe570e01338cdbf46cf42f3d5616f062c253ba",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-model-release-memory-2026-06-29.md",
+      "byteLength": 3005,
+      "sha256": "d13f38c8df9b5771522b54bdeccdf4a0c9558f2888413daeb9a8f8a23ca8053e",
+      "retainedGitBlob": "60d9c5eaafabaf936aad904eab2002e3d6cc4bbb",
+      "retainedGitSha256": "0b5fe7af325dd0c42db9142c218a7385e0ff42c51eccd37d4a3dcd3e18f5d13e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-model-release-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-observed-route-set-memory-2026-06-29.md",
+      "byteLength": 2982,
+      "sha256": "aca16c2005e3500219aea4e31c28bc82508b71827ce61e85d2a0c8bea11188f7",
+      "retainedGitBlob": "33a9f02f4d3870bcaf9e7c711ccb467678b17c32",
+      "retainedGitSha256": "d3e06cd557f474354da29c071c5e8582419ac112e9cde4144f3376b15f6accd3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-observed-route-set-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-operator-receipt-memory-2026-06-29.md",
+      "byteLength": 5673,
+      "sha256": "6be3403d53309cde40155ee685916c7cca65e3f2490fafd46b2ece16b0e2fd18",
+      "retainedGitBlob": "2ff6f526b6f1c9ed39fab2070d9c97fe8109fcde",
+      "retainedGitSha256": "0416d75d0fed8333e75b57872e6ea6d49d31c65d36aa594c1b896cb43eabad52",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-operator-receipt-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-origin-policy-memory-2026-06-28.md",
+      "byteLength": 4961,
+      "sha256": "2daac0296d237d607f3bfdc19f38143e969c1cdb55efca02b99c8d076704098e",
+      "retainedGitBlob": "d0b959d89abd818d46a11096d90c81fda6f57c56",
+      "retainedGitSha256": "9e377f051b95f02bcea0e524809d87d53d0bf203a9c3dbb26fff7e54c8e3a5b2",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-origin-policy-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-output-limit-memory-2026-06-28.md",
+      "byteLength": 4354,
+      "sha256": "6330081b52d08e2782452abebd01ba766cc676a907e8d6c2aff42c26f3296b40",
+      "retainedGitBlob": "2de33dd5ae85eb80cbe8c6c678c7c8af6dc06f41",
+      "retainedGitSha256": "2738e97a0c608c709a61ee80ff2f508667d5e3aa95093f7cba014521427a1a9f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-output-limit-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-phases-memory-2026-06-27.md",
+      "byteLength": 3313,
+      "sha256": "aff83eb2ed056401fccb8d7c567d2ca49d8ee45214dec7f6e2f4dd1e41082a7b",
+      "retainedGitBlob": "cc49373b347117bb46094ac00d60246edb9a8ab4",
+      "retainedGitSha256": "49b206ea6d5748c4bc4cffe0dda643c219eda0e0897eb81c53a7ab1a4a4d9048",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-phases-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-planned-fetch-count-memory-2026-06-29.md",
+      "byteLength": 3564,
+      "sha256": "515261ba4cc91825166e841618924aaf1ce464ef28df24c22967e0832262b625",
+      "retainedGitBlob": "fd3f0c21b1a192a8d8b9ee65896fa48ef140969d",
+      "retainedGitSha256": "974e51f21b424389c4f0b25b4fc93511e03e1028d91371117ad8fc4da469c982",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-planned-fetch-count-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-profile-memory-2026-06-28.md",
+      "byteLength": 3526,
+      "sha256": "e8160724c406efdb3825769cf012b53882c7cba79a15365d4d477d9ce9d0eb82",
+      "retainedGitBlob": "6aba6515e572b4c6b7747549a3fde60f1fe2618c",
+      "retainedGitSha256": "d7e364b72289d453c8da507cda8e28da781c865cb077bdfcfaddb158fe3dff3b",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-profile-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-prompt-limit-memory-2026-06-28.md",
+      "byteLength": 2233,
+      "sha256": "474e8eeb0f94f8f326bbb8642d7a71c44526583bb3e5424f45833fc4524481a3",
+      "retainedGitBlob": "25aafc101eec892a07c6dc5cfa5aa1b65edfa230",
+      "retainedGitSha256": "e3c71037c665948834f5eace9ceda9e88590bcd149b4cf975a2c202a8832639c",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-prompt-limit-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-resource-drift-memory-2026-06-27.md",
+      "byteLength": 2728,
+      "sha256": "8454e64b1e731357f7b5c8aa7199584f34da75fe617ebde44a05a76cb8e06a1a",
+      "retainedGitBlob": "ae6459cab4cdf84b3ec1541001c4dbbb2030f7d7",
+      "retainedGitSha256": "c1693ef8c3ed7695ec134feb985c5cba85dc4ab80c09d5767830f1c86ae1a511",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-resource-drift-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-resource-memory-2026-06-27.md",
+      "byteLength": 3140,
+      "sha256": "2d0086853f1e84575753ee7e8470ae79052bceecb10c7a141a713862b139af18",
+      "retainedGitBlob": "1ba846f624dd233c67cd6aaf4f6a426acbcd78b5",
+      "retainedGitSha256": "ffef5b38d4fed225e87ea0084a9dcc78d84798931817c500056ead8f9f43d4f9",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-resource-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-role-display-memory-2026-06-27.md",
+      "byteLength": 3267,
+      "sha256": "9478a9f1ea938a85490a05ea3b75ac4035f57541d55394ec8f1e84504b55464b",
+      "retainedGitBlob": "0e21601d66fc40ecf99d57a9316775e8bd1f8e06",
+      "retainedGitSha256": "deb178f29835981955ff077d94ac6dfffd73844fcd0dde5a98e3074c4066fdd8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-role-display-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-role-drift-memory-2026-06-27.md",
+      "byteLength": 2788,
+      "sha256": "06a02981d1005f16afe045f5a6a971813f6252d1110be3d3c6cdaf988802269b",
+      "retainedGitBlob": "f06c94a5565fdefa2274265586d7eaa701cb7306",
+      "retainedGitSha256": "09e4b7161f18493d15602726e1115d30d952cc0775d239258f0bd6f61f5e00c1",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-role-drift-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-route-set-algorithm-memory-2026-06-29.md",
+      "byteLength": 5199,
+      "sha256": "3751c2b83ca894f9a0025df65fea9f34dc306f4ed41ee5795ed8c1f96f308d78",
+      "retainedGitBlob": "08653a74cc00ca51e6c3f0685fe6051ef8571fb0",
+      "retainedGitSha256": "fff62d2778f1ba419afc3e1eba6823e2c1fc711b4f5997311ae1cc1500c7e07d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-route-set-algorithm-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-route-set-memory-2026-06-29.md",
+      "byteLength": 4285,
+      "sha256": "316357ea493fa938f37d0700845311020b2ae6cda5865a32c3050000b4c87448",
+      "retainedGitBlob": "673eb80f54549b7ef6a8ff2a9197fe7caa4fb633",
+      "retainedGitSha256": "522901241995d31ebef3db1e7d8b9e4170e842634e07c35680a17ebde4fb3a29",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-route-set-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-route-set-version-memory-2026-06-29.md",
+      "byteLength": 4860,
+      "sha256": "1d257fc039fc077d23a5a4d78f18b8a72b0a3e9d16d7438f6d62afa727768d6a",
+      "retainedGitBlob": "4ddbf09f67b2e457b96f777dada47c12b21c1b31",
+      "retainedGitSha256": "9de455bbd4432a3760b1f9e3752b67e4243d2c3dcb3e783e685ab97c793c330b",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-route-set-version-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-runtime-reset-memory-2026-06-29.md",
+      "byteLength": 3212,
+      "sha256": "c82c9d65265c9fcce97c66b9aec285cb7e8eef007ee163b4d3cb9ced010f8d6f",
+      "retainedGitBlob": "7817f343febeb1f0541f03098b15f762e66719ea",
+      "retainedGitSha256": "99318a970abaa9324a5c141cf78697ecc603e2b60b5b80eee07d5f820f537301",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-runtime-reset-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-runtime-scratch-memory-2026-06-28.md",
+      "byteLength": 3794,
+      "sha256": "015c468a4115a4b564698033387a3f3bb0a28ca75f15137f0b07168c88d6fa81",
+      "retainedGitBlob": "50d56c9ef0dbf9a168b85f3a2c295a6a3866e94f",
+      "retainedGitSha256": "8c4eef479967f6aa29d3806be2bb4212c8239744266506019b6fb8b25e2aed9d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-runtime-scratch-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-sampler-cap-memory-2026-06-28.md",
+      "byteLength": 3522,
+      "sha256": "c2ae9b43d8b9b97a7ce95883a39c7b2c69851113ae912393757db32417278dab",
+      "retainedGitBlob": "42c75a07242bd9bb9620c8e4254c0a17ddf159ab",
+      "retainedGitSha256": "35d0a337c25885ffe2322b109f41b72c7bcea388f3ca499157cf7413234a1049",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-sampler-cap-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-slots-memory-2026-06-27.md",
+      "byteLength": 2594,
+      "sha256": "95522adfc1812d5172338b3aaa7be148306a61cece9a10897bc3b59108d2b0bd",
+      "retainedGitBlob": "8fddb99ef5951c6b6b356b056e728fa44cd5a69d",
+      "retainedGitSha256": "f96f60042441f838ca058f85ab628dba4a48ff2ac211293a86a51c65bad62ebb",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-slots-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-stack-drift-memory-2026-06-27.md",
+      "byteLength": 2855,
+      "sha256": "42b66ac014b446e4f78bb5c82fe1a17d13a2940b661aec080d9a1a402f2aed40",
+      "retainedGitBlob": "c56687c6960d9bc2a6cd3be42eac1bb383e9f47a",
+      "retainedGitSha256": "3198d97b29a5d169e931eadd201d398f815f4eac98140a8532d8e09e41f0e033",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-stack-drift-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-tokenizer-memory-2026-06-28.md",
+      "byteLength": 3254,
+      "sha256": "d2d8cda84b97318cc4ba1499e4aad9f22af0a2843c5a5b21b1915b34b9d3d1c2",
+      "retainedGitBlob": "24670e9b992e9da23e37be7387da05790503b040",
+      "retainedGitSha256": "25b42816bbf5d4ebac1c3ce073cb38a3b6a3481e21bf41b0ccfd59844e5fd362",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-tokenizer-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-total-budget-memory-2026-06-28.md",
+      "byteLength": 3626,
+      "sha256": "4f36aef49a53a48407da04daafcafc9661a3dfe294ccaab4f2985604c5b91b37",
+      "retainedGitBlob": "a502e5be31a4375f6d9efe6c5dc22a70aed05605",
+      "retainedGitSha256": "5159d34820ed1a924813aa870589980360526329758bee233476984cc6ee0296",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-total-budget-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-total-limit-memory-2026-06-28.md",
+      "byteLength": 3821,
+      "sha256": "662a451ec6648dae8682d683678f390fa37a6c1c7078a0a66989dedceeaf0e20",
+      "retainedGitBlob": "394fc405e1154b99f3e096479f3f44b1effcb0d3",
+      "retainedGitSha256": "53ff7e3ffc4fb85900ade075787eef385df027289ad438783117f242fd2359b5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-total-limit-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-wasm-export-set-memory-2026-06-28.md",
+      "byteLength": 3984,
+      "sha256": "a512dd88e739d9e8a61cf8e79261a05afcf00793c761d1ba578df3dd2727af49",
+      "retainedGitBlob": "f390535a77844818724a419257dbc5887286de4d",
+      "retainedGitSha256": "47ff56137499c1e08419557a2c2452ffae1c61c3193e879ccc0f85d69922f292",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-wasm-export-set-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-wasm-heap-memory-2026-06-28.md",
+      "byteLength": 3032,
+      "sha256": "17084c73e44a42abca2158b26dff0ce3cd78c827e20f6f07c3cdb6909d4b3041",
+      "retainedGitBlob": "003e1836d947795c0a1a416e43d2c9a8184676d5",
+      "retainedGitSha256": "d674aca30be14eddd171e1e98cb6e045f6082d44c4398c2d80ab620a935bcdb3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-wasm-heap-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-wasm-memory-memory-2026-06-28.md",
+      "byteLength": 4421,
+      "sha256": "2f471f64ca88b62085b921c13adba545736cef136445af92af16c33057e25543",
+      "retainedGitBlob": "dcc3535316ea6eedb94716822bba39cecbb8af03",
+      "retainedGitSha256": "39046cd9ca10a28518eeda64a59f8cf38eae56b5a4910a6c0edf5146999a13ba",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-wasm-memory-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-module-plan-wasm-transfer-memory-2026-06-28.md",
+      "byteLength": 3113,
+      "sha256": "d20348301a1683a6b8c1062f2bec19c3c20a4acfe7354308679e78e8496155bb",
+      "retainedGitBlob": "9aac1ba084afebd1def97a4574d263cdbf9e61a3",
+      "retainedGitSha256": "071e1c816b8f5a5715ef183d40832e81adbff036038a62928a8f268e28dba92d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-module-plan-wasm-transfer-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-multi-parent-operator-provenance-memory-2026-06-29.md",
+      "byteLength": 14441,
+      "sha256": "acb1f38573dfa2701eb8ea77f0ec39e9cc691d723e49bcf3bf6e49401434e041",
+      "retainedGitBlob": "4dda5d9b77e9ba96544168cfc6fd59f94395dde5",
+      "retainedGitSha256": "2edb7d9c76f396b1fc0b8151d7e259e7a04757df158c7e9febeaab88cea868b6",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-multi-parent-operator-provenance-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-multi-quant-selector-root-memory-2026-06-27.md",
+      "byteLength": 3574,
+      "sha256": "13dee03ebb2191ba93701160645f7d92776a99f7dce59674500d0e34db37fcbb",
+      "retainedGitBlob": "8bc9cbc8aa465701829c22f8eaefaf44a8f371e0",
+      "retainedGitSha256": "14a20214fb78a028589d56faf5c975819a93c8eb373c515b09b857bcbf186ef7",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-multi-quant-selector-root-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-parent-pool-soup-bundle-memory-2026-06-29.md",
+      "byteLength": 6639,
+      "sha256": "58f5bc0784636805236c2d3ac31511e544adf27c40d199a6581ef1eb54fba96c",
+      "retainedGitBlob": "b93ba72850303a3ce0e6e37127235275bed446ee",
+      "retainedGitSha256": "3f0a65d9cf63ee36d195ac6ebf51edbf6bb3bbd7aee935363bb49e64cdadd79e",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-parent-pool-soup-bundle-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-preferred-adapter-route-memory-2026-06-27.md",
+      "byteLength": 3708,
+      "sha256": "788a04f7415a8fb011bcabf7cfa7ef110028575773521299f8e22d98d76f0939",
+      "retainedGitBlob": "e71ce13eb6d01b0f457264b031baf1e66dbc6240",
+      "retainedGitSha256": "a13deedfdce7a2e38126142a91a60dd9e5233176f98af6995d6d27b1f2ecccbf",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-preferred-adapter-route-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-runtime-assembly-diagnostics-memory-2026-06-28.md",
+      "byteLength": 3030,
+      "sha256": "1aa0eb2318dd879fc52bd993b2705ed92d62299b0dcf8b0d1bab756d96086dcd",
+      "retainedGitBlob": "e5beace55ab6264e1d18ea903814a1fe0e98c815",
+      "retainedGitSha256": "71ddb3ee33a1538711fedf86f5aa67f254e291ca9d4bc597b121563c421d6d3a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-runtime-assembly-diagnostics-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-runtime-manifest-memory-2026-06-27.md",
+      "byteLength": 3919,
+      "sha256": "abf0c37ae352308a3afe9bb46ae6db568be59a63c96b1f884ab1414e750602cf",
+      "retainedGitBlob": "2761969b2ff9a6ac08e9552f47fdeccff20dc535",
+      "retainedGitSha256": "6c53ed9e13272f0f151b003d005c0e65dd905a6cd21884123e31b8e680f0574f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-runtime-manifest-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-budget-contract-memory-2026-06-27.md",
+      "byteLength": 3513,
+      "sha256": "3524c528ac2562fc84e2b88523625c88ea9fe88c9c49097be8807b0a099cb252",
+      "retainedGitBlob": "d0d8c7df3d4aab4a562b13f2239f83d51b24f3f3",
+      "retainedGitSha256": "854fbbda988a443c426284742ff87b73567f110fdfb8e90d0178697ca6c9de94",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-budget-contract-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-budget-memory-2026-06-27.md",
+      "byteLength": 2415,
+      "sha256": "30cdb23eaf83866f7a8eed8c96b8bd6d8d6a6ce8cd3a520049c849dd835a8d69",
+      "retainedGitBlob": "43c044b61a812deee4396a6261cf6aa7c126a392",
+      "retainedGitSha256": "103c88e7d17c9622569a1577eca2a07b4d58f61ac66f2909f7c92f7cd2b3d8d4",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-budget-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-genome-fitness-memory-2026-06-28.md",
+      "byteLength": 2500,
+      "sha256": "830ccc325d81d9265259e698ec30738272e13c5c40548bbd8f04156ab48e5dc4",
+      "retainedGitBlob": "7c70e7c737464e0f930a279a6d75644cab7536a4",
+      "retainedGitSha256": "7801ab9db31575b8e5435b940263169b339e73858ede858f2015d8b14867f9a4",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-genome-fitness-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-heritable-artifact-memory-2026-06-28.md",
+      "byteLength": 3797,
+      "sha256": "2781bb05ac61da2721b6f537027cfdd21af1f88d903c8bf517cdf1779a37ddb2",
+      "retainedGitBlob": "16f7dd1800a4514149976d89711dd11e3363d13a",
+      "retainedGitSha256": "2347abd8a2298f594a1e6086cace7ad4bfc901f61163c5fe3995c2edcbcafda0",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-heritable-artifact-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-mate-selection-memory-2026-06-28.md",
+      "byteLength": 3689,
+      "sha256": "c7cd44c3f261d31fbff45c0033e5f2a7a6cd3b1859d44df3ab0efe77e879ae1a",
+      "retainedGitBlob": "f17f957de85e21a6dc568678bc5e330e06fea00b",
+      "retainedGitSha256": "92fd4f6c06d8cb9998daeb77d6e104523fa8e493d96a26b58af43d994abfbc31",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-mate-selection-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-novelty-memory-2026-06-28.md",
+      "byteLength": 2881,
+      "sha256": "125d67d14da6299b969ecc799b352000a3a7295d021811eec39bc583a8845522",
+      "retainedGitBlob": "e072475f65d22994c13f182b50a328155616fea0",
+      "retainedGitSha256": "2a14fe6ac122b95dcc2905f79f4bbba077891de963d37959bebc9652c61f587a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-novelty-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-phenotype-evidence-memory-2026-06-28.md",
+      "byteLength": 3648,
+      "sha256": "af246a180a3ef3c6481d709d2526e632225322bde5413807763d12b2b0e8ee9d",
+      "retainedGitBlob": "b53e6e8e6ebbfcb668564fb469402ef0ae4f3f63",
+      "retainedGitSha256": "967f661f9e6c9d02c16f4d6e189149d596e7ec760e843a645c4664597d216d11",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-phenotype-evidence-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-population-memory-2026-06-28.md",
+      "byteLength": 3328,
+      "sha256": "05e3272e315e57083af2e002bae2e11a2974acf90e210a0f0893208693ecd97e",
+      "retainedGitBlob": "67927824b273a9f5f9fada187a2a22e8bff50ffb",
+      "retainedGitSha256": "14c063fca375a70ea090fedc9357d892e32f288690187ff233cbc5046c3c623a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-population-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-selector-species-fit-memory-2026-06-28.md",
+      "byteLength": 2644,
+      "sha256": "a199fcad642920bfb7270b3195fae8463a337858f1bf1b1333bc42ef743c0969",
+      "retainedGitBlob": "1555cf2663601d796fdb7b9c03efa1abb98f9906",
+      "retainedGitSha256": "39c113e7ec03fd794d5a7fdeaf9b37967c8934b773c34186f424c6d81e80edd5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-selector-species-fit-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-source-backed-alr1-contract-memory-2026-06-28.md",
+      "byteLength": 2775,
+      "sha256": "8c9cad95fbe62d08abbf1e99156effe55247d1f4048ef36d83ca436656d4a768",
+      "retainedGitBlob": "7bb9e66ad881c67c9599bbc5e8859abd6710979e",
+      "retainedGitSha256": "943c3617e1f1090b1ccb455e22694d56e87076e5ee3cd2ec4c6bd909165c0690",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-source-backed-alr1-contract-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-source-backed-alr1-route-memory-2026-06-28.md",
+      "byteLength": 2331,
+      "sha256": "20248a7217b1148fbd601b94a19dab190757b05c31f6644639ad27cd48d4edfe",
+      "retainedGitBlob": "8a738d2ebdc786e88b68fc30f1b8d2333f688bca",
+      "retainedGitSha256": "e68d782aa14a7142234f5f83fea061bd6af8d7cfb10f39a9e2c46a91fc7d0031",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-source-backed-alr1-route-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-sparse-adapter-route-memory-2026-06-27.md",
+      "byteLength": 5662,
+      "sha256": "310bcb7472e49ba278cff1cc772aee86fea0258e3f4cca62afb4b53887f7e526",
+      "retainedGitBlob": "52abd79a8d466077a81d0a02e4062231daf16db8",
+      "retainedGitSha256": "fb231f01d63dfb3d65291bd0773a92b198ad87cac28011b3ea08e9b9b3d82b76",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-sparse-adapter-route-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-text-sidecar-budget-memory-2026-06-27.md",
+      "byteLength": 3330,
+      "sha256": "2e0092c4c48ec67819c04e8b9e0d30dac7d60b7ccfaf026f11ee1ebcc6b51a4e",
+      "retainedGitBlob": "79fb4184fff9411305116aa2d80833f5e1499cc9",
+      "retainedGitSha256": "2d9f6a8a7829431ffc2ad4798fa2f4853f76a9dbe1ed35f3f614ac5a4d0aab54",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-text-sidecar-budget-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/browser-text-sidecar-contract-memory-2026-06-27.md",
+      "byteLength": 3305,
+      "sha256": "716f08868ac59ff775515479ea28f2c0592894d0ad06d69c69e99f2fe7dd36fd",
+      "retainedGitBlob": "b0dad065d617e1ee2ad6a16b95b97c0a8940a6e3",
+      "retainedGitSha256": "061af93bc1919c788012e7922c98a4fe5fa36c93ed0ea3106bddabfc67cd1042",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\browser-text-sidecar-contract-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/candidate-operator-receipt-binding-memory-2026-06-29.md",
+      "byteLength": 4170,
+      "sha256": "48c72230d562bd8b92debe65cda017656a73aa8313f093d6b211435e8da7c2e1",
+      "retainedGitBlob": "100a4e6d5167910fe379cf98aff9ff1c53807ed8",
+      "retainedGitSha256": "bcc0ce140845e101ab11106e1e0bfe00efdde70b4f15ec9e5b589efdeaa613af",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\candidate-operator-receipt-binding-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/crossover-operator-memory-2026-06-29.md",
+      "byteLength": 4888,
+      "sha256": "d5f2a53a341901df973211ea347632c74b1a7bcc730e41625a74d30d321f6599",
+      "retainedGitBlob": "5ff49b9cd4cd435c2b8303cedf1198c43f62f931",
+      "retainedGitSha256": "3b521e640ee0554a28ab84510f6e4395d75561697377be9bf20c0bd9b0a04d7b",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\crossover-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/dare-browser-operator-provenance-memory-2026-06-29.md",
+      "byteLength": 2314,
+      "sha256": "fc274d54576eade636c554c694fb84ac1ba5e4c6ef4f47500de7b3535eb345ab",
+      "retainedGitBlob": "d6937a1ab923241d5957dbe15ac7c41d3e2db808",
+      "retainedGitSha256": "6c3201a5557c24d687b1286cd133a679b9e8614b30c1ab6b6d2a7f3b04846f4d",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\dare-browser-operator-provenance-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/dare-operator-memory-2026-06-29.md",
+      "byteLength": 4423,
+      "sha256": "4892eb5f822230a6151129abc290cca4f877d05c3b58368171329ba300029355",
+      "retainedGitBlob": "73905d45ed97d2bc06635aa4adc3a2502cc1408f",
+      "retainedGitSha256": "4a11bcc1f129c7321b6d2fa15a35fa29982a51df7e0526d687199afdc12dc4d3",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\dare-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/enterprise-rust-governance-memory-2026-06-25.md",
+      "byteLength": 4607,
+      "sha256": "784aa66eb68b0b1220eb7a209e3d4c8803f69ea2d42e6bee40cb1d64042a9249",
+      "retainedGitBlob": "3cd606d5297c7db0e3263b72e966f80a5db79513",
+      "retainedGitSha256": "4e8303ac7ca4355a96234e06de3069a1a8b598bb6e3b2dad773385710d54b7c0",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\enterprise-rust-governance-memory-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/federated-operator-memory-2026-06-29.md",
+      "byteLength": 3705,
+      "sha256": "d52ad57c0fc036c46fdcd64dc8beeec5113fef12bc322f6d0e78ee710072f108",
+      "retainedGitBlob": "9fd8e9e34ef651de494fdaafe9391b1245295039",
+      "retainedGitSha256": "e885d2fe26065577ae873c0100d6ee4b9188a6bdc374c3c549953b67440d9492",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\federated-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/federated-selector-receipt-route-memory-2026-06-29.md",
+      "byteLength": 4901,
+      "sha256": "24cc63017c1086f2b180a00f213d843c9590a63dbd1dfedec6c1a9f71e8530f3",
+      "retainedGitBlob": "3006b9f56bca47858defdfbd483f0ac215028985",
+      "retainedGitSha256": "1d552e90e3cb4cfb4df739ba8268d2c0a924650679f45ba08776846db84c9cb6",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\federated-selector-receipt-route-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/index.md",
+      "byteLength": 42630,
+      "sha256": "f945f3057832d05c21c235de7e5267f60152dc8e7c3e2575af35c11b3c6672f1",
+      "retainedGitBlob": "8b8242b474ca3302beb99bdb123b4b041e29b77a",
+      "retainedGitSha256": "0e29cf89bd26386d2a835c449b558f34ed1ef3d651a0ad3d0c663e8d48f96801",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\reports\\index.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/low-rank-adapter-package-memory-2026-06-28.md",
+      "byteLength": 2570,
+      "sha256": "d87a6f6c9b5d0094b75cbc4cfbf1ab636f2920f32696088947f842b85846bf93",
+      "retainedGitBlob": "54129417cbb5dd4a873ae0ddd535602d1c998504",
+      "retainedGitSha256": "3b0f47977fae9a67f5a44ace6c63b85f5f29983d471fee7a78b8351a369e9e79",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\low-rank-adapter-package-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/model-breeding-ecology-memory-2026-06-26.md",
+      "byteLength": 9208,
+      "sha256": "a42e06f2db49e639675aa3c3148b446367024f9974750303db70cfffa15912c6",
+      "retainedGitBlob": "c5f5d97c9f45841bd51ff2361b84fad23ec8a738",
+      "retainedGitSha256": "1b19a908a786e52a9a9c372f6b550bf69fdaf6e1e4351c97cfa4a08041b81d9c",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\model-breeding-ecology-memory-2026-06-26.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/multi-parent-soup-manifest-memory-2026-06-29.md",
+      "byteLength": 2200,
+      "sha256": "e1a6f41d71a8fc7a37d2411b901ab7d91566f909f544873760dcdef1aa754c9a",
+      "retainedGitBlob": "6731b0429284a4a6e8adda40f2256dcefe7f89d8",
+      "retainedGitSha256": "6155417b072178ac5cfaae585d636bcf3589984d0d3d58c81036546603c1b958",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\multi-parent-soup-manifest-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/mutation-operator-memory-2026-06-29.md",
+      "byteLength": 5435,
+      "sha256": "ba54d8bd68babd3bf7965acb8d26a0d5f6798871c6d13c33a06e3047797dd0bb",
+      "retainedGitBlob": "82d744c7cdba7c0139f5e3dab608eee71dd17d3d",
+      "retainedGitSha256": "3dbb42dd18ab044c01cd28401f9ab3b63d651c1fbf9b67dfc061c536bbffdb99",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\mutation-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/operator-schedule-carry-forward-memory-2026-06-29.md",
+      "byteLength": 3131,
+      "sha256": "692eeb4619041d4e29b75f39ead717eda4dae352601dda7d58fc1b9b026d522a",
+      "retainedGitBlob": "968b38afe04a63143dd2afb5067bb77b301bf79e",
+      "retainedGitSha256": "1b0f90a6021c61202114e22b412ba85e738ba24169ee0cdff7c808511257311f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\reports\\operator-schedule-carry-forward-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/parent-pool-evolution-schedule-memory-2026-06-29.md",
+      "byteLength": 2033,
+      "sha256": "e8e6d7c7a9b8e5d249b948430be976978af9cf0c9260816ecd3d1b047a235800",
+      "retainedGitBlob": "eb4d18f741af22473feffce7444e2ea91779ed58",
+      "retainedGitSha256": "a9a6783f561ab1a5ad734b336ef154b925d4e840bc068d42284f37fcee413118",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\parent-pool-evolution-schedule-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/promotion-operator-receipt-binding-memory-2026-06-29.md",
+      "byteLength": 4621,
+      "sha256": "9c55a5857691270a4f43015c6b52c9fae7b930d8a4ab1a6bf8f450e8709b9b88",
+      "retainedGitBlob": "4c1941fa5d0c50c17a722866a299e90f5daba21c",
+      "retainedGitSha256": "c32389433efa8e20c1375140129b5d410a784da00f259a1b93d847b0e2d687bd",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\promotion-operator-receipt-binding-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/prune-operator-memory-2026-06-29.md",
+      "byteLength": 6295,
+      "sha256": "f975a6026d41981f53a718ae93ee9803d16f4d630e6aaeb9b220b289a25d4741",
+      "retainedGitBlob": "e435c91987e8ec6938e5c3a35ebd2b6468c4d342",
+      "retainedGitSha256": "ecb4d77a48add836c4e8807e7af16f53c8e5c04a825e214bd5cc106522958f62",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\prune-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/registry-adapter-family-memory-2026-06-27.md",
+      "byteLength": 3273,
+      "sha256": "4c61031473e95bb1eb3f70c2d09d5229b40a829d67c2c8646a69cb61b4bf52a8",
+      "retainedGitBlob": "33c040ba82a88faafc20e920400475af04fb61bd",
+      "retainedGitSha256": "98cd1b5ebc3810f7e53799a6dfe4da724c0996c8296f2aab0a2326edd2ef617b",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\registry-adapter-family-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/registry-adapter-sidecar-memory-2026-06-27.md",
+      "byteLength": 4155,
+      "sha256": "afef8f0226436ade1e9845a84f7e98377ae4ac31381fb00d8227b0f092ae1e3c",
+      "retainedGitBlob": "eda3e5dcd90c3f3dd3a96ae1d1df5218fd1f7ceb",
+      "retainedGitSha256": "bc77d73eb9a97070baa591887bde8c175656f222cc9b21b561e0beef81893926",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\registry-adapter-sidecar-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/report-intake-index-2026-06-25.md",
+      "byteLength": 6514,
+      "sha256": "d050ae29b565316fbb07b30a89043b3d58736ef0e88060e8743945596c8e6fb6",
+      "retainedGitBlob": "be04655ed2cd807851cabf62e5eba6e76e1a2eb7",
+      "retainedGitSha256": "1c14d8b9832abcfdccf34a456c84c709f4ceae4e342bceef63dd2584cffccfbd",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\report-intake-index-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/report-intake-index-2026-06-26.md",
+      "byteLength": 6517,
+      "sha256": "ac3789e3ce7b14bf2caae42a7ae7977a6c11901d3aa27e0ee5aa6f8096e44f6f",
+      "retainedGitBlob": "6b8d7b14180ed15dc817fa7aadf580358e74cbc0",
+      "retainedGitSha256": "315e907ae2f60db530ae47b409e02abc88785a47cdfdc0ff70fb0bc53eda7049",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\report-intake-index-2026-06-26.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/report-intake-index-2026-06-28.md",
+      "byteLength": 3125,
+      "sha256": "a4eda61c9b8a4fa7b843bfb2ec0beb417b0ec3c2a0755d773d60e4480f3efd8f",
+      "retainedGitBlob": "d86494dba310fa84174d70a6c7bea11e330ace77",
+      "retainedGitSha256": "280ad63643e25c8e7a3543ac3d691632078a44b7c6afcfb5225d8f8ef43ea3d7",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\report-intake-index-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/runtime-adapter-apply-memory-2026-06-27.md",
+      "byteLength": 3251,
+      "sha256": "aa14021bc0f8daa5c91234e35f15bf2814b0c47157abdd41521eb852c1662b04",
+      "retainedGitBlob": "2a684e634987fd7ca8a84cdd23c40d69473d91e8",
+      "retainedGitSha256": "f81edd958cc202496740236b91c74bb5c88c490209f56b1a3414060fad7a5af2",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\runtime-adapter-apply-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/selector-operator-receipt-binding-memory-2026-06-29.md",
+      "byteLength": 3602,
+      "sha256": "f8f00c7a41eb272d50e3f703ad2ceeac46735262e12ac699f2e419e38004c314",
+      "retainedGitBlob": "fec665618b16960abb3391b7bbd671b1dc58d78d",
+      "retainedGitSha256": "b420a9343c6c48aad2c33c8d63a2e0f09d28fbe1734bc9db31d7dba3ac03191c",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\selector-operator-receipt-binding-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/sparse-adapter-package-memory-2026-06-27.md",
+      "byteLength": 2934,
+      "sha256": "fd32dbd5bb758b87c2f422b97222da83c794b1939190fc71c2aaedf0d205b455",
+      "retainedGitBlob": "2ba700e2ce92b3a106905f3a2feb644dbda438c8",
+      "retainedGitSha256": "3ea5bfd6b0d41a92d30b2683fcd4f840247a24f803f74f38458b402ddf567883",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\sparse-adapter-package-memory-2026-06-27.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/teleodynamic-resource-bounded-memory-2026-06-25.md",
+      "byteLength": 3635,
+      "sha256": "88eb9b106928f2319c0592bf33848a596765b811ff400f4c506da7272e551992",
+      "retainedGitBlob": "6c248ef1389b89460d4c7687a5212b3c93d553f3",
+      "retainedGitSha256": "a235ebdbd055ee51b11d4ffe52706d2e9a623f84e5b8aec4112a8967e2b863d6",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\teleodynamic-resource-bounded-memory-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/tinylm-modular-architecture-memory-2026-06-25.md",
+      "byteLength": 4087,
+      "sha256": "cc49b0bb97a0f16e07c577edc60b6dd04092480bdc5ceb8f9405ea152ef368d3",
+      "retainedGitBlob": "beae787f641793a20b428d7f5ae066d1299a3441",
+      "retainedGitSha256": "1a09a5063a20fa84293b6da59cf23316d4aa51e89334d7cdad574c0924000bb8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\tinylm-modular-architecture-memory-2026-06-25.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/trained-adapter-source-alr1-memory-2026-06-28.md",
+      "byteLength": 2836,
+      "sha256": "c34d56192db444ca36cc19c45aba30af1bdda205444876fac628ad4f6bbe0ba0",
+      "retainedGitBlob": "e40e0573d788f10924d4f351ba15a4a562108f14",
+      "retainedGitSha256": "b86565f2cc143421dd42b015d6be77e8b018a31b155c02ebc7cc8778445695a8",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\trained-adapter-source-alr1-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/trained-adapter-source-memory-2026-06-28.md",
+      "byteLength": 2538,
+      "sha256": "8e6a33c90f4dd0f897a3a25bd7997fd9b35ec3ab9ca15194175ba2f5101ca3c8",
+      "retainedGitBlob": "dedae695a83e3d5b685414140922aa5c981e91a9",
+      "retainedGitSha256": "a0433c078ef64a914a94eee612ca1e54b7fb7c02d8dc71860d0ce74152ac7284",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\trained-adapter-source-memory-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/two-parent-operator-browser-provenance-memory-2026-06-29.md",
+      "byteLength": 4285,
+      "sha256": "8085d6144d08a0264f38e0d7afdf9017ea6ab5212e68ee20bc6fede23bcf2cad",
+      "retainedGitBlob": "4b0484227364e029d78733cb52002a93eb4fc1fa",
+      "retainedGitSha256": "683062e366444656560dc46069063656fd4b7b0c0dfa9635942759245c2a5add",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\two-parent-operator-browser-provenance-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/reports/weighted-soup-operator-memory-2026-06-29.md",
+      "byteLength": 4388,
+      "sha256": "4476107482d4bba80d8457b37e54b639db5d31fe10ecd9b0acd706c7131f89fd",
+      "retainedGitBlob": "cb015aafa93be780ecc5027b76a0ef07f2263ebd",
+      "retainedGitSha256": "845a2e3c2fc890c1330a4674c98f823eea887c16503a563fdccd4c80e1a85227",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\reports\\weighted-soup-operator-memory-2026-06-29.md"
+    },
+    {
+      "relativePath": "runtime-docs/research/index.md",
+      "byteLength": 928,
+      "sha256": "91f759025771524e5f88b926640cedb95160a0da1d032b4ba626921cabc4be60",
+      "retainedGitBlob": "a618b45e99fa40669fc0ec0e01505c84448eafa2",
+      "retainedGitSha256": "a2db1724945d9dd19ba4d0a117a885c5410e1f2bfb17f9d7cf4967ae1b1bdd10",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\research\\index.md"
+    },
+    {
+      "relativePath": "runtime-docs/research/model-breeding-reference-ideas-2026-06-26.md",
+      "byteLength": 11431,
+      "sha256": "d4abe12867431723d900aed1d38883ce71a9acc40f1c59882eac5bc3480d2bbd",
+      "retainedGitBlob": "8a2d1b319bf098be3b44961f26b2ecd4715d3634",
+      "retainedGitSha256": "759eb154a07cfe463f17990b070999ed8d459d58afb43d0b3c4d4e89aa221286",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\research\\model-breeding-reference-ideas-2026-06-26.md"
+    },
+    {
+      "relativePath": "runtime-docs/research/modelbreeder-zero-dependency-reference-ideas-2026-06-28.md",
+      "byteLength": 4699,
+      "sha256": "e070856b756f5c9dd89f75e6877b88ed8ecc6e8765b153ff090d6713a176e414",
+      "retainedGitBlob": "f9fc7d5ca4fe82eb66b5f3287f2c8df86bda2fa1",
+      "retainedGitSha256": "162afc09e80651913b241a75d5f0b7622789c7ec22bc9c08b8fdfbced4eb7c46",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\TinyRustLM.com\\wiki\\runtime-mirust\\research\\modelbreeder-zero-dependency-reference-ideas-2026-06-28.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-analysis-summary.md",
+      "byteLength": 2030,
+      "sha256": "3165996a7adac0cdd32bfe6118a2e0777ea6274a8eb7cbd80fadb6ad862429e9",
+      "retainedGitBlob": "4e63bbce3556e4f6b9306e5b6b5d4ad9040174f0",
+      "retainedGitSha256": "d34c2aa68daebe2e03745ad08d0761a7c4786b6f754572938cda95b4bb0f2c80",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-analysis-summary.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-memory/index.md",
+      "byteLength": 1209,
+      "sha256": "d1a389c1e387e1b4624b9b99c1ee0bf728073a8da287892ecab703072a71cf02",
+      "retainedGitBlob": "1838b8d5ab74ebc73a4c8cc9f36bae903f8de83f",
+      "retainedGitSha256": "3c170411ee3dc1b95b1167d0eebc75eae57a487c34392cf975ddf45340e87f95",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-memory\\index.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-memory/knowledge-map.md",
+      "byteLength": 32328,
+      "sha256": "50165423a83dd27d9fe6e3bed9a63922315cd84da6ad6bd50417641c2b5a3a4c",
+      "retainedGitBlob": "abc8992d942fdad8b763a390bb6355c2bd54363f",
+      "retainedGitSha256": "44f021caa67a7b532195e8d9773858f4369668c09e215dacab4f82198fd3bfee",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-memory\\knowledge-map.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-memory/log.md",
+      "byteLength": 38218,
+      "sha256": "45a6f91824c97949b508a97775d36da687faf2175c3ce903ae4532dc8d1a9d3c",
+      "retainedGitBlob": "76e889c63e9831e4bc7e16af48921f5943fd171f",
+      "retainedGitSha256": "029dcd61d4d80d169ad9e189ff6637ad52e50fd44664b7cd965396582d0206a5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-memory\\log.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-memory/rust-browser-harness-standards.md",
+      "byteLength": 534,
+      "sha256": "5099bd8788874ab52475cbab8a3c8e1b48012d0d18fe2317e6a0e7c34acf20fa",
+      "retainedGitBlob": "b716ca33398492c4b1c2907a141a588c0dbc2740",
+      "retainedGitSha256": "b3db7f1a90a1b52db76d324e488c1a345291a95c56f9ec4a4fad4777f759109a",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-memory\\rust-browser-harness-standards.md"
+    },
+    {
+      "relativePath": "runtime-docs/source-memory/source-memory-guide.md",
+      "byteLength": 37060,
+      "sha256": "5264f30add93fd436f8f9a03f6f81e22bec3fd0b32c2d9f98d169555e3dc0e8f",
+      "retainedGitBlob": "aae23b29c8534ee19c344ff5c1d0d165c58dcfbc",
+      "retainedGitSha256": "f2211d0e70f89e9980ed0c7df858171d9996478234f9b245a40c32992b49e5c5",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\source-memory\\source-memory-guide.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/analyzing-website-virality-1.md",
+      "byteLength": 62524,
+      "sha256": "fb787c31f57feda2ad636d6bcc858c823f27efcee2747d200f259dabb9ebee14",
+      "retainedGitBlob": "9821d1fca65e7afe9d9dee504b79ea4ef45c37c3",
+      "retainedGitSha256": "6d9c11aff76aa0b3505016958bcbe0ede3dd1c8cded1d749fed9da5a798a5fab",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\analyzing-website-virality-1.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/future-proof-native-html5-techniques-1.md",
+      "byteLength": 54082,
+      "sha256": "dec1e60342c61e7d408b625310b9ed712cf1fc9e0e6a6a7aff5298a7edc7fc8c",
+      "retainedGitBlob": "351aa50d557534759910cc83a558b483b7410540",
+      "retainedGitSha256": "012ac971c92c0ef592c3517c3db794379eccd05f4a2e062034bc82803d24431f",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\future-proof-native-html5-techniques-1.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/index.md",
+      "byteLength": 2666,
+      "sha256": "cda0bcb88086add2d6ff8fb33187a7977ea14a0382c70e03c1cb7cdbd6b0cf52",
+      "retainedGitBlob": "6f9e1e3ca9ccb244a2dd59e19c9c502652802b4c",
+      "retainedGitSha256": "5761b934d96f43ceb5d7388b3076cfe9cad683b21defafe9164b9fe4be5a71ad",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\index.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/innovative-vanilla-web-design-1.md",
+      "byteLength": 47714,
+      "sha256": "d313bf2f605707adf1f256e2814407166926e6d9354576f60b8239079eb03de8",
+      "retainedGitBlob": "b062ffe7dacedae43cfc0392416b1d0f9a5e9138",
+      "retainedGitSha256": "58a6db0d6fa9226e9ec35a8dcb697b1d48644ec865158529631ab6552b4a2645",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\innovative-vanilla-web-design-1.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/mememtech-vanilla-web-architecture-1.md",
+      "byteLength": 43178,
+      "sha256": "84654f410722d0dedd83bed6bb4639907cf567b4925be445dae2c1a2fc066c63",
+      "retainedGitBlob": "cc7a94804a0906cbcd57c399f9f3a93265478132",
+      "retainedGitSha256": "a8b1105bff91a8e9230ed54a8643e6b8ac99556a448bf16285ed3fe5b5f49274",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\mememtech-vanilla-web-architecture-1.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/vanilla-js-future-proof-techniques-1.md",
+      "byteLength": 47902,
+      "sha256": "242d29ff004b13604f7b9871b6ea1cdffb819a9714b70503617940b01360522c",
+      "retainedGitBlob": "e470ca1677977c43f3b52aff3098655b4e5b716f",
+      "retainedGitSha256": "e3e7722bbb3369a374c8fdded48a40cd37b2b3bde03bedb4e86ece69915ff3e2",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\vanilla-js-future-proof-techniques-1.md"
+    },
+    {
+      "relativePath": "runtime-docs/web-research/website-review-and-improvement-plan.md",
+      "byteLength": 41580,
+      "sha256": "635f1bef30a73d724f696947675140b133586eea5d2f4cce8e4396ebe6f9d594",
+      "retainedGitBlob": "a9264d9b1077fd0992ca17afa5728451ecb8d797",
+      "retainedGitSha256": "ca08e99d0d21776760813d2253bdc923b02248a63585635a475a61b0daf62607",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\docs\\web-research\\website-review-and-improvement-plan.md"
+    },
+    {
+      "relativePath": "runtime-pages.json",
+      "byteLength": 133154,
+      "sha256": "cb6ad471c9907c88836cd040d78bb46196310ac3dd7334ad161272dfef5b364d",
+      "retainedGitBlob": "5840adc849955ca28dddae53328ef6b145962804",
+      "retainedGitSha256": "846da7b3f2024fcba4cf1d2457f64974c1d23f9ac0e87a90af1b27cef8c58d89",
+      "worktreeEqualsGit": false,
+      "normalizedDuplicateAt": "E:\\Source\\Rust\\Runtime.MiRust.com\\data\\pages.json"
+    }
+  ],
+  "review": {
+    "duplicates": "164 documents match already reviewed canonical Runtime/TinyRust material after CRLF normalization; runtime-pages.json additionally matches Runtime/data/pages.json byte for byte.",
+    "uniqueChanges": "Later browser, source-options, eval CLI and testing notes were compared with canonical Runtime versions. They describe obsolete SLM1/v0 workflows and scoped historical checks, not current model quality. Useful lessons are transferred to the canonical TinyRust experiment record.",
+    "metadata": "Historical package indexes, route maps and deployment instructions are obsolete snapshots. README/health declare 1.0.6 while version.json declares 1.0.7; their coexistence is not a coherent release proof.",
+    "evidenceLimit": "No old script, model, conversion, training, deployment or claimed historical browser test was executed. The compact record preserves actual file/Git identities, not a new verification of every prose claim."
+  },
+  "physicalRetirement": "not attempted at inventory creation"
+}

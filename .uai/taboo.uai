@@ -61,3 +61,5 @@ prohibitions:
 # Reviewed TinyRustLM and retired-Runtime findings begin at E:\Source\Rust\TinyRustLM.com\wiki\runtime-mirust\reports\ecosystem-experiment-lessons-2026-09-12.md; this is a growing review, not blanket proof that every experiment has been assessed.
 
 # Release-tool cleanup 2026-09-12: metadata generators emit stdout only; validate the canonical public files in place, including ignored extras. Never recreate source stages or restore unreachable legacy publisher code. Keep the surviving reviewed stage as an explicit blocking defect until exact authorized removal is verified.
+
+# Historical mirror cleanup 2026-09-12: preserve useful lessons and exact Git identities, then retire duplicate raw Runtime files. The archive regenerator and copied-Git tests are removed. Do not recreate them or treat blocked physical deletions as completed.

@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.startup.current.v1
-updated_utc: 2026-08-31T12:02:33Z
+updated_utc: 2026-09-12T21:08:29.177Z
 prepared_package: tinyrustlm-developer-portal-1.8.3
 prepared_status: awaiting_content_commit_and_publication_proof
 last_verified_package: tinyrustlm-developer-portal-1.8.2
@@ -8,7 +8,7 @@ first_steps:
   - Read workspace.uai, then .uai/totem.uai and .uai/taboo.uai.
   - Read .uai/short-term-memory.uai for active release state.
   - Read .uai/long-term-memory.uai for checksum-bound public pointers.
-  - Open docs/report-index.md or docs/runtime-portal only for task-relevant historical evidence.
+  - Open docs/report-index.md or the compact historical-runtime-retirement-review.json for relevant evidence, then use the exact retained Git object if the original is needed. Do not regenerate the obsolete mirror.
   - Scan the agent-file-handoff buckets before processing new intake.
 
 authority: One canonical TinyRustLM.com source checkout; declared-public changes invalidate deployed-current status until a newer verified release; one SLM2 path; exactly two separate MemoryEndpoints.com uses; synchronized prelaunch memory copies; no live claim without exact evidence.

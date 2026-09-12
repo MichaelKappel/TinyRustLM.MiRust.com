@@ -211,35 +211,61 @@ test("public pointer ledger binds only current LF public documents", () => {
   }
 });
 
-test("retained Runtime mirror carries the 4723df7 historical boundary without losing later content", () => {
-  const sourceOptionsPath = "docs/runtime-portal/runtime-docs/implementation/slmcomposer-source-options-ui-v1.0.7.md";
-  const docsIndexPath = "docs/runtime-portal/runtime-docs/index.md";
-  const implementationIndexPath = "docs/runtime-portal/runtime-docs/implementation/index.md";
-  const sourceOptions = read(sourceOptionsPath);
-  const docsIndex = read(docsIndexPath);
-  const implementationIndex = read(implementationIndexPath);
+const runtimeRetirementReviewPath = "artifacts/ecosystem-cleanup-20260912/historical-runtime-retirement-review.json";
+const runtimeRetirementReviewSha256 = "c0555bc18fde0b9232811444b45b8332d07fddf2d7efec57b8f024468b212108";
 
-  assert.match(sourceOptions, /Historical and superseded \(2026-07-01\)/);
-  assert.match(sourceOptions, /current TinyRustLM model-acquisition contract/);
-  assert.match(sourceOptions, /This archive makes no claim that peers or qualified\n> models are live\./);
-  assert.match(sourceOptions, /hf-conversion-kit-exec/);
-  assert.match(docsIndex, /Historical SLM Composer source-options snapshot/);
-  assert.match(docsIndex, /makes no live peer or model claim/);
-  assert.match(implementationIndex, /Historical: SLM Composer Source Options UI v1\.0\.7/);
-  assert.match(implementationIndex, /retained mirror later accumulated/);
+/** Bind the compact review before using any of its historical paths or identities. */
+function readRuntimeRetirementReview() {
+  const bytes = fs.readFileSync(path.join(repositoryRoot, runtimeRetirementReviewPath));
+  assert.ok(bytes.length > 0 && bytes.length < 262144);
+  assert.equal(crypto.createHash("sha256").update(bytes).digest("hex"), runtimeRetirementReviewSha256);
+  const review = JSON.parse(bytes);
+  assert.equal(review.fileCount, 184);
+  assert.equal(review.files.length, 184);
+  assert.equal(review.retainedGitCommit, "7a6f9db1d33d9d19700af180917de2d45ccf9f89");
+  return review;
+}
 
-  const lfPaths = [
-    sourceOptionsPath,
-    docsIndexPath,
-    implementationIndexPath,
-    "docs/runtime-portal/MANIFEST.md",
-    "tools/build-runtime-archive-manifest.js",
-  ];
-  const attributes = read(".gitattributes");
-  const attributeLines = attributes.split(/\r?\n/u);
-  for (const relativePath of lfPaths) {
-    assert.equal(fs.readFileSync(path.join(repositoryRoot, ...relativePath.split("/"))).includes(13), false, relativePath);
-    assert.ok(attributeLines.includes(`${relativePath} text eol=lf`), relativePath);
+test("historical Runtime review preserves every exact Git blob without copied source fixtures", () => {
+  const review = readRuntimeRetirementReview();
+  const listing = execFileSync("git", ["ls-tree", "-r", "-z", review.retainedGitCommit, "--", "docs/runtime-portal"],
+    { cwd: repositoryRoot, encoding: "utf8", timeout: 30000, maxBuffer: 1048576 });
+  const entries = new Map(listing.split("\0").filter(Boolean).map((line) => {
+    const match = line.match(/^100644 blob ([0-9a-f]{40})\t(.+)$/u);
+    assert.ok(match, "Historical closure contains an unexpected Git entry");
+    return [match[2], match[1]];
+  }));
+  const batch = execFileSync("git", ["cat-file", "--batch"], { cwd: repositoryRoot, timeout: 30000,
+    maxBuffer: 8388608, input: review.files.map((file) => file.retainedGitBlob).join("\n") + "\n" });
+  let offset = 0;
+  for (const file of review.files) {
+    assert.equal(entries.get("docs/runtime-portal/" + file.relativePath), file.retainedGitBlob);
+    const end = batch.indexOf(10, offset);
+    assert.ok(end > offset);
+    const header = batch.subarray(offset, end).toString("ascii").match(/^([0-9a-f]{40}) blob ([0-9]+)$/u);
+    assert.ok(header);
+    assert.equal(header[1], file.retainedGitBlob);
+    const length = Number(header[2]);
+    assert.ok(Number.isSafeInteger(length) && length <= 8388608);
+    const payload = batch.subarray(end + 1, end + 1 + length);
+    assert.equal(payload.length, length);
+    assert.equal(batch[end + 1 + length], 10);
+    assert.equal(crypto.createHash("sha1").update("blob " + length + "\0").update(payload).digest("hex"), file.retainedGitBlob);
+    assert.equal(crypto.createHash("sha256").update(payload).digest("hex"), file.retainedGitSha256);
+    offset = end + 2 + length;
+  }
+  assert.equal(offset, batch.length);
+});
+
+test("reviewed historical Runtime files and obsolete archive tools are physically absent", () => {
+  const review = readRuntimeRetirementReview();
+  const remaining = review.files.filter((file) => fs.existsSync(path.join(repositoryRoot, "docs/runtime-portal", file.relativePath)));
+  assert.equal(remaining.length, 0, "Reviewed historical Runtime files still remain: " + remaining.length);
+  for (const name of ["build-runtime-archive-manifest.js", "runtime-archive-manifest.test.js"]) {
+    assert.equal(fs.existsSync(path.join(__dirname, name)), false);
+  }
+  for (const relative of review.retainedCurrentFiles) {
+    assert.equal(fs.existsSync(path.join(repositoryRoot, "docs/runtime-portal", relative)), true);
   }
 });
 

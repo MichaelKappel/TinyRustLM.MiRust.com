@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.file-handoff.current.v2
-updated_utc: 2026-08-31T12:02:33Z
+updated_utc: 2026-09-12T21:08:29.177Z
 current_authority: New intake is reviewed against exactly one canonical TinyRustLM.com source, clean-slate SLM2, exact two-use MemoryEndpoints.com, privacy, evidence, no-compatibility, and declared-public deployment-current invalidation contracts in totem.uai and taboo.uai.
 handoff_root: agent-file-handoff/
 active_buckets:
@@ -29,7 +29,7 @@ prepared_publication_handoff:
   source_tree: pending
   manifest_sha256: pending
   receipt: none
-  next_gate: Commit coherent source, generate exact commit-bound manifests, prove remote equality, validate exact staging, publish, and complete GET/HEAD retired-route plus byte readback before any verified claim.
+  next_gate: Use coherent canonical content C1, package-only C2 and stdout deployment metadata; validate current canonical bytes and resolve surviving retired copies. Full-site publishing remains disabled. Future publication requires separate retirement evidence and complete GET/HEAD plus byte readback.
 
 last_verified_publication_handoff:
   status: published_and_readback_verified

@@ -83,7 +83,7 @@ test("a substituted verifier or wrong Node identity is rejected before execution
 });
 
 test("hostile gate prevents canonical CLI entrypoints from reading or writing deployment data", () => {
-  for (const name of ["build-runtime-archive-manifest.js", "verify-site-deployment-input.js"]) {
+  for (const name of ["build-site-deployment-manifest.js", "verify-site-deployment-input.js"]) {
     let gates = 0;
     let reads = 0;
     let writes = 0;
@@ -124,7 +124,6 @@ test("canonical PowerShell rejects a substituted runtime before deployment input
 test("every release or deployment entrypoint gates before snapshot, staging, credentials, or transport", () => {
   const cases = [
     ["tools/build-public-package-manifest.js", "assertCanonicalSourceAuthority(repositoryRoot)", "readHistoricalPublicationAuthority(repositoryRoot)"],
-    ["tools/build-runtime-archive-manifest.js", "assertCanonicalSourceAuthority(repositoryRoot)", "buildRuntimeArchiveManifest("],
     ["tools/build-site-deployment-manifest.js", "assertCanonicalSourceAuthority(repositoryRoot)", "readHistoricalPublicationAuthority(repositoryRoot)"],
     ["tools/verify-site-deployment-input.js", "assertCanonicalSourceAuthority(repositoryRoot)", "validateDeploymentInput("],
     ["tools/deploy-site.ps1", "Assert-CanonicalSourceAuthority", "$manifestItem = Get-Item"],

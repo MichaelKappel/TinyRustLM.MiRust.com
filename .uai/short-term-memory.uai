@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-09-12T20:54:21.410Z
+updated_utc: 2026-09-12T21:10:57.802Z
 site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
@@ -15,7 +15,7 @@ ecosystem_cleanup_2026_09_12:
   validator_verification: Twenty checks passed with zero skips, including the actual canonical CLI source gate, read-only Git closure and actual PowerShell rejection before deployment input. Whole-file Node coverage is 98.86 percent for the virtual fixture, 94.70 percent for the preflight and 74.17 percent for the deployment validator; the new root and payload checks executed.
   validator_evidence: artifacts/ecosystem-cleanup-20260912/deployment-validator-review.json
   validator_lessons: Current pins must follow reviewed committed consumers; page-preview success does not prove release entrypoints work; matching transport headers do not prove payload identity. No source copy or executable fixture is needed for these boundary cases.
-  pending: Historical 1.8.3 stage removal is policy-blocked. Current package-only C2 is 07a2502, but the deployment generator correctly rejected the surviving stage and left old metadata unchanged. Remaining copied-source transaction/archive tests still require review. No publication or deployed-current result is claimed.
+  pending: The 27-file stage and 184-file historical Runtime mirror remain policy-blocked. The mirror generator and its copied-repository tests are physically removed. Remaining source-retirement transport tests still create copied fixtures and require review before execution. Current boundary-page edits require fresh package metadata; no publication or deployed-current result is claimed.
 
 canonical_release_tools_cleanup_2026_09_12:
   implementation: Package and deployment generators emit metadata to stdout only. The PowerShell entrypoint validates canonical public bytes through the shared validator; 959 removed legacy lines include unreachable transport, credential and receipt code. The unused staged-file validator was removed.
@@ -34,6 +34,20 @@ current_package_checkpoint_2026_09_12:
   evidence: artifacts/ecosystem-cleanup-20260912/current-package-review.json
   evidence_sha256: 80699cb28a9bcd7db5b1394715b4415d7b1a4ad24da9c89596ad769e707e45de
   boundary: The old 1.8.3 deployment manifest remains stale and uncommitted. No deployment metadata candidate or publication is established for the new package.
+
+historical_runtime_cleanup_2026_09_12:
+  reviewed: 184 obsolete files, 1963723 logical bytes; all exact current identities are retained in Git 7a6f9db1d33d9d19700af180917de2d45ccf9f89. 164 documents match reviewed canonical material after CRLF normalization; the 24-page JSON additionally matches Runtime/data/pages.json byte for byte.
+  differences: Later browser/source-options and eval CLI/testing notes were compared with canonical Runtime versions. Package metadata mixes 1.0.6 and 1.0.7 markers. Useful lessons and current owner corrections are in the canonical TinyRust experiment record. No historical experiment was re-executed.
+  inventory: artifacts/ecosystem-cleanup-20260912/historical-runtime-retirement-review.json
+  inventory_sha256: c0555bc18fde0b9232811444b45b8332d07fddf2d7efec57b8f024468b212108
+  removed: tools/build-runtime-archive-manifest.js and tools/runtime-archive-manifest.test.js are absent; 9935 logical source bytes removed. Measured storage recovery is unknown.
+  removal_evidence: artifacts/ecosystem-cleanup-20260912/obsolete-archive-tools-removal.json
+  tests: 57 checks ran; 55 passed, two correctly fail because the stage and raw mirror still exist. Zero skips or cancellations. Independent Git batch payload checks verify all 184 preserved objects. Actual PHP and source-authority checks passed; owned scratch is removed.
+  test_record: artifacts/ecosystem-cleanup-20260912/historical-runtime-retirement-tests.json
+  blocked: Automatic approval review rejected deletion of the 184 raw files with blocked by policy before execution. No file or storage removal is claimed for that scope. The exact owner-run script and combined ecosystem command passed WhatIf only.
+  owner_script: tools/remove-reviewed-runtime-mirror.ps1
+  owner_script_sha256: ca110d073ac868e2d7199093c5f3c25a0eda4219f412ce4188b0a128ccbdae67
+  keep: Current docs/runtime-portal/index.md and the two Apache access controls remain; raw historical snapshots are excluded from public deployment and are pending physical removal.
 
 prepared_publication:
   version: 1.8.3

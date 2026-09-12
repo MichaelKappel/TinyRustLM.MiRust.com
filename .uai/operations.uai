@@ -1,17 +1,17 @@
 profile: tinyrustlm-mirust.operations.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-09-12T21:08:29.177Z
 
 local_gate:
   - Parse every PHP file with PHP 8 when the local runtime is available.
-  - Validate JSON, XML, UAI policy, current docs, generated archive manifest, generated package manifest, and release metadata.
+  - Validate JSON, XML, UAI policy, current docs, compact historical identity reviews, generated package manifest, and release metadata.
   - Smoke desktop and mobile routes with real Chromium; reject overflow, missing assets, console errors, and stale current claims.
   - Require a clean worktree and direct remote equality before deployment.
 
 release_order:
   - Commit the complete content basis.
   - Generate checksum-bound package metadata from that immutable commit.
-  - Commit and push the final release revision.
-  - Build and validate the deployment manifest from the exact content commit.
-  - Publish only through the bounded site profile, then verify exact HTTPS bytes, headers, routes, and release records.
+  - Commit only docs/package-manifest.md as package-only C2 and push it.
+  - Generate deployment metadata to stdout from that exact C2; validate the canonical public files in place. Surviving stages and retired copies remain blockers.
+  - The full-site publisher is disabled. Any future separately reviewed publisher requires complete retirement evidence, then exact HTTPS bytes, headers, routes and release records.
 
 proof_rule: A reachable site, local check, source commit, or configured credential is not deployment evidence.

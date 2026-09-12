@@ -1,18 +1,18 @@
 profile: tinyrustlm-mirust.architecture.current.v1
-updated_utc: 2026-08-28T20:20:00Z
+updated_utc: 2026-09-12T21:08:29.177Z
 site: TinyRustLM.MiRust.com
 
 site_architecture:
   rendering: Plain PHP routes, native HTML/CSS, and bounded vanilla JavaScript.
   current_content: data/pages.php, README.md, llms.txt, llms-full.txt, and current docs.
   public_uai: Allowlisted orientation and pointer files only.
-  historical_evidence: docs/reports and docs/runtime-portal are labeled non-authoritative archives.
+  historical_evidence: Current report pointers and compact review records retain useful lessons; obsolete Runtime mirror bytes belong in Git history, with pending physical removal recorded explicitly.
   release: Content-addressed committed bytes, deterministic manifest, bounded deployment, and exact HTTPS readback.
 
 product_architecture:
   - One clean-slate prelaunch browser-local TinyRustLM.com product.
   - One exact six-member SLM2 composition path with independent validation.
   - One dedicated worker owns model, tokenizer, generation, and KV state.
-  - Project sites receive no prompts or model bytes.
+  - Inference and prompts stay local. MiniModel.org may operate initial server seeds; that authorization does not establish a qualified model or live seed.
 
 memory_authority: Read .uai/totem.uai and .uai/taboo.uai for the exact two separate MemoryEndpoints.com uses and prelaunch redundancy rules.

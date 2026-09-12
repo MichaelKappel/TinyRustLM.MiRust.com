@@ -253,7 +253,6 @@ test("accepts every current public working-tree artifact under the narrowed poli
 
 test("release generators enforce public policy while the local historical inventory remains separate", () => {
   const toolsRoot = __dirname;
-  const runtime = fs.readFileSync(path.join(toolsRoot, "build-runtime-archive-manifest.js"), "utf8");
   const packageManifest = fs.readFileSync(path.join(toolsRoot, "build-public-package-manifest.js"), "utf8");
   const deployment = fs.readFileSync(path.join(toolsRoot, "build-site-deployment-manifest.js"), "utf8");
 
@@ -261,11 +260,8 @@ test("release generators enforce public policy while the local historical invent
     assert.match(source, /require\("\.\/public-artifact-policy\.js"\)/);
     assert.match(source, /assertPublishableArtifact\(/);
   }
-  assert.doesNotMatch(runtime, /public-artifact-policy\.js/);
-  assert.doesNotMatch(runtime, /assertPublishableArtifact\(/);
-  assert.match(runtime, /function compareOrdinal/);
-  assert.match(runtime, /MAX_ARCHIVE_FILE_BYTES/);
-  assert.match(runtime, /Historical archive file exceeds its local inventory bound/);
+  assert.equal(fs.existsSync(path.join(toolsRoot, "build-runtime-archive-manifest.js")), false);
+  assert.equal(fs.existsSync(path.join(toolsRoot, "runtime-archive-manifest.test.js")), false);
   assert.match(deployment, /assertDirectoryAbsent\(stagingRoot\)/);
   assert.doesNotMatch(deployment, /fs\.(?:mkdirSync|writeFileSync|copyFileSync|cpSync)/);
 });

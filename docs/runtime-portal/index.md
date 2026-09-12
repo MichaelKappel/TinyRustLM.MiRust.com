@@ -13,12 +13,13 @@ The current browser-local app is:
 
 ## What Is Preserved
 
-The repository retains the former runtime documentation corpus and its byte
+Git history preserves the former runtime documentation corpus and its byte
 identities. The raw mirror is not part of the current public package or
 deployment closure because historical records include obsolete operator
 directions and machine-local details.
 
-The records remain available for repository audit without becoming current
+Useful historical lessons belong in current project records; obsolete runtime
+snapshots remain available through Git for audit. They do not become current
 instructions, public navigation, or compatibility authority. Immutable release
 receipts remain unchanged.
 
@@ -38,5 +39,8 @@ describe superseded historical work only. They do not authorize a reader,
 fallback, migration, alias, or shipping path.
 
 The sole current clean-slate composition path is SLM2. Current authority lives
-in the developer portal and its current contracts. Project sites do not run or
-proxy user model bytes or receive prompts.
+in the developer portal and its current contracts. MiniModel.org is the default
+discovery and P2P source and may operate initial server seeds. Hugging Face,
+local import, conversion and manual peer controls belong under Advanced.
+Inference remains local, and project sites receive no prompts. This policy
+does not establish a qualified model or live seed.

@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.public-long-term-memory.current.v1
-updated_utc: 2026-09-12T20:50:20.076Z
+updated_utc: 2026-09-12T21:08:29.177Z
 storage_mode: checksum_bound_current_pointers
 
 current_pointers:
@@ -11,7 +11,7 @@ current_pointers:
     sha256: 24aee48040077548499788e7d9a6e25057e00027bc720f5c4c238fc85047d42d
   historical_runtime_boundary:
     path: docs/runtime-portal/index.md
-    sha256: e5790b1b8913a611e5abb808e58d9d6f3016cb3ae992d11915fffd49d2c6ca14
+    sha256: ab2b72ce9e2a58f8850292ff980adf6496658af756bd7c7d4d7b5fb6ec53e65c
 
 current_product:
   - One prelaunch TinyRustLM product and one exact six-member SLM2 composition path.

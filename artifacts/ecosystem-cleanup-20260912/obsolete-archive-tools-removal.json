@@ -1,0 +1,23 @@
+{
+  "schema": "tinyrustlm-mirust.obsolete-archive-tools-removal/1",
+  "observedUtc": "2026-09-12T21:05:46.545Z",
+  "files": [
+    {
+      "path": "tools/build-runtime-archive-manifest.js",
+      "originalWorkingBytes": 6540,
+      "originalWorkingSha256": "013b9bbfc9c2a84479cc619751fd98d3a8bb72e7319491ba546d2d15884e1b64",
+      "retainedGitCommit": "7a6f9db1d33d9d19700af180917de2d45ccf9f89",
+      "absent": true
+    },
+    {
+      "path": "tools/runtime-archive-manifest.test.js",
+      "originalWorkingBytes": 3395,
+      "originalWorkingSha256": "912c8a3fcca17247108372bae9a6ea13bf5f3d6ae5693489995b9faff5d5ec4e",
+      "retainedGitCommit": "7a6f9db1d33d9d19700af180917de2d45ccf9f89",
+      "absent": true
+    }
+  ],
+  "logicalBytes": 9935,
+  "measuredStorageRecovery": null,
+  "reason": "Obsolete mirror writer and its copied-repository tests retired; compact Git-bound review replaces active regeneration."
+}
