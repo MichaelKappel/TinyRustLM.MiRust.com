@@ -1,0 +1,137 @@
+{
+  "schema": "tinyrustlm.mirust.source-retirement-tool-review.v1",
+  "observedAtUtc": "2026-09-12T22:37:43Z",
+  "canonicalRoot": "E:/Source/Rust/TinyRustLM.MiRust.com",
+  "historicalCommit": "bfb3ac57d88f17a475e885011196e158b29f94c3",
+  "historicalFiles": [
+    {
+      "path": "tools/retire-public-source-copies.ps1",
+      "byteLength": 86958,
+      "sha256": "9c71b9816c41744690e5e2dd794770d64a6db257f65fe898a640fdee027deb96",
+      "lines": 1844
+    },
+    {
+      "path": "tools/source-retirement-transaction.test.js",
+      "byteLength": 35842,
+      "sha256": "1ccc555db0d8ecbf99801391a1bbfcfda95add9d531e25679130b21a9023ae7d",
+      "lines": 732
+    }
+  ],
+  "currentFiles": [
+    {
+      "path": "tools/retire-public-source-copies.ps1",
+      "byteLength": 79033,
+      "sha256": "80829238f46a4e90b6ab1d6fd760be0a85c9b079ef729e956791c61cfc2fbbab",
+      "lines": 1688
+    },
+    {
+      "path": "tools/source-retirement-transaction.test.js",
+      "byteLength": 7501,
+      "sha256": "c964006122f2ed6c7377db9d2b630d915f2295e1471bcb19ee0f91776134ddc9",
+      "lines": 118
+    },
+    {
+      "path": "tools/retire-public-source-copies_test.ps1",
+      "byteLength": 20026,
+      "sha256": "53f1c9bf8ec77cbddf31f85c0dd9114cd998b5c12c75d01d4759bf95da1634b3",
+      "lines": 357
+    }
+  ],
+  "removed": {
+    "conditionalFixtureBranches": 40,
+    "fixtureOnlyFunctions": 4,
+    "cliOptions": [
+      "FixtureRoot",
+      "FixtureFault"
+    ],
+    "behaviors": [
+      "alternate deployment/transport authority roots and reduced fixture identity checks",
+      "local copied-site transport, fake HTTPS root, and fixture receipt mode",
+      "OS temporary site trees, source/control copies, authority-marker files and recursive mirror copies in the Node tests"
+    ]
+  },
+  "retained": [
+    "canonical source authority before transaction work",
+    "immutable deployment identities and independently attested secret-free transport binding",
+    "durable start before remote mutation",
+    "exact owner-marker custody and unowned/ambiguous lock preservation",
+    "guard proof before deletion, rollback only before proof, and monotonic deletion",
+    "terminal journal before final receipt, with explicit incomplete-cleanup outcomes"
+  ],
+  "corrected": "Node startup injection is now disabled across the whole transaction, including later Node-dependent Git validation; caller environment is restored on success or failure.",
+  "tests": {
+    "command": "node --test tools/source-retirement-transaction.test.js tools/source-authority-preflight.test.js tools/retired-public-route.test.js tools/deploy-site-security.test.js tools/source-copy-retirement.test.js tools/public-artifact-policy.test.js tools/deployment-validation.test.js",
+    "node": {
+      "total": 60,
+      "passed": 58,
+      "failed": 2,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "nestedPowerShell": {
+      "total": 23,
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "relationship": "Nested in one Node test; not 23 additional independent whole-suite runs."
+    },
+    "expectedExistingFailures": [
+      {
+        "name": "retired source copies and all stages are absent while canonical bytes match immutable C2",
+        "reason": "Reviewed deploy/staging/1.8.3 remains physically present after policy-blocked removal."
+      },
+      {
+        "name": "reviewed historical Runtime files and obsolete archive tools are physically absent",
+        "reason": "All 184 reviewed raw mirror files remain after policy-blocked removal."
+      }
+    ],
+    "actualCli": "Source preflight runs using the real pinned Node executable with hostile NODE_OPTIONS/NODE_PATH disabled, then correctly rejects the unbound transport authority before credentials/network/evidence. Both removed fixture options reject at parameter binding.",
+    "actualFilesystem": "Create-only small JSON journal/final-receipt behavior exercised inside operation-owned canonical test output. Pester TEMP/TMP and TestDrive remain under that owner; all output removed.",
+    "actualHttp": "Canonical PHP GET/HEAD public bytes and negative/private-route checks passed. No external retirement transport or public deployment was exercised."
+  },
+  "coverage": {
+    "tool": "Pester 3.4.0 command breakpoints",
+    "wholeSource": {
+      "executed": 798,
+      "analyzed": 1329,
+      "percent": 60.0451467268623
+    },
+    "changedFunctions": [
+      {
+        "name": "Initialize-SourceRetirementState",
+        "executed": 32,
+        "analyzed": 32
+      },
+      {
+        "name": "Invoke-SourceRetirementTransaction",
+        "executed": 137,
+        "analyzed": 151
+      },
+      {
+        "name": "Invoke-SourceRetirement",
+        "executed": 15,
+        "analyzed": 15
+      }
+    ],
+    "changedFunctionCommandPercent": 92.92929292929293,
+    "boundary": "Command coverage, not branch coverage. Network transport is simulated in memory. Whole-source coverage is below 75%; changed transaction/state/environment functions exceed 75%. Actual separate CLI preflight is not included in these Pester counts."
+  },
+  "transportAuthority": {
+    "path": "deploy/ftps-transport-authority.v1.json",
+    "byteLength": 358,
+    "sha256": "87e40866f5828fc9b7b34cee422e48d53e3d47c12bda6855809f79e791cb3b37",
+    "lines": 11,
+    "status": "blocked-pending-independent-attestation"
+  },
+  "unchangedManifestSha256": "7059e67b0f3a50a152d5687d397c39410ab93b332cfddce9139276c2b97e5735",
+  "lessons": "TinyRustLM.com/wiki/runtime-mirust/reports/ecosystem-experiment-lessons-2026-09-12.md C22",
+  "claims": {
+    "remoteMutationPerformed": false,
+    "productionRetirementReceiptCreated": false,
+    "sitePublished": false,
+    "modelDownloaded": false,
+    "sourceCopyCreated": false,
+    "measuredStorageRecovery": false
+  },
+  "ownedTestOutputRemaining": 0
+}

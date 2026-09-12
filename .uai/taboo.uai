@@ -63,3 +63,5 @@ prohibitions:
 # Release-tool cleanup 2026-09-12: metadata generators emit stdout only; validate the canonical public files in place, including ignored extras. Never recreate source stages or restore unreachable legacy publisher code. Keep the surviving reviewed stage as an explicit blocking defect until exact authorized removal is verified.
 
 # Historical mirror cleanup 2026-09-12: preserve useful lessons and exact Git identities, then retire duplicate raw Runtime files. The archive regenerator and copied-Git tests are removed. Do not recreate them or treat blocked physical deletions as completed.
+
+# Retirement-tool cleanup 2026-09-12: do not restore FixtureRoot/FixtureFault, alternate authority roots, copied-site transports or fixture receipt modes. Test the canonical functions with transport state in memory; own and remove bounded non-source output under artifacts. Keep Node startup injection disabled for the full operation, including later Git validation. Simulated success is not production retirement evidence.

@@ -1,20 +1,16 @@
 [CmdletBinding()]
 param(
     [switch]$Publish,
-    [string]$FixtureRoot,
     [string]$ReceiptPath,
     [ValidatePattern("^[0-9a-f]{12}$")]
     [string]$Nonce,
     [string]$FileZillaProfilePath = (Join-Path $env:APPDATA "FileZilla\sitemanager.xml"),
-    [string]$NodeExecutablePath = $env:TINYRUSTLM_NODE_EXECUTABLE,
-    [ValidateSet("none", "before-evidence", "lock-create-ambiguous", "lock-owner-substitution", "capability-rename", "guard-readback", "before-removal", "after-first-removal", "cleanup", "receipt-write")]
-    [string]$FixtureFault = "none"
+    [string]$NodeExecutablePath = $env:TINYRUSTLM_NODE_EXECUTABLE
 )
 
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 $repositoryRoot = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
-$script:fixtureMode = -not [string]::IsNullOrWhiteSpace($FixtureRoot)
 $script:verifiedNodeExecutablePath = $null
 $expectedNodeExecutableBytes = [int64]91380224
 $expectedNodeExecutableSha256 = "63c259c81e5d472b5f11c8d506070130cb04a1ecf84b80377a34ed6ec9048088"
@@ -75,44 +71,43 @@ function Assert-CanonicalSourceAuthority {
     $script:verifiedNodeExecutablePath = $resolvedNode
 }
 
-if (-not $script:fixtureMode) { Assert-CanonicalSourceAuthority }
 Add-Type -AssemblyName System.Net.Http
 
-$script:fixtureTargetRoot = $null
-$script:fixtureAuthorityRoot = $null
-$script:fixtureHttpsRoot = $null
-$script:credential = $null
-$script:ftpHost = $null
-$script:ftpPort = 0
-$script:ftpProtocol = $null
-$script:ftpUser = $null
-$script:ftpRemoteRoot = $null
-$script:httpClient = $null
-$script:phase = "local-preflight"
-$script:lockAttempted = $false
-$script:lockAcquired = $false
-$script:lockOwnershipProven = $false
-$script:lockDisposition = "not-attempted"
-$script:lockOwnerToken = $null
-$script:lockOwnerBytes = $null
-$script:lockOwnerSha256 = $null
-$script:lockOwnerMarkerRemoved = $false
-$script:deletionStarted = $false
-$script:guardReadbackProven = $false
-$script:artifactsInstalled = 0
-$script:installationRecords = @()
-$script:readbackRequestCount = 0
-$script:retiredResults = @()
-$script:deploymentAuthority = $null
-$script:transportAuthority = $null
-$script:transportTupleSha256 = $null
-$script:transportBindingSha256 = $null
-$script:evidenceRoot = $null
-$script:evidenceRootCreated = $false
-$script:journalStartedPath = $null
-$script:journalTerminalPath = $null
-$script:journalReserved = $false
-$script:terminalEvidenceWritten = $false
+# Reset process-local custody before each explicit transaction.
+function Initialize-SourceRetirementState {
+    $script:credential = $null
+    $script:ftpHost = $null
+    $script:ftpPort = 0
+    $script:ftpProtocol = $null
+    $script:ftpUser = $null
+    $script:ftpRemoteRoot = $null
+    $script:httpClient = $null
+    $script:phase = "local-preflight"
+    $script:lockAttempted = $false
+    $script:lockAcquired = $false
+    $script:lockOwnershipProven = $false
+    $script:lockDisposition = "not-attempted"
+    $script:lockOwnerToken = $null
+    $script:lockOwnerBytes = $null
+    $script:lockOwnerSha256 = $null
+    $script:lockOwnerMarkerRemoved = $false
+    $script:deletionStarted = $false
+    $script:guardReadbackProven = $false
+    $script:artifactsInstalled = 0
+    $script:installationRecords = @()
+    $script:readbackRequestCount = 0
+    $script:retiredResults = @()
+    $script:deploymentAuthority = $null
+    $script:transportAuthority = $null
+    $script:transportTupleSha256 = $null
+    $script:transportBindingSha256 = $null
+    $script:evidenceRoot = $null
+    $script:evidenceRootCreated = $false
+    $script:journalStartedPath = $null
+    $script:journalTerminalPath = $null
+    $script:journalReserved = $false
+    $script:terminalEvidenceWritten = $false
+}
 
 $origin = "https://tinyrustlm.mirust.com"
 $profileName = "TinyRustLM.MiRust.com"
@@ -259,7 +254,7 @@ function ConvertFrom-StrictJsonBytes {
 
 function Get-DeploymentAuthority {
     $script:phase = "deployment-identity"
-    $authorityRoot = if ($script:fixtureMode) { $script:fixtureAuthorityRoot } else { $repositoryRoot }
+    $authorityRoot = $repositoryRoot
     $manifestRelative = "deploy/site-deployment-manifest.v1.json"
     $manifestBytes = Get-ContainedPlainFileBytes -Root $authorityRoot -RelativePath $manifestRelative -MaximumBytes $maximumAuthorityBytes
     $manifest = ConvertFrom-StrictJsonBytes -Bytes $manifestBytes -Description "Deployment manifest"
@@ -273,21 +268,13 @@ function Get-DeploymentAuthority {
     $last = $manifest.last_verified_publication
     $receiptRelative = [string]$last.receipt
     Assert-RelativePath -Path $receiptRelative
-    if (-not $script:fixtureMode -and (
+    if ((
         $last.version -cne $canonicalDeploymentVersion -or
         $last.source_commit -cne $canonicalDeploymentCommit -or
         $last.source_tree -cne $canonicalDeploymentTree -or
         $receiptRelative -cne $canonicalDeploymentReceiptPath -or
         $last.receipt_sha256 -cne $canonicalDeploymentReceiptSha256)) {
         throw "Last-verified deployment identity drifted."
-    }
-    if ($script:fixtureMode -and (
-        [string]$last.version -notmatch "^[A-Za-z0-9._-]{1,64}$" -or
-        [string]$last.source_commit -notmatch "^[0-9a-f]{40}$" -or
-        [string]$last.source_tree -notmatch "^[0-9a-f]{40}$" -or
-        $receiptRelative -notmatch "^deploy/receipts/[A-Za-z0-9._-]+\.json$" -or
-        [string]$last.receipt_sha256 -notmatch "^[0-9a-f]{64}$")) {
-        throw "Fixture deployment identity is invalid."
     }
 
     $receiptBytes = Get-ContainedPlainFileBytes -Root $authorityRoot -RelativePath $receiptRelative -MaximumBytes $maximumAuthorityBytes
@@ -330,32 +317,30 @@ function Get-DeploymentAuthority {
         throw "Deployment receipt does not contain the exact retirement identities."
     }
 
-    if (-not $script:fixtureMode) {
-        $expected = @{
-            ".uai/.htaccess" = @(256, "4268ee353e8ae2a97969cb8e03f17d6ad5d0b74b5c93c61a31f547038780c54f")
-            ".uai/index.uai" = @(1408, "d42499579ae930fd1904420804ecd8e52bd8c3152c21061c54046f528a5d9409")
-            ".uai/taboo.uai" = @(4515, "e9d87bd04351dbe52d2804ef7213b199fa2e2b7f1c95a8dc0753d0bccbd7bf70")
-            ".uai/talisman.uai" = @(734, "78c3436b437cd40b106789c985b8cc033502ca38a710e944d34d17ba219ec96e")
-            ".uai/totem.uai" = @(2870, "85e283635278191cca992d3cb044223c261d1d393335c95c202ec119602d96ba")
-            ".well-known/uaix-talisman.txt" = @(3268, "da4570444088642c9e644287b56cefe252244955b65fe1d280e7a5f180f323c8")
-            "docs/reports/gguf-mirust-all-source-review-bundle.txt" = @(4915911, "8be2f5781fbc3db4ae5c5af6a167b5dd16b6e19df6ecbdcd82b87367b56c6de0")
-            "docs/reports/analyzing-website-virality.md" = @(62253, "5cdb3c8c9fa714af0c44b48ec58b3c885846d5c8d7b1e5dde869442b83da95ef")
-            "docs/reports/future-proof-native-html5-techniques.md" = @(53751, "a152a89b4575ddb990ddb5300dae0ac44bc424abded40c9adb7ca87045461879")
-            "docs/reports/innovative-vanilla-web-design.md" = @(47461, "fe68269f39258fa1e3bfecb7f78c153f4ca24c0f08432d3f193f91087b12122c")
-            "docs/reports/mememtech-vanilla-web-architecture.md" = @(42941, "4e3acaa0d568c201c56e8f74e0016004743d04e553b9aec8e83152e0f8b4e47a")
-            "docs/reports/memory-systems-domains-research.md" = @(39530, "b400312f9feb5f5d5d2bf0c77b221b925b7ac091bc618e1b6964d38885d8c9b9")
-            "docs/reports/rust-wasm-neural-model-patterns.md" = @(69793, "53e988fbcdd51a06a6155a8293ca85113543f20d9f78af52ee50997b23e5f618")
-            "docs/reports/tiny-language-models-for-rust-wasm.md" = @(44102, "37d6b47ed4284f65c591921f653f3aa4e17672593ae84c09c84e4222fc808ae9")
-            "docs/reports/tiny-language-models-for-wasm.md" = @(46105, "b823a12562f6db288c6b16a38a6a9a8c6dd2af8c02f783bbf34e3c54836ff6fb")
-            "docs/reports/understanding-tinyrustlm-creation-and-purpose.md" = @(31890, "69a94b184f4876b293ef268f22df5db63f1dff5413afef03f7a9c6bab397440d")
-            "docs/reports/vanilla-js-future-proof-techniques.md" = @(47621, "5bcc36711c08d1072c857b01e025d7fff946615349bdeeb340e70fa8677f92b3")
-            "docs/runtime-portal/runtime-docs/workspace.uai" = @(74217, "5d8b08c561d6660d6eb8ace22b30baafc2ed8d9e8ec5a27334b304038d4480ff")
-        }
-        foreach ($path in $identityPaths) {
-            if ([int64]$identities[$path].bytes -ne [int64]$expected[$path][0] -or
-                [string]$identities[$path].sha256 -cne [string]$expected[$path][1]) {
-                throw "Canonical retirement identity drifted."
-            }
+    $expected = @{
+        ".uai/.htaccess" = @(256, "4268ee353e8ae2a97969cb8e03f17d6ad5d0b74b5c93c61a31f547038780c54f")
+        ".uai/index.uai" = @(1408, "d42499579ae930fd1904420804ecd8e52bd8c3152c21061c54046f528a5d9409")
+        ".uai/taboo.uai" = @(4515, "e9d87bd04351dbe52d2804ef7213b199fa2e2b7f1c95a8dc0753d0bccbd7bf70")
+        ".uai/talisman.uai" = @(734, "78c3436b437cd40b106789c985b8cc033502ca38a710e944d34d17ba219ec96e")
+        ".uai/totem.uai" = @(2870, "85e283635278191cca992d3cb044223c261d1d393335c95c202ec119602d96ba")
+        ".well-known/uaix-talisman.txt" = @(3268, "da4570444088642c9e644287b56cefe252244955b65fe1d280e7a5f180f323c8")
+        "docs/reports/gguf-mirust-all-source-review-bundle.txt" = @(4915911, "8be2f5781fbc3db4ae5c5af6a167b5dd16b6e19df6ecbdcd82b87367b56c6de0")
+        "docs/reports/analyzing-website-virality.md" = @(62253, "5cdb3c8c9fa714af0c44b48ec58b3c885846d5c8d7b1e5dde869442b83da95ef")
+        "docs/reports/future-proof-native-html5-techniques.md" = @(53751, "a152a89b4575ddb990ddb5300dae0ac44bc424abded40c9adb7ca87045461879")
+        "docs/reports/innovative-vanilla-web-design.md" = @(47461, "fe68269f39258fa1e3bfecb7f78c153f4ca24c0f08432d3f193f91087b12122c")
+        "docs/reports/mememtech-vanilla-web-architecture.md" = @(42941, "4e3acaa0d568c201c56e8f74e0016004743d04e553b9aec8e83152e0f8b4e47a")
+        "docs/reports/memory-systems-domains-research.md" = @(39530, "b400312f9feb5f5d5d2bf0c77b221b925b7ac091bc618e1b6964d38885d8c9b9")
+        "docs/reports/rust-wasm-neural-model-patterns.md" = @(69793, "53e988fbcdd51a06a6155a8293ca85113543f20d9f78af52ee50997b23e5f618")
+        "docs/reports/tiny-language-models-for-rust-wasm.md" = @(44102, "37d6b47ed4284f65c591921f653f3aa4e17672593ae84c09c84e4222fc808ae9")
+        "docs/reports/tiny-language-models-for-wasm.md" = @(46105, "b823a12562f6db288c6b16a38a6a9a8c6dd2af8c02f783bbf34e3c54836ff6fb")
+        "docs/reports/understanding-tinyrustlm-creation-and-purpose.md" = @(31890, "69a94b184f4876b293ef268f22df5db63f1dff5413afef03f7a9c6bab397440d")
+        "docs/reports/vanilla-js-future-proof-techniques.md" = @(47621, "5bcc36711c08d1072c857b01e025d7fff946615349bdeeb340e70fa8677f92b3")
+        "docs/runtime-portal/runtime-docs/workspace.uai" = @(74217, "5d8b08c561d6660d6eb8ace22b30baafc2ed8d9e8ec5a27334b304038d4480ff")
+    }
+    foreach ($path in $identityPaths) {
+        if ([int64]$identities[$path].bytes -ne [int64]$expected[$path][0] -or
+            [string]$identities[$path].sha256 -cne [string]$expected[$path][1]) {
+            throw "Canonical retirement identity drifted."
         }
     }
 
@@ -370,10 +355,10 @@ function Get-DeploymentAuthority {
 
 function Get-TransportAuthority {
     $script:phase = "transport-authority"
-    $authorityRoot = if ($script:fixtureMode) { $script:fixtureAuthorityRoot } else { $repositoryRoot }
+    $authorityRoot = $repositoryRoot
     $bytes = Get-ContainedPlainFileBytes -Root $authorityRoot -RelativePath $transportAuthorityRelativePath -MaximumBytes 4096
     $sha256 = Get-Sha256Bytes -Bytes $bytes
-    if (-not $script:fixtureMode -and $sha256 -cne $canonicalTransportAuthoritySha256) {
+    if ($sha256 -cne $canonicalTransportAuthoritySha256) {
         throw "Checked-in FTPS transport authority bytes drifted."
     }
     $authority = ConvertFrom-StrictJsonBytes -Bytes $bytes -Description "FTPS transport authority"
@@ -619,34 +604,6 @@ function Get-BoundRemoteRenamePath {
     return "/$encoded"
 }
 
-function Resolve-FixturePath {
-    param([Parameter(Mandatory)][string]$RelativePath)
-
-    $bound = Get-BoundRemotePath -RelativePath $RelativePath
-    $fullPath = [IO.Path]::GetFullPath((Join-Path $script:fixtureTargetRoot ($bound -replace "/", "\")))
-    if (-not $fullPath.StartsWith($script:fixtureTargetRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
-        throw "Fixture path escaped the owned fixture root."
-    }
-    return $fullPath
-}
-
-function Assert-PlainFixtureTree {
-    $rootItem = Get-Item -LiteralPath $script:fixtureTargetRoot -Force
-    if (-not $rootItem.PSIsContainer -or ($rootItem.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
-        throw "Fixture root must be a plain directory."
-    }
-    $marker = Join-Path $script:fixtureTargetRoot ".source-retirement-fixture-root"
-    if (-not (Test-Path -LiteralPath $marker -PathType Leaf) -or
-        [IO.File]::ReadAllText($marker, [Text.Encoding]::UTF8) -cne "tinyrustlm-source-retirement-fixture-v1`n") {
-        throw "Fixture root is missing its exact ownership marker."
-    }
-    foreach ($item in @(Get-ChildItem -LiteralPath $script:fixtureTargetRoot -Recurse -Force)) {
-        if (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
-            throw "Fixture tree must not contain links or reparse points."
-        }
-    }
-}
-
 function Get-EncodedRemotePath {
     param([Parameter(Mandatory)][string]$RemotePath)
 
@@ -685,16 +642,6 @@ function Test-FileUnavailableError {
 function Get-TargetSize {
     param([Parameter(Mandatory)][string]$RelativePath)
 
-    if ($script:fixtureMode) {
-        $fullPath = Resolve-FixturePath -RelativePath $RelativePath
-        if (-not (Test-Path -LiteralPath $fullPath)) { return [int64]-1 }
-        $item = Get-Item -LiteralPath $fullPath -Force
-        if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
-            throw "Fixture target is not a regular file."
-        }
-        return [int64]$item.Length
-    }
-
     try {
         $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::GetFileSize)
         $response = $request.GetResponse()
@@ -712,10 +659,6 @@ function Get-TargetBytes {
     $size = Get-TargetSize -RelativePath $RelativePath
     if ($size -lt 0) { return $null }
     if ($size -gt $MaximumBytes) { throw "Remote control artifact exceeds its read bound." }
-    if ($script:fixtureMode) {
-        $bytes = [IO.File]::ReadAllBytes((Resolve-FixturePath -RelativePath $RelativePath))
-        return ,$bytes
-    }
 
     $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::DownloadFile)
     $response = $request.GetResponse()
@@ -775,10 +718,7 @@ function Test-TargetDirectory {
     param([Parameter(Mandatory)][string]$RelativePath)
 
     Assert-RelativePath -Path $RelativePath
-    if ($script:fixtureMode) {
-        $fullPath = Resolve-FixturePath -RelativePath $RelativePath
-        return Test-Path -LiteralPath $fullPath -PathType Container
-    }
+
     try {
         $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::ListDirectory)
         $response = $request.GetResponse()
@@ -795,18 +735,10 @@ function New-TargetDirectoryCreateOnly {
     param([Parameter(Mandatory)][string]$RelativePath)
 
     if (Test-TargetDirectory -RelativePath $RelativePath) { throw "Remote create-only directory is occupied." }
-    if ($script:fixtureMode) {
-        $fullPath = Resolve-FixturePath -RelativePath $RelativePath
-        [IO.Directory]::CreateDirectory($fullPath) | Out-Null
-    }
-    else {
-        $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::MakeDirectory)
-        $response = $request.GetResponse()
-        $response.Dispose()
-    }
-    if ($FixtureFault -ceq "lock-create-ambiguous" -and $RelativePath -ceq $lockPath) {
-        throw "Injected ambiguous lock-creation response."
-    }
+    $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::MakeDirectory)
+    $response = $request.GetResponse()
+    $response.Dispose()
+
     if (-not (Test-TargetDirectory -RelativePath $RelativePath)) {
         throw "Remote create-only directory did not commit."
     }
@@ -816,14 +748,9 @@ function Remove-TargetDirectory {
     param([Parameter(Mandatory)][string]$RelativePath)
 
     if (-not (Test-TargetDirectory -RelativePath $RelativePath)) { return }
-    if ($script:fixtureMode) {
-        [IO.Directory]::Delete((Resolve-FixturePath -RelativePath $RelativePath), $false)
-    }
-    else {
-        $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::RemoveDirectory)
-        $response = $request.GetResponse()
-        $response.Dispose()
-    }
+    $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::RemoveDirectory)
+    $response = $request.GetResponse()
+    $response.Dispose()
     if (Test-TargetDirectory -RelativePath $RelativePath) { throw "Remote directory removal did not commit." }
 }
 
@@ -831,14 +758,9 @@ function Remove-TargetFile {
     param([Parameter(Mandatory)][string]$RelativePath)
 
     if ((Get-TargetSize -RelativePath $RelativePath) -lt 0) { return }
-    if ($script:fixtureMode) {
-        [IO.File]::Delete((Resolve-FixturePath -RelativePath $RelativePath))
-    }
-    else {
-        $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::DeleteFile)
-        $response = $request.GetResponse()
-        $response.Dispose()
-    }
+    $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::DeleteFile)
+    $response = $request.GetResponse()
+    $response.Dispose()
     if ((Get-TargetSize -RelativePath $RelativePath) -ge 0) { throw "Remote file removal did not commit." }
 }
 
@@ -853,27 +775,21 @@ function Send-TargetFileCreateOnly {
         (Get-TargetSize -RelativePath $RelativePath) -ge 0) {
         throw "Remote create-only file path is occupied or invalid."
     }
-    if ($script:fixtureMode) {
-        $stream = [IO.File]::Open((Resolve-FixturePath -RelativePath $RelativePath), [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
+    $failure = $null
+    try {
+        $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::UploadFile)
+        $request.ContentLength = $Bytes.Length
+        $stream = $request.GetRequestStream()
         try { $stream.Write($Bytes, 0, $Bytes.Length); $stream.Flush() } finally { $stream.Dispose() }
+        $response = $request.GetResponse()
+        $response.Dispose()
     }
-    else {
-        $failure = $null
-        try {
-            $request = New-FtpRequest -RemotePath $RelativePath -Method ([Net.WebRequestMethods+Ftp]::UploadFile)
-            $request.ContentLength = $Bytes.Length
-            $stream = $request.GetRequestStream()
-            try { $stream.Write($Bytes, 0, $Bytes.Length); $stream.Flush() } finally { $stream.Dispose() }
-            $response = $request.GetResponse()
-            $response.Dispose()
+    catch { $failure = $_.Exception }
+    if ($null -ne $failure -and -not (Test-TargetIdentity -RelativePath $RelativePath -Bytes $Bytes)) {
+        if (-not $RetainOnAmbiguity) {
+            try { Remove-TargetFile -RelativePath $RelativePath } catch { }
         }
-        catch { $failure = $_.Exception }
-        if ($null -ne $failure -and -not (Test-TargetIdentity -RelativePath $RelativePath -Bytes $Bytes)) {
-            if (-not $RetainOnAmbiguity) {
-                try { Remove-TargetFile -RelativePath $RelativePath } catch { }
-            }
-            throw $failure
-        }
+        throw $failure
     }
     if (-not (Test-TargetIdentity -RelativePath $RelativePath -Bytes $Bytes)) {
         throw "Remote create-only file identity did not commit."
@@ -886,48 +802,11 @@ function Move-TargetFileReplacing {
     Assert-RelativePath -Path $SourcePath
     Assert-RelativePath -Path $TargetPath
     if ((Get-TargetSize -RelativePath $SourcePath) -lt 0) { throw "Remote rename source is absent." }
-    if ($script:fixtureMode) {
-        $source = Resolve-FixturePath -RelativePath $SourcePath
-        $target = Resolve-FixturePath -RelativePath $TargetPath
-        if (Test-Path -LiteralPath $target -PathType Leaf) {
-            $replacementBackup = "$source.fixture-replaced-backup"
-            if (Test-Path -LiteralPath $replacementBackup) { throw "Fixture atomic-replacement backup is occupied." }
-            [IO.File]::Replace($source, $target, $replacementBackup)
-            [IO.File]::Delete($replacementBackup)
-        }
-        else { [IO.File]::Move($source, $target) }
-    }
-    else {
-        $request = New-FtpRequest -RemotePath $SourcePath -Method ([Net.WebRequestMethods+Ftp]::Rename)
-        $request.RenameTo = Get-BoundRemoteRenamePath -RelativePath $TargetPath
-        $response = $request.GetResponse()
-        $response.Dispose()
-    }
+    $request = New-FtpRequest -RemotePath $SourcePath -Method ([Net.WebRequestMethods+Ftp]::Rename)
+    $request.RenameTo = Get-BoundRemoteRenamePath -RelativePath $TargetPath
+    $response = $request.GetResponse()
+    $response.Dispose()
     if ((Get-TargetSize -RelativePath $SourcePath) -ge 0) { throw "Remote rename source remains present." }
-}
-
-function Assert-FixturePrivateNamespace {
-    param([Parameter(Mandatory)][string]$RequestPath)
-
-    $allowedRequestPaths = @(
-        "/.uai/source-retirement.lock/preflight.bin",
-        "/.uai/source-retirement.lock/cap-source/probe.bin"
-    )
-    if ($allowedRequestPaths -cnotcontains $RequestPath) {
-        throw "Fixture private namespace probe path is not exact."
-    }
-    $guardPath = Resolve-FixturePath -RelativePath ".uai/.htaccess"
-    if (-not (Test-Path -LiteralPath $guardPath -PathType Leaf)) {
-        throw "Fixture private namespace guard is absent."
-    }
-    $guard = [IO.File]::ReadAllText($guardPath, [Text.Encoding]::UTF8)
-    if (-not $guard.Contains('<FilesMatch "^(index|long-term-memory)\.uai$">') -or
-        -not $guard.Contains('<FilesMatch "^(?!(index|long-term-memory)\.uai$).+">') -or
-        @($guard -split "`n" | Where-Object { $_.TrimEnd("`r") -ceq "  Require all granted" }).Count -ne 1 -or
-        @($guard -split "`n" | Where-Object { $_.TrimEnd("`r") -ceq "  Require all denied" }).Count -ne 1 -or
-        $guard -match "source-retirement") {
-        throw "Fixture private namespace is not fail-closed for retirement controls."
-    }
 }
 
 function Read-BoundedHttpBody {
@@ -959,7 +838,6 @@ function Assert-NoLocation {
 function Assert-PrivateNamespaceReadback {
     param([Parameter(Mandatory)][string]$RequestPath)
 
-    if ($script:fixtureMode) { Assert-FixturePrivateNamespace -RequestPath $RequestPath; return }
     foreach ($method in @([Net.Http.HttpMethod]::Head, [Net.Http.HttpMethod]::Get)) {
         $request = [Net.Http.HttpRequestMessage]::new($method, "$origin$RequestPath")
         $response = $script:httpClient.SendAsync($request, [Net.Http.HttpCompletionOption]::ResponseHeadersRead).GetAwaiter().GetResult()
@@ -979,9 +857,7 @@ function Get-HttpsIdentityBytes {
     param([Parameter(Mandatory)][string]$RelativePath, [Parameter(Mandatory)][int64]$MaximumBytes)
 
     Assert-RelativePath -Path $RelativePath
-    if ($script:fixtureMode) {
-        return ,(Get-ContainedPlainFileBytes -Root $script:fixtureHttpsRoot -RelativePath $RelativePath -MaximumBytes $MaximumBytes)
-    }
+
     $encoded = Get-EncodedRemotePath -RemotePath $RelativePath
     $request = [Net.Http.HttpRequestMessage]::new([Net.Http.HttpMethod]::Get, "$origin/$encoded")
     $response = $script:httpClient.SendAsync($request, [Net.Http.HttpCompletionOption]::ResponseHeadersRead).GetAwaiter().GetResult()
@@ -1098,7 +974,7 @@ function Assert-GoneResponse {
 }
 
 function Assert-PreMutationRouteObservation {
-    if ($script:fixtureMode) { return }
+
     foreach ($variant in $retiredVariants) {
         foreach ($cacheBusted in @($false, $true)) {
             $url = "$origin$variant"
@@ -1116,25 +992,8 @@ function Assert-PreMutationRouteObservation {
     }
 }
 
-function Assert-FixtureGoneContract {
-    foreach ($relative in $artifactPaths) {
-        $expected = Get-LocalArtifactBytes -RelativePath $relative
-        if (-not (Test-TargetIdentity -RelativePath $relative -Bytes $expected)) {
-            throw "Fixture guard identity is incomplete."
-        }
-    }
-    $expectedPaths = @($retiredPaths | ForEach-Object { "/$_".ToLowerInvariant() })
-    foreach ($variant in $retiredVariants) {
-        $decoded = [Uri]::UnescapeDataString(($variant -split "\?", 2)[0]).ToLowerInvariant()
-        if ($expectedPaths -cnotcontains $decoded) {
-            throw "Fixture route decoder did not resolve an exact retired route."
-        }
-    }
-    $script:readbackRequestCount += $retiredVariants.Count * 4
-}
-
 function Assert-RetiredRouteReadbacks {
-    if ($script:fixtureMode) { Assert-FixtureGoneContract; return }
+
     foreach ($methodName in @("HEAD", "GET")) {
         foreach ($variant in $retiredVariants) {
             foreach ($cacheBusted in @($false, $true)) {
@@ -1165,7 +1024,7 @@ function Invoke-CapabilityRehearsal {
     Send-TargetFileCreateOnly -RelativePath $targetProbe -Bytes $oldBytes
     Send-TargetFileCreateOnly -RelativePath $sourceProbe -Bytes $newBytes
     Assert-PrivateNamespaceReadback -RequestPath "/$sourceProbe"
-    if ($FixtureFault -ceq "capability-rename") { throw "Injected capability rename failure." }
+
     Move-TargetFileReplacing -SourcePath $sourceProbe -TargetPath $targetProbe
     if (-not (Test-TargetIdentity -RelativePath $targetProbe -Bytes $newBytes)) {
         throw "Cross-directory atomic replacement capability is unavailable."
@@ -1446,24 +1305,11 @@ function Resolve-ReceiptPath {
     if ([string]::IsNullOrWhiteSpace($ReceiptPath)) { throw "An explicit create-only receipt path is required." }
     $resolved = [IO.Path]::GetFullPath($ReceiptPath)
     if (Test-Path -LiteralPath $resolved) { throw "Source-retirement receipt path is already occupied." }
-    $receiptRoot = if ($script:fixtureMode) {
-        [IO.Path]::GetFullPath((Join-Path $fixtureOwner "receipts"))
-    }
-    else {
-        [IO.Path]::GetFullPath((Join-Path $repositoryRoot "deploy\source-retirement-receipts"))
-    }
-    if ($script:fixtureMode) {
-        $expectedFixtureReceipt = [IO.Path]::GetFullPath((Join-Path $receiptRoot "receipt.json"))
-        if (-not [string]::Equals($resolved, $expectedFixtureReceipt, [StringComparison]::OrdinalIgnoreCase)) {
-            throw "Fixture receipt path is not the exact owned evidence path."
-        }
-    }
-    else {
-        $expectedLeaf = "source-retirement-[0-9]{8}T[0-9]{6}Z-$Nonce\.json"
-        if (-not [string]::Equals((Split-Path -Parent $resolved), $receiptRoot, [StringComparison]::OrdinalIgnoreCase) -or
-            (Split-Path -Leaf $resolved) -notmatch "^$expectedLeaf$") {
-            throw "Production source-retirement receipt path is not canonical."
-        }
+    $receiptRoot = [IO.Path]::GetFullPath((Join-Path $repositoryRoot "deploy\source-retirement-receipts"))
+    $expectedLeaf = "source-retirement-[0-9]{8}T[0-9]{6}Z-$Nonce\.json"
+    if (-not [string]::Equals((Split-Path -Parent $resolved), $receiptRoot, [StringComparison]::OrdinalIgnoreCase) -or
+        (Split-Path -Leaf $resolved) -notmatch "^$expectedLeaf$") {
+        throw "Production source-retirement receipt path is not canonical."
     }
     $parent = Split-Path -Parent $resolved
     $parentOwner = Split-Path -Parent $parent
@@ -1565,7 +1411,7 @@ function Reserve-DurableLocalJournal {
         site = "TinyRustLM.MiRust.com"
         origin = $origin
         operation_nonce = $Nonce
-        mode = if ($script:fixtureMode) { "fixture" } else { "ftps" }
+        mode = "ftps"
         deployment_receipt_sha256 = [string]$script:deploymentAuthority.receipt_sha256
         transport_authority_sha256 = [string]$script:transportAuthority.sha256
         transport_binding_sha256 = $script:transportBindingSha256
@@ -1587,7 +1433,7 @@ function Write-TerminalJournal {
         site = "TinyRustLM.MiRust.com"
         origin = $origin
         operation_nonce = $Nonce
-        mode = if ($script:fixtureMode) { "fixture" } else { "ftps" }
+        mode = "ftps"
         deployment_receipt_sha256 = [string]$script:deploymentAuthority.receipt_sha256
         transport_authority_sha256 = [string]$script:transportAuthority.sha256
         transport_binding_sha256 = $script:transportBindingSha256
@@ -1607,7 +1453,6 @@ function Write-TerminalJournal {
 function Write-CreateOnlyReceipt {
     param([System.Collections.IDictionary]$Receipt, [Parameter(Mandatory)][string]$ResolvedPath)
 
-    if ($FixtureFault -ceq "receipt-write") { throw "Injected final receipt failure." }
     $bytes = ConvertTo-BoundedJsonBytes -Value $Receipt -Description "Source-retirement receipt"
     $temporary = "$ResolvedPath.$Nonce.tmp"
     if ((Test-Path -LiteralPath $ResolvedPath) -or (Test-Path -LiteralPath $temporary)) {
@@ -1626,7 +1471,7 @@ function New-ReceiptRecord {
         site = "TinyRustLM.MiRust.com"
         origin = $origin
         operation_nonce = $Nonce
-        mode = if ($script:fixtureMode) { "fixture" } else { "ftps" }
+        mode = "ftps"
         source_commit = if ($null -ne $GitIdentity) { [string]$GitIdentity.source_commit } else { $null }
         source_tree = if ($null -ne $GitIdentity) { [string]$GitIdentity.source_tree } else { $null }
         deployment_receipt_sha256 = if ($null -ne $script:deploymentAuthority) { [string]$script:deploymentAuthority.receipt_sha256 } else { $null }
@@ -1648,196 +1493,195 @@ function New-ReceiptRecord {
     return $record
 }
 
-if ($Publish -and $script:fixtureMode) { throw "Publish and fixture modes are mutually exclusive." }
-if (-not $script:fixtureMode -and $FixtureFault -cne "none") { throw "Failure injection is fixture-only." }
-
-$artifacts = @(Assert-LocalArtifacts)
-if (-not $Publish -and -not $script:fixtureMode) {
-    $script:transportAuthority = Get-TransportAuthority
-    Write-Host ("PREPARED {0} exact public artifacts; {1} exact retirements; no credentials or network used." -f $artifacts.Count, $retiredPaths.Count)
-    exit 0
-}
-if ([string]::IsNullOrWhiteSpace($Nonce)) { throw "Execution requires an explicit 12-character lowercase hexadecimal nonce." }
-
-$gitIdentity = $null
-if ($script:fixtureMode) {
-    $script:fixtureTargetRoot = [IO.Path]::GetFullPath($FixtureRoot)
-    $fixtureOwner = [IO.Path]::GetFullPath((Split-Path -Parent $script:fixtureTargetRoot))
-    $script:fixtureAuthorityRoot = [IO.Path]::GetFullPath((Join-Path $fixtureOwner "authority"))
-    $script:fixtureHttpsRoot = [IO.Path]::GetFullPath((Join-Path $fixtureOwner "https"))
-    Assert-PlainFixtureTree
-}
-$script:transportAuthority = Get-TransportAuthority
-if (-not $script:fixtureMode) { $gitIdentity = Assert-PublishGitIdentity -Artifacts $artifacts }
-$resolvedReceiptPath = Resolve-ReceiptPath
-$startedUtc = (Get-Date).ToUniversalTime().ToString("o")
-$profile = $null
-$handler = $null
-$failureCode = $null
-
-try {
-    $script:deploymentAuthority = Get-DeploymentAuthority
-    $profile = Get-CredentialProfile -Path $FileZillaProfilePath
-    Assert-TransportAuthorityBinding -Profile $profile
-    $script:ftpHost = $profile.Host
-    $script:ftpPort = $profile.Port
-    $script:ftpProtocol = $profile.Protocol
-    $script:ftpUser = $profile.User
-    $script:ftpRemoteRoot = $profile.RemoteRoot
-    if (-not $script:fixtureMode) {
-        $script:credential = [Net.NetworkCredential]::new($profile.User, $profile.Password)
+# Execute one canonical transaction; importing definitions does not read credentials or contact a site.
+function Invoke-SourceRetirementTransaction {
+    Initialize-SourceRetirementState
+    Assert-CanonicalSourceAuthority
+    $artifacts = @(Assert-LocalArtifacts)
+    if (-not $Publish) {
+        $script:transportAuthority = Get-TransportAuthority
+        Write-Host ("PREPARED {0} exact public artifacts; {1} exact retirements; no credentials or network used." -f $artifacts.Count, $retiredPaths.Count)
+        return
     }
-    $profile.Password = $null
-    $script:transportBindingSha256 = Get-TransportBindingSha256
+    if ([string]::IsNullOrWhiteSpace($Nonce)) { throw "Execution requires an explicit 12-character lowercase hexadecimal nonce." }
 
-    if (-not $script:fixtureMode) {
+    $gitIdentity = $null
+
+    $script:transportAuthority = Get-TransportAuthority
+    $gitIdentity = Assert-PublishGitIdentity -Artifacts $artifacts
+    $resolvedReceiptPath = Resolve-ReceiptPath
+    $startedUtc = (Get-Date).ToUniversalTime().ToString("o")
+    $profile = $null
+    $handler = $null
+    $failureCode = $null
+
+    try {
+        $script:deploymentAuthority = Get-DeploymentAuthority
+        $profile = Get-CredentialProfile -Path $FileZillaProfilePath
+        Assert-TransportAuthorityBinding -Profile $profile
+        $script:ftpHost = $profile.Host
+        $script:ftpPort = $profile.Port
+        $script:ftpProtocol = $profile.Protocol
+        $script:ftpUser = $profile.User
+        $script:ftpRemoteRoot = $profile.RemoteRoot
+        $script:credential = [Net.NetworkCredential]::new($profile.User, $profile.Password)
+        $profile.Password = $null
+        $script:transportBindingSha256 = Get-TransportBindingSha256
+
         $handler = [Net.Http.HttpClientHandler]::new()
         $handler.AllowAutoRedirect = $false
         $script:httpClient = [Net.Http.HttpClient]::new($handler)
         $script:httpClient.Timeout = [TimeSpan]::FromSeconds(30)
         Assert-PreMutationRouteObservation
-    }
-    Assert-RemoteSiteIdentity
-    if (-not (Test-TargetDirectory -RelativePath ".uai")) { throw "Private remote control namespace is absent." }
-    if (Test-TargetDirectory -RelativePath $lockPath) { throw "Private remote retirement lock is already occupied." }
-    if ($FixtureFault -ceq "before-evidence") { throw "Injected failure after read-only preflight." }
+        Assert-RemoteSiteIdentity
+        if (-not (Test-TargetDirectory -RelativePath ".uai")) { throw "Private remote control namespace is absent." }
+        if (Test-TargetDirectory -RelativePath $lockPath) { throw "Private remote retirement lock is already occupied." }
 
-    Initialize-EvidenceRoot -ResolvedReceiptPath $resolvedReceiptPath
-    Initialize-LockOwnershipIdentity
-    Reserve-DurableLocalJournal -StartedUtc $startedUtc
-    $script:phase = "lock-acquisition"
-    $script:lockAttempted = $true
-    $script:lockDisposition = "creation-attempted-unproven"
-    try {
-        New-TargetDirectoryCreateOnly -RelativePath $lockPath
+        Initialize-EvidenceRoot -ResolvedReceiptPath $resolvedReceiptPath
+        Initialize-LockOwnershipIdentity
+        Reserve-DurableLocalJournal -StartedUtc $startedUtc
+        $script:phase = "lock-acquisition"
+        $script:lockAttempted = $true
+        $script:lockDisposition = "creation-attempted-unproven"
+        try {
+            New-TargetDirectoryCreateOnly -RelativePath $lockPath
+        }
+        catch {
+            $script:lockAcquired = $false
+            $script:lockOwnershipProven = $false
+            $script:lockDisposition = "creation-result-ambiguous-unowned"
+            throw
+        }
+        $script:phase = "lock-ownership-proof"
+        $script:lockDisposition = "directory-created-ownership-unproven"
+        Send-TargetFileCreateOnly -RelativePath $lockOwnerPath -Bytes $script:lockOwnerBytes -RetainOnAmbiguity
+        Assert-ExactLockOwnership
+        $script:lockAcquired = $true
+        $script:lockOwnershipProven = $true
+        $script:lockDisposition = "present-owned-exact"
+
+        Invoke-CapabilityRehearsal
+
+        for ($index = 0; $index -lt $artifactPaths.Count; $index++) {
+            $relative = $artifactPaths[$index]
+            Install-ControlArtifact -Index $index -RelativePath $relative -Bytes (Get-LocalArtifactBytes -RelativePath $relative)
+        }
+
+        $script:phase = "guard-readback-before-removal"
+
+        Assert-RetiredRouteReadbacks
+        $script:guardReadbackProven = $true
+        $script:phase = "target-identity-before-removal"
+        Assert-RetiredTargetIdentities
+
+        Assert-ExactLockOwnership
+        $script:deletionStarted = $true
+        for ($index = 0; $index -lt $retiredPaths.Count; $index++) {
+            Assert-ExactLockOwnership
+            $script:phase = "remove-retired-$index"
+            $relative = $retiredPaths[$index]
+            $wasPresent = (Get-TargetSize -RelativePath $relative) -ge 0
+            Remove-TargetFile -RelativePath $relative
+            if ((Get-TargetSize -RelativePath $relative) -ge 0) { throw "Retired source copy remains present." }
+            $script:retiredResults += [ordered]@{
+                path = $relative
+                status = if ($wasPresent) { "deleted" } else { "already-absent" }
+            }
+
+        }
+
+        $script:phase = "terminal-readback"
+        Assert-ExactLockOwnership
+        Assert-RetiredRouteReadbacks
+        foreach ($relative in $retiredPaths) {
+            if ((Get-TargetSize -RelativePath $relative) -ge 0) { throw "Retired source copy reappeared after removal." }
+        }
+        $script:phase = "private-control-cleanup"
+
+        Remove-PrivateControls
+
+        $receipt = New-ReceiptRecord -Status "retired-routes-verified" -GitIdentity $gitIdentity -Artifacts $artifacts -StartedUtc $startedUtc -FailureCode ""
+        Write-TerminalJournal -Receipt $receipt
+        Write-CreateOnlyReceipt -Receipt $receipt -ResolvedPath $resolvedReceiptPath
+        Write-Host "RETIRED routes verified; receipt created."
     }
     catch {
-        $script:lockAcquired = $false
-        $script:lockOwnershipProven = $false
-        $script:lockDisposition = "creation-result-ambiguous-unowned"
+        if (-not $script:journalReserved) {
+            if ($script:evidenceRootCreated) {
+                try { [IO.Directory]::Delete($script:evidenceRoot, $false) } catch { }
+            }
+            throw
+        }
+        if ($script:terminalEvidenceWritten) { throw }
+        $failureCode = $_.Exception.GetType().FullName
+        $failedPhase = $script:phase
+        $rollbackFailed = $false
+        $ownershipLost = $false
+        if ($script:lockOwnershipProven) {
+            try { Assert-ExactLockOwnership }
+            catch { $ownershipLost = $true }
+        }
+        if ($script:lockOwnershipProven -and -not $script:deletionStarted -and -not $script:guardReadbackProven) {
+            if ($script:installationRecords.Count -gt 0) {
+                try { Restore-UnprovenControlArtifacts } catch { $rollbackFailed = $true }
+            }
+            if (-not $rollbackFailed) {
+                try { Remove-PrivateControls } catch { $rollbackFailed = $true }
+            }
+        }
+        if (($script:guardReadbackProven -or $script:deletionStarted) -and $script:lockAcquired) {
+            $script:lockDisposition = "retained-for-reconciliation"
+        }
+        $status = if ($failedPhase -ceq "deployment-identity" -or
+            $failedPhase -ceq "remote-site-identity" -or
+            $failedPhase -ceq "local-journal-reservation") {
+            "identity-rejected"
+        }
+        elseif ($failedPhase -ceq "lock-acquisition" -or $failedPhase -ceq "lock-ownership-proof") {
+            "lock-ownership-unproven"
+        }
+        elseif ($failedPhase -ceq "capability-rehearsal") {
+            "capability-rejected"
+        }
+        elseif ($script:deletionStarted) {
+            "guarded-removal-incomplete"
+        }
+        elseif ($script:artifactsInstalled -eq $artifactPaths.Count) {
+            "guarded-removal-not-started"
+        }
+        else { "guard-install-incomplete" }
+        if ($failedPhase -ceq "private-control-cleanup" -and $script:retiredResults.Count -eq $retiredPaths.Count) {
+            $status = "retired-routes-verified-control-cleanup-pending"
+        }
+        if ($rollbackFailed -or $ownershipLost) { $status = "ambiguous-control-state" }
+        else { $script:phase = $failedPhase }
+        $receipt = New-ReceiptRecord -Status $status -GitIdentity $gitIdentity -Artifacts $artifacts -StartedUtc $startedUtc -FailureCode $failureCode
+        Write-TerminalJournal -Receipt $receipt
+        Write-CreateOnlyReceipt -Receipt $receipt -ResolvedPath $resolvedReceiptPath
         throw
     }
-    $script:phase = "lock-ownership-proof"
-    $script:lockDisposition = "directory-created-ownership-unproven"
-    Send-TargetFileCreateOnly -RelativePath $lockOwnerPath -Bytes $script:lockOwnerBytes -RetainOnAmbiguity
-    Assert-ExactLockOwnership
-    $script:lockAcquired = $true
-    $script:lockOwnershipProven = $true
-    $script:lockDisposition = "present-owned-exact"
-    if ($FixtureFault -ceq "lock-owner-substitution") {
-        [IO.File]::WriteAllBytes(
-            (Resolve-FixturePath -RelativePath $lockOwnerPath),
-            [Text.Encoding]::ASCII.GetBytes("foreign-owner-marker`n")
-        )
-        Assert-ExactLockOwnership
+    finally {
+        if ($null -ne $profile) { $profile.Password = $null }
+        $script:credential = $null
+        $script:ftpUser = $null
+        if ($null -ne $script:httpClient) { $script:httpClient.Dispose(); $script:httpClient = $null }
+        if ($null -ne $handler) { $handler.Dispose() }
     }
-    Invoke-CapabilityRehearsal
-
-    for ($index = 0; $index -lt $artifactPaths.Count; $index++) {
-        $relative = $artifactPaths[$index]
-        Install-ControlArtifact -Index $index -RelativePath $relative -Bytes (Get-LocalArtifactBytes -RelativePath $relative)
-    }
-
-    $script:phase = "guard-readback-before-removal"
-    if ($FixtureFault -ceq "guard-readback") { throw "Injected guard readback failure." }
-    Assert-RetiredRouteReadbacks
-    $script:guardReadbackProven = $true
-    $script:phase = "target-identity-before-removal"
-    Assert-RetiredTargetIdentities
-    if ($FixtureFault -ceq "before-removal") { throw "Injected failure before guarded removal." }
-
-    Assert-ExactLockOwnership
-    $script:deletionStarted = $true
-    for ($index = 0; $index -lt $retiredPaths.Count; $index++) {
-        Assert-ExactLockOwnership
-        $script:phase = "remove-retired-$index"
-        $relative = $retiredPaths[$index]
-        $wasPresent = (Get-TargetSize -RelativePath $relative) -ge 0
-        Remove-TargetFile -RelativePath $relative
-        if ((Get-TargetSize -RelativePath $relative) -ge 0) { throw "Retired source copy remains present." }
-        $script:retiredResults += [ordered]@{
-            path = $relative
-            status = if ($wasPresent) { "deleted" } else { "already-absent" }
-        }
-        if ($FixtureFault -ceq "after-first-removal" -and $index -eq 0) {
-            throw "Injected failure after first monotonic removal."
-        }
-    }
-
-    $script:phase = "terminal-readback"
-    Assert-ExactLockOwnership
-    Assert-RetiredRouteReadbacks
-    foreach ($relative in $retiredPaths) {
-        if ((Get-TargetSize -RelativePath $relative) -ge 0) { throw "Retired source copy reappeared after removal." }
-    }
-    $script:phase = "private-control-cleanup"
-    if ($FixtureFault -ceq "cleanup") { throw "Injected cleanup failure." }
-    Remove-PrivateControls
-
-    $receipt = New-ReceiptRecord -Status "retired-routes-verified" -GitIdentity $gitIdentity -Artifacts $artifacts -StartedUtc $startedUtc -FailureCode ""
-    Write-TerminalJournal -Receipt $receipt
-    Write-CreateOnlyReceipt -Receipt $receipt -ResolvedPath $resolvedReceiptPath
-    Write-Host "RETIRED routes verified; receipt created."
 }
-catch {
-    if (-not $script:journalReserved) {
-        if ($script:evidenceRootCreated) {
-            try { [IO.Directory]::Delete($script:evidenceRoot, $false) } catch { }
-        }
-        throw
+
+# Keep startup injection disabled through every Node-dependent authority check.
+function Invoke-SourceRetirement {
+    $hadNodeOptions = Test-Path Env:NODE_OPTIONS
+    $savedNodeOptions = if ($hadNodeOptions) { $env:NODE_OPTIONS } else { $null }
+    $hadNodePath = Test-Path Env:NODE_PATH
+    $savedNodePath = if ($hadNodePath) { $env:NODE_PATH } else { $null }
+    Remove-Item Env:NODE_OPTIONS -ErrorAction SilentlyContinue
+    Remove-Item Env:NODE_PATH -ErrorAction SilentlyContinue
+    try { Invoke-SourceRetirementTransaction }
+    finally {
+        if ($hadNodeOptions) { Set-Item Env:NODE_OPTIONS $savedNodeOptions }
+        if ($hadNodePath) { Set-Item Env:NODE_PATH $savedNodePath }
     }
-    if ($script:terminalEvidenceWritten) { throw }
-    $failureCode = $_.Exception.GetType().FullName
-    $failedPhase = $script:phase
-    $rollbackFailed = $false
-    $ownershipLost = $false
-    if ($script:lockOwnershipProven) {
-        try { Assert-ExactLockOwnership }
-        catch { $ownershipLost = $true }
-    }
-    if ($script:lockOwnershipProven -and -not $script:deletionStarted -and -not $script:guardReadbackProven) {
-        if ($script:installationRecords.Count -gt 0) {
-            try { Restore-UnprovenControlArtifacts } catch { $rollbackFailed = $true }
-        }
-        if (-not $rollbackFailed) {
-            try { Remove-PrivateControls } catch { $rollbackFailed = $true }
-        }
-    }
-    if (($script:guardReadbackProven -or $script:deletionStarted) -and $script:lockAcquired) {
-        $script:lockDisposition = "retained-for-reconciliation"
-    }
-    $status = if ($failedPhase -ceq "deployment-identity" -or
-        $failedPhase -ceq "remote-site-identity" -or
-        $failedPhase -ceq "local-journal-reservation") {
-        "identity-rejected"
-    }
-    elseif ($failedPhase -ceq "lock-acquisition" -or $failedPhase -ceq "lock-ownership-proof") {
-        "lock-ownership-unproven"
-    }
-    elseif ($failedPhase -ceq "capability-rehearsal") {
-        "capability-rejected"
-    }
-    elseif ($script:deletionStarted) {
-        "guarded-removal-incomplete"
-    }
-    elseif ($script:artifactsInstalled -eq $artifactPaths.Count) {
-        "guarded-removal-not-started"
-    }
-    else { "guard-install-incomplete" }
-    if ($failedPhase -ceq "private-control-cleanup" -and $script:retiredResults.Count -eq $retiredPaths.Count) {
-        $status = "retired-routes-verified-control-cleanup-pending"
-    }
-    if ($rollbackFailed -or $ownershipLost) { $status = "ambiguous-control-state" }
-    else { $script:phase = $failedPhase }
-    $receipt = New-ReceiptRecord -Status $status -GitIdentity $gitIdentity -Artifacts $artifacts -StartedUtc $startedUtc -FailureCode $failureCode
-    Write-TerminalJournal -Receipt $receipt
-    Write-CreateOnlyReceipt -Receipt $receipt -ResolvedPath $resolvedReceiptPath
-    throw
 }
-finally {
-    if ($null -ne $profile) { $profile.Password = $null }
-    $script:credential = $null
-    $script:ftpUser = $null
-    if ($null -ne $script:httpClient) { $script:httpClient.Dispose(); $script:httpClient = $null }
-    if ($null -ne $handler) { $handler.Dispose() }
-}
+
+if ($MyInvocation.InvocationName -ne '.') { Invoke-SourceRetirement }

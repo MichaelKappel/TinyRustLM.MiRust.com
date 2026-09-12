@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-09-12T21:15:23.958Z
+updated_utc: 2026-09-12T22:37:43Z
 site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
@@ -15,7 +15,17 @@ ecosystem_cleanup_2026_09_12:
   validator_verification: Twenty checks passed with zero skips, including the actual canonical CLI source gate, read-only Git closure and actual PowerShell rejection before deployment input. Whole-file Node coverage is 98.86 percent for the virtual fixture, 94.70 percent for the preflight and 74.17 percent for the deployment validator; the new root and payload checks executed.
   validator_evidence: artifacts/ecosystem-cleanup-20260912/deployment-validator-review.json
   validator_lessons: Current pins must follow reviewed committed consumers; page-preview success does not prove release entrypoints work; matching transport headers do not prove payload identity. No source copy or executable fixture is needed for these boundary cases.
-  pending: The 27-file stage and 184-file Runtime mirror remain policy-blocked. The archive generator and its copied-repository tests are absent. Current C1 efce5c3 and package-only C2 8fe3842 bind all 27 public files exactly; actual deployment generation stops at the surviving stage without changing the old manifest. Remaining source-retirement transport tests require cleanup. No publication is claimed.
+  pending: The 27-file stage and 184-file Runtime mirror remain policy-blocked. The archive generator and its copied-repository tests are absent. Current C1 efce5c3 and package-only C2 8fe3842 bind all 27 public files exactly; actual deployment generation stops at the surviving stage without changing the old manifest. Source-retirement tests now use canonical functions and transport state in memory; production transport attestation and retirement remain open. No publication is claimed.
+
+source_retirement_tool_cleanup_2026_09_12:
+  change: Removed both fixture CLI options, 40 conditional fixture branches, four fixture-only functions, alternate authority roots, fixture receipts and copied-site transports. The Node harness no longer writes public/control source or authority-marker files into temporary site trees.
+  correctness: Every actual invocation uses canonical production authority checks. Node startup options are disabled for the whole transaction, including later Git validation, and restored on success or failure. Imported definitions perform no transaction.
+  tests: All five focused Node checks and 23 nested Pester checks pass. The seven-file Node suite has 58 passes and two existing failures on the surviving stage and 184-file mirror, with zero skips or cancellations. Real PHP route checks passed; actual production CLI preflight still rejects the unbound transport authority before credentials, network or evidence.
+  coverage: Pester command coverage is 184/198 (92.93 percent) across the changed state/transaction/environment functions and 798/1329 (60.05 percent) for the whole script. No branch-coverage or real FTPS execution claim.
+  evidence: artifacts/ecosystem-cleanup-20260912/source-retirement-tool-review.json
+  evidence_sha256: 40cf67421007dbb4f68ca12cdde39d39451a0a36d42265d80006f296b6647b27
+  lessons: TinyRustLM.com/wiki/runtime-mirust/reports/ecosystem-experiment-lessons-2026-09-12.md C22
+  boundary: Simulated transport and receipts stay in memory; small JSON write tests and Pester output are owned below canonical artifacts and removed. No production receipt, remote mutation, publication or measured storage recovery. Existing deployment manifest bytes remain unchanged.
 
 canonical_release_tools_cleanup_2026_09_12:
   implementation: Package and deployment generators emit metadata to stdout only. The PowerShell entrypoint validates canonical public bytes through the shared validator; 959 removed legacy lines include unreachable transport, credential and receipt code. The unused staged-file validator was removed.

@@ -38,4 +38,10 @@ docs/runtime-portal/runtime-docs/implementation/slmcomposer-source-options-ui-v1
 /sitemap.xml text eol=lf
 /tools/remove-reviewed-stage.ps1 text eol=lf
 /tools/remove-reviewed-runtime-mirror.ps1 text eol=lf
+/tools/retire-public-source-copies.ps1 text eol=lf
+/tools/retire-public-source-copies_test.ps1 text eol=lf
+/tools/source-retirement-transaction.test.js text eol=lf
+/.uai/short-term-memory.uai text eol=lf
+/.uai/taboo.uai text eol=lf
+/deploy/README.md text eol=lf
 /artifacts/ecosystem-cleanup-20260912/*.json text eol=lf

@@ -80,3 +80,20 @@ path. It produces adjacent `started`, `terminal`, and final JSON evidence under
 `retired-routes-verified`, and commit them as one immutable evidence group.
 That evidence is necessary but does not publish the complete site; any future
 publisher must require its exact committed identity before operating.
+
+The retirement CLI has one canonical production path. `-FixtureRoot` and
+`-FixtureFault`, alternate authority roots, local copied-site transport and
+fixture receipt identities have been removed. Importing its definitions does
+not execute a transaction. Every actual invocation checks canonical source
+authority; Node startup options remain disabled through later Git validation
+and are restored when the invocation ends.
+
+Run `node --test tools/source-retirement-transaction.test.js` for the focused
+checks. They invoke the canonical PowerShell script and the installed Pester
+3.4.0 tests with transport and transaction records simulated in memory.
+Small create-only JSON write checks and Pester temporary output use an owned
+directory under this repository's `artifacts/tests`, removed afterward.
+They create no source trees, authority-marker files or copied public sites.
+These simulations are not FTPS, outside-network readback or retirement evidence.
+The compact result and coverage limits are in
+`artifacts/ecosystem-cleanup-20260912/source-retirement-tool-review.json`.
