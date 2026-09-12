@@ -1,20 +1,20 @@
 {
   "schema": "tinyrustlm-mirust.current-package-review/1",
-  "observedUtc": "2026-09-12T20:53:31.831Z",
-  "contentCommit": "d938fcd2f55c28bc66c547dcf99efd3b40b9e63a",
-  "packageCommit": "07a250231dfc37f0621ce07b6110b6f7a3e3a3ab",
+  "observedUtc": "2026-09-12T21:14:06.551Z",
+  "contentCommit": "efce5c38d81bc85bcb44d8403250a51778a701bc",
+  "packageCommit": "8fe3842e64e305f9e3cace2d67068921e6937c99",
   "packageIdentity": {
     "path": "docs/package-manifest.md",
-    "commit": "07a250231dfc37f0621ce07b6110b6f7a3e3a3ab",
-    "tree": "a9a64fbc6a26751867ecf0cc7b2c0e4a39797a36",
-    "basis_commit": "d938fcd2f55c28bc66c547dcf99efd3b40b9e63a",
-    "basis_tree": "138acdb2f6a3abb4888734bb1acdb21f0dfe29ba",
-    "git_blob": "sha1:6499c4806444e511013ac239e60f2178ec623929",
+    "commit": "8fe3842e64e305f9e3cace2d67068921e6937c99",
+    "tree": "5472ddd08ff21dd3ee7b0ad8948909b233212c26",
+    "basis_commit": "efce5c38d81bc85bcb44d8403250a51778a701bc",
+    "basis_tree": "56dbcb318ae0602d468aeb6ff74c4db233fec942",
+    "git_blob": "sha1:9526d022a819fef2e57b3221d214d921fc72144f",
     "bytes": 3670,
-    "sha256": "a451e4e5380db058df77ee42969c647e9303fdc16a360fe47addad646d25ae2a"
+    "sha256": "43b932a3689fe57901facf8ea32d3a78bc727b634d12cae9406eadb407663e6e"
   },
   "canonicalPublicFiles": 27,
-  "canonicalPublicBytes": 137219,
+  "canonicalPublicBytes": 137532,
   "allCurrentPublicBytesMatchGit": true,
   "ignoredPublicExtrasChecked": true,
   "deploymentGenerator": {

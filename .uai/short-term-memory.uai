@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-09-12T21:10:57.802Z
+updated_utc: 2026-09-12T21:15:23.958Z
 site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
@@ -15,7 +15,7 @@ ecosystem_cleanup_2026_09_12:
   validator_verification: Twenty checks passed with zero skips, including the actual canonical CLI source gate, read-only Git closure and actual PowerShell rejection before deployment input. Whole-file Node coverage is 98.86 percent for the virtual fixture, 94.70 percent for the preflight and 74.17 percent for the deployment validator; the new root and payload checks executed.
   validator_evidence: artifacts/ecosystem-cleanup-20260912/deployment-validator-review.json
   validator_lessons: Current pins must follow reviewed committed consumers; page-preview success does not prove release entrypoints work; matching transport headers do not prove payload identity. No source copy or executable fixture is needed for these boundary cases.
-  pending: The 27-file stage and 184-file historical Runtime mirror remain policy-blocked. The mirror generator and its copied-repository tests are physically removed. Remaining source-retirement transport tests still create copied fixtures and require review before execution. Current boundary-page edits require fresh package metadata; no publication or deployed-current result is claimed.
+  pending: The 27-file stage and 184-file Runtime mirror remain policy-blocked. The archive generator and its copied-repository tests are absent. Current C1 efce5c3 and package-only C2 8fe3842 bind all 27 public files exactly; actual deployment generation stops at the surviving stage without changing the old manifest. Remaining source-retirement transport tests require cleanup. No publication is claimed.
 
 canonical_release_tools_cleanup_2026_09_12:
   implementation: Package and deployment generators emit metadata to stdout only. The PowerShell entrypoint validates canonical public bytes through the shared validator; 959 removed legacy lines include unreachable transport, credential and receipt code. The unused staged-file validator was removed.
@@ -27,12 +27,12 @@ canonical_release_tools_cleanup_2026_09_12:
   retirement: All 27 stage files match immutable Git commit 24e4f875a0e508827e6ddf6f94664e927261fbd5 and the compact review; zero unique files. Deletion was rejected with blocked by policy. The exact owner-run script and combined ecosystem command passed WhatIf only. No storage recovery is claimed.
 
 current_package_checkpoint_2026_09_12:
-  content_commit: d938fcd2f55c28bc66c547dcf99efd3b40b9e63a
-  package_commit: 07a250231dfc37f0621ce07b6110b6f7a3e3a3ab
-  public_closure: All 27 canonical files match the current Git closure exactly, totaling 137219 logical bytes; ignored public extras were included in the path check.
+  content_commit: efce5c38d81bc85bcb44d8403250a51778a701bc
+  package_commit: 8fe3842e64e305f9e3cace2d67068921e6937c99
+  public_closure: All 27 canonical files match the current Git closure exactly, totaling 137532 logical bytes; ignored public extras were included in the path check.
   generator: Actual package CLI emitted stdout only; the caller wrote the one canonical package document and committed it alone. Actual deployment CLI passed the package/marker checks, then rejected the surviving stage with zero stdout and no manifest mutation.
   evidence: artifacts/ecosystem-cleanup-20260912/current-package-review.json
-  evidence_sha256: 80699cb28a9bcd7db5b1394715b4415d7b1a4ad24da9c89596ad769e707e45de
+  evidence_sha256: 07fc9dda1482be8ebd1de8f5c89542c08a05a9261d2db50b390e8e330b125bc5
   boundary: The old 1.8.3 deployment manifest remains stale and uncommitted. No deployment metadata candidate or publication is established for the new package.
 
 historical_runtime_cleanup_2026_09_12:
