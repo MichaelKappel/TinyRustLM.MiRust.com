@@ -5,10 +5,10 @@
 - Status: `commit-bound-candidate`; this manifest is not deployment evidence.
 - Last verified publication: `1.8.2` via `deploy/receipts/site-deployment-20260830T014629Z.json`.
 - Last verified receipt authority: Git commit `6d56e6d4a1811a7d7b94d10ff384071ea866974e`, blob `sha1:fe5633220e96fb131957035a11f1245a96ec5a30`, 78092 bytes, SHA-256 `e762a900aad256d5783ea5fbdec68307f95b08d4e0f1f76db6765329fa172cf2`.
-- Content-basis commit: `d938fcd2f55c28bc66c547dcf99efd3b40b9e63a`
-- Content-basis tree: `138acdb2f6a3abb4888734bb1acdb21f0dfe29ba`
+- Content-basis commit: `efce5c38d81bc85bcb44d8403250a51778a701bc`
+- Content-basis tree: `56dbcb318ae0602d468aeb6ff74c4db233fec942`
 - Public files, excluding this manifest: 26
-- Public bytes, excluding this manifest: 133549
+- Public bytes, excluding this manifest: 133862
 
 This manifest excludes itself to avoid a recursive checksum. Historical
 runtime records remain repository-retained historical evidence. Their raw mirror
@@ -20,7 +20,7 @@ fallback, migration, or product claim.
 | `.htaccess` | 1657 | `de9b96be33f1768e80e75debb4c82afef4995bc0d0e282a5a3fa45b6feb2f63b` |
 | `.uai/.htaccess` | 214 | `122886cf276798e8620965bb5a773584353920cf23e3dc8591f4a035ba0fc774` |
 | `.uai/index.uai` | 1461 | `1d64f689c63ebdc6f92b53ed6766f86d60fe1a220585e37b914d6e9bf6cdd507` |
-| `.uai/long-term-memory.uai` | 2434 | `f46aa8d2a43e42af9388501eb9e9086eb67dc6f919e604f4d471e74e03d060aa` |
+| `.uai/long-term-memory.uai` | 2434 | `c7af4771a136a6e8beb28764a769c7b9f83beb9900c5345877ae950caa4e46b3` |
 | `.well-known/uaix-talisman.txt` | 2706 | `c1aebbb6694f974d861d7ff5bf1ed8dc77d82834347cbe10dc273393ac80e307` |
 | `LICENSE.txt` | 11357 | `c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4` |
 | `assets/css/site.css` | 21543 | `35bddf4c03d28e62e812424686b27cc208c173db5c7fd3fac97da965e9bfd730` |
@@ -33,7 +33,7 @@ fallback, migration, or product claim.
 | `docs/reports-index.php` | 4085 | `3aebf303f0cae0e627978426f46a301a100dac999355e798237de999a2fd9a39` |
 | `docs/reports/.htaccess` | 556 | `65e33b28136f4c208254062814ab561d1d2a7fc65ea8974e1a3a9c05494384c0` |
 | `docs/retired-source-copy-gone.txt` | 54 | `2d4cb085c99b2ae5e787510498ff78e7dd1eff8ea59f915dd56440c37930e2cd` |
-| `docs/runtime-portal/index.md` | 1620 | `e5790b1b8913a611e5abb808e58d9d6f3016cb3ae992d11915fffd49d2c6ca14` |
+| `docs/runtime-portal/index.md` | 1933 | `ab2b72ce9e2a58f8850292ff980adf6496658af756bd7c7d4d7b5fb6ec53e65c` |
 | `docs/ui-ux-25-rounds-2026-07-12.md` | 4574 | `653b716c5970fef4b6bf2762c3ff482b3d34b0e684696de870f4e1e9f66c6fa0` |
 | `includes/footer.php` | 1702 | `a7ddf6c8f791091a10638b7338e1c13568f570167bc449805516c8fdcaf12a01` |
 | `includes/functions.php` | 7737 | `6b3247fa70a1409966297be7244d5e6a740bc10b2bd79e60d75d5c0c45a46605` |
