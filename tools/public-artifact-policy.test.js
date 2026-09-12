@@ -2,29 +2,17 @@
 "use strict";
 
 const assert = require("node:assert/strict");
-const crypto = require("node:crypto");
 const fs = require("node:fs");
-const os = require("node:os");
 const path = require("node:path");
 const { execFileSync } = require("node:child_process");
 const test = require("node:test");
 const {
   MAX_TEXT_ARTIFACT_BYTES,
   assertDirectoryAbsent,
-  assertExactFileTree,
   assertPlainDirectory,
   assertPublishableArtifact,
   isPublicArtifactPath,
 } = require("./public-artifact-policy.js");
-
-// Produces the exact identity shape consumed by the staging verifier.
-function identity(relativePath, bytes) {
-  return {
-    path: relativePath,
-    bytes: bytes.length,
-    sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
-  };
-}
 
 test("allows current documentation and the explicit live-site source allowlist", () => {
   assert.equal(assertPublishableArtifact("docs/report.md", Buffer.from("report\n")), "docs/report.md");
@@ -279,26 +267,12 @@ test("release generators enforce public policy while the local historical invent
   assert.match(runtime, /MAX_ARCHIVE_FILE_BYTES/);
   assert.match(runtime, /Historical archive file exceeds its local inventory bound/);
   assert.match(deployment, /assertDirectoryAbsent\(stagingRoot\)/);
-  assert.match(deployment, /assertExactFileTree\(stagingRoot, files\)/);
+  assert.doesNotMatch(deployment, /fs\.(?:mkdirSync|writeFileSync|copyFileSync|cpSync)/);
 });
 
-test("requires absent staging and verifies an exact regular-file closure", () => {
-  const parent = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-stage-policy-"));
-  const staging = path.join(parent, "next");
-  const payload = Buffer.from("exact bytes\n");
-  try {
-    assert.doesNotThrow(() => assertDirectoryAbsent(staging));
-    fs.mkdirSync(staging);
-    assert.doesNotThrow(() => assertPlainDirectory(staging));
-    assert.throws(() => assertDirectoryAbsent(staging), /must be absent/i);
-
-    fs.writeFileSync(path.join(staging, "one.txt"), payload);
-    assert.doesNotThrow(() => assertExactFileTree(staging, [identity("one.txt", payload)]));
-
-    fs.writeFileSync(path.join(staging, "extra.txt"), Buffer.from("extra\n"));
-    assert.throws(() => assertExactFileTree(staging, [identity("one.txt", payload)]), /file count mismatch/i);
-  }
-  finally {
-    fs.rmSync(parent, { recursive: true, force: true });
-  }
+test("retired staging paths must be absent", () => {
+  const existing = path.resolve(__dirname);
+  assert.doesNotThrow(() => assertPlainDirectory(existing));
+  assert.throws(() => assertDirectoryAbsent(existing), /must be absent/i);
+  assert.doesNotThrow(() => assertDirectoryAbsent(path.join(existing, "absent-stage-" + process.pid)));
 });

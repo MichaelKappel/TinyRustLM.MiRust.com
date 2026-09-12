@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.short-term-memory.current.v2
-updated_utc: 2026-08-31T12:02:33Z
+updated_utc: 2026-09-12T20:50:20.076Z
 site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
@@ -15,7 +15,16 @@ ecosystem_cleanup_2026_09_12:
   validator_verification: Twenty checks passed with zero skips, including the actual canonical CLI source gate, read-only Git closure and actual PowerShell rejection before deployment input. Whole-file Node coverage is 98.86 percent for the virtual fixture, 94.70 percent for the preflight and 74.17 percent for the deployment validator; the new root and payload checks executed.
   validator_evidence: artifacts/ecosystem-cleanup-20260912/deployment-validator-review.json
   validator_lessons: Current pins must follow reviewed committed consumers; page-preview success does not prove release entrypoints work; matching transport headers do not prove payload identity. No source copy or executable fixture is needed for these boundary cases.
-  pending: Existing 1.8.3 package/deployment metadata is bound to older public bytes, and stage-producing tools and remaining historical-copy tests still require cleanup. No staging, publication or deployed-current result is claimed; the broader ecosystem goal is active.
+  pending: Historical 1.8.3 stage removal is policy-blocked; current public changes require a new C1/package-only C2/deployment-metadata sequence. Remaining copied-source transaction/archive tests still require review. No publication or deployed-current result is claimed.
+
+canonical_release_tools_cleanup_2026_09_12:
+  implementation: Package and deployment generators emit metadata to stdout only. The PowerShell entrypoint validates canonical public bytes through the shared validator; 959 removed legacy lines include unreachable transport, credential and receipt code. The unused staged-file validator was removed.
+  correctness: Exact canonical root and manifest; regular public files and complete Git/worktree paths including ignored extras; C2 ancestry and byte identities; retired stage absence; explicit LF attributes; Node startup environment disabled across both subprocess calls.
+  owner_policy: MiniModel.org is the default discovery/P2P source and may operate initial server seeds. Hugging Face, local import, conversion and manual peer/IP settings belong under Advanced. These requirements are not live availability evidence.
+  verification: 56 checks ran; 55 passed, one correctly fails because the reviewed 1.8.3 stage remains. Zero skipped or cancelled. Actual PHP GET/HEAD and negative route checks passed. Actual PowerShell with hostile Node options reached and rejected the retired stage. Owned scratch was removed.
+  coverage: Validator 90.97 percent lines; public policy 96.80; virtual fixture 96.81; scratch helper 100. Branch coverage and limits are in the compact proof.
+  evidence: artifacts/ecosystem-cleanup-20260912/canonical-release-tools-review.json
+  retirement: All 27 stage files match immutable Git commit 24e4f875a0e508827e6ddf6f94664e927261fbd5 and the compact review; zero unique files. Deletion was rejected with blocked by policy. The exact owner-run script and combined ecosystem command passed WhatIf only. No storage recovery is claimed.
 
 prepared_publication:
   version: 1.8.3

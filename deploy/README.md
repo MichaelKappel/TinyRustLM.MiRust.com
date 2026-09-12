@@ -1,26 +1,29 @@
 # TinyRustLM.MiRust.com Deployment
 
-The production deployment closure is generated from canonical Git blob bytes,
-not from platform-dependent worktree line endings.
+Release metadata is generated from canonical Git blob bytes. Validation checks
+the exact public files in the owning checkout; no copied staging tree is created.
 
 ## Build The Release Closure
 
 ```powershell
-& 'C:\Program Files\nodejs\node.exe' tools/build-public-package-manifest.js <C1-content-commit>
+$package = & 'C:\Program Files\nodejs\node.exe' tools/build-public-package-manifest.js <C1-content-commit>
+if ($LASTEXITCODE -ne 0) { throw 'Package generation failed.' }
+[IO.File]::WriteAllText((Join-Path $PWD 'docs\package-manifest.md'), ($package -join "`n") + "`n", [Text.UTF8Encoding]::new($false))
 # Commit only docs/package-manifest.md as package-only C2.
-& 'C:\Program Files\nodejs\node.exe' tools/build-site-deployment-manifest.js <C2-package-commit>
+$deployment = & 'C:\Program Files\nodejs\node.exe' tools/build-site-deployment-manifest.js <C2-package-commit>
+if ($LASTEXITCODE -ne 0) { throw 'Deployment metadata generation failed.' }
+[IO.File]::WriteAllText((Join-Path $PWD 'deploy\site-deployment-manifest.v1.json'), ($deployment -join "`n") + "`n", [Text.UTF8Encoding]::new($false))
 ```
 
 The package generator binds the exact C1 public closure. The deployment
-generator requires that package-only C2 relationship, writes the
-source-controlled manifest at
-`deploy/site-deployment-manifest.v1.json` and materializes ignored staging
-bytes under `deploy/staging/<version>/`. C1 must contain every non-package-
+generator requires that package-only C2 relationship. Both tools emit stdout
+only; the commands above place their results in the two canonical metadata
+files. Existing `deploy/staging/<version>/` is rejected. C1 must contain every non-package-
 manifest site change; C2 must change only `docs/package-manifest.md`. Neither
 generated candidate is publication evidence.
 
 Every release and deployment entrypoint invokes the canonical ecosystem
-source-authority verifier before reading a release snapshot, creating staging,
+source-authority verifier before reading release inputs,
 loading credentials, or touching transport. A missing, malformed, or failing
 verdict stops the entrypoint.
 
@@ -30,8 +33,10 @@ verdict stops the entrypoint.
 & .\tools\deploy-site.ps1 -NodeExecutablePath 'C:\Program Files\nodejs\node.exe'
 ```
 
-Validation requires a clean Git worktree, exact staged file identities, a
-bounded manifest, and ancestry from the declared package-only C2 commit. The
+Validation requires exact canonical public-file identities, a bounded manifest,
+the complete public path set, and ancestry from the declared package-only C2
+commit. Non-public work does not create publication authority; publishing would
+still require a clean committed checkout and separate release evidence. The
 Node path must be absolute; the entrypoint verifies its exact checked-in byte
 length and SHA-256 identity before invoking the local preflight, which in turn
 verifies the exact canonical source-authority verifier bytes before execution.
@@ -40,12 +45,12 @@ verifies the exact canonical source-authority verifier bytes before execution.
 
 `tools/deploy-site.ps1` is validation-only. Its legacy `-Publish` switch fails
 before manifest loading, credential-profile access, receipt creation, or any
-remote request. The legacy publisher did not bind FileZilla `RemoteDir` and
-could delete the retired source copies outside the hardened transaction.
+remote request. The unreachable legacy credential, transport and receipt code
+has been removed, together with its obsolete credential and report parameters.
 
 There is currently no authorized full-site publisher in this tree. Do not
 remove the fail-closed gate, replay the legacy path, infer deployment from a
-valid staging closure, or claim release 1.8.3 as published.
+valid canonical public closure, or claim release 1.8.3 as published.
 
 ## Source-Copy Retirement
 

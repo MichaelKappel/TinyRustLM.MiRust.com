@@ -16,8 +16,8 @@ return [
             ],
             [
                 'heading' => 'P2P-first and local',
-                'body' => 'Exact qualified composition bytes may move directly between consenting peers. If no exact qualified peer composition is available, an installed local companion may perform an explicit pinned local conversion. TinyRustLM and MiniModel project sites receive no prompts and do not proxy model bytes.',
-                'points' => ['Direct consenting peer transfer', 'Explicit local conversion', 'No hosted inference', 'No project-site model-byte proxy'],
+                'body' => 'Startup restores an eligible saved model or automatically acquires a small qualified composition through MiniModel.org. MiniModel.org may operate the initial server seeds. Hugging Face, local import, conversion and manual peer settings stay under Advanced. Inference stays local; a configured route does not prove that a qualified model or live seed is available.',
+                'points' => ['MiniModel.org by default', 'Initial server seeds', 'Advanced source options', 'Local inference'],
             ],
             [
                 'heading' => 'Two MemoryEndpoints.com uses',

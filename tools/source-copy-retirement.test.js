@@ -10,9 +10,13 @@ const test = require("node:test");
 const {
   HISTORICAL_RECEIPT_AUTHORITY,
   RETIREMENT_POLICY,
+  buildRetiredRouteChecks,
+  deriveRetiredPaths,
   readHistoricalPublicationAuthority,
+  readPublicCommitClosure,
+  validateDeploymentInput,
 } = require("./verify-site-deployment-input.js");
-const { isPublicArtifactPath } = require("./public-artifact-policy.js");
+const { assertDirectoryAbsent, isPublicArtifactPath } = require("./public-artifact-policy.js");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const retiredPaths = [
@@ -80,12 +84,21 @@ function assertLegalReleaseState(manifest, packageManifest) {
   if (manifest.status === "commit-bound-candidate") assert.equal(packageCandidate, true);
 }
 
-test("retired source copies and stale deployment staging are physically absent", () => {
+test("retired source copies and all stages are absent while canonical bytes match immutable C2", () => {
   for (const relativePath of retiredPaths) {
     assert.equal(fs.existsSync(path.join(repositoryRoot, ...relativePath.split("/"))), false);
   }
-  assert.equal(fs.existsSync(path.join(repositoryRoot, "deploy", "staging", "1.8.2")), false);
-  assert.equal(fs.existsSync(path.join(repositoryRoot, "deploy", "staging", "1.8.3")), false);
+  assertDirectoryAbsent(path.join(repositoryRoot, "deploy", "staging", "1.8.2"));
+  const manifestPath = path.join(repositoryRoot, "deploy", "site-deployment-manifest.v1.json");
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  assertLegalReleaseState(manifest, read("docs/package-manifest.md"));
+  const stagingRoot = path.join(repositoryRoot, "deploy", "staging", manifest.version);
+  assertDirectoryAbsent(stagingRoot);
+  if (manifest.status === "commit-bound-candidate") {
+    const result = validateDeploymentInput(manifestPath);
+    assert.equal(result.packageTransaction.packageCommit, manifest.source_commit);
+    assert.equal(result.fileCount, manifest.files.length);
+  }
 });
 
 test("historical reports remain repository-retained but outside the public deployment closure", () => {
@@ -96,7 +109,7 @@ test("historical reports remain repository-retained but outside the public deplo
   }
 });
 
-test("live indexes exclude retired source copies while prepared deployment metadata remains non-final", () => {
+test("live indexes exclude retired source copies and retirement metadata matches the immutable release state", () => {
   const currentFiles = [
     ".uai/archives/source-report-manifest.json",
     "docs/package-manifest.md",
@@ -143,8 +156,15 @@ test("live indexes exclude retired source copies while prepared deployment metad
     false,
   );
   assert.equal(deploymentManifest.retirement_policy, RETIREMENT_POLICY);
-  assert.deepEqual(deploymentManifest.retired_files, []);
-  assert.deepEqual(deploymentManifest.retired_route_checks, []);
+  assertLegalReleaseState(deploymentManifest, read("docs/package-manifest.md"));
+  const expectedRetiredPaths = deploymentManifest.status === "prepared-awaiting-content-commit"
+    ? []
+    : deriveRetiredPaths(
+      readHistoricalPublicationAuthority(repositoryRoot).receipt.files,
+      readPublicCommitClosure(repositoryRoot, deploymentManifest.source_commit),
+    );
+  assert.deepEqual(deploymentManifest.retired_files, expectedRetiredPaths);
+  assert.deepEqual(deploymentManifest.retired_route_checks, buildRetiredRouteChecks(expectedRetiredPaths));
 });
 
 test("source-report manifest binds the canonical LF report-index bytes", () => {

@@ -85,7 +85,9 @@ function createVirtualBoundary() {
       for (const entry of directories) if (entry === name || entry.startsWith(name + path.sep)) directories.delete(entry);
     }
   }
-  const virtualFs = { mkdirSync, writeFileSync, readFileSync, lstatSync, readdirSync, rmSync };
+  const realpathSync = (value) => normalized(value);
+  realpathSync.native = realpathSync;
+  const virtualFs = { mkdirSync, writeFileSync, readFileSync, lstatSync, readdirSync, rmSync, realpathSync };
 
   /** Resolve an explicitly created virtual commit. */
   function getCommit(id) {
@@ -129,6 +131,16 @@ function createVirtualBoundary() {
     } else if (command === "ls-tree") {
       result = [...getCommit(args.at(-1)).snapshot].map(([name, bytes]) =>
         `100644 blob ${blobId(bytes)} ${bytes.length}\t${name}\0`).join("");
+    } else if (command === "ls-files") {
+      const tracked = [...getCommit("HEAD").snapshot.keys()];
+      const present = [...files.keys()].map((name) => path.relative(repositoryRoot, name).split(path.sep).join("/"))
+        .filter((name) => !args.includes("--exclude-standard") || name !== faults.ignoredFile);
+      result = [...new Set([...tracked, ...present])].join("\0") + "\0";
+    } else if (command === "merge-base") {
+      let current = getCommit(args[3]);
+      while (current.id !== args[2] && current.parent) current = getCommit(current.parent);
+      assert.equal(current.id, args[2], "Virtual commit is not an ancestor");
+      result = "";
     } else if (command === "show") {
       const separator = argument.indexOf(":");
       result = getCommit(argument.slice(0, separator)).snapshot.get(argument.slice(separator + 1));

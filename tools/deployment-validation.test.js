@@ -8,11 +8,6 @@ const path = require("node:path");
 const { execFileSync, spawnSync } = require("node:child_process");
 const test = require("node:test");
 const {
-  PUBLIC_PATH_PREFIXES,
-  PUBLIC_UAI_PATHS,
-  ROOT_PUBLIC_PATHS,
-} = require("./public-artifact-policy.js");
-const {
   HTTPS_READBACK_PATHS,
   PACKAGE_MANIFEST_PATH,
   RELEASE_DATE,
@@ -56,7 +51,7 @@ function packageIdentity(root, packageCommit, basisCommit, git) {
   };
 }
 
-/** Synthesize transaction and staging responses in memory; no checkout or copy exists. */
+/** Synthesize transaction and canonical-file responses in memory; no checkout or copy exists. */
 function materializeFixture(options = {}) {
   const boundary = createVirtualBoundary();
   const { root, fs, git, api } = boundary;
@@ -100,13 +95,6 @@ function materializeFixture(options = {}) {
     const sourceTree = git(root, ["rev-parse", `${packageCommit}^{tree}`]).trim();
     const closure = readPublicCommitClosure(root, packageCommit);
 
-    const staging = path.join(root, "staging");
-    fs.mkdirSync(staging);
-    for (const file of closure) {
-      const destination = path.join(staging, ...file.path.split("/"));
-      fs.mkdirSync(path.dirname(destination), { recursive: true });
-      fs.writeFileSync(destination, file.committed);
-    }
     const files = closure.map(({ committed, ...file }) => ({
       ...file,
       https_readback_path: HTTPS_READBACK_PATHS.has(file.path) ? `/${file.path}` : null,
@@ -131,7 +119,7 @@ function materializeFixture(options = {}) {
       retired_files: retiredFiles,
       retired_route_checks: buildRetiredRouteChecks(retiredFiles),
     };
-    const manifestPath = path.join(root, "manifest.json");
+    const manifestPath = path.join(root, "deploy", "site-deployment-manifest.v1.json");
     fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
     return {
       ...boundary,
@@ -141,7 +129,6 @@ function materializeFixture(options = {}) {
       packageCommit,
       previousContentCommit,
       root,
-      staging,
     };
   }
   catch (error) {
@@ -152,7 +139,7 @@ function materializeFixture(options = {}) {
 
 /** Exercise the actual validator against explicitly virtual I/O. */
 function validateFixture(fixture) {
-  return fixture.api.validateDeploymentInput(fixture.manifestPath, fixture.staging, {
+  return fixture.api.validateDeploymentInput(fixture.manifestPath, {
     historicalPublication: fixturePublication,
     historicalFiles: fixtureHistoricalFiles,
     requiredRetiredPaths: new Set(),
@@ -174,7 +161,7 @@ test("deployment validator CLI reaches usage validation from a non-root working 
   assert.equal(result.status, 1);
   assert.match(
     result.stderr,
-    /Usage: node tools\/verify-site-deployment-input\.js <manifest> <staging-root>/u,
+    /Usage: node tools\/verify-site-deployment-input\.js <canonical-manifest>/u,
   );
   assert.doesNotMatch(result.stderr, /ReferenceError|repositoryRoot is not defined/u);
   assert.doesNotMatch(result.stdout, /POLICY_VALID/u);
@@ -212,13 +199,20 @@ test("shared deployment validator accepts an exact C1 to package-only C2 closure
 test("shared deployment validator rejects extras, source disguised as text, and prepared manifests", () => {
   const fixture = materializeFixture();
   try {
-    fixture.fs.writeFileSync(path.join(fixture.staging, "unexpected.txt"), "unexpected\n");
-    assert.throws(() => validateFixture(fixture), /file count mismatch/i);
-    fixture.fs.rmSync(path.join(fixture.staging, "unexpected.txt"));
+    fixture.fs.writeFileSync(path.join(fixture.root, "docs", "unexpected.md"), "unexpected\n");
+    assert.throws(() => validateFixture(fixture), /public file count or path closure/i);
+    fixture.faults.ignoredFile = "docs/unexpected.md";
+    assert.throws(() => validateFixture(fixture), /public file count or path closure/i,
+      "Ignored public files still invalidate the canonical closure");
+    fixture.fs.rmSync(path.join(fixture.root, "docs", "unexpected.md"));
+    const stage = path.join(fixture.root, "deploy", "staging", RELEASE_VERSION);
+    fixture.fs.mkdirSync(stage);
+    assert.throws(() => validateFixture(fixture), /staging root must be absent/i);
+    fixture.fs.rmSync(stage, { recursive: true });
 
-    const packageManifest = path.join(fixture.staging, "docs", "package-manifest.md");
+    const packageManifest = path.join(fixture.root, "docs", "package-manifest.md");
     fixture.fs.writeFileSync(packageManifest, "#!/usr/bin/env node\nconsole.log('copied');\n");
-    assert.throws(() => validateFixture(fixture), /source shebang/i);
+    assert.throws(() => validateFixture(fixture), /declared regular file|source shebang/i);
     fixture.fs.writeFileSync(
       packageManifest,
       fixture.git(fixture.root, ["show", `${fixture.packageCommit}:${PACKAGE_MANIFEST_PATH}`], null),
@@ -303,15 +297,12 @@ test("deployment validation rejects a hand-maintained or incomplete retirement c
   }
 });
 
-test("deployment generation gates C3 materialization on the C1 to C2 proof", () => {
+test("deployment generation proves its package transaction and emits metadata without source copies", () => {
   const source = fs.readFileSync(path.join(repositoryRoot, "tools", "build-site-deployment-manifest.js"), "utf8");
-  const transactionGate = source.indexOf("verifyPackageManifestTransaction(repositoryRoot, packageCommit");
-  const stagingGate = source.indexOf("assertDirectoryAbsent(stagingRoot);", transactionGate);
-  const materialization = source.indexOf("fs.mkdirSync(stagingRoot);", stagingGate);
-  assert.ok(transactionGate >= 0, "package transaction gate is missing");
-  assert.ok(transactionGate < stagingGate, "staging absence check precedes package transaction proof");
-  assert.ok(stagingGate < materialization, "staging materialization precedes package transaction proof");
-  assert.match(source, /package_manifest: packageTransaction\.identity/);
+  assert.match(source, /verifyPackageManifestTransaction\(repositoryRoot, packageCommit/);
+  assert.match(source, /assertDirectoryAbsent\(stagingRoot\)/);
+  assert.doesNotMatch(source, /fs\.(?:mkdirSync|writeFileSync|copyFileSync|cpSync)/);
+  assert.match(source, /process\.stdout\.write/);
 });
 
 test("same-length Git batch payload drift is rejected despite an unchanged object header", () => {
@@ -319,6 +310,29 @@ test("same-length Git batch payload drift is rejected despite an unchanged objec
   fixture.faults.batchPayload = true;
   assert.throws(() => fixture.api.readPublicCommitClosure(fixture.root, fixture.contentCommit),
     /batch payload failed object-ID verification/);
+});
+
+test("canonical validation rejects substituted roots, linked files and changed working bytes", () => {
+  const fixture = materializeFixture();
+  assert.throws(() => fixture.api.validateDeploymentInput(fixture.manifestPath, {
+    repositoryRoot: path.dirname(repositoryRoot)
+  }), /canonical repository root/);
+  assert.throws(() => fixture.api.validateDeploymentInput(path.join(repositoryRoot, "other.json")),
+    /canonical manifest path/);
+  const file = path.join(fixture.root, "docs", "artifact-000.md");
+  const bytes = fixture.fs.readFileSync(file);
+  const drift = Buffer.from(bytes);
+  drift[0] ^= 1;
+  fixture.fs.writeFileSync(file, drift);
+  assert.throws(() => validateFixture(fixture), /Canonical public file identity mismatch/);
+  fixture.fs.writeFileSync(file, bytes);
+  const originalStat = fixture.fs.lstatSync;
+  fixture.fs.lstatSync = (name) => name === file
+    ? { ...originalStat(name), isSymbolicLink: () => true } : originalStat(name);
+  assert.throws(() => validateFixture(fixture), /declared regular file/);
+  fixture.fs.lstatSync = originalStat;
+  fixture.fs.rmSync(file);
+  assert.throws(() => validateFixture(fixture), /Virtual path does not exist/);
 });
 
 test("real canonical Git closure is read without staging or writing a second checkout", () => {
@@ -334,33 +348,12 @@ test("real canonical Git closure is read without staging or writing a second che
   assert.equal(current.sha256, crypto.createHash("sha256").update(actual).digest("hex"));
 });
 
-test("PowerShell validation independently proves commit tree, Git closure, blob identity, and policy before credentials", () => {
+test("PowerShell validation delegates to the canonical shared validator after authority checks", () => {
   const source = fs.readFileSync(path.join(repositoryRoot, "tools", "deploy-site.ps1"), "utf8");
-  for (const required of [
-    "source_tree does not equal source_commit^{tree}",
-    '"ls-tree", "-r", "--name-only"',
-    '"hash-object", "--no-filters"',
-    '"cat-file", "-s"',
-    "Assert-ExactStagingClosure",
-    "Assert-CommitAndPublicClosure",
-    "Assert-SharedPublicArtifactPolicy",
-    "Retired remote source copy remains present after deletion",
-  ]) {
-    assert.ok(source.includes(required), required);
-  }
-  const cleanGate = source.indexOf("$gitStatus = @(git -C $repositoryRoot status --porcelain --untracked-files=all)");
-  const sharedPolicyCall = source.indexOf("Assert-SharedPublicArtifactPolicy -ManifestPath");
-  const publishGate = source.indexOf("if (-not $Publish) { exit 0 }");
-  const credentialLoad = source.indexOf("$profile = Get-CredentialProfile");
-  assert.ok(cleanGate >= 0 && cleanGate < sharedPolicyCall);
-  assert.ok(sharedPolicyCall < publishGate);
-  assert.ok(publishGate < credentialLoad);
-  for (const policyPath of [...PUBLIC_UAI_PATHS, ...ROOT_PUBLIC_PATHS, ...PUBLIC_PATH_PREFIXES]) {
-    assert.ok(source.includes(`"${policyPath}"`), `PowerShell public policy omits ${policyPath}`);
-  }
-  for (const privatePath of [".uai/talisman.uai", ".uai/taboo.uai", ".uai/totem.uai"]) {
-    assert.equal(PUBLIC_UAI_PATHS.has(privatePath), false, privatePath);
-  }
-  assert.match(source, /docs\/runtime-portal\/index\.md/);
-  assert.match(source, /last-verified-publication-minus-current-public-closure/);
+  const gate = source.lastIndexOf("Assert-CanonicalSourceAuthority");
+  const validator = source.indexOf("& $script:verifiedNodeExecutablePath $validator $resolvedManifestPath");
+  assert.ok(gate >= 0 && validator > gate);
+  assert.match(source, /verify-site-deployment-input\.js/);
+  assert.doesNotMatch(source, /Get-CredentialProfile|New-FtpRequest|Publish-File|Write-Receipt|Net\.WebRequest/);
+  assert.match(source, /VALIDATION_ONLY/);
 });

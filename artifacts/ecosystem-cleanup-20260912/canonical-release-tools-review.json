@@ -1,0 +1,95 @@
+{
+  "schema": "tinyrustlm-mirust.canonical-release-tools-review/1",
+  "observedUtc": "2026-09-12T20:50:20.076Z",
+  "implementation": [
+    {
+      "path": "tools/build-public-package-manifest.js",
+      "byteLength": 2120,
+      "workingFileSha256": "5ac27037a0e151940fff7abc08cec57a6f6192e4befe72994606f122b026a594"
+    },
+    {
+      "path": "tools/build-site-deployment-manifest.js",
+      "byteLength": 7721,
+      "workingFileSha256": "a7a4a082db9bc52f2a55786d0fd13d74577e43080717e0702f70f7b16f5ca287"
+    },
+    {
+      "path": "tools/deploy-site.ps1",
+      "byteLength": 4742,
+      "workingFileSha256": "067d7fc62a44c0f4236c3d852736df1be85c55f564a7cffc56246ad4f0ac28d3"
+    },
+    {
+      "path": "tools/verify-site-deployment-input.js",
+      "byteLength": 27619,
+      "workingFileSha256": "2bb5d46034cfc897f6ed9f2a6e9578f730e4e93f5496a35894e9918a993e492a"
+    },
+    {
+      "path": "tools/public-artifact-policy.js",
+      "byteLength": 21209,
+      "workingFileSha256": "ebdda9adeef40e73ed9fa87963799770d20335d12f4fedf266c55084b6961f9a"
+    },
+    {
+      "path": "tools/test-artifacts.js",
+      "byteLength": 1909,
+      "workingFileSha256": "cf0bdf3d4b1f6e9cfcd1457417bd2e5044f3df94482012ae246ce296d01dd4ed"
+    }
+  ],
+  "tests": {
+    "total": 56,
+    "passed": 55,
+    "failed": 1,
+    "skipped": 0,
+    "cancelled": 0,
+    "expectedOpenFailure": "Policy-blocked historical 1.8.3 stage remains",
+    "record": "artifacts/ecosystem-cleanup-20260912/canonical-release-tools-test-results.json",
+    "sha256": "556224c373b70f9cb660adb74147aad3db977d9a053e4252a6698e4537ab40cf",
+    "coverage": {
+      "validator": {
+        "line": 90.97,
+        "branch": 68.55
+      },
+      "publicPolicy": {
+        "line": 96.8,
+        "branch": 89.57
+      },
+      "virtualFixture": {
+        "line": 96.81,
+        "branch": 94.12
+      },
+      "scratchHelper": {
+        "line": 100,
+        "branch": 50
+      }
+    },
+    "coverageLimit": "Whole-file V8 percentages; unexecuted failure branches remain. A passing test subset is not release readiness."
+  },
+  "powerShell": {
+    "record": "artifacts/ecosystem-cleanup-20260912/canonical-powershell-validation.json",
+    "sha256": "c1a05ed77dae4c9b3424ceb1448ebb0d875b63fbe269dbf888b062079b376cfb",
+    "result": "Actual canonical runtime strips hostile Node options, runs source gates, rejects the surviving retired stage, and cleans scratch."
+  },
+  "retirement": {
+    "review": "artifacts/ecosystem-cleanup-20260912/stale-1.8.3-stage-review.json",
+    "sha256": "ce5b7b5b7cc2eb20a0c36ea94087ddc8eddcded21ef4b8a90ee7fd12bcdb8c03",
+    "files": 27,
+    "logicalBytes": 136632,
+    "uniqueFiles": 0,
+    "retainedGitCommit": "24e4f875a0e508827e6ddf6f94664e927261fbd5",
+    "physicalState": "present; deletion blocked by policy",
+    "ownerScript": "tools/remove-reviewed-stage.ps1",
+    "ownerScriptSha256": "2d659d2af00e0da3b8713ae0731732920e2f180e7e9a961ec2c93e6bd6d9ceea",
+    "whatIf": "Passed 27 SHA-256/length/Git-blob checks; no mutation or receipt."
+  },
+  "lessons": [
+    "Check canonical public bytes, including ignored extras; do not recreate source stages to make Git/worktree identities agree.",
+    "Pin public line endings explicitly for direct checkout validation.",
+    "Remove unreachable legacy transport code and its obsolete arguments; validate using one current shared implementation.",
+    "Keep Node startup environment disabled across every verified subprocess.",
+    "A retirement readiness failure is a current defect even when all executable boundary checks pass."
+  ],
+  "nonClaims": [
+    "No physical retirement",
+    "No publication or remote mutation",
+    "No qualified model or live MiniModel seed",
+    "No complete ecosystem cleanup"
+  ]
+}

@@ -168,18 +168,17 @@ test("Apache guards retire private UAI and raw archive paths before file bypass"
   assert.match(uaiGuard, /<FilesMatch "\^\(\?!\(index\|long-term-memory\)\\\.uai\$\)\.\+">/);
 });
 
-test("deployment readback requires production GET and HEAD retirement proof", () => {
-  const deployment = fs.readFileSync(path.join(repositoryRoot, "tools", "deploy-site.ps1"), "utf8");
+test("the separate retirement transaction requires production GET and HEAD readback proof", () => {
+  const deployment = fs.readFileSync(path.join(repositoryRoot, "tools", "retire-public-source-copies.ps1"), "utf8");
   const generator = fs.readFileSync(path.join(repositoryRoot, "tools", "build-site-deployment-manifest.js"), "utf8");
   assert.match(deployment, /Assert-RetiredRouteReadback/);
-  assert.match(deployment, /if \(\$CacheBusted\)/);
+  assert.match(deployment, /if \(\$cacheBusted\)/);
   assert.match(deployment, /foreach \(\$cacheBusted in @\(\$false, \$true\)\)/);
-  assert.match(deployment, /-Method "GET"/);
-  assert.match(deployment, /-Method "HEAD"/);
-  assert.match(deployment, /-CacheBusted \$cacheBusted/);
-  assert.match(deployment, /retired_route_request_count[^\n]+\* 4/);
+  assert.match(deployment, /foreach \(\$methodName in @\("HEAD", "GET"\)\)/);
+  assert.match(deployment, /source_retirement=\$Nonce/);
+  assert.match(deployment, /Assert-GoneResponse -Response \$response -ExpectBody \(\$methodName -ceq "GET"\)/);
   assert.match(deployment, /StatusCode -ne 410/);
-  assert.match(deployment, /Headers\.Location/);
+  assert.match(deployment, /Assert-NoLocation -Response \$Response/);
   assert.match(deployment, /Content-Length/);
   assert.match(generator, /retired_route_checks/);
 });

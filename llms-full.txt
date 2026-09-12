@@ -47,15 +47,16 @@ publication.
 
 ## P2P And Local Conversion
 
-Acquisition is P2P-first. A peer path is eligible only for an exact qualified
-composition with matching identity and evidence. Bytes move directly between
-consenting peers, not through TinyRustLM or MiniModel project sites. When no
-exact qualified peer composition is available, an installed local companion
-may perform one explicit conversion from a pinned and verified public source.
-The user must see which route is active. There is no remote-inference fallback
-or instruction-file download masquerading as acquisition.
+Startup restores an eligible saved model or automatically acquires a small
+qualified composition through MiniModel.org, the default discovery and P2P
+source. MiniModel.org may operate the initial server seeds. A peer path is
+eligible only for an exact qualified composition with matching identity and
+evidence. Hugging Face, local-file import, pinned companion conversion and
+manual peer/IP settings belong under Advanced. The user can see acquisition
+progress without configuring those controls. There is no remote-inference
+fallback or instruction-file download masquerading as acquisition.
 
-Project sites receive no prompts and do not proxy model bytes. Catalog rows,
+Project sites receive no prompts and do not proxy third-party downloads. Catalog rows,
 configured peers, local probes, or loopback health do not prove outside-network
 availability.
 

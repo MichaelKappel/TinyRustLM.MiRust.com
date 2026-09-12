@@ -16,6 +16,7 @@ const {
 const repositoryRoot = path.resolve(__dirname, "..");
 assertCanonicalSourceAuthority(repositoryRoot);
 const contentCommit = process.argv[2];
+if (process.argv.length !== 3) throw new Error("Expected one content commit or --check-prepared; output is stdout only.");
 const outputPath = path.join(repositoryRoot, "docs", "package-manifest.md");
 const historicalPublication = readHistoricalPublicationAuthority(repositoryRoot).publication;
 
@@ -50,5 +51,4 @@ const documentBytes = Buffer.from(built.document, "utf8");
 assertPublishableArtifact(PACKAGE_MANIFEST_PATH, documentBytes, {
   allowSiteSource: true,
 });
-fs.writeFileSync(outputPath, documentBytes);
-process.stdout.write(`${outputPath}\n${built.files.length} files\n${built.totalBytes} bytes\n`);
+process.stdout.write(documentBytes);

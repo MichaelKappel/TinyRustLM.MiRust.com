@@ -7,8 +7,6 @@ const { execFileSync } = require("node:child_process");
 const { assertCanonicalSourceAuthority } = require("./source-authority-preflight.js");
 const {
   assertDirectoryAbsent,
-  assertExactFileTree,
-  assertPlainDirectory,
   assertPublishableArtifact,
 } = require("./public-artifact-policy.js");
 const {
@@ -28,10 +26,8 @@ const {
 const repositoryRoot = path.resolve(__dirname, "..");
 assertCanonicalSourceAuthority(repositoryRoot);
 const packageCommit = process.argv[2];
-const outputPath = path.resolve(
-  repositoryRoot,
-  process.argv[3] || "deploy/site-deployment-manifest.v1.json",
-);
+const outputPath = path.join(repositoryRoot, "deploy/site-deployment-manifest.v1.json");
+if (process.argv.length !== 3) throw new Error("Expected one package commit or --check-prepared; output is stdout only.");
 const stagingRoot = path.join(repositoryRoot, "deploy", "staging", RELEASE_VERSION);
 const historicalAuthority = readHistoricalPublicationAuthority(repositoryRoot);
 const historicalPublication = historicalAuthority.publication;
@@ -59,12 +55,12 @@ if (packageCommit === "--check-prepared") {
     throw new Error("Prepared deployment manifest is not a bounded non-published 1.8.3 placeholder.");
   }
   assertDirectoryAbsent(stagingRoot);
-  process.stdout.write(`PREPARED ${RELEASE_VERSION}; commit-bound deployment manifest and staging pending\n`);
+  process.stdout.write(`PREPARED ${RELEASE_VERSION}; commit-bound deployment manifest pending; no local stage is permitted\n`);
   process.exit(0);
 }
 
 if (!/^[0-9a-f]{40}$/.test(packageCommit || "")) {
-  throw new Error("Usage: node tools/build-site-deployment-manifest.js <40-character-package-commit> [output]|--check-prepared");
+  throw new Error("Usage: node tools/build-site-deployment-manifest.js <40-character-package-commit>|--check-prepared");
 }
 
 function git(args, encoding = "utf8") {
@@ -72,6 +68,7 @@ function git(args, encoding = "utf8") {
     cwd: repositoryRoot,
     encoding,
     maxBuffer: 128 * 1024 * 1024,
+    timeout: 30000,
   });
 }
 
@@ -160,21 +157,9 @@ if (stagedFiles.length < MIN_PUBLIC_ARTIFACTS || stagedFiles.length > MAX_PUBLIC
 }
 
 assertDirectoryAbsent(stagingRoot);
-fs.mkdirSync(path.dirname(stagingRoot), { recursive: true });
-assertPlainDirectory(path.dirname(stagingRoot));
-fs.mkdirSync(stagingRoot);
-assertPlainDirectory(stagingRoot);
-for (const file of stagedFiles) {
-  const relativePath = file.path;
-  const stagedPath = path.join(stagingRoot, ...relativePath.split("/"));
-  fs.mkdirSync(path.dirname(stagedPath), { recursive: true });
-  fs.writeFileSync(stagedPath, file.committed);
-}
-
 const files = stagedFiles.map(({ committed, ...file }) => file);
 const retiredFiles = deriveRetiredPaths(historicalAuthority.receipt.files, files);
 const retiredRouteChecks = buildRetiredRouteChecks(retiredFiles);
-assertExactFileTree(stagingRoot, files);
 
 const manifest = {
   schema: "tinyrustlm.mirust.site_deployment_manifest.v1",
@@ -203,7 +188,4 @@ const manifest = {
   retired_route_checks: retiredRouteChecks,
 };
 
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-process.stdout.write(`${outputPath}\n${files.length} files\n`);
-process.stdout.write(`${stagingRoot}\n`);
+process.stdout.write(`${JSON.stringify(manifest, null, 2)}\n`);

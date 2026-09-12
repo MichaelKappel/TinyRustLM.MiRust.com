@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 "use strict";
 
-const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
 const { TextDecoder } = require("node:util");
@@ -499,7 +498,7 @@ function assertDirectoryAbsent(directory) {
     if (error && error.code === "ENOENT") return;
     throw error;
   }
-  throw new Error(`Staging root must be absent before materialization: ${directory}`);
+  throw new Error(`Retired staging root must be absent: ${directory}`);
 }
 
 // Rejects a directory reached through a symlink or junction ancestor.
@@ -515,59 +514,6 @@ function assertPlainDirectory(directory) {
   }
 }
 
-// Enumerates only regular files and rejects links or other special entries.
-function walkRegularFiles(directory, root = directory) {
-  return fs.readdirSync(directory, { withFileTypes: true })
-    .sort((left, right) => compareOrdinal(left.name, right.name))
-    .flatMap((entry) => {
-      const absolutePath = path.join(directory, entry.name);
-      if (entry.isSymbolicLink()) {
-        throw new Error(`Staging closure must not contain symbolic links: ${absolutePath}`);
-      }
-      if (entry.isDirectory()) return walkRegularFiles(absolutePath, root);
-      if (!entry.isFile()) {
-        throw new Error(`Staging closure contains an unsupported entry: ${absolutePath}`);
-      }
-      return [{
-        absolutePath,
-        relativePath: path.relative(root, absolutePath).split(path.sep).join("/"),
-      }];
-    });
-}
-
-// Recomputes the staged closure so missing, extra, or changed files fail closed.
-function assertExactFileTree(directory, expectedFiles) {
-  const root = fs.lstatSync(directory);
-  if (!root.isDirectory() || root.isSymbolicLink()) {
-    throw new Error(`Staging root must be a plain directory: ${directory}`);
-  }
-
-  const expected = new Map(expectedFiles.map((file) => [
-    normalizeRelativePath(file.path),
-    { bytes: file.bytes, sha256: file.sha256 },
-  ]));
-  if (expected.size !== expectedFiles.length) {
-    throw new Error("Expected staging closure contains a duplicate path.");
-  }
-
-  const actual = walkRegularFiles(directory);
-  if (actual.length !== expected.size) {
-    throw new Error(`Staging closure file count mismatch: expected ${expected.size}, found ${actual.length}`);
-  }
-
-  for (const file of actual) {
-    const identity = expected.get(file.relativePath);
-    if (!identity) {
-      throw new Error(`Staging closure contains an unexpected file: ${file.relativePath}`);
-    }
-    const bytes = fs.readFileSync(file.absolutePath);
-    const sha256 = crypto.createHash("sha256").update(bytes).digest("hex");
-    if (bytes.length !== identity.bytes || sha256 !== identity.sha256) {
-      throw new Error(`Staging file identity mismatch: ${file.relativePath}`);
-    }
-  }
-}
-
 module.exports = {
   PRIVATE_PUBLICATION_PATH_PREFIXES,
   PUBLIC_DENY_CONTROL_PATHS,
@@ -577,7 +523,6 @@ module.exports = {
   ROOT_PUBLIC_PATHS,
   MAX_TEXT_ARTIFACT_BYTES,
   assertDirectoryAbsent,
-  assertExactFileTree,
   assertPlainDirectory,
   assertPublishableArtifact,
   compareOrdinal,

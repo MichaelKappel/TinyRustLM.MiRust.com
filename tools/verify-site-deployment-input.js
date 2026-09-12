@@ -8,7 +8,8 @@ const { execFileSync } = require("node:child_process");
 const { TextDecoder } = require("node:util");
 const { assertCanonicalSourceAuthority } = require("./source-authority-preflight.js");
 const {
-  assertExactFileTree,
+  assertDirectoryAbsent,
+  assertPlainDirectory,
   assertPublishableArtifact,
   compareOrdinal,
   isPublicArtifactPath,
@@ -484,8 +485,20 @@ function verifyPackageManifestTransaction(repositoryRoot, packageCommit, options
   };
 }
 
-function validateDeploymentInput(manifestPath, stagingRoot, options = {}) {
+/** Verify exact public bytes in their canonical checkout without a second staging tree. */
+function validateDeploymentInput(manifestPath, options = {}) {
   const repositoryRoot = options.repositoryRoot || path.resolve(__dirname, "..");
+  if (typeof repositoryRoot !== "string" || !path.isAbsolute(repositoryRoot) ||
+      path.relative(path.resolve(__dirname, ".."), path.resolve(repositoryRoot)) !== "") {
+    throw new Error("Deployment validation requires the canonical repository root.");
+  }
+  assertPlainDirectory(repositoryRoot);
+  if (typeof manifestPath !== "string" || !path.isAbsolute(manifestPath) ||
+      path.relative(path.join(repositoryRoot, DEPLOYMENT_MANIFEST_PATH), path.resolve(manifestPath)) !== "") {
+    throw new Error("Deployment validation requires the canonical manifest path.");
+  }
+  assertPlainDirectory(path.dirname(manifestPath));
+  assertDirectoryAbsent(path.join(repositoryRoot, "deploy", "staging", RELEASE_VERSION));
   const manifestItem = fs.lstatSync(manifestPath);
   if (!manifestItem.isFile() || manifestItem.isSymbolicLink() || manifestItem.size < 1 || manifestItem.size > 2 * 1024 * 1024) {
     throw new Error("Deployment manifest must be one bounded regular file.");
@@ -531,6 +544,7 @@ function validateDeploymentInput(manifestPath, stagingRoot, options = {}) {
     throw new Error("Deployment manifest package-manifest identity is not exact.");
   }
   const closure = readPublicCommitClosure(repositoryRoot, manifest.source_commit);
+  git(repositoryRoot, ["merge-base", "--is-ancestor", manifest.source_commit, "HEAD"]);
   if (closure.length !== manifest.files.length) {
     throw new Error("Deployment manifest does not contain the exact public C2 path closure.");
   }
@@ -545,7 +559,13 @@ function validateDeploymentInput(manifestPath, stagingRoot, options = {}) {
   if (!exactJsonEqual(manifest.retired_route_checks, buildRetiredRouteChecks(retiredPaths))) {
     throw new Error("Deployment manifest retired-route proof closure is not exact.");
   }
-  const expected = [];
+  // Ignored public files still exist and must not disappear from the byte closure.
+  const localPaths = git(repositoryRoot, ["ls-files", "-z", "--cached", "--others"])
+    .split("\0").filter(Boolean).filter(isPublicArtifactPath).sort(compareOrdinal);
+  if (!exactJsonEqual(localPaths, closure.map((file) => file.path))) {
+    throw new Error("Canonical public file count or path closure does not match the manifest.");
+  }
+  let totalBytes = 0;
   for (let index = 0; index < closure.length; index += 1) {
     const committed = closure[index];
     const expectedFile = {
@@ -561,24 +581,31 @@ function validateDeploymentInput(manifestPath, stagingRoot, options = {}) {
     if (!isPublicArtifactPath(relativePath) || retiredPaths.includes(relativePath)) {
       throw new Error(`Deployment manifest contains a forbidden or non-public path: ${relativePath}`);
     }
-    const absolutePath = path.join(stagingRoot, ...relativePath.split("/"));
-    const staged = fs.readFileSync(absolutePath);
-    assertPublishableArtifact(relativePath, staged, { allowSiteSource: true });
-    expected.push({ path: relativePath, bytes: expectedFile.bytes, sha256: expectedFile.sha256 });
+    const absolutePath = path.join(repositoryRoot, ...relativePath.split("/"));
+    assertPlainDirectory(path.dirname(absolutePath));
+    const stat = fs.lstatSync(absolutePath);
+    if (!stat.isFile() || stat.isSymbolicLink() || stat.size !== expectedFile.bytes || stat.size > 16777216) {
+      throw new Error(`Canonical public file is not the declared regular file: ${relativePath}`);
+    }
+    const bytes = fs.readFileSync(absolutePath);
+    assertPublishableArtifact(relativePath, bytes, { allowSiteSource: true });
+    if (bytes.length !== expectedFile.bytes || sha256(bytes) !== expectedFile.sha256) {
+      throw new Error(`Canonical public file identity mismatch: ${relativePath}`);
+    }
+    totalBytes += bytes.length;
+    if (totalBytes > 67108864) throw new Error("Canonical public closure exceeds its total byte bound.");
   }
-  assertExactFileTree(stagingRoot, expected);
-  return { fileCount: expected.length, manifest, packageTransaction };
+  return { fileCount: closure.length, totalBytes, manifest, packageTransaction };
 }
 
 if (require.main === module) {
   const repositoryRoot = path.resolve(__dirname, "..");
   assertCanonicalSourceAuthority(repositoryRoot);
   const manifestPath = process.argv[2];
-  const stagingRoot = process.argv[3];
-  if (!manifestPath || !stagingRoot) {
-    throw new Error("Usage: node tools/verify-site-deployment-input.js <manifest> <staging-root>");
+  if (!manifestPath || process.argv.length !== 3) {
+    throw new Error("Usage: node tools/verify-site-deployment-input.js <canonical-manifest>");
   }
-  const result = validateDeploymentInput(path.resolve(manifestPath), path.resolve(stagingRoot));
+  const result = validateDeploymentInput(path.resolve(manifestPath));
   process.stdout.write(`POLICY_VALID ${result.fileCount} files\n`);
 }
 

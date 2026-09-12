@@ -1,0 +1,149 @@
+{
+  "schema": "tinyrustlm-mirust.retired-stage-review/1",
+  "reviewedUtc": "2026-09-12T20:32:27.660Z",
+  "root": "E:\\Source\\Rust\\TinyRustLM.MiRust.com\\deploy\\staging\\1.8.3",
+  "retainedGitCommit": "24e4f875a0e508827e6ddf6f94664e927261fbd5",
+  "manifestSha256": "7059e67b0f3a50a152d5687d397c39410ab93b332cfddce9139276c2b97e5735",
+  "files": [
+    {
+      "relativePath": ".htaccess",
+      "byteLength": 1657,
+      "sha256": "de9b96be33f1768e80e75debb4c82afef4995bc0d0e282a5a3fa45b6feb2f63b"
+    },
+    {
+      "relativePath": ".uai/.htaccess",
+      "byteLength": 214,
+      "sha256": "122886cf276798e8620965bb5a773584353920cf23e3dc8591f4a035ba0fc774"
+    },
+    {
+      "relativePath": ".uai/index.uai",
+      "byteLength": 1461,
+      "sha256": "1d64f689c63ebdc6f92b53ed6766f86d60fe1a220585e37b914d6e9bf6cdd507"
+    },
+    {
+      "relativePath": ".uai/long-term-memory.uai",
+      "byteLength": 2130,
+      "sha256": "87090e77f9b7cdbc126bb4758f0084472dfcd186dc1155da65823c7b7fdd8362"
+    },
+    {
+      "relativePath": ".well-known/uaix-talisman.txt",
+      "byteLength": 2706,
+      "sha256": "c1aebbb6694f974d861d7ff5bf1ed8dc77d82834347cbe10dc273393ac80e307"
+    },
+    {
+      "relativePath": "assets/css/site.css",
+      "byteLength": 21543,
+      "sha256": "35bddf4c03d28e62e812424686b27cc208c173db5c7fd3fac97da965e9bfd730"
+    },
+    {
+      "relativePath": "assets/js/site.js",
+      "byteLength": 6971,
+      "sha256": "b01e2871e1cacc430ff065b5edea964a37810a342b84b3326aa20fa4466f1024"
+    },
+    {
+      "relativePath": "data/pages.php",
+      "byteLength": 22161,
+      "sha256": "d4d5e84a32103af15544d38ccdcbd7e1b78c7684a1cde6a6e5fab25cdb4c7c3f"
+    },
+    {
+      "relativePath": "data/site.php",
+      "byteLength": 5731,
+      "sha256": "e4be09aeb4da23db9d9d91e5356d13429a38244fd3a8cf4bfa0b8de15f8d85a5"
+    },
+    {
+      "relativePath": "docs/index.php",
+      "byteLength": 5222,
+      "sha256": "f43fc37a39c632f61e3606e42c60a7ed43ebe9f601f93e861cb22796466bba97"
+    },
+    {
+      "relativePath": "docs/long-term-memory.md",
+      "byteLength": 3612,
+      "sha256": "68290fd6e2107c1be86ff957d5df4d1668e859d533509e13665f6447aba7a073"
+    },
+    {
+      "relativePath": "docs/package-manifest.md",
+      "byteLength": 3670,
+      "sha256": "fe4b408266e3a50ad81393f836567a9c5cff91565b3b85ba09e0f99fd843e350"
+    },
+    {
+      "relativePath": "docs/report-index.md",
+      "byteLength": 3569,
+      "sha256": "24aee48040077548499788e7d9a6e25057e00027bc720f5c4c238fc85047d42d"
+    },
+    {
+      "relativePath": "docs/reports-index.php",
+      "byteLength": 4085,
+      "sha256": "3aebf303f0cae0e627978426f46a301a100dac999355e798237de999a2fd9a39"
+    },
+    {
+      "relativePath": "docs/reports/.htaccess",
+      "byteLength": 556,
+      "sha256": "65e33b28136f4c208254062814ab561d1d2a7fc65ea8974e1a3a9c05494384c0"
+    },
+    {
+      "relativePath": "docs/retired-source-copy-gone.txt",
+      "byteLength": 54,
+      "sha256": "2d4cb085c99b2ae5e787510498ff78e7dd1eff8ea59f915dd56440c37930e2cd"
+    },
+    {
+      "relativePath": "docs/runtime-portal/index.md",
+      "byteLength": 1620,
+      "sha256": "e5790b1b8913a611e5abb808e58d9d6f3016cb3ae992d11915fffd49d2c6ca14"
+    },
+    {
+      "relativePath": "docs/ui-ux-25-rounds-2026-07-12.md",
+      "byteLength": 4574,
+      "sha256": "653b716c5970fef4b6bf2762c3ff482b3d34b0e684696de870f4e1e9f66c6fa0"
+    },
+    {
+      "relativePath": "includes/footer.php",
+      "byteLength": 1702,
+      "sha256": "a7ddf6c8f791091a10638b7338e1c13568f570167bc449805516c8fdcaf12a01"
+    },
+    {
+      "relativePath": "includes/functions.php",
+      "byteLength": 7737,
+      "sha256": "6b3247fa70a1409966297be7244d5e6a740bc10b2bd79e60d75d5c0c45a46605"
+    },
+    {
+      "relativePath": "includes/header.php",
+      "byteLength": 6851,
+      "sha256": "b8ccb633539e1983c484b638d472aae2b8e07eb56a08fd750223f8fe52ae9218"
+    },
+    {
+      "relativePath": "index.php",
+      "byteLength": 6774,
+      "sha256": "4c16821be6d3cd21e6a54679251e62581caa23100b8242a3c075d2bfced243e9"
+    },
+    {
+      "relativePath": "LICENSE.txt",
+      "byteLength": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "relativePath": "llms-full.txt",
+      "byteLength": 5798,
+      "sha256": "70c41e8378efc11e7fd2fbfb3dc42ed42413562b72b7fdc012db9c7d3920e713"
+    },
+    {
+      "relativePath": "llms.txt",
+      "byteLength": 2419,
+      "sha256": "d89c7358fb3e127082033c042b33260d6cc51a8bc1807df214c6b156392734c0"
+    },
+    {
+      "relativePath": "robots.txt",
+      "byteLength": 220,
+      "sha256": "f626803b1b578c79e89881f69be1a96a460cbd9974a9c4cb9666543eeca87532"
+    },
+    {
+      "relativePath": "sitemap.xml",
+      "byteLength": 2238,
+      "sha256": "d06961c9afec9959ddaf53a717c9d9d78f5bcf99194c6e44702127797819d785"
+    }
+  ],
+  "fileCount": 27,
+  "logicalBytes": 136632,
+  "uniqueFiles": 0,
+  "physicalDeletionVerified": false,
+  "lesson": "The initial 1.8.3 candidate copied the entire public source closure into staging. Its immutable package/source commits preserve these historical bytes; future metadata generation must emit stdout and validation must read canonical files in place."
+}

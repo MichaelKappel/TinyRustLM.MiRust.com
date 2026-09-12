@@ -43,10 +43,13 @@ readback and is not publication.
 
 ## Acquisition And Privacy
 
-Model acquisition is P2P-first. Exact qualified composition bytes may move
-directly between consenting peers. When no exact qualified peer composition is
-available, an installed local companion may perform an explicit, pinned local
-conversion. Project sites do not proxy model bytes and receive no prompts.
+Startup restores an eligible saved model or automatically acquires a small
+qualified composition through MiniModel.org, the default discovery and P2P
+source. MiniModel.org may operate the initial server seeds; a configured route
+does not prove that a qualified model or live seed is available. Hugging Face,
+local-file import, pinned companion conversion and manual peer/IP settings
+belong under Advanced. Inference remains local, and project sites receive no
+prompts or proxy third-party model downloads.
 
 Catalog metadata, peer availability, composition qualification, browser
 execution, and model quality are separately evidenced claims. Configuration,

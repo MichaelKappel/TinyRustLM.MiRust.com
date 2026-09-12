@@ -1,5 +1,5 @@
 profile: tinyrustlm-mirust.public-long-term-memory.current.v1
-updated_utc: 2026-08-31T18:06:02Z
+updated_utc: 2026-09-12T20:50:20.076Z
 storage_mode: checksum_bound_current_pointers
 
 current_pointers:
@@ -15,6 +15,7 @@ current_pointers:
 
 current_product:
   - One prelaunch TinyRustLM product and one exact six-member SLM2 composition path.
+  - Startup restores an eligible saved model or acquires a small qualified composition through MiniModel.org; initial server seeds are authorized. Hugging Face, local import, conversion and manual peer/IP controls belong under Advanced. This policy does not establish a qualified model or live seed.
   - The default public package transaction is TinyRustLM.Abstractions, TinyRustLM.Core, and TinyRustLM.P2P.
   - TinyRustLM.MemoryEndpoints is a separately optional connector for exactly two authorized MemoryEndpoints.com uses.
   - Historical reports and Runtime.MiRust.com material are evidence only and do not authorize obsolete readers, compatibility, fallback, or current claims.

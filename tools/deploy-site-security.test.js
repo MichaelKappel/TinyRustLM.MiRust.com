@@ -3,43 +3,38 @@
 
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
-const os = require("node:os");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const test = require("node:test");
+const { temporaryDirectory } = require("./test-artifacts.js");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const deployScript = path.join(repositoryRoot, "tools", "deploy-site.ps1");
 const deployReadme = path.join(repositoryRoot, "deploy", "README.md");
 const powershell = process.platform === "win32" ? "powershell.exe" : "pwsh";
 
-test("legacy full-site publish fails before manifest, credentials, receipts, or remote mutation", () => {
-  const owner = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-disabled-publisher-"));
-  try {
-    const report = path.join(owner, "must-not-exist.json");
-    const result = spawnSync(powershell, [
-      "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-      "-File", deployScript,
-      "-NodeExecutablePath", process.execPath,
-      "-Publish",
-      "-ManifestPath", path.join(owner, "missing-manifest.json"),
-      "-FileZillaProfilePath", path.join(owner, "missing-profile.xml"),
-      "-ReportPath", report,
-    ], {
-      cwd: repositoryRoot,
-      encoding: "utf8",
-      maxBuffer: 2 * 1024 * 1024,
-      windowsHide: true,
-    });
-    assert.notEqual(result.status, 0);
-    assert.match(`${result.stderr}\n${result.stdout}`, /Legacy full-site publishing is disabled/u);
-    assert.deepEqual(fs.readdirSync(owner), []);
-    assert.equal(fs.existsSync(report), false);
-  }
-  finally { fs.rmSync(owner, { recursive: true, force: true }); }
+test("legacy full-site publish fails before manifest, credentials, receipts, or remote mutation", (context) => {
+  const owner = temporaryDirectory(context, "disabled-publisher-");
+  const report = path.join(owner, "must-not-exist.json");
+  const result = spawnSync(powershell, [
+    "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+    "-File", deployScript,
+    "-NodeExecutablePath", process.execPath,
+    "-Publish",
+    "-ManifestPath", path.join(owner, "missing-manifest.json"),
+  ], {
+    cwd: repositoryRoot,
+    encoding: "utf8",
+    maxBuffer: 2 * 1024 * 1024,
+    windowsHide: true,
+  });
+  assert.notEqual(result.status, 0);
+  assert.match(`${result.stderr}\n${result.stdout}`, /Legacy full-site publishing is disabled/u);
+  assert.deepEqual(fs.readdirSync(owner), [".test-owner"]);
+  assert.equal(fs.existsSync(report), false);
 });
 
-test("disabled publish guard precedes every legacy publisher dependency and mutation call", () => {
+test("validation-only entrypoint contains no legacy publisher dependency or mutation call", () => {
   const source = fs.readFileSync(deployScript, "utf8");
   const disabledGate = source.indexOf("if ($Publish) {");
   assert.ok(disabledGate >= 0);
@@ -51,8 +46,8 @@ test("disabled publish guard precedes every legacy publisher dependency and muta
     "Remove-RemoteFileIfPresent -RemotePath $currentPath",
     "Write-Receipt -Receipt $receipt",
   ]) {
-    const offset = source.indexOf(later);
-    assert.ok(offset > disabledGate, later);
+    if (later === "$manifestItem = Get-Item") assert.ok(source.indexOf(later) > disabledGate);
+    else assert.equal(source.includes(later), false, later);
   }
   assert.match(source, /Complete the hardened source-retirement transaction/u);
   assert.doesNotMatch(source, /&\s+node\b/iu);

@@ -1,0 +1,11 @@
+{
+  "schema": "tinyrustlm-mirust.canonical-powershell-validation/1",
+  "observedUtc": "2026-09-12T20:48:29.630Z",
+  "status": 1,
+  "actualPowerShell": true,
+  "actualCanonicalNode": true,
+  "hostileNodeOptionsStripped": true,
+  "expectedFailure": "Retired staging root must be absent: deploy/staging/1.8.3",
+  "validationSuccessClaimed": false,
+  "transportInvoked": false
+}

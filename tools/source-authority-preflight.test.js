@@ -113,8 +113,7 @@ test("canonical PowerShell rejects a substituted runtime before deployment input
   const result = spawnSync("powershell.exe", [
     "-NoLogo", "-NoProfile", "-NonInteractive", "-File", path.join(__dirname, "deploy-site.ps1"),
     "-NodeExecutablePath", path.join(repositoryRoot, "README.md"),
-    "-ManifestPath", path.join(repositoryRoot, "artifacts", `missing-${nonce}.json`),
-    "-ReportPath", reportPath
+    "-ManifestPath", path.join(repositoryRoot, "artifacts", `missing-${nonce}.json`)
   ], { cwd: repositoryRoot, encoding: "utf8", windowsHide: true, timeout: 10000 });
   assert.ifError(result.error);
   assert.notEqual(result.status, 0);

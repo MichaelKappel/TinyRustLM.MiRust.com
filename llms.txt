@@ -15,10 +15,12 @@ Default public package transaction: TinyRustLM.Abstractions, TinyRustLM.Core,
 TinyRustLM.P2P. TinyRustLM.MemoryEndpoints is the separately optional two-use
 connector and is excluded from that default transaction.
 
-Model acquisition is P2P-first. Exact qualified bytes travel directly between
-consenting peers; otherwise an installed local companion may perform an
-explicit pinned local conversion. Project sites do not proxy model bytes and
-receive no prompts.
+Startup restores an eligible saved model or automatically acquires a small
+qualified composition through MiniModel.org, the default discovery and P2P
+source. MiniModel.org may operate the initial server seeds. Hugging Face,
+local-file import, pinned companion conversion and manual peer/IP settings
+belong under Advanced. Project sites receive no prompts and do not proxy
+third-party model downloads. Source policy does not prove live seed availability.
 
 MemoryEndpoints.com has two distinct uses:
 
