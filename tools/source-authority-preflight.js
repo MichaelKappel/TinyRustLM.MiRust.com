@@ -12,8 +12,9 @@ const EXPECTED_NODE_RUNTIME = Object.freeze({
   sha256: "63c259c81e5d472b5f11c8d506070130cb04a1ecf84b80377a34ed6ec9048088",
 });
 const EXPECTED_SOURCE_AUTHORITY_VERIFIER = Object.freeze({
-  bytes: 144650,
-  sha256: "d8005c826d3e477787a79ad4f25fbd3cf25bd37cb810b3b2bf708667e2290d47",
+  // Canonical committed gate from TinyRustLM.com 70e890e; no copied gate is admitted.
+  bytes: 141430,
+  sha256: "f99083edfe7eae96279acafcb624eb88e1a26e43d5622d498711fe280691647d",
 });
 
 function sha256RegularFile(filePath, expectedBytes, label) {
@@ -108,6 +109,7 @@ function assertCanonicalSourceAuthority(repositoryRoot, options = {}) {
     encoding: "utf8",
     env: childEnvironment,
     maxBuffer: MAX_GATE_OUTPUT_BYTES,
+    timeout: 120000,
     windowsHide: true,
   });
   if (result.error || result.status !== 0) {

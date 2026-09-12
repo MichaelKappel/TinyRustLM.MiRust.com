@@ -4,9 +4,8 @@
 const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
 const fs = require("node:fs");
-const os = require("node:os");
 const path = require("node:path");
-const { execFileSync } = require("node:child_process");
+const { execFileSync, spawnSync } = require("node:child_process");
 const test = require("node:test");
 const {
   PUBLIC_PATH_PREFIXES,
@@ -21,11 +20,11 @@ const {
   RETAINED_PRIVATE_REPORT_PATHS,
   RETIREMENT_POLICY,
   buildRetiredRouteChecks,
-  buildPackageManifestDocument,
   deriveRetiredPaths,
   readPublicCommitClosure,
-  validateDeploymentInput,
 } = require("./verify-site-deployment-input.js");
+
+const { createVirtualBoundary } = require("./deployment-validation-fixture.js");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const fixturePublication = Object.freeze({
@@ -42,21 +41,8 @@ const fixtureHistoricalFiles = Object.freeze([
   Object.freeze({ path: "docs/retired-fixture.md" }),
 ]);
 
-function git(root, args, encoding = "utf8") {
-  return execFileSync("git", args, {
-    cwd: root,
-    encoding,
-    maxBuffer: 16 * 1024 * 1024,
-  });
-}
-
-function commitAll(root, message) {
-  git(root, ["add", "--all"]);
-  git(root, ["commit", "--quiet", "-m", message]);
-  return git(root, ["rev-parse", "HEAD"]).trim();
-}
-
-function packageIdentity(root, packageCommit, basisCommit) {
+/** Describe the synthetic package transaction using the supplied virtual Git boundary. */
+function packageIdentity(root, packageCommit, basisCommit, git) {
   const bytes = git(root, ["show", `${packageCommit}:${PACKAGE_MANIFEST_PATH}`], null);
   return {
     path: PACKAGE_MANIFEST_PATH,
@@ -70,13 +56,18 @@ function packageIdentity(root, packageCommit, basisCommit) {
   };
 }
 
+/** Synthesize transaction and staging responses in memory; no checkout or copy exists. */
 function materializeFixture(options = {}) {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-deployment-validation-"));
+  const boundary = createVirtualBoundary();
+  const { root, fs, git, api } = boundary;
+  const { buildPackageManifestDocument, readPublicCommitClosure } = api;
+  // Create virtual history only; this callback never invokes a real Git executable.
+  const commitAll = (root, message) => {
+    git(root, ["add", "--all"]);
+    git(root, ["commit", "--quiet", "-m", message]);
+    return git(root, ["rev-parse", "HEAD"]).trim();
+  };
   try {
-    git(root, ["init", "--quiet"]);
-    git(root, ["config", "user.name", "TinyRustLM Test"]);
-    git(root, ["config", "user.email", "test@example.invalid"]);
-    git(root, ["config", "core.autocrlf", "false"]);
 
     const docs = path.join(root, "docs");
     fs.mkdirSync(docs);
@@ -132,7 +123,7 @@ function materializeFixture(options = {}) {
       last_verified_publication: { ...fixturePublication },
       source_commit: packageCommit,
       source_tree: sourceTree,
-      package_manifest: packageIdentity(root, packageCommit, basisCommit),
+      package_manifest: packageIdentity(root, packageCommit, basisCommit, git),
       transport_profile: "TinyRustLM.MiRust.com",
       retirement_policy: RETIREMENT_POLICY,
       files,
@@ -143,6 +134,7 @@ function materializeFixture(options = {}) {
     const manifestPath = path.join(root, "manifest.json");
     fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
     return {
+      ...boundary,
       contentCommit,
       manifest,
       manifestPath,
@@ -158,14 +150,35 @@ function materializeFixture(options = {}) {
   }
 }
 
+/** Exercise the actual validator against explicitly virtual I/O. */
 function validateFixture(fixture) {
-  return validateDeploymentInput(fixture.manifestPath, fixture.staging, {
+  return fixture.api.validateDeploymentInput(fixture.manifestPath, fixture.staging, {
     historicalPublication: fixturePublication,
     historicalFiles: fixtureHistoricalFiles,
     requiredRetiredPaths: new Set(),
     repositoryRoot: fixture.root,
   });
 }
+
+test("deployment validator CLI reaches usage validation from a non-root working directory", () => {
+  const result = spawnSync(process.execPath, [
+    path.join(repositoryRoot, "tools", "verify-site-deployment-input.js"),
+  ], {
+    cwd: path.join(repositoryRoot, "tools"),
+    encoding: "utf8",
+    maxBuffer: 2 * 1024 * 1024,
+    timeout: 120000,
+    windowsHide: true,
+  });
+  assert.ifError(result.error);
+  assert.equal(result.status, 1);
+  assert.match(
+    result.stderr,
+    /Usage: node tools\/verify-site-deployment-input\.js <manifest> <staging-root>/u,
+  );
+  assert.doesNotMatch(result.stderr, /ReferenceError|repositoryRoot is not defined/u);
+  assert.doesNotMatch(result.stdout, /POLICY_VALID/u);
+});
 
 test("retained report retirements carry exact case and encoded readback variants", () => {
   const checks = buildRetiredRouteChecks(RETAINED_PRIVATE_REPORT_PATHS);
@@ -192,31 +205,31 @@ test("shared deployment validator accepts an exact C1 to package-only C2 closure
     assert.equal(result.packageTransaction.packageCommit, fixture.packageCommit);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
 test("shared deployment validator rejects extras, source disguised as text, and prepared manifests", () => {
   const fixture = materializeFixture();
   try {
-    fs.writeFileSync(path.join(fixture.staging, "unexpected.txt"), "unexpected\n");
+    fixture.fs.writeFileSync(path.join(fixture.staging, "unexpected.txt"), "unexpected\n");
     assert.throws(() => validateFixture(fixture), /file count mismatch/i);
-    fs.rmSync(path.join(fixture.staging, "unexpected.txt"));
+    fixture.fs.rmSync(path.join(fixture.staging, "unexpected.txt"));
 
     const packageManifest = path.join(fixture.staging, "docs", "package-manifest.md");
-    fs.writeFileSync(packageManifest, "#!/usr/bin/env node\nconsole.log('copied');\n");
+    fixture.fs.writeFileSync(packageManifest, "#!/usr/bin/env node\nconsole.log('copied');\n");
     assert.throws(() => validateFixture(fixture), /source shebang/i);
-    fs.writeFileSync(
+    fixture.fs.writeFileSync(
       packageManifest,
-      git(fixture.root, ["show", `${fixture.packageCommit}:${PACKAGE_MANIFEST_PATH}`], null),
+      fixture.git(fixture.root, ["show", `${fixture.packageCommit}:${PACKAGE_MANIFEST_PATH}`], null),
     );
 
     fixture.manifest.status = "prepared-awaiting-content-commit";
-    fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
+    fixture.fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
     assert.throws(() => validateFixture(fixture), /identity or bounds/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -226,7 +239,7 @@ test("deployment validation rejects a stale package manifest based on an unrelat
     assert.throws(() => validateFixture(fixture), /basis commit must be the sole parent/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -236,7 +249,7 @@ test("deployment validation rejects a forged package-manifest table even when C2
     assert.throws(() => validateFixture(fixture), /does not exactly match the C1 public closure/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -246,7 +259,7 @@ test("deployment validation rejects a C2 commit containing an unrelated change",
     assert.throws(() => validateFixture(fixture), /must change only docs\/package-manifest\.md/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -254,25 +267,26 @@ test("deployment validation rejects forged historical and package identities", (
   const fixture = materializeFixture();
   try {
     fixture.manifest.last_verified_publication.receipt_sha256 = "0".repeat(64);
-    fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
+    fixture.fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
     assert.throws(() => validateFixture(fixture), /last-verified publication identity/i);
 
     fixture.manifest.last_verified_publication = { ...fixturePublication };
     fixture.manifest.package_manifest.sha256 = "0".repeat(64);
-    fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
+    fixture.fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
     assert.throws(() => validateFixture(fixture), /package-manifest identity/i);
 
     fixture.manifest.package_manifest = packageIdentity(
       fixture.root,
       fixture.packageCommit,
       fixture.contentCommit,
+      fixture.git,
     );
     fixture.manifest.files[0].sha256 = "0".repeat(64);
-    fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
+    fixture.fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
     assert.throws(() => validateFixture(fixture), /file identity disagrees with C2/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -281,11 +295,11 @@ test("deployment validation rejects a hand-maintained or incomplete retirement c
   try {
     fixture.manifest.retired_files = [];
     fixture.manifest.retired_route_checks = [];
-    fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
+    fixture.fs.writeFileSync(fixture.manifestPath, `${JSON.stringify(fixture.manifest, null, 2)}\n`);
     assert.throws(() => validateFixture(fixture), /retired-file deletion closure is not exact/i);
   }
   finally {
-    fs.rmSync(fixture.root, { recursive: true, force: true });
+    fixture.fs.rmSync(fixture.root, { recursive: true, force: true });
   }
 });
 
@@ -298,6 +312,26 @@ test("deployment generation gates C3 materialization on the C1 to C2 proof", () 
   assert.ok(transactionGate < stagingGate, "staging absence check precedes package transaction proof");
   assert.ok(stagingGate < materialization, "staging materialization precedes package transaction proof");
   assert.match(source, /package_manifest: packageTransaction\.identity/);
+});
+
+test("same-length Git batch payload drift is rejected despite an unchanged object header", () => {
+  const fixture = materializeFixture();
+  fixture.faults.batchPayload = true;
+  assert.throws(() => fixture.api.readPublicCommitClosure(fixture.root, fixture.contentCommit),
+    /batch payload failed object-ID verification/);
+});
+
+test("real canonical Git closure is read without staging or writing a second checkout", () => {
+  for (const root of [path.dirname(repositoryRoot), ".", null]) {
+    assert.throws(() => readPublicCommitClosure(root, "a".repeat(40)), /canonical repository root/);
+  }
+  const commit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: repositoryRoot, encoding: "utf8" }).trim();
+  const closure = readPublicCommitClosure(repositoryRoot, commit);
+  assert.ok(closure.length >= 20 && closure.length <= 512);
+  const current = closure.find((file) => file.path === "index.php");
+  const actual = execFileSync("git", ["show", `${commit}:index.php`], { cwd: repositoryRoot });
+  assert.ok(current.committed.equals(actual));
+  assert.equal(current.sha256, crypto.createHash("sha256").update(actual).digest("hex"));
 });
 
 test("PowerShell validation independently proves commit tree, Git closure, blob identity, and policy before credentials", () => {

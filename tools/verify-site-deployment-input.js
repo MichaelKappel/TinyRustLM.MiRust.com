@@ -65,12 +65,18 @@ const HTTPS_READBACK_PATHS = new Set([
 ]);
 const UTF8_DECODER = new TextDecoder("utf-8", { fatal: true });
 
+/** Read bounded Git output only from this module's canonical owning repository. */
 function git(repositoryRoot, args, encoding = "utf8", input) {
+  if (typeof repositoryRoot !== "string" || !path.isAbsolute(repositoryRoot) ||
+      path.relative(path.resolve(__dirname, ".."), path.resolve(repositoryRoot)) !== "") {
+    throw new Error("Deployment validation requires the canonical repository root.");
+  }
   return execFileSync("git", args, {
     cwd: repositoryRoot,
     encoding,
     input,
     maxBuffer: 128 * 1024 * 1024,
+    timeout: 30000,
   });
 }
 
@@ -267,6 +273,12 @@ function readPublicCommitClosure(repositoryRoot, commit, options = {}) {
       throw new Error(`Git batch response bytes are truncated for ${entry.path}.`);
     }
     const committed = Buffer.from(batch.subarray(contentStart, contentEnd));
+    // A matching batch header alone does not bind the returned payload to its Git object.
+    const actualBlob = crypto.createHash("sha1")
+      .update(`blob ${committed.length}\0`).update(committed).digest("hex");
+    if (actualBlob !== entry.blob) {
+      throw new Error(`Git batch payload failed object-ID verification: ${entry.path}`);
+    }
     offset = contentEnd + 1;
     assertPublishableArtifact(entry.path, committed, { allowSiteSource: true });
     return {
@@ -559,6 +571,7 @@ function validateDeploymentInput(manifestPath, stagingRoot, options = {}) {
 }
 
 if (require.main === module) {
+  const repositoryRoot = path.resolve(__dirname, "..");
   assertCanonicalSourceAuthority(repositoryRoot);
   const manifestPath = process.argv[2];
   const stagingRoot = process.argv[3];

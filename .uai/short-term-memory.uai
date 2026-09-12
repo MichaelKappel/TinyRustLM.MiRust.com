@@ -10,7 +10,12 @@ ecosystem_cleanup_2026_09_12:
   verification: Eight executable checks passed, including every declared static GET and HEAD byte, live PHP negative requests, retired-route behavior, and a real directory-link probe. No fixtures remain in artifacts.
   coverage_gap: PHP has no Xdebug or PCOV coverage extension; real PHP and HTTP behavior checks are the closest automated evidence, not a percentage claim.
   publication: index.php changed. Existing package and deployment byte bindings require regeneration after the next content checkpoint; no publication or deployed-current claim is made.
-  pending: Existing deployment-verifier edits and historical-copy cleanup remain under review; the broader ecosystem goal is still active.
+  validator_change: Deployment transaction and hostile-gate tests now synthesize bounded filesystem/Git responses in memory instead of creating Git repositories, copied tools or public stages. A separate test reads the real canonical committed closure.
+  validator_corrections: The CLI root declaration is repaired; the gate pin matches the committed TinyRustLM source-authority verifier; Git reads require the canonical repository and have a timeout; batch payloads are rehashed against their Git blob IDs instead of trusting matching headers.
+  validator_verification: Twenty checks passed with zero skips, including the actual canonical CLI source gate, read-only Git closure and actual PowerShell rejection before deployment input. Whole-file Node coverage is 98.86 percent for the virtual fixture, 94.70 percent for the preflight and 74.17 percent for the deployment validator; the new root and payload checks executed.
+  validator_evidence: artifacts/ecosystem-cleanup-20260912/deployment-validator-review.json
+  validator_lessons: Current pins must follow reviewed committed consumers; page-preview success does not prove release entrypoints work; matching transport headers do not prove payload identity. No source copy or executable fixture is needed for these boundary cases.
+  pending: Existing 1.8.3 package/deployment metadata is bound to older public bytes, and stage-producing tools and remaining historical-copy tests still require cleanup. No staging, publication or deployed-current result is claimed; the broader ecosystem goal is active.
 
 prepared_publication:
   version: 1.8.3

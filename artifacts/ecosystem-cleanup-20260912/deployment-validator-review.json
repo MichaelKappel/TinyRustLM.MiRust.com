@@ -1,0 +1,43 @@
+{
+  "schema": "tinyrustlm-mirust.deployment-validator-review/1",
+  "observedUtc": "2026-09-12T20:21:07.707Z",
+  "tests": 20,
+  "passed": 20,
+  "skipped": 0,
+  "coverageTool": "Node 24.14.0 --experimental-test-coverage",
+  "sources": [
+    {
+      "path": "tools/deployment-validation-fixture.js",
+      "sha256": "abd06d8be7fcb6744c5d278bc09a18699e1cc326bfd801fd6951b339cbfb31c0",
+      "linePercent": 98.86,
+      "branchPercent": 93.42
+    },
+    {
+      "path": "tools/source-authority-preflight.js",
+      "sha256": "870420cacf0480154fa3b84cba4fbcfc6bb1fd2380afde274c0ce47a459902c0",
+      "linePercent": 94.7,
+      "branchPercent": 70.83
+    },
+    {
+      "path": "tools/verify-site-deployment-input.js",
+      "sha256": "fae16e3f46a444f65ed65f936759ca5fc5d77cf3990c2cb1d08b37774f6b5711",
+      "linePercent": 74.17,
+      "branchPercent": 66.96
+    }
+  ],
+  "canonicalGate": {
+    "sourceCommit": "70e890e61b6f26b59f76f90ea967f367e2134196",
+    "byteLength": 141430,
+    "sha256": "f99083edfe7eae96279acafcb624eb88e1a26e43d5622d498711fe280691647d",
+    "worktreeMatchesCommittedBytes": true
+  },
+  "boundaries": {
+    "virtualTransactionFixturesOnly": true,
+    "realCanonicalGitRead": true,
+    "realCanonicalCliGate": true,
+    "realPowerShellRuntimeRejection": true,
+    "deployment": false,
+    "currentPublication": false
+  },
+  "pending": "Existing 1.8.3 candidate/package metadata and physical stage assumptions still require reconciliation after current public-source changes."
+}

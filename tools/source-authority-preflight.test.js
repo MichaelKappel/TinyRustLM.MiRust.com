@@ -4,26 +4,32 @@
 const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
 const fs = require("node:fs");
-const os = require("node:os");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const test = require("node:test");
+const vm = require("node:vm");
+const Module = require("node:module");
 const {
   EXPECTED_NODE_RUNTIME,
   EXPECTED_SOURCE_AUTHORITY_VERIFIER,
   assertFileIdentity,
-  assertCanonicalSourceAuthority,
   canonicalSourceAuthorityGatePath,
 } = require("./source-authority-preflight.js");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 
-function fileIdentity(filePath) {
-  const bytes = fs.readFileSync(filePath);
-  return {
-    bytes: bytes.length,
-    sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
-  };
+/** Execute canonical CommonJS source in memory with explicit process-boundary replies. */
+function loadCanonical(name, dependencies, asMain = false) {
+  const filename = path.join(__dirname, name);
+  const module = { exports: {} };
+  const originalRequire = Module.createRequire(filename);
+  const require = (id) => Object.hasOwn(dependencies, id) ? dependencies[id] : originalRequire(id);
+  require.main = asMain ? module : null;
+  vm.runInNewContext(fs.readFileSync(filename, "utf8"), {
+    require, module, exports: module.exports, __dirname, __filename: filename,
+    process, Buffer, Set, Map, TextDecoder, console
+  }, { filename });
+  return module.exports;
 }
 
 test("checked-in identities bind the exact Node runtime and canonical verifier bytes", () => {
@@ -39,132 +45,81 @@ test("checked-in identities bind the exact Node runtime and canonical verifier b
   ));
 });
 
-test("a hostile authority-gate failure stops the guarded action", () => {
-  const owner = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-authority-hostile-"));
-  try {
-    const gatePath = path.join(owner, "hostile-gate.js");
-    const gateMarker = path.join(owner, "gate-ran.txt");
-    const actionMarker = path.join(owner, "action-ran.txt");
-    fs.writeFileSync(
-      gatePath,
-      `require('node:fs').writeFileSync(${JSON.stringify(gateMarker)}, 'failed gate reached\\n'); process.exit(23);\n`,
-    );
-    assert.throws(() => {
-      assertCanonicalSourceAuthority(repositoryRoot, {
-        gatePath,
-        expectedGateIdentity: fileIdentity(gatePath),
-      });
-      fs.writeFileSync(actionMarker, "forbidden action\n");
-    }, /source-authority gate failed/i);
-    assert.equal(fs.existsSync(gateMarker), true);
-    assert.equal(fs.existsSync(actionMarker), false);
-  }
-  finally {
-    fs.rmSync(owner, { recursive: true, force: true });
+test("hostile, malformed and timed-out gate replies stop the guarded action", () => {
+  for (const result of [
+    { status: 23, stdout: "" }, { status: null, error: new Error("synthetic timeout") },
+    { status: 0, stdout: "not-json" },
+    { status: 0, stdout: JSON.stringify({ verdict: "pass", wholeVolumeInventoryPerformed: true }) }
+  ]) {
+    let invoked = 0;
+    const api = loadCanonical("source-authority-preflight.js", {
+      "node:child_process": { spawnSync(runtime, args, options) {
+        invoked += 1;
+        assert.equal(runtime, process.execPath);
+        assert.equal(args[0], canonicalSourceAuthorityGatePath(repositoryRoot));
+        assert.equal(options.timeout, 120000);
+        assert.equal(options.env.NODE_OPTIONS, undefined);
+        assert.equal(options.env.NODE_PATH, undefined);
+        return result;
+      } }
+    });
+    assert.throws(() => api.assertCanonicalSourceAuthority(repositoryRoot), /gate.*(?:failed|verdict)/i);
+    assert.equal(invoked, 1);
   }
 });
 
-test("a pass-shaped mutable verifier is rejected before it can execute", () => {
-  const owner = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-authority-identity-"));
-  try {
-    const gatePath = path.join(owner, "untrusted-gate.js");
-    const gateMarker = path.join(owner, "gate-ran.txt");
-    fs.writeFileSync(
-      gatePath,
-      `require('node:fs').writeFileSync(${JSON.stringify(gateMarker)}, 'must not run\\n'); process.stdout.write(JSON.stringify({canonicalLayoutAvailable:true,coverageClass:'registered-governed-roots-only',localScanPerformed:true,verdict:'pass',wholeVolumeInventoryPerformed:false}) + '\\n');\n`,
-    );
-    assert.throws(
-      () => assertCanonicalSourceAuthority(repositoryRoot, { gatePath }),
-      /immutable expected identity/i,
-    );
-    assert.equal(fs.existsSync(gateMarker), false);
-  }
-  finally {
-    fs.rmSync(owner, { recursive: true, force: true });
+test("a substituted verifier or wrong Node identity is rejected before execution", () => {
+  let invoked = 0;
+  const api = loadCanonical("source-authority-preflight.js", {
+    "node:child_process": { spawnSync() { invoked += 1; throw new Error("must not execute"); } }
+  });
+  assert.throws(() => api.assertCanonicalSourceAuthority(repositoryRoot, {
+    gatePath: path.join(repositoryRoot, "README.md")
+  }), /immutable expected identity/);
+  assert.throws(() => api.assertCanonicalSourceAuthority(repositoryRoot, {
+    expectedRuntimeIdentity: { bytes: EXPECTED_NODE_RUNTIME.bytes, sha256: "0".repeat(64) }
+  }), /Node runtime does not match/);
+  assert.equal(invoked, 0);
+});
+
+test("hostile gate prevents canonical CLI entrypoints from reading or writing deployment data", () => {
+  for (const name of ["build-runtime-archive-manifest.js", "verify-site-deployment-input.js"]) {
+    let gates = 0;
+    let reads = 0;
+    let writes = 0;
+    assert.throws(() => loadCanonical(name, {
+      "./source-authority-preflight.js": { assertCanonicalSourceAuthority(root) {
+        assert.equal(root, repositoryRoot);
+        gates += 1;
+        throw new Error("synthetic hostile gate rejected");
+      } },
+      "node:fs": {
+        readdirSync() { reads += 1; throw new Error("forbidden inventory read"); },
+        lstatSync() { reads += 1; throw new Error("forbidden manifest read"); },
+        writeFileSync() { writes += 1; throw new Error("forbidden artifact write"); }
+      }
+    }, true), /synthetic hostile gate rejected/);
+    assert.equal(gates, 1);
+    assert.equal(reads, 0);
+    assert.equal(writes, 0);
   }
 });
 
-test("a mismatched Node runtime identity is rejected before verifier execution", () => {
-  const owner = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-authority-runtime-"));
-  try {
-    const gatePath = path.join(owner, "gate.js");
-    const gateMarker = path.join(owner, "gate-ran.txt");
-    fs.writeFileSync(
-      gatePath,
-      `require('node:fs').writeFileSync(${JSON.stringify(gateMarker)}, 'must not run\\n');\n`,
-    );
-    assert.throws(
-      () => assertCanonicalSourceAuthority(repositoryRoot, {
-        gatePath,
-        expectedGateIdentity: fileIdentity(gatePath),
-        expectedRuntimeIdentity: {
-          bytes: EXPECTED_NODE_RUNTIME.bytes,
-          sha256: "0".repeat(64),
-        },
-      }),
-      /Node runtime does not match its immutable expected identity/i,
-    );
-    assert.equal(fs.existsSync(gateMarker), false);
-  }
-  finally {
-    fs.rmSync(owner, { recursive: true, force: true });
-  }
-});
-
-test("hostile gate failure reaches neither archive snapshot nor deployment input", () => {
-  const owner = fs.mkdtempSync(path.join(os.tmpdir(), "tinyrustlm-authority-entrypoint-"));
-  try {
-    const rustRoot = path.join(owner, "Rust");
-    const siteRoot = path.join(rustRoot, "TinyRustLM.MiRust.com");
-    const toolsRoot = path.join(siteRoot, "tools");
-    const archiveRoot = path.join(siteRoot, "docs", "runtime-portal");
-    const gateRoot = path.join(rustRoot, "TinyRustLM.com", "tinyrustlm", "tools");
-    const gateMarker = path.join(owner, "gate-ran.txt");
-    fs.mkdirSync(toolsRoot, { recursive: true });
-    fs.mkdirSync(archiveRoot, { recursive: true });
-    fs.mkdirSync(gateRoot, { recursive: true });
-    fs.writeFileSync(path.join(archiveRoot, "evidence.md"), "must not be inventoried\n");
-    for (const relativePath of [
-      "tools/build-runtime-archive-manifest.js",
-      "tools/source-authority-preflight.js",
-      "tools/deploy-site.ps1",
-    ]) {
-      fs.copyFileSync(
-        path.join(repositoryRoot, ...relativePath.split("/")),
-        path.join(siteRoot, ...relativePath.split("/")),
-      );
-    }
-    fs.writeFileSync(
-      path.join(gateRoot, "verify-single-source-authority.js"),
-      `require('node:fs').writeFileSync(${JSON.stringify(gateMarker)}, 'hostile gate reached\\n'); process.exit(29);\n`,
-    );
-
-    const archive = spawnSync(process.execPath, [
-      path.join(toolsRoot, "build-runtime-archive-manifest.js"),
-    ], { cwd: siteRoot, encoding: "utf8", windowsHide: true });
-    assert.notEqual(archive.status, 0);
-    assert.match(`${archive.stderr}\n${archive.stdout}`, /immutable expected identity/i);
-    assert.equal(fs.existsSync(path.join(archiveRoot, "MANIFEST.md")), false);
-
-    if (process.platform === "win32") {
-      const reportPath = path.join(owner, "forbidden-report.json");
-      const deployment = spawnSync("powershell.exe", [
-        "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-        "-File", path.join(toolsRoot, "deploy-site.ps1"),
-        "-NodeExecutablePath", process.execPath,
-        "-ManifestPath", path.join(owner, "missing-manifest.json"),
-        "-FileZillaProfilePath", path.join(owner, "missing-profile.xml"),
-        "-ReportPath", reportPath,
-      ], { cwd: siteRoot, encoding: "utf8", windowsHide: true });
-      assert.notEqual(deployment.status, 0);
-      assert.match(`${deployment.stderr}\n${deployment.stdout}`, /source-authority gate failed/i);
-      assert.equal(fs.existsSync(reportPath), false);
-    }
-    assert.equal(fs.existsSync(gateMarker), false);
-  }
-  finally {
-    fs.rmSync(owner, { recursive: true, force: true });
-  }
+test("canonical PowerShell rejects a substituted runtime before deployment input or output", {
+  skip: process.platform !== "win32"
+}, () => {
+  const nonce = crypto.randomBytes(12).toString("hex");
+  const reportPath = path.join(repositoryRoot, "artifacts", `never-created-${nonce}.json`);
+  const result = spawnSync("powershell.exe", [
+    "-NoLogo", "-NoProfile", "-NonInteractive", "-File", path.join(__dirname, "deploy-site.ps1"),
+    "-NodeExecutablePath", path.join(repositoryRoot, "README.md"),
+    "-ManifestPath", path.join(repositoryRoot, "artifacts", `missing-${nonce}.json`),
+    "-ReportPath", reportPath
+  ], { cwd: repositoryRoot, encoding: "utf8", windowsHide: true, timeout: 10000 });
+  assert.ifError(result.error);
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Node runtime does not match its immutable expected identity/);
+  assert.equal(fs.existsSync(reportPath), false);
 });
 
 test("every release or deployment entrypoint gates before snapshot, staging, credentials, or transport", () => {
