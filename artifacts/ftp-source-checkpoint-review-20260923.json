@@ -1,0 +1,33 @@
+{
+  "schema": "tinyrustlm-mirust.ftp-source-checkpoint-review.v1",
+  "date": "2026-09-23",
+  "authority": "Owner requests checked-in code, no charged GitHub features, local validation and FTP/FTPS website publication.",
+  "actions": "Repository Actions disabled and official API readback verified; central receipt in TinyRustLM.com artifacts/ecosystem-cleanup-20260912/github-cost-policy-review.json.",
+  "sourceGatePin": {
+    "commit": "1114003d35e52f4fdb9a2f1b76a4f3bd53ecd8db",
+    "bytes": 141430,
+    "sha256": "c3308e10c7cf055767839528ea3605827c6f0c047a2c10d1dabe8907988c03e6",
+    "baseline": "The prior pin rejected the real verifier and prevented hostile-reply assertions from reaching the child boundary.",
+    "baselineOutputBytes": 4355,
+    "baselineOutputSha256": "8b6e51202d48ea77d87ac8ce17b1368a0d94d003dbffb327611055dbf009a36c",
+    "finalTests": "7 passed, 0 failed, 0 skipped; tools/source-authority-preflight.test.js",
+    "finalOutputBytes": 1729,
+    "finalOutputSha256": "669ef81f87cffb0a27c3fba97046d105862338680c19fc35243de5087c2d0b11",
+    "limit": "Identity and boundary tests pass; the actual canonical gate still reports 37 unreadable entries. This is not source admission."
+  },
+  "supersededUncommittedManifest": {
+    "bytes": 75757,
+    "sha256": "7059e67b0f3a50a152d5687d397c39410ab93b332cfddce9139276c2b97e5735",
+    "boundCommit": "24e4f875a0e508827e6ddf6f94664e927261fbd5",
+    "mismatchedFiles": [".uai/long-term-memory.uai", "data/pages.php", "docs/package-manifest.md", "docs/runtime-portal/index.md", "index.php", "llms-full.txt", "llms.txt"],
+    "replacement": "Existing prepared-awaiting-content-commit form, null source identities and empty file/route lists; cannot authorize publication. Historical publication identity preserved. No source or content payload was discarded."
+  },
+  "deploymentValidation": {
+    "tests": "13 passed, 1 failed, 0 skipped; the real CLI test stops at the known source-authority refusal before usage validation.",
+    "outputBytes": 6267,
+    "outputSha256": "140d61a8ad91a6de0e5653fa3faab580c2672a6635e7d90fc1d1b99970077bfa",
+    "preparedCli": "build-site-deployment-manifest.js --check-prepared stops at the real source-authority gate. The prepared metadata replacement is not a passed generation or publication result."
+  },
+  "publication": "Not attempted: source admission, surviving stage/mirrors, unbound FTPS tuple and validation-only publisher remain blockers. No credentials or remote content were accessed.",
+  "scope": "Tool identity, private UAI policy and nonpublished deployment metadata only; public content/design unchanged."
+}

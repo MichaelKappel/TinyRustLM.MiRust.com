@@ -4,6 +4,13 @@ site: TinyRustLM.MiRust.com
 status: prepared_not_published
 prepared_site_package: 1.8.3
 
+owner_delivery_policy_2026_09_23:
+  github: Ordinary Git source control only; no charged GitHub features or hosted Actions. Repository Actions are disabled and official API readback verified. Do not pay or enable CI to unblock a release.
+  validation: Run validation locally and retain actual platform, source, target and byte-integrity gates.
+  publication: Use the existing FTP/FTPS host for approved website publication, followed by exact HTTPS readback. A Git push is not publication.
+  source_gate: The portal now pins canonical verifier commit1114003 and SHA256c3308e10c7cf055767839528ea3605827c6f0c047a2c10d1dabe8907988c03e6. The prior pin failed before the real gate; matching the pin does not resolve the37 unreadable entries.
+  verification: Seven source-boundary tests pass. Deployment validation has13passes and1source-gate failure. The stale uncommitted candidate has been replaced by the existing nonpublished prepared form with no source or file claims. See artifacts/ftp-source-checkpoint-review-20260923.json; publication remains blocked.
+
 ecosystem_cleanup_2026_09_12:
   change: The local PHP preview no longer delegates arbitrary repository files to the built-in file server. Only manifest-declared static HTTPS readback paths are served, through direct files with canonical paths; normal page rendering is retained.
   boundary: Exact loopback Host plus GET or HEAD; private files, path aliases, linked files and directories, and other methods are rejected without reflecting paths or file content.
