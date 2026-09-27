@@ -15,3 +15,9 @@ release_order:
   - The full-site publisher is disabled. Any future separately reviewed publisher requires complete retirement evidence, then exact HTTPS bytes, headers, routes and release records.
 
 proof_rule: A reachable site, local check, source commit, or configured credential is not deployment evidence.
+
+source_authority_checkpoint_2026_09_27:
+  canonical_commit: 383e5e51658a5979903c265db0812bfa810d43ac
+  review: artifacts/source-authority-metadata-review-20260927.json
+  result: Exact verifier pin refreshed; all7 preflight checks pass. The canonical gate admits ordinary .vs metadata without exempting nested source, links or access failures.
+  boundary: Actual source scan remains incomplete on37 paths. No public artifacts or deployment changed. GitHub Actions remains disabled; local validation and FTP/FTPS policy apply.

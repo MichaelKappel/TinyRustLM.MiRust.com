@@ -1,0 +1,23 @@
+{
+  "schema": "tinyrustlm-mirust.source-authority-metadata-review.v1",
+  "reviewedDate": "2026-09-27",
+  "portalSourceBefore": "7e5cec53e71ae17b6e988edaa3b312bda8ff86e7",
+  "canonicalSourceCommit": "383e5e51658a5979903c265db0812bfa810d43ac",
+  "canonicalVerifier": {
+    "bytes": 141558,
+    "sha256": "e7cf243bdd94fdfd31d3455b415d5d4eecc769aaf350ab82334906a66cf34f95"
+  },
+  "change": "Refresh the exact canonical verifier pin after reviewed Visual Studio metadata admission; retain loose-source, reparse, access and substituted-input rejection.",
+  "validation": {
+    "command": "node --test tools/source-authority-preflight.test.js",
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "diffCheck": "passed"
+  },
+  "intake": "Both README.md files are intake bucket instructions; preserved as setup material. No new owner report in this portal.",
+  "sourceGate": "Canonical actual scan remains incomplete on35 unreadable directories and two installer links; this pin update does not admit publication.",
+  "publicBytesChanged": false,
+  "published": false,
+  "githubActionsUsed": false
+}
