@@ -16,6 +16,11 @@ release_order:
 
 proof_rule: A reachable site, local check, source commit, or configured credential is not deployment evidence.
 
+source_authority_c107:
+  result: Canonical verifier pin refreshed to144408 bytes and SHA25696253fb03be0fb60ed9b94ad71859f0134fcf261f4cb2eb94884dfa66c79c6ca; all7 preflight tests pass.
+  purpose: Distinguish one exact upstream setuptools ZIP fixture from copied ecosystem source while preserving installed reference integrity. No dependency subtree exemption; altered bytes or copies remain blocking.
+  boundary: Canonical registered-root scan now passes following the owner's26-directory cleanup. This is not model qualification or deployment; previous source-access blockers below are historical. No public artifacts changed.
+
 source_authority_checkpoint_2026_09_27:
   canonical_commit: 383e5e51658a5979903c265db0812bfa810d43ac
   review: artifacts/source-authority-metadata-review-20260927.json

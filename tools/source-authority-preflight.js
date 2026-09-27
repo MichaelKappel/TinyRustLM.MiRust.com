@@ -12,9 +12,9 @@ const EXPECTED_NODE_RUNTIME = Object.freeze({
   sha256: "63c259c81e5d472b5f11c8d506070130cb04a1ecf84b80377a34ed6ec9048088",
 });
 const EXPECTED_SOURCE_AUTHORITY_VERIFIER = Object.freeze({
-  // Canonical committed gate from TinyRustLM.com 383e5e5; no copied gate is admitted.
-  bytes: 141558,
-  sha256: "e7cf243bdd94fdfd31d3455b415d5d4eecc769aaf350ab82334906a66cf34f95",
+  // Canonical C107 gate; exact third-party fixture identity, no copied gate admitted.
+  bytes: 144408,
+  sha256: "96253fb03be0fb60ed9b94ad71859f0134fcf261f4cb2eb94884dfa66c79c6ca",
 });
 
 function sha256RegularFile(filePath, expectedBytes, label) {
